@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or its released artifacts, please cite this
+  repository using the metadata below. No paper DOI or arXiv identifier has
+  been assigned yet.
+title: "Microfluidic Native Physics: Reliability Audits and Physics-Guided Constraints"
+type: software
+authors:
+  - family-names: Zhang
+    given-names: Zhiyuan
+repository-code: "https://github.com/LibertychaserUS/microfluidic-native-physics"
+repository-artifact: "https://huggingface.co/datasets/Chaser111/microfluidic-native-physics"
+url: "https://github.com/LibertychaserUS/microfluidic-native-physics"
+abstract: >-
+  Reproducible public-data studies of reliability under chemistry shift in
+  droplet microfluidics, including a sealed-label negative validation and a
+  native-variable physics-guided constrained regression protocol. The work is
+  retrospective and does not claim wet-lab feasibility.
+license: Apache-2.0
+keywords:
+  - microfluidics
+  - droplet generation
+  - machine learning
+  - distribution shift
+  - physics-guided regression
+  - applicability domain
+  - conformal prediction

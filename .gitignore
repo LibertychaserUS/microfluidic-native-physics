@@ -1,0 +1,79 @@
+# SPDX-License-Identifier: Apache-2.0
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+build/
+dist/
+*.egg-info/
+
+# Notebooks and plotting caches
+.ipynb_checkpoints/
+.matplotlib/
+
+# Third-party raw data and local caches are never committed implicitly
+data/raw/
+data/cache/
+downloads/
+
+# Local runs and scratch outputs. Curated release artifacts are committed under
+# artifacts/ only after hash and license review.
+runs/
+scratch/
+artifacts/local/
+artifacts/tmp/
+artifacts/fast/
+artifacts/superseded/
+*expanded_artifacts_fast*/
+*expanded_artifacts_finalfast*/
+*.tmp
+*.log
+
+# Local model/checkpoint formats; explicitly allow-list a release model if one
+# is later required and documented.
+*.ubj
+*.joblib
+*.pkl
+*.pt
+*.pth
+*.ckpt
+
+# Manuscript build products
+manuscript/*.aux
+manuscript/*.bbl
+manuscript/*.bcf
+manuscript/*.blg
+manuscript/*.fdb_latexmk
+manuscript/*.fls
+manuscript/*.log
+manuscript/*.out
+manuscript/*.run.xml
+manuscript/*.synctex.gz
+manuscript/*.toc
