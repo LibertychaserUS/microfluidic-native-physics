@@ -1,0 +1,13 @@
+[
+  {
+    "id": "W3-C1",
+    "clarification": "Mondrian calibration groups use the training table's own key (D1 geometry dependency group, D2 chemistry); the external table's `source` key is undefined on training rows."
+  },
+  {
+    "id": "W3-D1",
+    "cell": "D1_de_to_se",
+    "repeat": 0,
+    "deviation": "calibration rule fell back from dependency_group to row",
+    "reason": "fewer than five dependency groups among the training rows"
+  }
+]

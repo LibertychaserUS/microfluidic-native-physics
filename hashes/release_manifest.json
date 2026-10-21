@@ -1,0 +1,1407 @@
+{
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "33676f06471189133f7e09a051eaf079fe9d91f2d5637a52be76a0c494c895ad",
+      "size_bytes": 2355
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "a7321104e00e3e1d1b320e503856da1251576120a1959ec86110349f141d88cb",
+      "size_bytes": 2209
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "a8ccf4a4969a7a594815491a8eb9805db9edfd132e47ff2f5026b79c7316e888",
+      "size_bytes": 1343
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "size_bytes": 11357
+    },
+    {
+      "path": "LICENSES/CC-BY-4.0.txt",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+      "size_bytes": 18656
+    },
+    {
+      "path": "LICENSES/README.md",
+      "sha256": "ea76470dc7c70bdb37497f4bb77748d0b255932500b5dc6b2640b42186c1cddd",
+      "size_bytes": 1824
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "92523e0dfb6542d378bf477e76a4880872b29491004a93bb2115c0836fc44b44",
+      "size_bytes": 593
+    },
+    {
+      "path": "README.md",
+      "sha256": "f6945e6695f3f3e3645e7edb25c7c394b8e5c1e1160b579fb24bf39b1cb1520e",
+      "size_bytes": 10653
+    },
+    {
+      "path": "THIRD_PARTY_DATA.md",
+      "sha256": "d5cdde762622e7daa6a701f8c5c7b6a3b30dfcbf56bfbbad007a7cc9ff2180c7",
+      "size_bytes": 3824
+    },
+    {
+      "path": "data/README.md",
+      "sha256": "ea2922b756b40e7797b2916ee9abb6556ff4f70795323b164293a1b2a28b8086",
+      "size_bytes": 856
+    },
+    {
+      "path": "data/source_registry.json",
+      "sha256": "a65a62172813732b657a7a09edb1d4c0a5228d2221f1e710512584cd607e84ee",
+      "size_bytes": 4374
+    },
+    {
+      "path": "docs/HASH_REGISTRY.md",
+      "sha256": "42d83bfb03d6cfc7185172e9381ab9c28d422803e746962675c5de9291f60ae3",
+      "size_bytes": 11496
+    },
+    {
+      "path": "docs/RELEASE_CHECKLIST.md",
+      "sha256": "6f915a97b3169112facbfc6340e8dea112c0e41ccfe2ebe7e88055a3eea4b71b",
+      "size_bytes": 6859
+    },
+    {
+      "path": "hashes/appendix_d_registry.json",
+      "sha256": "b9388ffd9b0792458f0d40c60c8f7b3328fd79c804eb35666811ffca95c1bff1",
+      "size_bytes": 18742
+    },
+    {
+      "path": "manuscript/README.md",
+      "sha256": "081f71e0d3789da3ad7692a9b7978274211ef99c58933683186fe5800c3c5907",
+      "size_bytes": 1878
+    },
+    {
+      "path": "manuscript/data/copied_artifacts.sha256",
+      "sha256": "53f46bb1c705b621c611e6d2676999502c9f8f65be69303c74e6fde14c54ec36",
+      "size_bytes": 1164
+    },
+    {
+      "path": "manuscript/data/locked_decision_rule.json",
+      "sha256": "ac43a7f41e29b250dc1044c6185a59d00fca82e74a0e1f6e803aee9f6f0d6a93",
+      "size_bytes": 686
+    },
+    {
+      "path": "manuscript/data/model_summary_metrics.csv",
+      "sha256": "c032563a06aa2dc1aeb641566943c417fef5cf4153a6e9469740693e5030555c",
+      "size_bytes": 1147
+    },
+    {
+      "path": "manuscript/data/paired_group_differences_v2p_vs_b1.csv",
+      "sha256": "a93661197bb59268cf2ed4c4bbe13605f5063b67562e5fd12902e943407128cf",
+      "size_bytes": 500
+    },
+    {
+      "path": "manuscript/data/reliability_metrics.json",
+      "sha256": "a480f869640ed8cd2e39dbbc1da3bd630c24d56dcb3521bfa3bba70f22bb6659",
+      "size_bytes": 4931
+    },
+    {
+      "path": "manuscript/data/reproduction_metrics.json",
+      "sha256": "b0bb757e71c13a9dc251a74286fcc72e629288f899bb87ca01ac2863e02b200e",
+      "size_bytes": 3099
+    },
+    {
+      "path": "manuscript/data/rerendered_figures.sha256",
+      "sha256": "b339ed38a577bcc647b7c03ebe3bc7fd1112aaad1b538c17bd4ec332bc766986",
+      "size_bytes": 558
+    },
+    {
+      "path": "manuscript/figures/expanded_figure_1_split_generalization.png",
+      "sha256": "d35ff7005fbaf0220ae7eca8c5100b36d912d2d10c785ef3225969e0c8ca7307",
+      "size_bytes": 66540
+    },
+    {
+      "path": "manuscript/figures/expanded_figure_2_interval_transfer.png",
+      "sha256": "56ffc13e23b458402578eb51f00a874fe1213b67899b579f263a141c52965349",
+      "size_bytes": 279918
+    },
+    {
+      "path": "manuscript/figures/expanded_figure_3_relative_risk_coverage.png",
+      "sha256": "771eec0db4aa1f8f405050ee449ae832f56453a38c56b630f3a5e093d9ad222e",
+      "size_bytes": 217128
+    },
+    {
+      "path": "manuscript/figures/expanded_figure_4_source_retention.png",
+      "sha256": "8a0bb81c1b58b25ea5fa4fb9c05cf1a44958b6f6d167c05cb2d33e8b5cb7022c",
+      "size_bytes": 105656
+    },
+    {
+      "path": "manuscript/figures/expanded_figure_5_inverse_replay.png",
+      "sha256": "0285d4fe7534779c2a89ac5d1068c104e26fa6e834ca80df555bf830a12ab63a",
+      "size_bytes": 90345
+    },
+    {
+      "path": "manuscript/figures/expanded_figure_6_knn_sensitivity.png",
+      "sha256": "8e2b6085e905b86a84459b3855545eb22e80783969c71fe479036183d3407433",
+      "size_bytes": 70093
+    },
+    {
+      "path": "manuscript/figures/figure_cqr_coverage_shift.png",
+      "sha256": "77bbb239fc888d26d898a163466dc2f10cd65f7af057ddeba14a6c6c889e51f4",
+      "size_bytes": 43221
+    },
+    {
+      "path": "manuscript/figures/figure_distance_vs_error.png",
+      "sha256": "22b77185aa4a354600bda8b86a220d39c7e3e139bb5d07b4525134b138903136",
+      "size_bytes": 98647
+    },
+    {
+      "path": "manuscript/figures/figure_pruning_precision.png",
+      "sha256": "68959adf9120f5f1b1ab3c1e3f1d514d61568b0c1b16b5df87a99eba4dcfe45b",
+      "size_bytes": 68819
+    },
+    {
+      "path": "manuscript/figures/v1_figure_1_blind_prediction_diagnostics.png",
+      "sha256": "cabe05417e387d1bbdddf2fee898f865186c01bb356816de9b653950cb1a61db",
+      "size_bytes": 207000
+    },
+    {
+      "path": "manuscript/figures/v1_figure_2_blind_risk_coverage.png",
+      "sha256": "8214759fa7c8c7a56c1848f803dc28d63493f0af45508be1eddffa59ef5a821d",
+      "size_bytes": 120183
+    },
+    {
+      "path": "manuscript/main.bbl",
+      "sha256": "3025858616db11b7e96eec294220ce027bc1cbce3760bd9c2e2fbdd3f3bf0e76",
+      "size_bytes": 13035
+    },
+    {
+      "path": "manuscript/main.tex",
+      "sha256": "69f67039102053dd3cd2d2beef5a0ff63668b940c483858d5520218172212b15",
+      "size_bytes": 135121
+    },
+    {
+      "path": "manuscript/main_zh.bbl",
+      "sha256": "3025858616db11b7e96eec294220ce027bc1cbce3760bd9c2e2fbdd3f3bf0e76",
+      "size_bytes": 13035
+    },
+    {
+      "path": "manuscript/main_zh.tex",
+      "sha256": "fa40a43fb6fcdc72b5ae2fd63a12e6ab4bb2ca943f151650381db5761f96e138",
+      "size_bytes": 124913
+    },
+    {
+      "path": "manuscript/numbers_ledger.json",
+      "sha256": "f0a0b474804a31a65a2e1c0476a370283a69bc4a19e9e28c645e00acbf174c81",
+      "size_bytes": 218666
+    },
+    {
+      "path": "manuscript/references.bib",
+      "sha256": "8b7934bd314353f613c935ef52e042052435293ea598cefa2e258d9745638331",
+      "size_bytes": 12917
+    },
+    {
+      "path": "manuscript/tools/check_numbers.py",
+      "sha256": "262f58d586105320ba8d2001552a953789b20abb407a0df17ada4389db47708c",
+      "size_bytes": 18527
+    },
+    {
+      "path": "manuscript/tools/render_figures.py",
+      "sha256": "1d5b61c72dd1e93f4891b8a0ec69730d8780a5c2bc343d8fe0df680452b14718",
+      "size_bytes": 8334
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "92ff95314fd9e3476be622603e20ce4173ebccffd37ba447ccafb9798b70daff",
+      "size_bytes": 657
+    },
+    {
+      "path": "requirements/README.md",
+      "sha256": "a278927eacf0300a5b53d8b2baad28bc36fa36c51ebb2a1bb6e9304062813391",
+      "size_bytes": 825
+    },
+    {
+      "path": "requirements/analysis.in",
+      "sha256": "f39e446a4935890429b23d1e11403c46d7aeec235c41f6b0028e4227c60e13e6",
+      "size_bytes": 324
+    },
+    {
+      "path": "requirements/ci.txt",
+      "sha256": "f3dce6a8edc95b9a2c247a657f24fefc08fc31db3435c0af1c2636aefff3628a",
+      "size_bytes": 242
+    },
+    {
+      "path": "requirements/environment-macos-arm64-py3.12.json",
+      "sha256": "db76df34669b5a64011732959299efec7e98131b4981c0eba77655148da7d4f1",
+      "size_bytes": 574
+    },
+    {
+      "path": "scaleup/D3_BINDING.json",
+      "sha256": "c943ce8bfab2e2db225e7d3fa3947b8f15ca54ac9063b866af2c1ca9157d284f",
+      "size_bytes": 5313
+    },
+    {
+      "path": "scaleup/D3_BINDING.json.sha256",
+      "sha256": "6d2ec30deb760a8f80ec59584ba156f47a86d45fdd5ad33d6e26a7a52b5745d8",
+      "size_bytes": 82
+    },
+    {
+      "path": "scaleup/D3_BLIND_PROTOCOL.md",
+      "sha256": "1fa4b404c964c1cfd2d78d2c1fbf5a9965e11560e4d07d2f4e005e15adc91419",
+      "size_bytes": 9552
+    },
+    {
+      "path": "scaleup/D3_BLIND_PROTOCOL.md.sha256",
+      "sha256": "21153d7d8b027ade7cdcb509a2c5fdcec40d6c4ef10a36e4c5f22e693309f9f0",
+      "size_bytes": 87
+    },
+    {
+      "path": "scaleup/D3_DEVIATION_REGISTER.md",
+      "sha256": "4673d15ef816f229e68cf89a1a5ed77b0ad5dc8a0a7030663223f44cc54d159d",
+      "size_bytes": 6309
+    },
+    {
+      "path": "scaleup/README.md",
+      "sha256": "645739a4d1f3a5068b5b61e020158fb25bc6a0d1739a1dafb725d5744d934c12",
+      "size_bytes": 3585
+    },
+    {
+      "path": "scaleup/W3_PROTOCOL.md",
+      "sha256": "8f058306de4d51de1c3708443ed46d7c1556fef95ba3479a1cc7389ee46cb3f8",
+      "size_bytes": 7350
+    },
+    {
+      "path": "scaleup/W3_PROTOCOL.md.sha256",
+      "sha256": "222bedc6fb87030e1464ac9f8b5f38db147e132d460186fc4b5e165a475ff103",
+      "size_bytes": 81
+    },
+    {
+      "path": "scaleup/W4_PROTOCOL.md",
+      "sha256": "23dc7d0ae5431aeb89e3fe9a9174552e0d0258824658f97a674ccb216e951aa8",
+      "size_bytes": 6482
+    },
+    {
+      "path": "scaleup/W4_PROTOCOL.md.sha256",
+      "sha256": "2310a37785efa22715179aef78450588387a10a948f4850d0f015ee2b3729f65",
+      "size_bytes": 81
+    },
+    {
+      "path": "scaleup/W5_PROTOCOL.md",
+      "sha256": "03af554431259a7971ca695db3a80e8cddc270814365c2f4c0c1f63960e60b40",
+      "size_bytes": 4551
+    },
+    {
+      "path": "scaleup/W5_PROTOCOL.md.sha256",
+      "sha256": "5b51e240e425320d5fa5ba34ddce4ce7884c3c2c3f255c1207353d68b1f09503",
+      "size_bytes": 81
+    },
+    {
+      "path": "scaleup/w3/__init__.py",
+      "sha256": "a8df04f89e97d6c90657eb9919d97002b4f41bc6dbf524a3ba26eccc58395a58",
+      "size_bytes": 87
+    },
+    {
+      "path": "scaleup/w3/applicability.py",
+      "sha256": "8696419ecdcb2d793d50b5ff2a4d6b4cb883f0607e80b16307b3c27968aa6df6",
+      "size_bytes": 5779
+    },
+    {
+      "path": "scaleup/w3/cells.py",
+      "sha256": "79ec97560fc574edd971a0456e137e772daa113f7c92acad4a04962cea3f4159",
+      "size_bytes": 7545
+    },
+    {
+      "path": "scaleup/w3/d3_custodian.py",
+      "sha256": "26f9afeff8b458c2296b41218fd1d9c90263377766686825340aa3a05887c639",
+      "size_bytes": 7579
+    },
+    {
+      "path": "scaleup/w3/d3_posthoc_correction.py",
+      "sha256": "5ebaaa41d7ffd53dcf44d39e7cc542efa30b5b5920548222faf137e7a679c1f7",
+      "size_bytes": 4187
+    },
+    {
+      "path": "scaleup/w3/d3_predict.py",
+      "sha256": "30d99a478625d1a97d3e30453380d7ff4e900f2130b91625f836ac8cb04316e7",
+      "size_bytes": 16314
+    },
+    {
+      "path": "scaleup/w3/d3_reveal.py",
+      "sha256": "630d08d9eb0d1b7c239afa130d5335ada974d49a2145e2f301bf43f996857328",
+      "size_bytes": 17350
+    },
+    {
+      "path": "scaleup/w3/datasets.py",
+      "sha256": "78eda0cd9b4fa3a8af64822ffb68fce33e45432736bd9fcf4187e3772044d616",
+      "size_bytes": 8057
+    },
+    {
+      "path": "scaleup/w3/evaluate.py",
+      "sha256": "ee595738a1f0e2e4673bc0b3de87066cf81102cbcb71a8e4ef6f5b8e68bff802",
+      "size_bytes": 10608
+    },
+    {
+      "path": "scaleup/w3/intervals.py",
+      "sha256": "3dd924ecca38e67ed900f8ee732c5a3264712736ec9f5caf76b6a9f4426a770c",
+      "size_bytes": 7002
+    },
+    {
+      "path": "scaleup/w3/models.py",
+      "sha256": "7289080a47e5c9a60ba5c3a89e20b3f7ad95fea9fa77308d319f514a56988389",
+      "size_bytes": 2976
+    },
+    {
+      "path": "scaleup/w3/posthoc_round2.py",
+      "sha256": "3feddf1c57652bc499bf51eed38f5f876e8db202da371f71d5c8ff76fd7d23b0",
+      "size_bytes": 20215
+    },
+    {
+      "path": "scaleup/w3/run_w3.py",
+      "sha256": "54dc8ae5814fe72d7024f9d3251f44b5ce04f5920d5bcd73fb6068424e592677",
+      "size_bytes": 15044
+    },
+    {
+      "path": "scaleup/w3/run_w4.py",
+      "sha256": "a96a8724be8458e4b32696b79d6a0ac39ec7e5001e8ff0ea6edbf1c970cdb3e6",
+      "size_bytes": 14869
+    },
+    {
+      "path": "scaleup/w3/run_w5.py",
+      "sha256": "bc391f3ee84385b8d9df06f01f3b8aa9c3fa7d248bb55609bdd4911bf3c7eae7",
+      "size_bytes": 10110
+    },
+    {
+      "path": "scaleup/w3/tests/test_w3.py",
+      "sha256": "0698b325cb7c47878bd37a34f6087cfa0f1057e7c40ef0e1109151fa5fe6fa1c",
+      "size_bytes": 6282
+    },
+    {
+      "path": "scaleup/w3/tests/test_w4.py",
+      "sha256": "a1cfac9b55a9f022c57db66b698471a4372063a1760b5836b68274c68f7e5e99",
+      "size_bytes": 3654
+    },
+    {
+      "path": "scaleup/w3/tests/test_w5.py",
+      "sha256": "6edbaefa0b4d797336c3cdece1f883aa228cd7de2f82eee4900bfad0cae0b2a0",
+      "size_bytes": 3494
+    },
+    {
+      "path": "scaleup/w3/uq_models.py",
+      "sha256": "3cd05188cdfa4f7a5adc109e52578a03ccf18a7db94112bcdac78b8942ceebaf",
+      "size_bytes": 8336
+    },
+    {
+      "path": "scaleup/w3/weighted_conformal.py",
+      "sha256": "af53622f93ecedf0768f6c293cd5ba51cd2f48592b1b1362acbf28c912977670",
+      "size_bytes": 2344
+    },
+    {
+      "path": "scaleup/w3/workspace.py",
+      "sha256": "a63016e28fcab022d6a7fc47605f7b22b9cb5495119f36148ad4d9a66bcf99b3",
+      "size_bytes": 2614
+    },
+    {
+      "path": "scripts/compare_runs.py",
+      "sha256": "e90270c6f9558a2e697cfb29ab913312d87a2a64112cb4f0ab217076dca1d36c",
+      "size_bytes": 2796
+    },
+    {
+      "path": "scripts/fetch_public_data.py",
+      "sha256": "30b3280d15660117563e3d9ae3bddaa124bcddfd0e57cc6f001951f00e94a4e1",
+      "size_bytes": 5228
+    },
+    {
+      "path": "scripts/release_lib.py",
+      "sha256": "7d7382fa62e2035ab3c324e615c2aa41ea4a7d8a1df6b78829651232775e4958",
+      "size_bytes": 5439
+    },
+    {
+      "path": "scripts/release_manifest.py",
+      "sha256": "e4b955a00da143b724c0bb3c4a64191e2d85530f77c5bce189bb4a5db196f9d8",
+      "size_bytes": 5403
+    },
+    {
+      "path": "scripts/validate_repository_policy.py",
+      "sha256": "8ce8e26c7695d1ee84c84557037d622c20a4222ed8f8cad0202fd3f4d0be812c",
+      "size_bytes": 4235
+    },
+    {
+      "path": "scripts/validate_requirements_lock.py",
+      "sha256": "790267c6757e3d4acb90164c4917d30bcde53c356a6089567fbff0957576a371",
+      "size_bytes": 2485
+    },
+    {
+      "path": "scripts/validate_strict_json.py",
+      "sha256": "1c9eb9eddef03b617ecdbca9a294f75cae84933db7f0ba0a4c17a93b46ea0ed7",
+      "size_bytes": 1310
+    },
+    {
+      "path": "scripts/verify_hash_registry.py",
+      "sha256": "1c8ffb16daf322c188e05425d462e17db50d8fc7b01b7f133615d13ecd60ecc1",
+      "size_bytes": 4139
+    },
+    {
+      "path": "scripts/verify_run_manifests.py",
+      "sha256": "6682ef54c66f7d9cfffe05c0ddf76cf3ad42da54e1b21a2d8021d2efc637b9eb",
+      "size_bytes": 2475
+    },
+    {
+      "path": "tests/test_release_infrastructure.py",
+      "sha256": "7b3f1f0de07925e186db84e6ae67b778a56440b25c4ec4248a73aa8c3cc0539d",
+      "size_bytes": 5817
+    },
+    {
+      "path": "work/data/README.md",
+      "sha256": "8bb983e00d44c86b09d0ade9a468598be79a3b067f7855e028a7d563cd84e8a5",
+      "size_bytes": 3524
+    },
+    {
+      "path": "work/microfluidic_reliability/BLIND_PREREGISTRATION_LOCK.json",
+      "sha256": "1f6901bc79de2cd189c7813d63e16ba561b7c502ce42721f4ed9e15a2357edc7",
+      "size_bytes": 1710
+    },
+    {
+      "path": "work/microfluidic_reliability/BLIND_PREREGISTRATION_LOCK.sha256",
+      "sha256": "6305bddedaa51ecac4cfd626fb3b5ab4e9a6c809af9664946ce7cd67d4c131d4",
+      "size_bytes": 98
+    },
+    {
+      "path": "work/microfluidic_reliability/BLIND_REVEAL_INCIDENT.md",
+      "sha256": "75615dd3fc6f1d3ea26224c5243b56dd25003dcba48d935e502a6fa72e7db162",
+      "size_bytes": 2572
+    },
+    {
+      "path": "work/microfluidic_reliability/BLIND_VALIDATION_PROTOCOL.md",
+      "sha256": "1402752425f111a97222ae5c4cb7d13bd68ca1fdfabab978594ac79370e68b1c",
+      "size_bytes": 6008
+    },
+    {
+      "path": "work/microfluidic_reliability/EXPERIMENT_PROTOCOL.md",
+      "sha256": "48f776147c2b1c8292d1752d95d74c5d6eb1dea87d08579b88bcc3b218735559",
+      "size_bytes": 10914
+    },
+    {
+      "path": "work/microfluidic_reliability/JSON_SERIALIZATION_POSTMORTEM.md",
+      "sha256": "3b8bfa91b771920ed49be25ca5d5de41502f1c5e88eaa6eb394973f4973485b4",
+      "size_bytes": 2585
+    },
+    {
+      "path": "work/microfluidic_reliability/LITERATURE_EVIDENCE_MATRIX.md",
+      "sha256": "a9cbe516157b948e77c14aaad9fd002c32fea611fc70c283a83aa303a1beb556",
+      "size_bytes": 6066
+    },
+    {
+      "path": "work/microfluidic_reliability/PHYSICS_CONSTRAINED_V2_PROTOCOL.md",
+      "sha256": "5e4a1e4c4a8bb344ed0d1393477a7807b69cc57517eb359a03aec3cbf6471d55",
+      "size_bytes": 12360
+    },
+    {
+      "path": "work/microfluidic_reliability/PHYSICS_CONSTRAINED_V2_PROTOCOL.sha256",
+      "sha256": "29f2ebc1be55fee4653846cc15e1e7bb6ad2f9a8e7ca9fe7ff0f4ba88c3ad86e",
+      "size_bytes": 101
+    },
+    {
+      "path": "work/microfluidic_reliability/PROTOCOL_DEVIATION_REGISTER.md",
+      "sha256": "e8a593c9ff180bf2dc15d141b8ddfb33af6644944916fd29132db8d8a645ba7e",
+      "size_bytes": 9336
+    },
+    {
+      "path": "work/microfluidic_reliability/README.md",
+      "sha256": "3a3d9d8fe2081fc544d8a46a0f1b33dec6ed9df9f2b28748c36016f40740f780",
+      "size_bytes": 4140
+    },
+    {
+      "path": "work/microfluidic_reliability/SOURCE_MANIFEST.md",
+      "sha256": "1b9768d5a074e8380b2977626d5d7ae1367210e1aeee1e50541f24193d8d8c88",
+      "size_bytes": 1881
+    },
+    {
+      "path": "work/microfluidic_reliability/artifacts/external_predictions.csv",
+      "sha256": "7068e233384363048ce074ed5bf2443a349bda3b802a6c5da96cabd93274fa30",
+      "size_bytes": 12965
+    },
+    {
+      "path": "work/microfluidic_reliability/artifacts/external_reliability_predictions.csv",
+      "sha256": "8a541973dc6e2e920fbf14e6709de2d2e8f25e41eb599bb4cfe9dafd3e3f7a12",
+      "size_bytes": 13375
+    },
+    {
+      "path": "work/microfluidic_reliability/artifacts/figure_cqr_coverage_shift.png",
+      "sha256": "10220ce24e8a955b917582ec1b28b324bf301269fa439e4c2e841fa9ed462153",
+      "size_bytes": 42565
+    },
+    {
+      "path": "work/microfluidic_reliability/artifacts/figure_distance_vs_error.png",
+      "sha256": "a6d8bea1a43089e147a6ec0fc37172e93806bf1e85bcf7b4b10777aef3308899",
+      "size_bytes": 98362
+    },
+    {
+      "path": "work/microfluidic_reliability/artifacts/figure_pruning_precision.png",
+      "sha256": "68959adf9120f5f1b1ab3c1e3f1d514d61568b0c1b16b5df87a99eba4dcfe45b",
+      "size_bytes": 68819
+    },
+    {
+      "path": "work/microfluidic_reliability/artifacts/reliability_metrics.json",
+      "sha256": "a480f869640ed8cd2e39dbbc1da3bd630c24d56dcb3521bfa3bba70f22bb6659",
+      "size_bytes": 4931
+    },
+    {
+      "path": "work/microfluidic_reliability/artifacts/reproduction_metrics.json",
+      "sha256": "b0bb757e71c13a9dc251a74286fcc72e629288f899bb87ca01ac2863e02b200e",
+      "size_bytes": 3099
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/BLIND_REVEAL_CONSUMED.json",
+      "sha256": "e285c4cb4ad7db74b9a3aca4b6240759081095c821865ae76852486f6fb13344",
+      "size_bytes": 189
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/blind_reveal_results_recovered.json",
+      "sha256": "008d026163af37b7ecddf220d2ffc5aea0818784561a389419e088cf0eaa1624",
+      "size_bytes": 55346
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/custodian_manifest.json",
+      "sha256": "24083606729f20afd7266d081c54647750b1952fe6b5f35e25d3aa37b12b373f",
+      "size_bytes": 1594
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/posthoc_analysis_corrected/blind_posthoc_summary.json",
+      "sha256": "135340bfb571b971c780aaf4fe9d8102107b1beaeff8090fbd59383a57713861",
+      "size_bytes": 108157
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/posthoc_analysis_corrected/blind_tx100_merged_diagnostics.csv",
+      "sha256": "14775a6c6d63da1fd075cf7cfa09fdfc3c3ea096a74bc364dabb645c54922856",
+      "size_bytes": 32245
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/posthoc_analysis_corrected/figure_1_blind_prediction_diagnostics.png",
+      "sha256": "933c263e570a808dc7aa42226151726320811084b41e5bb2a95b2a4a5bf4b35b",
+      "size_bytes": 298976
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/posthoc_analysis_corrected/figure_2_blind_risk_coverage.png",
+      "sha256": "8214759fa7c8c7a56c1848f803dc28d63493f0af45508be1eddffa59ef5a821d",
+      "size_bytes": 120183
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/posthoc_analysis_corrected/figure_3_posthoc_calibration_sensitivity.png",
+      "sha256": "bb76958b72bcc234b8a205769162007307fac2583b086099fece13332eb07314",
+      "size_bytes": 108880
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/posthoc_analysis_corrected/figure_4_blind_target_search.png",
+      "sha256": "88f14febf75922859fd35743c7b139b18157f978b24637533d464d0c2c8f9f14",
+      "size_bytes": 221015
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/prereveal/blind_candidate_rankings.csv",
+      "sha256": "0583059ad6d57a6f11ddd5e63328c42b33c095f4adb3865fff4ca8aff6763c65",
+      "size_bytes": 24289
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/prereveal/blind_environment_manifest.json",
+      "sha256": "65b115d81930904119ef05d432a7a600a2058b13bc72e9e2f133d9eec6ad2c22",
+      "size_bytes": 229
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/prereveal/blind_prediction_bundle.json",
+      "sha256": "2b6eb42d709b367c563e62ca7c82ee764c06ac2b67dffc9f1127b3b732d6932d",
+      "size_bytes": 163356
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/prereveal/blind_prediction_bundle.sha256",
+      "sha256": "81c3785e985dfbd80f6ece6274ea71761f396d809233caccdc658139b97e62cd",
+      "size_bytes": 95
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/prereveal/blind_predictions.csv",
+      "sha256": "64a72754a702a59cf2f4b7d3153e26ac43f0eae66c22739305cd4ee3e5a95c14",
+      "size_bytes": 18414
+    },
+    {
+      "path": "work/microfluidic_reliability/blind_artifacts/prereveal/blind_target_queries.csv",
+      "sha256": "8b9162f72e375363371d61b9ee9e663b0aa4e81a1674a6ce6753f180a9410d9b",
+      "size_bytes": 4988
+    },
+    {
+      "path": "work/microfluidic_reliability/d3_blind_artifacts/custodian_manifest.json",
+      "sha256": "6f5503b19cdc1ea029319dc4e1d8afceb33f66564e148e32fcd64c99d7f4e1f0",
+      "size_bytes": 6219
+    },
+    {
+      "path": "work/microfluidic_reliability/d3_blind_artifacts/prereveal/D3_DEVELOPMENT_REFERENCE.json",
+      "sha256": "a14757683d732fbaa040cfbc6422fda781cce990319c1f5fe147029d86fb2d15",
+      "size_bytes": 942
+    },
+    {
+      "path": "work/microfluidic_reliability/d3_blind_artifacts/prereveal/blind_prediction_bundle.json",
+      "sha256": "79be728c7673803e329ce85574def2c34a869f52d3e2526a1a3161343d296bd2",
+      "size_bytes": 81757
+    },
+    {
+      "path": "work/microfluidic_reliability/d3_blind_artifacts/prereveal/blind_prediction_bundle.sha256",
+      "sha256": "73762547376f6690dfa86f4b310c1cdce887cc833eebbda08016d603267636c2",
+      "size_bytes": 95
+    },
+    {
+      "path": "work/microfluidic_reliability/d3_blind_artifacts/prereveal/code_and_lock_hashes.json",
+      "sha256": "5b467f18d2805ae405ff10a0230275811b885747e43af32da8357c18e5bbce13",
+      "size_bytes": 728
+    },
+    {
+      "path": "work/microfluidic_reliability/d3_blind_artifacts/prereveal/environment.json",
+      "sha256": "be9d82c7033280c130950e7166e42631a378e54d127433af6a2fc0f0ee3ec873",
+      "size_bytes": 162
+    },
+    {
+      "path": "work/microfluidic_reliability/d3_blind_artifacts/prereveal/sealed_primary_predictions.csv",
+      "sha256": "e48eef91ebd83eb5d54f6b502445bd71ef2dfa3a419f985f599c21f86cd7eb79",
+      "size_bytes": 15309
+    },
+    {
+      "path": "work/microfluidic_reliability/d3_blind_artifacts/prereveal/sealed_secondary_predictions.csv",
+      "sha256": "e7532313d917bfdf3812877db93b32651f514f13f8c23b2d3dc26636909592f0",
+      "size_bytes": 3587
+    },
+    {
+      "path": "work/microfluidic_reliability/d3_blind_artifacts/reveal/D3_REVEAL_CONSUMED.json",
+      "sha256": "c1b37d48adfacdd1d9fc45d325a768fa57e7cab1cc96eb49d1d12a3e24bc4fee",
+      "size_bytes": 189
+    },
+    {
+      "path": "work/microfluidic_reliability/d3_blind_artifacts/reveal/blind_reveal_results.json",
+      "sha256": "1f6a96c14000eae6fea409c0dfa11f6968596ce3ac4fa6a66b1f1770b70b6d13",
+      "size_bytes": 27351
+    },
+    {
+      "path": "work/microfluidic_reliability/d3_blind_artifacts/reveal/posthoc_applicability_corrected.json",
+      "sha256": "1826880ac6f57056d002b45b1fc201dd311015225911eff7969d5bf8d2645b04",
+      "size_bytes": 20560
+    },
+    {
+      "path": "work/microfluidic_reliability/d3_blind_artifacts/reveal/sealed_primary_scored_rows.csv",
+      "sha256": "fff8e81112ed7419b37dc2a305142cd14ab3a3e6f77fbe04ecb137f340bcb98a",
+      "size_bytes": 17907
+    },
+    {
+      "path": "work/microfluidic_reliability/d3_blind_artifacts/reveal/sealed_secondary_scored_rows.csv",
+      "sha256": "94f3a1d0e6c741ea4ffb54442084ea9eb49f5d0c86a5c53c3b56b4696a242b27",
+      "size_bytes": 4092
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run1/artifact_hashes.json",
+      "sha256": "9cb20f921d0da53d846b5b12fd8308c29a302fec847e4d46503d8020894b8464",
+      "size_bytes": 4656
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run1/data_audit.json",
+      "sha256": "39f3581d571c70ea8b066fe9901a983cf23038f0b0ab5b299fd15980b19c04a5",
+      "size_bytes": 1111
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run1/environment.json",
+      "sha256": "566bc0ec989b520c14d2c298ffbad0def2d733f07dfd6b2ffdf5285b51564dea",
+      "size_bytes": 278
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run1/experiment_registry.json",
+      "sha256": "5611db34e05f6fe7b710878426e74944e087c57fa102c0886b632f2faf64fba4",
+      "size_bytes": 1841
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run1/reproducibility_manifest.json",
+      "sha256": "07f4e41b27e38898f5eaa2cfa4fcd4658640fca44e8396946bec11632070f039",
+      "size_bytes": 2549
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run1/test_evidence.json",
+      "sha256": "ccb7b89592f2ec2ec1a1d813a0ab067c523eeb35aefd3ccdab7ea4f120c60524",
+      "size_bytes": 305
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/applicability_aurc_summary.csv",
+      "sha256": "a86ed83ff161e3ee4b7c77e61192f13b51399f6bddd9ff65369bf295e99fa4fa",
+      "size_bytes": 49472
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/applicability_binary_summary.csv",
+      "sha256": "ed30016a3d0edb3bbfd6316e74ed28777e03a8a521a7196146768c72f20bab64",
+      "size_bytes": 17835
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/applicability_calibration_metadata.csv",
+      "sha256": "aa649d027a8b40eaf0e4b14b7e63dded59140f46259382e3099162f1ce3cc771",
+      "size_bytes": 5288
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/applicability_calibration_scores.csv",
+      "sha256": "c1327d86f46d4815cbf89c599bb584dda505645aba2672772b14f567a1742d01",
+      "size_bytes": 78112
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/applicability_correlations.csv",
+      "sha256": "3f3631780364dac66a435d53646b0235f9526b7dcea32ad2ab4fb047f4d666e9",
+      "size_bytes": 29865
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/applicability_partition_composition.csv",
+      "sha256": "9c99c1d096cc5652099c562a71a532af96cf799569ebcbd4350fea23dbe8aa0d",
+      "size_bytes": 617
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/applicability_random_controls.csv",
+      "sha256": "a3d394f3f2dc46582525c0ede3ed6cfb65b5f6e3dabdbf28847c6cd53bfe0281",
+      "size_bytes": 66742
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/applicability_risk_curves.csv",
+      "sha256": "f7ec50c8b665fcc73ba52eb2f205802c49dbe458de55c0bf8f5fcf6f5ea90998",
+      "size_bytes": 603996
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/applicability_scored.csv",
+      "sha256": "0d7f68474e5f3986edf226223ec17705fcef163058215115e689ae12a6b9020f",
+      "size_bytes": 51375
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/applicability_source_binary_summary.csv",
+      "sha256": "f6b0e245edf416d40f2c12b99b71ffec67e4a22cb53c32fd04ff52ce50992f81",
+      "size_bytes": 46715
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/applicability_thresholds.csv",
+      "sha256": "d6decf5c463e2658f302d9857eea4d92f084a43ab75f455f3833f8a537c5ef6d",
+      "size_bytes": 2134
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/artifact_hashes.json",
+      "sha256": "9cb20f921d0da53d846b5b12fd8308c29a302fec847e4d46503d8020894b8464",
+      "size_bytes": 4656
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/data_audit.json",
+      "sha256": "39f3581d571c70ea8b066fe9901a983cf23038f0b0ab5b299fd15980b19c04a5",
+      "size_bytes": 1111
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/environment.json",
+      "sha256": "566bc0ec989b520c14d2c298ffbad0def2d733f07dfd6b2ffdf5285b51564dea",
+      "size_bytes": 278
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/expanded_results_summary.json",
+      "sha256": "5f6f6feb52cea1ece29bf35fcc39bc6520c73d705117e856696b70904652a279",
+      "size_bytes": 932311
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/experiment_registry.json",
+      "sha256": "5611db34e05f6fe7b710878426e74944e087c57fa102c0886b632f2faf64fba4",
+      "size_bytes": 1841
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/external_model_predictions.csv",
+      "sha256": "57614e3e0715ad351b0cc45be423124c11e04ff198f0ac53ce8b79bef5eabfc7",
+      "size_bytes": 33497
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/external_model_summary.csv",
+      "sha256": "030121e9d2e25731b2a8917cdacda36e2405b6fcc9f11d0248b26f1bf0f350c1",
+      "size_bytes": 3289
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/figure_1_split_generalization.png",
+      "sha256": "d35ff7005fbaf0220ae7eca8c5100b36d912d2d10c785ef3225969e0c8ca7307",
+      "size_bytes": 66540
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/figure_2_interval_transfer.png",
+      "sha256": "56ffc13e23b458402578eb51f00a874fe1213b67899b579f263a141c52965349",
+      "size_bytes": 279918
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/figure_3_relative_risk_coverage.png",
+      "sha256": "d92e0ff21adb5ab58eefb13336aea6a5ac71c78a2514f140c675096cf80096b2",
+      "size_bytes": 210372
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/figure_4_source_retention.png",
+      "sha256": "b857ddd6d9fec64c9fa74f551b71ad0fa8a28825f418aa850bbb8583d76f34fb",
+      "size_bytes": 82506
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/figure_5_inverse_replay.png",
+      "sha256": "0285d4fe7534779c2a89ac5d1068c104e26fa6e834ca80df555bf830a12ab63a",
+      "size_bytes": 90345
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/figure_6_knn_sensitivity.png",
+      "sha256": "8e2b6085e905b86a84459b3855545eb22e80783969c71fe479036183d3407433",
+      "size_bytes": 70093
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/hierarchical_bootstrap_summary.csv",
+      "sha256": "2dbfca308f27f71a84b6b7882900e72e9006458d4be347c325e5cd8b09c4991a",
+      "size_bytes": 3785
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/internal_group_risk_validation.csv",
+      "sha256": "66b3035f593525c4da37ce4b581745f1c5c915dd7b5a2e659c4df91e9433fd19",
+      "size_bytes": 48721
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/interval_physical_bound_diagnostics.csv",
+      "sha256": "938c5587a9d9108c7c10e2c8765bfc6e4a6f1955ca032f09b58999b49cafdf6f",
+      "size_bytes": 142086
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/interval_split_composition.csv",
+      "sha256": "5216672ee901fd3c3e71c43bdd83e10c4204dfa8bf8ba8af2e85b503d9af3aa5",
+      "size_bytes": 3658
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/interval_split_de_pair_audit.csv",
+      "sha256": "b22e86fc8c7d22d345652c5f71c5745c0042c7d58c7c5fb63df6f644be8e42b0",
+      "size_bytes": 1393
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/interval_splits.csv",
+      "sha256": "678c92eb00319eea1d42a21ca2efa0eb004f406e2738ac5ac331f64f06228ccb",
+      "size_bytes": 945068
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/interval_summary.csv",
+      "sha256": "e22f091b6b724b5f7e00a59bdd4288f162493319a3ad2e2e4a050f9932eaee1f",
+      "size_bytes": 607741
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/inverse_replay_selection_freeze.json",
+      "sha256": "9fd51b76e1e74071b986b93ee974f2a93d8fe8d5fadfdfa80ff8f8705c615b7e",
+      "size_bytes": 609
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/inverse_replay_summary.csv",
+      "sha256": "0e2585a201b8792fee9cd89bc760a56cc9a6428252278d4c2390f84dba90e529",
+      "size_bytes": 201784
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/reproducibility_manifest.json",
+      "sha256": "07f4e41b27e38898f5eaa2cfa4fcd4658640fca44e8396946bec11632070f039",
+      "size_bytes": 2549
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/shuffled_label_control_predictions.csv",
+      "sha256": "b9ad35bf6f29067269b5999813152238897badda61a1d80690588652f4301483",
+      "size_bytes": 312654
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/shuffled_label_control_summary.csv",
+      "sha256": "39b992927403d1849201ee2f13de10f38ccef09b5a77d2bf9a16c45464bf73a3",
+      "size_bytes": 5112
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/split_metrics.csv",
+      "sha256": "44b874144fc7407e51a20a572d57492b53adff62ecb7336b545db31f2d101411",
+      "size_bytes": 67222
+    },
+    {
+      "path": "work/microfluidic_reliability/expanded_artifacts_canonical_run2/test_evidence.json",
+      "sha256": "ccb7b89592f2ec2ec1a1d813a0ab067c523eeb35aefd3ccdab7ea4f120c60524",
+      "size_bytes": 305
+    },
+    {
+      "path": "work/microfluidic_reliability/posthoc_review_round2/artifact_hashes.json",
+      "sha256": "37e3cc7a7706dd8a55d24aaa88656e54c89c63ff6284da55ec811cb2a0e16ab4",
+      "size_bytes": 502
+    },
+    {
+      "path": "work/microfluidic_reliability/posthoc_review_round2/d3_alternative_metrics.json",
+      "sha256": "4f597447cd2aae83eade21887ebc48dabd8bfac7083242a45f96722a9cb79b35",
+      "size_bytes": 2259
+    },
+    {
+      "path": "work/microfluidic_reliability/posthoc_review_round2/d3_log_target_baseline.json",
+      "sha256": "2c089ac772a1d613900768d6655a851f812120878ebbbd231f8a720e5873c36b",
+      "size_bytes": 6135
+    },
+    {
+      "path": "work/microfluidic_reliability/posthoc_review_round2/environment.json",
+      "sha256": "e361d3a8c7b1f63fea559b5b24253f5ed68d51f7644a91f4845e8ebe33e93135",
+      "size_bytes": 792
+    },
+    {
+      "path": "work/microfluidic_reliability/posthoc_review_round2/v1_development_loco_reference.json",
+      "sha256": "f4e4d02a41eddd17f943c44ff423ed32207f450848935bce9e50b1b500cfc915",
+      "size_bytes": 3487
+    },
+    {
+      "path": "work/microfluidic_reliability/posthoc_review_round2/w3_metric_robustness.json",
+      "sha256": "db0ea4bb90d24e71a55fee9e4cf828c6782a8bde37c223031b66fabcdf033d89",
+      "size_bytes": 10201
+    },
+    {
+      "path": "work/microfluidic_reliability/src/blind_custodian.py",
+      "sha256": "7ec02af7c1e45da257029da7b7b7fb95ca67c0c1a43d9f0b824fb6672f6a275f",
+      "size_bytes": 13930
+    },
+    {
+      "path": "work/microfluidic_reliability/src/blind_posthoc_analysis.py",
+      "sha256": "13094138435878146f06d7138383ade9367269f360309b6362fc370b4b719f6d",
+      "size_bytes": 39932
+    },
+    {
+      "path": "work/microfluidic_reliability/src/blind_predict.py",
+      "sha256": "91ae4b08aaaee07fa94a5dfb51af234c0a17250ca1656e71b21ddcc9fb7a64cb",
+      "size_bytes": 20678
+    },
+    {
+      "path": "work/microfluidic_reliability/src/blind_reveal.py",
+      "sha256": "46a289ad4369b10b56f8d1c233ba3a401769dec8fbcf392b1235a0baebd27a48",
+      "size_bytes": 18649
+    },
+    {
+      "path": "work/microfluidic_reliability/src/blind_reveal_recovery.py",
+      "sha256": "06b6099e0d7c754681bcee7de8f16b8eec8c6c902d4ca996d3e9d0086e263a74",
+      "size_bytes": 8496
+    },
+    {
+      "path": "work/microfluidic_reliability/src/dafd_reproduction.py",
+      "sha256": "fe3b59fe48e66d6930ce3e3d8b2bc6174bdd917da79e4e88bc66d9d63d26c4a8",
+      "size_bytes": 9071
+    },
+    {
+      "path": "work/microfluidic_reliability/src/expanded_study.py",
+      "sha256": "9b69ce812bce6dc50c2084b6d00161e02c348ae4175a6664179d5f4b0b76b4b8",
+      "size_bytes": 85416
+    },
+    {
+      "path": "work/microfluidic_reliability/src/interval_experiments.py",
+      "sha256": "cf74569e2a1aab98731a181d2d70c6738d4f382be4b6b6eff8375c96696bcdf3",
+      "size_bytes": 54142
+    },
+    {
+      "path": "work/microfluidic_reliability/src/native_physics_v2.py",
+      "sha256": "21ab9ea25eb1bfb8421c49d6a21b216242283286d33999eea88550c5f63b08c7",
+      "size_bytes": 93961
+    },
+    {
+      "path": "work/microfluidic_reliability/src/reliability_analysis.py",
+      "sha256": "fd7bb6dce3b69c20606feacb46118d9481a9dcd20d9d6401a36b9e71becc3789",
+      "size_bytes": 14106
+    },
+    {
+      "path": "work/microfluidic_reliability/src/strict_json.py",
+      "sha256": "a4d5d16e8b1fd5bf7e255aa9494061effedddf648ce34bccde75ae8e65e0dfbc",
+      "size_bytes": 2035
+    },
+    {
+      "path": "work/microfluidic_reliability/src/study_core.py",
+      "sha256": "0917aa1ef4f0621347a37fa1cbde37b5540f9f7cd8427b6d8f630a0c0aa13b67",
+      "size_bytes": 26285
+    },
+    {
+      "path": "work/microfluidic_reliability/tests/test_blind_posthoc_analysis.py",
+      "sha256": "b1547ba707f4d83b60bd5d71a006b8ac678f56c335aa7ab7202d060d72caf23f",
+      "size_bytes": 3299
+    },
+    {
+      "path": "work/microfluidic_reliability/tests/test_blind_workflow.py",
+      "sha256": "d32d63ca29bfbc70967177930c84d88ea45c6d3151ac1e88a076f5e38bba784a",
+      "size_bytes": 6179
+    },
+    {
+      "path": "work/microfluidic_reliability/tests/test_data_contract.py",
+      "sha256": "7651ac9637eb1c5884ba7a68452209391376ca4e32aa509835ca895d91afcbcf",
+      "size_bytes": 2336
+    },
+    {
+      "path": "work/microfluidic_reliability/tests/test_expanded_audit_fixes.py",
+      "sha256": "5efa1cf7b1a12b00cfe9ca03bd7eddfbe30635eefe2845929c57af893f38accb",
+      "size_bytes": 7047
+    },
+    {
+      "path": "work/microfluidic_reliability/tests/test_interval_experiments.py",
+      "sha256": "b53ecc64182a4495857e481895e0a7388de28d1f93559abb54ed25f726f79640",
+      "size_bytes": 13758
+    },
+    {
+      "path": "work/microfluidic_reliability/tests/test_native_physics_v2.py",
+      "sha256": "e64f22fc33860b32d77cbfe77d6c4947632b918a1d8d7655ef9d310f0024b8b7",
+      "size_bytes": 14527
+    },
+    {
+      "path": "work/microfluidic_reliability/tests/test_strict_json.py",
+      "sha256": "389c5c6d6cfb6d5f53d610f8ee8d70b73026c1114beffc79bff25f131f73a983",
+      "size_bytes": 1678
+    },
+    {
+      "path": "work/microfluidic_reliability/tests/test_study_core.py",
+      "sha256": "98a8483910f3308be99fe453935b52375ffbc06b067fa111742c722ebb3dc0f8",
+      "size_bytes": 8333
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run1/artifact_hashes.json",
+      "sha256": "f04770c7b9264987fef5d2d88ebdb8dff8748efdbd59534658de53f85d862846",
+      "size_bytes": 2481
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run1/configuration.json",
+      "sha256": "a21f3621e5ec964337f0d27b485a002b6b3531aa1ca59e0f910b2ccdde73f576",
+      "size_bytes": 1034
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run1/environment.json",
+      "sha256": "92e276abbcc4d3d1871fa21fd7261e8da68b460b0e9515372917d0ad544d86df",
+      "size_bytes": 567
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run1/source_provenance.json",
+      "sha256": "9dbb5c4304c32a155a4e5cda29734476e129f7d32a2250f4666cbb1c1d3384f8",
+      "size_bytes": 679
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/anomaly_register.json",
+      "sha256": "d1c9207cc150d08438a5826e4666de5ed3456021b30272db06d1a3c79743df1e",
+      "size_bytes": 1115
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/artifact_hashes.json",
+      "sha256": "f04770c7b9264987fef5d2d88ebdb8dff8748efdbd59534658de53f85d862846",
+      "size_bytes": 2481
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/configuration.json",
+      "sha256": "a21f3621e5ec964337f0d27b485a002b6b3531aa1ca59e0f910b2ccdde73f576",
+      "size_bytes": 1034
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/data_join_audit.json",
+      "sha256": "85582d98439cd1afdd8695c4cc6c7814193f4d31062af26308c31abf81a8e13e",
+      "size_bytes": 5246
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/ensemble_group_metrics.csv",
+      "sha256": "4c3ae608c7ea644f41a482be14f701c22b10a603c4372ea595dec5e4eef7fc2f",
+      "size_bytes": 10365
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/ensemble_per_row_predictions.csv",
+      "sha256": "59ca2fbf2aa51eccc25239fb95a6efdb556d4ce458b44702b4965ff15c3627ff",
+      "size_bytes": 662285
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/environment.json",
+      "sha256": "92e276abbcc4d3d1871fa21fd7261e8da68b460b0e9515372917d0ad544d86df",
+      "size_bytes": 567
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/inner_selection_records.csv",
+      "sha256": "8ecae5c1f4ec0a84a24a3a878bd3a314f6086e7a697288e7a09c5048444c8ca6",
+      "size_bytes": 262971
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/locked_decision_rule.json",
+      "sha256": "ac43a7f41e29b250dc1044c6185a59d00fca82e74a0e1f6e803aee9f6f0d6a93",
+      "size_bytes": 686
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/locked_physics_sensitivities.csv",
+      "sha256": "1a54985ef42248b3a00b4c61d413dfa1e8bd327c55ed0641ab777bfc92f3a833",
+      "size_bytes": 56696
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/locked_physics_sensitivity_summary.csv",
+      "sha256": "2a19fe53924b5a208f08d8ca177947fbf2003c95e7d730dd383e3c024d5ab733",
+      "size_bytes": 392
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/model_summary_metrics.csv",
+      "sha256": "c032563a06aa2dc1aeb641566943c417fef5cf4153a6e9469740693e5030555c",
+      "size_bytes": 1147
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/native_physics_layer_audit.csv",
+      "sha256": "deaddcf94a1e0d377194ed58ca5cb4b881e9be443b462d97ab5cf469f4cdbee3",
+      "size_bytes": 127111
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/outer_split_manifest.csv",
+      "sha256": "2206b8a648effaabec3a73a5ea21469bfd13621272292945cea0a38bfdcfe45d",
+      "size_bytes": 242508
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/paired_group_differences_v2p_vs_b1.csv",
+      "sha256": "a93661197bb59268cf2ed4c4bbe13605f5063b67562e5fd12902e943407128cf",
+      "size_bytes": 500
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/quarantined_anomaly_metrics.csv",
+      "sha256": "8bdac8b4476c1e302e5b0b0af8f636f0861143513ddc06b16344b8ed265e0e43",
+      "size_bytes": 817
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/quarantined_anomaly_predictions.csv",
+      "sha256": "fb6b2034dd31c9cb4674caf7da9633da1e0d9ce204be74d50315d9f398aef91a",
+      "size_bytes": 14866
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/quarantined_cmc_0p60_rows.csv",
+      "sha256": "924c2ee64afc0233672cd75ef99dae52d0fb40e78bf36e866fb041172e29465a",
+      "size_bytes": 370
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/retrospective_search_query_results.csv",
+      "sha256": "8e1b8aad349f693207f2bfa486c8434e0fb1ee084b18f7caa8e1c39dc5d8e89b",
+      "size_bytes": 248922
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/retrospective_search_selection_freeze.json",
+      "sha256": "3288e113819db0a9a283c180040def96e24bda1f84e1e2407036f1acb1ab5ab2",
+      "size_bytes": 331
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/retrospective_search_summary.csv",
+      "sha256": "1f670537529af09ba13534ce34b71ea86f6e2b1e5c2b75e4c1eebb5e5574625f",
+      "size_bytes": 3397
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/seed_group_metrics.csv",
+      "sha256": "6b476c5864200d0f7cdd0f7702c34421f89f845b98e609959aa7a015bf46ba9e",
+      "size_bytes": 46973
+    },
+    {
+      "path": "work/microfluidic_reliability/v2_artifacts_canonical_run2/source_provenance.json",
+      "sha256": "9dbb5c4304c32a155a4e5cda29734476e129f7d32a2250f4666cbb1c1d3384f8",
+      "size_bytes": 679
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run1/artifact_hashes.json",
+      "sha256": "b80b6703a2123b9a9432be22f9b0bef8fa1177fb18e00d676d6ed591400a7cf2",
+      "size_bytes": 1186
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run1/cells.csv",
+      "sha256": "cc5781d84e9441d4a0b4f47ebbbd8a0bdc20c6f48ecae4e1e1ffa43c6c372280",
+      "size_bytes": 8781
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run1/configuration.json",
+      "sha256": "bf7e0ebc151549717227a20829c941875d6c354935cc0e309b60e593b920a942",
+      "size_bytes": 1005
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run1/data_audit.json",
+      "sha256": "45bebef6874250da0837b28dba7adc4a8ebf7004e5acaa1a92d407aef07fcfe6",
+      "size_bytes": 6282
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run1/deviations.json",
+      "sha256": "3811a7b89ca06580f7a46ea8f2c7358eb9eb472a687b3ff5a8aed7041331738d",
+      "size_bytes": 448
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run1/environment.json",
+      "sha256": "60c6a069bdf3b9d8133365af56cb44e05edf1a7e6d97450808cacd7e0459f1fe",
+      "size_bytes": 183
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run2/artifact_hashes.json",
+      "sha256": "b80b6703a2123b9a9432be22f9b0bef8fa1177fb18e00d676d6ed591400a7cf2",
+      "size_bytes": 1186
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run2/cells.csv",
+      "sha256": "cc5781d84e9441d4a0b4f47ebbbd8a0bdc20c6f48ecae4e1e1ffa43c6c372280",
+      "size_bytes": 8781
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run2/configuration.json",
+      "sha256": "bf7e0ebc151549717227a20829c941875d6c354935cc0e309b60e593b920a942",
+      "size_bytes": 1005
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run2/data_audit.json",
+      "sha256": "45bebef6874250da0837b28dba7adc4a8ebf7004e5acaa1a92d407aef07fcfe6",
+      "size_bytes": 6282
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run2/deviations.json",
+      "sha256": "3811a7b89ca06580f7a46ea8f2c7358eb9eb472a687b3ff5a8aed7041331738d",
+      "size_bytes": 448
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run2/environment.json",
+      "sha256": "60c6a069bdf3b9d8133365af56cb44e05edf1a7e6d97450808cacd7e0459f1fe",
+      "size_bytes": 183
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run2/matrix_summary.json",
+      "sha256": "3b8965f35d6f269743e127535ade9b5909a48574a669fdf5c2a1f28085496703",
+      "size_bytes": 11778
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run2/point_predictions.csv",
+      "sha256": "7148f5067ba394f4c4fcb3e5997dbec6488a316d5aece9fd75684a145d1bbce0",
+      "size_bytes": 3521483
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run2/summary_ad.csv",
+      "sha256": "9f5b3cb98486955390818632d79f305d6f8e3579caac901fdb2851b55b8430fc",
+      "size_bytes": 538192
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run2/summary_candidate_level.csv",
+      "sha256": "5a75c5736c38315e573f570f34d6bdb8db7af2911662c5ae208cf5e90c1d7330",
+      "size_bytes": 69004
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run2/summary_interval.csv",
+      "sha256": "f6a8cd7846cca8ca0df242843bb600e3cd755826a5443b602b29dd14b7198a17",
+      "size_bytes": 166987
+    },
+    {
+      "path": "work/microfluidic_reliability/w3_artifacts_canonical_run2/summary_point.csv",
+      "sha256": "92564c36583f97118fe3573a5c03d69ce49deed16b56eae500d1e75c09a61408",
+      "size_bytes": 452242
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run1/artifact_hashes.json",
+      "sha256": "0924e81a6373962f9e081d6b42aea75a3fee72e904a690046d624f51a0b24681",
+      "size_bytes": 1003
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run1/cells.csv",
+      "sha256": "dc66a474c6b86a25d09747104ec5298cf5f91ac8ceb95aacc935747f48c4186d",
+      "size_bytes": 8117
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run1/configuration.json",
+      "sha256": "fadf5b9e42eb891a3369724d87f3e28496dbde6d2ff04bfadd130e7f1239120f",
+      "size_bytes": 1013
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run1/data_audit.json",
+      "sha256": "45bebef6874250da0837b28dba7adc4a8ebf7004e5acaa1a92d407aef07fcfe6",
+      "size_bytes": 6282
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run1/deviations.json",
+      "sha256": "f5339db03ca903fde490b07ec62d43077543eb3503154dd7fbcdd35184eac60a",
+      "size_bytes": 3501
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run1/environment.json",
+      "sha256": "60c6a069bdf3b9d8133365af56cb44e05edf1a7e6d97450808cacd7e0459f1fe",
+      "size_bytes": 183
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run2/artifact_hashes.json",
+      "sha256": "0924e81a6373962f9e081d6b42aea75a3fee72e904a690046d624f51a0b24681",
+      "size_bytes": 1003
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run2/cells.csv",
+      "sha256": "dc66a474c6b86a25d09747104ec5298cf5f91ac8ceb95aacc935747f48c4186d",
+      "size_bytes": 8117
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run2/configuration.json",
+      "sha256": "fadf5b9e42eb891a3369724d87f3e28496dbde6d2ff04bfadd130e7f1239120f",
+      "size_bytes": 1013
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run2/data_audit.json",
+      "sha256": "45bebef6874250da0837b28dba7adc4a8ebf7004e5acaa1a92d407aef07fcfe6",
+      "size_bytes": 6282
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run2/deviations.json",
+      "sha256": "f5339db03ca903fde490b07ec62d43077543eb3503154dd7fbcdd35184eac60a",
+      "size_bytes": 3501
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run2/environment.json",
+      "sha256": "60c6a069bdf3b9d8133365af56cb44e05edf1a7e6d97450808cacd7e0459f1fe",
+      "size_bytes": 183
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run2/summary_interval.csv",
+      "sha256": "9d4876946c1249b45391aa5a8c9b30b501a09685ce7107517f9f401edb573b40",
+      "size_bytes": 133306
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run2/summary_point.csv",
+      "sha256": "922c0d1edcf0e4694b9d132804f839fbea61234aa3c111a3b3bb5c9fa0b84025",
+      "size_bytes": 596124
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run2/summary_uncertainty.csv",
+      "sha256": "aa2c58b2a4fc25bf2871fef3ad6b47d42fd2946b3d430a6f69b065c4292c0f0b",
+      "size_bytes": 320835
+    },
+    {
+      "path": "work/microfluidic_reliability/w4_artifacts_canonical_run2/w4_summary.json",
+      "sha256": "9857e26e501b906f740cbaed5a6b65e55f2b761524d4281cedd17f7cbf25b5b3",
+      "size_bytes": 34275
+    },
+    {
+      "path": "work/microfluidic_reliability/w5_artifacts_canonical_run1/artifact_hashes.json",
+      "sha256": "0bcb6805387ac1625e4cdd33a1cb9db8d59908c1b8dccf822a37900492fb544e",
+      "size_bytes": 631
+    },
+    {
+      "path": "work/microfluidic_reliability/w5_artifacts_canonical_run1/cells.csv",
+      "sha256": "23a4921b16e200bca3dcd6c5cac31bedc2f74a0b8f0eef2b83033bfb8689abe9",
+      "size_bytes": 6536
+    },
+    {
+      "path": "work/microfluidic_reliability/w5_artifacts_canonical_run1/configuration.json",
+      "sha256": "c482d060ef30fe81f01c2adacf8fe566795faa57c7e96ab21348826d482be795",
+      "size_bytes": 727
+    },
+    {
+      "path": "work/microfluidic_reliability/w5_artifacts_canonical_run1/deviations.json",
+      "sha256": "66ad335b58b6094b756ee3fc2c6ca8db5db937738870324e1b901a50be5db238",
+      "size_bytes": 236
+    },
+    {
+      "path": "work/microfluidic_reliability/w5_artifacts_canonical_run1/environment.json",
+      "sha256": "60c6a069bdf3b9d8133365af56cb44e05edf1a7e6d97450808cacd7e0459f1fe",
+      "size_bytes": 183
+    },
+    {
+      "path": "work/microfluidic_reliability/w5_artifacts_canonical_run2/artifact_hashes.json",
+      "sha256": "0bcb6805387ac1625e4cdd33a1cb9db8d59908c1b8dccf822a37900492fb544e",
+      "size_bytes": 631
+    },
+    {
+      "path": "work/microfluidic_reliability/w5_artifacts_canonical_run2/cells.csv",
+      "sha256": "23a4921b16e200bca3dcd6c5cac31bedc2f74a0b8f0eef2b83033bfb8689abe9",
+      "size_bytes": 6536
+    },
+    {
+      "path": "work/microfluidic_reliability/w5_artifacts_canonical_run2/configuration.json",
+      "sha256": "c482d060ef30fe81f01c2adacf8fe566795faa57c7e96ab21348826d482be795",
+      "size_bytes": 727
+    },
+    {
+      "path": "work/microfluidic_reliability/w5_artifacts_canonical_run2/deviations.json",
+      "sha256": "66ad335b58b6094b756ee3fc2c6ca8db5db937738870324e1b901a50be5db238",
+      "size_bytes": 236
+    },
+    {
+      "path": "work/microfluidic_reliability/w5_artifacts_canonical_run2/environment.json",
+      "sha256": "60c6a069bdf3b9d8133365af56cb44e05edf1a7e6d97450808cacd7e0459f1fe",
+      "size_bytes": 183
+    },
+    {
+      "path": "work/microfluidic_reliability/w5_artifacts_canonical_run2/summary_weighted.csv",
+      "sha256": "d3e3d70161fa205d8e53278fd7647b1446f1d0a3c5e1136440968becb803f34f",
+      "size_bytes": 35748
+    },
+    {
+      "path": "work/microfluidic_reliability/w5_artifacts_canonical_run2/w5_summary.json",
+      "sha256": "a4a598fb2ff339159092017249f994592173514f6c61a63838150e40ffaff4c7",
+      "size_bytes": 11877
+    }
+  ],
+  "generated_by": "scripts/release_manifest.py",
+  "root": ".",
+  "schema_version": "release-file-manifest-v1"
+}

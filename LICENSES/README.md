@@ -9,23 +9,25 @@ This repository uses a deliberate dual-license boundary.
 The root [`LICENSE`](../LICENSE) applies to repository-authored software,
 including:
 
-- `src/**`;
-- `tests/**`;
-- executable scripts;
-- environment and workflow configuration; and
-- code/configuration snippets that are explicitly marked `Apache-2.0`.
+- `work/microfluidic_reliability/src/**` and `work/microfluidic_reliability/tests/**`;
+- `scaleup/w3/**`;
+- `scripts/**` and `manuscript/tools/**`;
+- `tests/**`, `requirements/**`, `pyproject.toml` and the workflow configuration; and
+- code or configuration snippets that are explicitly marked `Apache-2.0`.
 
 ## CC BY 4.0
 
 [`CC-BY-4.0.txt`](CC-BY-4.0.txt) applies to repository-authored research
 content, including:
 
-- `README.md` and original report/protocol prose under `docs/**`;
-- original manuscript and supplement text under `manuscript/**`;
-- original figures under `artifacts/figures/**`; and
-- repository-generated result summaries and their original selection or
-  arrangement under `artifacts/metrics/**` and `artifacts/predictions/**`, only
-  to the extent Zhiyuan Zhang holds the relevant rights.
+- `README.md`, the readme files of the subdirectories and the prose under `docs/**`;
+- the frozen protocols, deviation registers and incident records (`*.md` under
+  `work/microfluidic_reliability/` and `scaleup/`);
+- the manuscript text, bibliography and original figures under `manuscript/**`; and
+- repository-generated result summaries, manifests and figures under
+  `work/microfluidic_reliability/**` and `hashes/**`, only to the extent
+  Zhiyuan Zhang holds the relevant rights (they carry inputs of public
+  third-party rows; see below).
 
 Attribution should identify **Zhiyuan Zhang**, the work title, the repository
 URL, the CC BY 4.0 license, and whether changes were made.

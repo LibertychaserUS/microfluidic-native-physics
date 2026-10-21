@@ -1,0 +1,17 @@
+{
+  "all_locked_conditions_hold": false,
+  "beneficial_claim_allowed": false,
+  "fast_smoke_warning": null,
+  "locked_conditions": {
+    "1_macro_mape_lower_than_B1": false,
+    "2_improves_at_least_four_of_six_groups": false,
+    "3_worst_group_no_more_than_2pp_worse": true,
+    "4_zero_point_and_interval_invalid_rate": true,
+    "5_search_reports_coverage_recall_and_precision": true,
+    "6_no_outer_outcome_used_for_selection": true
+  },
+  "new_blind_validation_required": "A genuinely new V2 blind validation requires a different never-inspected dataset.",
+  "protocol_compliant_full_run": true,
+  "run_mode": "locked_full_study",
+  "tx100_status": "post_reveal_retrospective"
+}

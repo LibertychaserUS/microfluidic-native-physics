@@ -1,0 +1,32 @@
+{
+  "schema_version": "w5-weighted-conformal-v0",
+  "protocol_file": "W5_PROTOCOL.md",
+  "protocol_sha256": "03af554431259a7971ca695db3a80e8cddc270814365c2f4c0c1f63960e60b40",
+  "run_mode": "locked_full_study",
+  "settings": {
+    "fast": false,
+    "n_random_seeds": 15,
+    "n_geometry_seeds": 30,
+    "permutations": 2000,
+    "ensemble_members": 20,
+    "nominal_coverage": 0.9,
+    "threshold_quantile": 0.95
+  },
+  "point_model": "xgboost",
+  "weightings": [
+    "unweighted",
+    "w_domain",
+    "w_knn"
+  ],
+  "survival_coverage_rule": 0.8,
+  "cell_families": [
+    "D1_de_to_se",
+    "D1_external",
+    "D1_geometry",
+    "D1_random",
+    "D1_se_to_de",
+    "D2_chemistry_loco",
+    "D2_random"
+  ],
+  "n_cells": 69
+}

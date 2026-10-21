@@ -1,0 +1,4 @@
+partition,n_rows,n_se_rows,n_de_rows,n_dependency_groups,n_de_physical_experiments,threshold_scope_note
+proper_fit,764,370,394,29,197,"If threshold_calibration contains no DE rows, applicability thresholds are SE-calibrated and cannot establish general DE applicability."
+threshold_calibration,104,104,0,8,0,"If threshold_calibration contains no DE rows, applicability thresholds are SE-calibrated and cannot establish general DE applicability."
+external_candidate,64,44,20,7,10,"If threshold_calibration contains no DE rows, applicability thresholds are SE-calibrated and cannot establish general DE applicability."

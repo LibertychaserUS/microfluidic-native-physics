@@ -1,0 +1,8 @@
+model,n_quarantined_rows,mape_percent_descriptive_only,mae_mm_descriptive_only,prediction_seed_sd_mm,point_physical_invalid_rate,analysis_status
+B0,2,6.36907915627,0.00972364527555,0,0,quarantined_unlisted_CMC_0.60_sensitivity_only
+B1,2,23.8649864829,0.0368379291892,0,0.5,quarantined_unlisted_CMC_0.60_sensitivity_only
+B2,2,21.9715092416,0.0339926120639,0,0,quarantined_unlisted_CMC_0.60_sensitivity_only
+B3,2,6.40888886313,0.00982489109039,0.00747520833067,0,quarantined_unlisted_CMC_0.60_sensitivity_only
+V2-H,2,15.1437462334,0.0232604668438,0.00395826396947,0,quarantined_unlisted_CMC_0.60_sensitivity_only
+V2-M,2,12.3687284141,0.0190233412087,0.00251713258417,0,quarantined_unlisted_CMC_0.60_sensitivity_only
+V2-P,2,12.3661712488,0.0190193522274,0.00251803333267,0,quarantined_unlisted_CMC_0.60_sensitivity_only

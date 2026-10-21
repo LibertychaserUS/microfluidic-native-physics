@@ -1,0 +1,9 @@
+{
+  "cells.csv": "23a4921b16e200bca3dcd6c5cac31bedc2f74a0b8f0eef2b83033bfb8689abe9",
+  "configuration.json": "c482d060ef30fe81f01c2adacf8fe566795faa57c7e96ab21348826d482be795",
+  "deviations.json": "66ad335b58b6094b756ee3fc2c6ca8db5db937738870324e1b901a50be5db238",
+  "environment.json": "60c6a069bdf3b9d8133365af56cb44e05edf1a7e6d97450808cacd7e0459f1fe",
+  "interval_rows.csv": "71bbdd571355a2ce341cea13352e5685964221dd90d3390e472c8bdaccf91cd2",
+  "summary_weighted.csv": "d3e3d70161fa205d8e53278fd7647b1446f1d0a3c5e1136440968becb803f34f",
+  "w5_summary.json": "a4a598fb2ff339159092017249f994592173514f6c61a63838150e40ffaff4c7"
+}

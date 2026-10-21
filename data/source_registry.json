@@ -1,0 +1,94 @@
+{
+  "datasets": {
+    "dafd_osf_938rs": {
+      "article_doi": "10.1038/s41467-023-44068-3",
+      "dataset_url": "https://osf.io/938rs/",
+      "files": [
+        {
+          "bytes": 109224,
+          "name": "Comprehensive_normalized.xlsx",
+          "relative_path": "osf_938rs/Comprehensive_normalized.xlsx",
+          "sha256": "aebb0136ff812f7233c8fd57ebc0f27f1b935736e8a9c1d4fdc20585f06b9c06"
+        },
+        {
+          "bytes": 19259,
+          "name": "Generalizability_data_normalized.xlsx",
+          "relative_path": "osf_938rs/Generalizability_data_normalized.xlsx",
+          "sha256": "e90996da3e866e64922dc3b8aaef4b092ee6845fe95aac356c73e90ed108b303"
+        },
+        {
+          "bytes": 117748,
+          "name": "Final_Comprehensive_plus_Generalizability_data_normalized.xlsx",
+          "relative_path": "osf_938rs/Final_Comprehensive_plus_Generalizability_data_normalized.xlsx",
+          "sha256": "14ebfaae93a7bbc7e1a73be91a629c57b1720dffac0dd45cef6d7df4e7eb6ac3"
+        },
+        {
+          "bytes": 90716,
+          "name": "Raw_SE_dataset.xlsx",
+          "relative_path": "osf_938rs/Raw_SE_dataset.xlsx",
+          "sha256": "996862065c33a3f17a36ad2df825179937ddbd7f3c8da41765946a9c1db5e579"
+        }
+      ],
+      "license": "article CC BY 4.0; object-level redistribution terms of the OSF deposit not verified, so the workbooks are not mirrored",
+      "retrieval_date": "2026-07-16",
+      "status": "verify_only_manual_download"
+    },
+    "chagot_zenodo_7055018": {
+      "article_doi": "10.1039/D2LC00416J",
+      "dataset_url": "https://zenodo.org/records/7055018",
+      "files": [
+        {
+          "bytes": 3587,
+          "md5": "c5dd5f3fbfd7c218cea734b205ae502e",
+          "name": "matTrainingDataSet.mat",
+          "relative_path": "blind_raw/matTrainingDataSet.mat",
+          "sha256": "7fab0693a7065198468a5d654226f5e2164985e334ed105f91355bdd49fb1a17",
+          "url": "https://zenodo.org/records/7055018/files/matTrainingDataSet.mat?download=1"
+        },
+        {
+          "bytes": 1383,
+          "md5": "a6c41bba18e4f232e7f25e2207fd183c",
+          "name": "matTestDataSet.mat",
+          "relative_path": "blind_raw/matTestDataSet.mat",
+          "sha256": "55f202bd19433331c86ddc65507e834036d294f7f9b4db2275f21ad91f6729da",
+          "url": "https://zenodo.org/records/7055018/files/matTestDataSet.mat?download=1"
+        }
+      ],
+      "license": "CC BY 4.0",
+      "retrieval_date": "2026-07-16",
+      "status": "download_enabled",
+      "destination": "work/microfluidic_reliability",
+      "note": "The V1 custodian lock in native_physics_v2.py verifies these two files at work/microfluidic_reliability/blind_raw/; download with --destination work/microfluidic_reliability."
+    },
+    "smart_microfluidics_zenodo_17867478": {
+      "dataset_doi": "10.5281/zenodo.17867478",
+      "dataset_url": "https://zenodo.org/records/17867478",
+      "files": [
+        {
+          "bytes": 100784,
+          "md5": "28fcc5379016033c8f7a634a9eac0795",
+          "name": "microfluidics_dataset.zip",
+          "relative_path": "zenodo_17867478/microfluidics_dataset.zip",
+          "sha256": "54272086fb390c788c25780856439ba32bfceeae3d40f19bc72af76529af13ee",
+          "url": "https://zenodo.org/records/17867478/files/microfluidics_dataset.zip?download=1"
+        },
+        {
+          "bytes": 244485,
+          "md5": "c33f49a3e24bd726a96a98ee307fd7db",
+          "name": "README.pdf",
+          "relative_path": "zenodo_17867478/README.pdf",
+          "sha256": "a474c9c842aef90e20f870a3a0eb064235225e3bbef6c982454e6fef33c1af35",
+          "url": "https://zenodo.org/records/17867478/files/README.pdf?download=1"
+        }
+      ],
+      "license": "CC BY 4.0",
+      "note": "Extract microfluidics_dataset.zip in place; the D3 binding names raw_data/initial_formulations_raw.csv, raw_data/new_formulations_raw.csv and raw_data/wet_lab_validation_raw.csv, whose digests are in work/microfluidic_reliability/d3_blind_artifacts/custodian_manifest.json.",
+      "related_publication_doi": "10.1016/j.ijpharm.2025.126362",
+      "retrieval_date": "2026-10-17",
+      "status": "download_enabled"
+    }
+  },
+  "default_destination": "work/data",
+  "policy": "Third-party files are downloaded locally, verified, and ignored by git. They are never committed.",
+  "schema_version": "public-source-registry-v2"
+}

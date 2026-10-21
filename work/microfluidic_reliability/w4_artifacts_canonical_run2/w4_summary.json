@@ -1,0 +1,880 @@
+{
+  "run_mode": "locked_full_study",
+  "models": [
+    "qrf",
+    "gp",
+    "deep_ensemble"
+  ],
+  "survival_coverage_rule": 0.8,
+  "cells": {
+    "D1_de_to_se": {
+      "dataset": "D1",
+      "shift_type": "device_type",
+      "n_repeats": 1,
+      "models": {
+        "qrf": {
+          "mape_percent": 71.64759997777045,
+          "mape_ratio_vs_reference": 9.368200127795246,
+          "intervals": {
+            "native": {
+              "coverage": 0.07172995780590717,
+              "coverage_gap": -0.8282700421940928,
+              "mean_width_um": 28.35611229899057,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.04430379746835443,
+              "coverage_gap": -0.8556962025316456,
+              "mean_width_um": 14.419642999922193,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "conformalised_native": {
+              "coverage": 0.07172995780590717,
+              "coverage_gap": -0.8282700421940928,
+              "mean_width_um": 28.316587732638176,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            }
+          },
+          "scores": {
+            "uq_rel": 0.5954074969821156,
+            "uq_abs": 0.605027761570647,
+            "random_score": 0.6978011976149162,
+            "size_only": 0.6663727201223411,
+            "best_applicability_score": {
+              "name": "isolation_forest",
+              "aurc_relative": 0.43916813496232393
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 1.0,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.0
+        },
+        "gp": {
+          "mape_percent": 84.87026680945803,
+          "mape_ratio_vs_reference": 8.927404370113882,
+          "intervals": {
+            "native": {
+              "coverage": 0.6518987341772152,
+              "coverage_gap": -0.2481012658227848,
+              "mean_width_um": 162.0481035999289,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.016877637130801686,
+              "coverage_gap": -0.8831223628691983,
+              "mean_width_um": 14.031912633703538,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "conformalised_native": {
+              "coverage": 0.6286919831223629,
+              "coverage_gap": -0.27130801687763717,
+              "mean_width_um": 160.0472238679597,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            }
+          },
+          "scores": {
+            "uq_rel": 0.84870266809458,
+            "uq_abs": 0.84870266809458,
+            "random_score": 0.8293477608543395,
+            "size_only": 0.796829391341487,
+            "best_applicability_score": {
+              "name": "isolation_forest",
+              "aurc_relative": 0.538560791221979
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.0,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.0
+        },
+        "deep_ensemble": {
+          "mape_percent": 3271.8687560913095,
+          "mape_ratio_vs_reference": 226.32594530658417,
+          "intervals": {
+            "native": {
+              "coverage": 0.0,
+              "coverage_gap": -0.9,
+              "mean_width_um": 2665.6969318827505,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.0,
+              "coverage_gap": -0.9,
+              "mean_width_um": 24.714737399952497,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "conformalised_native": {
+              "coverage": 0.0,
+              "coverage_gap": -0.9,
+              "mean_width_um": 2683.9221646143715,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            }
+          },
+          "scores": {
+            "uq_rel": 35.050844665489116,
+            "uq_abs": 36.70087348226756,
+            "random_score": 32.25312470374735,
+            "size_only": 32.01614891921443,
+            "best_applicability_score": {
+              "name": "isolation_forest",
+              "aurc_relative": 26.337206143405474
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.0,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.0
+        }
+      }
+    },
+    "D1_external": {
+      "dataset": "D1",
+      "shift_type": "cross_literature",
+      "n_repeats": 1,
+      "models": {
+        "qrf": {
+          "mape_percent": 11.945786172065679,
+          "mape_ratio_vs_reference": 1.5619576312183798,
+          "intervals": {
+            "native": {
+              "coverage": 0.78125,
+              "coverage_gap": -0.11875000000000002,
+              "mean_width_um": 39.23300251220138,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.53125,
+              "coverage_gap": -0.36875,
+              "mean_width_um": 26.18824405582991,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "conformalised_native": {
+              "coverage": 0.8125,
+              "coverage_gap": -0.08750000000000002,
+              "mean_width_um": 40.23715552729315,
+              "fraction_of_repeats_surviving_0_80": 1.0,
+              "survives_0_80_on_mean_coverage": true
+            }
+          },
+          "scores": {
+            "uq_rel": 0.11148696262455587,
+            "uq_abs": 0.10161774026232914,
+            "random_score": 0.1197457108192527,
+            "size_only": 0.09941394914018159,
+            "best_applicability_score": {
+              "name": "mahalanobis_oas",
+              "aurc_relative": 0.10004751883775638
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.0,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.0
+        },
+        "gp": {
+          "mape_percent": 20.51335427818788,
+          "mape_ratio_vs_reference": 2.157775809046714,
+          "intervals": {
+            "native": {
+              "coverage": 0.734375,
+              "coverage_gap": -0.16562500000000002,
+              "mean_width_um": 116.91846847541916,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.625,
+              "coverage_gap": -0.275,
+              "mean_width_um": 49.380369954000074,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "conformalised_native": {
+              "coverage": 0.734375,
+              "coverage_gap": -0.16562500000000002,
+              "mean_width_um": 113.37592785805231,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            }
+          },
+          "scores": {
+            "uq_rel": 0.14997781431768964,
+            "uq_abs": 0.15920778836492505,
+            "random_score": 0.20135445945033853,
+            "size_only": 0.21799201090693754,
+            "best_applicability_score": {
+              "name": "knn_5",
+              "aurc_relative": 0.1653347636809212
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 1.0,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 1.0
+        },
+        "deep_ensemble": {
+          "mape_percent": 17.799284446932454,
+          "mape_ratio_vs_reference": 1.231235168199499,
+          "intervals": {
+            "native": {
+              "coverage": 0.328125,
+              "coverage_gap": -0.571875,
+              "mean_width_um": 41.213788255337526,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.90625,
+              "coverage_gap": 0.006249999999999978,
+              "mean_width_um": 68.83727824830386,
+              "fraction_of_repeats_surviving_0_80": 1.0,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "conformalised_native": {
+              "coverage": 0.90625,
+              "coverage_gap": 0.006249999999999978,
+              "mean_width_um": 84.22253008536336,
+              "fraction_of_repeats_surviving_0_80": 1.0,
+              "survives_0_80_on_mean_coverage": true
+            }
+          },
+          "scores": {
+            "uq_rel": 0.12024270435222403,
+            "uq_abs": 0.13446034012716496,
+            "random_score": 0.18353792233907174,
+            "size_only": 0.122633990663158,
+            "best_applicability_score": {
+              "name": "mahalanobis_oas",
+              "aurc_relative": 0.125293233028255
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 1.0,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 1.0
+        }
+      }
+    },
+    "D1_geometry": {
+      "dataset": "D1",
+      "shift_type": "device_geometry",
+      "n_repeats": 30,
+      "models": {
+        "qrf": {
+          "mape_percent": 12.001697340830534,
+          "mape_ratio_vs_reference": 1.5692682322508025,
+          "intervals": {
+            "native": {
+              "coverage": 0.8592427210635706,
+              "coverage_gap": -0.04075727893642936,
+              "mean_width_um": 41.59898940805039,
+              "fraction_of_repeats_surviving_0_80": 0.9,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "split_conformal": {
+              "coverage": 0.8634609817527811,
+              "coverage_gap": -0.036539018247218905,
+              "mean_width_um": 41.78117679792747,
+              "fraction_of_repeats_surviving_0_80": 0.8333333333333334,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "conformalised_native": {
+              "coverage": 0.8729209274925845,
+              "coverage_gap": -0.027079072507415612,
+              "mean_width_um": 44.25982841587358,
+              "fraction_of_repeats_surviving_0_80": 0.8666666666666667,
+              "survives_0_80_on_mean_coverage": true
+            }
+          },
+          "scores": {
+            "uq_rel": 0.10465669381097895,
+            "uq_abs": 0.11378042540776666,
+            "random_score": 0.12018783998658097,
+            "size_only": 0.11147039816691703,
+            "best_applicability_score": {
+              "name": "knn_5",
+              "aurc_relative": 0.10871717415930496
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.6,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.6666666666666666
+        },
+        "gp": {
+          "mape_percent": 20.809605085965096,
+          "mape_ratio_vs_reference": 2.188938085959756,
+          "intervals": {
+            "native": {
+              "coverage": 0.7094347086893623,
+              "coverage_gap": -0.19056529131063782,
+              "mean_width_um": 48.133729621077265,
+              "fraction_of_repeats_surviving_0_80": 0.3333333333333333,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.8622586013921463,
+              "coverage_gap": -0.0377413986078537,
+              "mean_width_um": 72.16468217322914,
+              "fraction_of_repeats_surviving_0_80": 0.7666666666666667,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "conformalised_native": {
+              "coverage": 0.8854436649067041,
+              "coverage_gap": -0.014556335093295921,
+              "mean_width_um": 76.54316925582768,
+              "fraction_of_repeats_surviving_0_80": 0.8333333333333334,
+              "survives_0_80_on_mean_coverage": true
+            }
+          },
+          "scores": {
+            "uq_rel": 0.1846938791290598,
+            "uq_abs": 0.18090654577575863,
+            "random_score": 0.20825626150981727,
+            "size_only": 0.19070637549699682,
+            "best_applicability_score": {
+              "name": "density_ratio_knn",
+              "aurc_relative": 0.17617462500259787
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.43333333333333335,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.23333333333333334
+        },
+        "deep_ensemble": {
+          "mape_percent": 39.80679710874588,
+          "mape_ratio_vs_reference": 2.7535673515300645,
+          "intervals": {
+            "native": {
+              "coverage": 0.6075424647262558,
+              "coverage_gap": -0.2924575352737442,
+              "mean_width_um": 58.748412507417875,
+              "fraction_of_repeats_surviving_0_80": 0.13333333333333333,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.8471850318822955,
+              "coverage_gap": -0.05281496811770463,
+              "mean_width_um": 87.32796656494548,
+              "fraction_of_repeats_surviving_0_80": 0.7666666666666667,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "conformalised_native": {
+              "coverage": 0.8850081469764439,
+              "coverage_gap": -0.014991853023556035,
+              "mean_width_um": 93.52687041186984,
+              "fraction_of_repeats_surviving_0_80": 0.8666666666666667,
+              "survives_0_80_on_mean_coverage": true
+            }
+          },
+          "scores": {
+            "uq_rel": 0.3328145436420611,
+            "uq_abs": 0.23670352740882505,
+            "random_score": 0.40583105884619014,
+            "size_only": 0.38377571996014503,
+            "best_applicability_score": {
+              "name": "mahalanobis_oas",
+              "aurc_relative": 0.2304241450103631
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.7333333333333333,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.06666666666666667
+        }
+      }
+    },
+    "D1_random": {
+      "dataset": "D1",
+      "shift_type": "reference",
+      "n_repeats": 15,
+      "models": {
+        "qrf": {
+          "mape_percent": 7.647957878823871,
+          "mape_ratio_vs_reference": 1.0,
+          "intervals": {
+            "native": {
+              "coverage": 0.9084291187739465,
+              "coverage_gap": 0.008429118773946313,
+              "mean_width_um": 27.524854556639013,
+              "fraction_of_repeats_surviving_0_80": 0.9333333333333333,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "split_conformal": {
+              "coverage": 0.9467432950191571,
+              "coverage_gap": 0.046743295019157055,
+              "mean_width_um": 33.12753080271706,
+              "fraction_of_repeats_surviving_0_80": 1.0,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "conformalised_native": {
+              "coverage": 0.9026819923371647,
+              "coverage_gap": 0.0026819923371647217,
+              "mean_width_um": 30.965875104611722,
+              "fraction_of_repeats_surviving_0_80": 0.8666666666666667,
+              "survives_0_80_on_mean_coverage": true
+            }
+          },
+          "scores": {
+            "uq_rel": 0.053954928796115284,
+            "uq_abs": 0.058939403949234366,
+            "random_score": 0.07623755587043464,
+            "size_only": 0.062230208168370785,
+            "best_applicability_score": {
+              "name": "knn_5",
+              "aurc_relative": 0.05560549552880811
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.9333333333333333,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.8
+        },
+        "gp": {
+          "mape_percent": 9.506712510254017,
+          "mape_ratio_vs_reference": 1.0,
+          "intervals": {
+            "native": {
+              "coverage": 0.8601532567049807,
+              "coverage_gap": -0.03984674329501917,
+              "mean_width_um": 24.82657628797251,
+              "fraction_of_repeats_surviving_0_80": 0.9333333333333333,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "split_conformal": {
+              "coverage": 0.9735632183908044,
+              "coverage_gap": 0.07356321839080457,
+              "mean_width_um": 56.06432719058484,
+              "fraction_of_repeats_surviving_0_80": 1.0,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "conformalised_native": {
+              "coverage": 0.9532567049808427,
+              "coverage_gap": 0.05325670498084288,
+              "mean_width_um": 39.87781512014054,
+              "fraction_of_repeats_surviving_0_80": 1.0,
+              "survives_0_80_on_mean_coverage": true
+            }
+          },
+          "scores": {
+            "uq_rel": 0.05959681460995625,
+            "uq_abs": 0.06456180252569663,
+            "random_score": 0.09536230099830112,
+            "size_only": 0.06785402868657549,
+            "best_applicability_score": {
+              "name": "knn_5",
+              "aurc_relative": 0.06171720660125311
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.9333333333333333,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.4
+        },
+        "deep_ensemble": {
+          "mape_percent": 14.456445776286019,
+          "mape_ratio_vs_reference": 1.0,
+          "intervals": {
+            "native": {
+              "coverage": 0.40306513409961686,
+              "coverage_gap": -0.4969348659003832,
+              "mean_width_um": 15.971876974341026,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.9601532567049809,
+              "coverage_gap": 0.060153256704980805,
+              "mean_width_um": 72.40422715027408,
+              "fraction_of_repeats_surviving_0_80": 1.0,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "conformalised_native": {
+              "coverage": 0.9141762452107277,
+              "coverage_gap": 0.014176245210727948,
+              "mean_width_um": 45.33802955646307,
+              "fraction_of_repeats_surviving_0_80": 0.9333333333333333,
+              "survives_0_80_on_mean_coverage": true
+            }
+          },
+          "scores": {
+            "uq_rel": 0.07844576833811345,
+            "uq_abs": 0.07854050516753285,
+            "random_score": 0.1499456616341729,
+            "size_only": 0.1064778644305857,
+            "best_applicability_score": {
+              "name": "knn_5",
+              "aurc_relative": 0.07924219749404776
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.8,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.6
+        }
+      }
+    },
+    "D1_se_to_de": {
+      "dataset": "D1",
+      "shift_type": "device_type",
+      "n_repeats": 1,
+      "models": {
+        "qrf": {
+          "mape_percent": 21.177618176322657,
+          "mape_ratio_vs_reference": 2.7690552840203955,
+          "intervals": {
+            "native": {
+              "coverage": 0.5253807106598984,
+              "coverage_gap": -0.3746192893401016,
+              "mean_width_um": 9.65536317832971,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.41116751269035534,
+              "coverage_gap": -0.4888324873096447,
+              "mean_width_um": 10.555806001052874,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "conformalised_native": {
+              "coverage": 0.5253807106598984,
+              "coverage_gap": -0.3746192893401016,
+              "mean_width_um": 10.124175723652415,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            }
+          },
+          "scores": {
+            "uq_rel": 0.30719449457496195,
+            "uq_abs": 0.3143035570638631,
+            "random_score": 0.2131755271450681,
+            "size_only": 0.3063531887150775,
+            "best_applicability_score": {
+              "name": "domain_classifier",
+              "aurc_relative": 0.11284840163933599
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.0,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.0
+        },
+        "gp": {
+          "mape_percent": 37.59967140112793,
+          "mape_ratio_vs_reference": 3.9550655771458976,
+          "intervals": {
+            "native": {
+              "coverage": 0.9593908629441624,
+              "coverage_gap": 0.059390862944162404,
+              "mean_width_um": 49.18308361192569,
+              "fraction_of_repeats_surviving_0_80": 1.0,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "split_conformal": {
+              "coverage": 0.1218274111675127,
+              "coverage_gap": -0.7781725888324873,
+              "mean_width_um": 15.143322309831214,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "conformalised_native": {
+              "coverage": 0.9822335025380711,
+              "coverage_gap": 0.08223350253807105,
+              "mean_width_um": 55.69533930577806,
+              "fraction_of_repeats_surviving_0_80": 1.0,
+              "survives_0_80_on_mean_coverage": true
+            }
+          },
+          "scores": {
+            "uq_rel": 0.3759967140112794,
+            "uq_abs": 0.3759967140112794,
+            "random_score": 0.3746351844390849,
+            "size_only": 0.3144814772515413,
+            "best_applicability_score": {
+              "name": "isolation_forest",
+              "aurc_relative": 0.39723923558111834
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.0,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 1.0
+        },
+        "deep_ensemble": {
+          "mape_percent": 302.8335489125062,
+          "mape_ratio_vs_reference": 20.94799465918978,
+          "intervals": {
+            "native": {
+              "coverage": 0.3299492385786802,
+              "coverage_gap": -0.5700507614213198,
+              "mean_width_um": 175.58949619835434,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.030456852791878174,
+              "coverage_gap": -0.8695431472081219,
+              "mean_width_um": 12.331283309542778,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "conformalised_native": {
+              "coverage": 0.39086294416243655,
+              "coverage_gap": -0.5091370558375634,
+              "mean_width_um": 183.24287852775282,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            }
+          },
+          "scores": {
+            "uq_rel": 1.4859241978075661,
+            "uq_abs": 0.947064448881775,
+            "random_score": 3.188861149197066,
+            "size_only": 4.598586397963285,
+            "best_applicability_score": {
+              "name": "mahalanobis_oas",
+              "aurc_relative": 1.0209228546889084
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 1.0,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.0
+        }
+      }
+    },
+    "D2_chemistry_loco": {
+      "dataset": "D2",
+      "shift_type": "whole_chemistry",
+      "n_repeats": 6,
+      "models": {
+        "qrf": {
+          "mape_percent": 9.849972042703627,
+          "mape_ratio_vs_reference": 1.5404344505357546,
+          "intervals": {
+            "native": {
+              "coverage": 0.8295852937945901,
+              "coverage_gap": -0.07041470620541002,
+              "mean_width_um": 51.43639777801915,
+              "fraction_of_repeats_surviving_0_80": 0.5,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "split_conformal": {
+              "coverage": 0.7021855328225702,
+              "coverage_gap": -0.19781446717742981,
+              "mean_width_um": 36.09111776139748,
+              "fraction_of_repeats_surviving_0_80": 0.3333333333333333,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "conformalised_native": {
+              "coverage": 0.7584033584271052,
+              "coverage_gap": -0.1415966415728949,
+              "mean_width_um": 47.40825177801916,
+              "fraction_of_repeats_surviving_0_80": 0.3333333333333333,
+              "survives_0_80_on_mean_coverage": false
+            }
+          },
+          "scores": {
+            "uq_rel": 0.08251257858210011,
+            "uq_abs": 0.08452754470756114,
+            "random_score": 0.1048151053986953,
+            "size_only": 0.09673823956415749,
+            "best_applicability_score": {
+              "name": "isolation_forest",
+              "aurc_relative": 0.08872926503359296
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 1.0,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.5
+        },
+        "gp": {
+          "mape_percent": 16.603039301576963,
+          "mape_ratio_vs_reference": 4.5500050881154674,
+          "intervals": {
+            "native": {
+              "coverage": 0.6994003965989068,
+              "coverage_gap": -0.2005996034010932,
+              "mean_width_um": 85.08258580710425,
+              "fraction_of_repeats_surviving_0_80": 0.3333333333333333,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.3589017521995488,
+              "coverage_gap": -0.5410982478004512,
+              "mean_width_um": 21.444284745838534,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "conformalised_native": {
+              "coverage": 0.716012695741108,
+              "coverage_gap": -0.18398730425889195,
+              "mean_width_um": 86.52942951310622,
+              "fraction_of_repeats_surviving_0_80": 0.3333333333333333,
+              "survives_0_80_on_mean_coverage": false
+            }
+          },
+          "scores": {
+            "uq_rel": 0.13824253711908185,
+            "uq_abs": 0.14413437311672436,
+            "random_score": 0.17172808235846357,
+            "size_only": 0.1332610339240246,
+            "best_applicability_score": {
+              "name": "isolation_forest",
+              "aurc_relative": 0.14070542363201938
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.5,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.5
+        },
+        "deep_ensemble": {
+          "mape_percent": 20.88881717825174,
+          "mape_ratio_vs_reference": 4.081143115911209,
+          "intervals": {
+            "native": {
+              "coverage": 0.2735611353438902,
+              "coverage_gap": -0.6264388646561098,
+              "mean_width_um": 35.77779955866976,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.35926858668044254,
+              "coverage_gap": -0.5407314133195574,
+              "mean_width_um": 28.836784006135826,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "conformalised_native": {
+              "coverage": 0.4471689309386626,
+              "coverage_gap": -0.45283106906133747,
+              "mean_width_um": 53.7219652330139,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            }
+          },
+          "scores": {
+            "uq_rel": 0.17506732950442985,
+            "uq_abs": 0.177569353472403,
+            "random_score": 0.22099184812062603,
+            "size_only": 0.18774025587205698,
+            "best_applicability_score": {
+              "name": "isolation_forest",
+              "aurc_relative": 0.17422707196891998
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.5,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.0
+        }
+      }
+    },
+    "D2_random": {
+      "dataset": "D2",
+      "shift_type": "reference",
+      "n_repeats": 15,
+      "models": {
+        "qrf": {
+          "mape_percent": 6.394281846447838,
+          "mape_ratio_vs_reference": 1.0,
+          "intervals": {
+            "native": {
+              "coverage": 0.927659574468085,
+              "coverage_gap": 0.02765957446808507,
+              "mean_width_um": 47.62731941985815,
+              "fraction_of_repeats_surviving_0_80": 1.0,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "split_conformal": {
+              "coverage": 0.9070921985815603,
+              "coverage_gap": 0.007092198581560271,
+              "mean_width_um": 37.04247146086578,
+              "fraction_of_repeats_surviving_0_80": 1.0,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "conformalised_native": {
+              "coverage": 0.8936170212765957,
+              "coverage_gap": -0.0063829787234042975,
+              "mean_width_um": 44.09534435319149,
+              "fraction_of_repeats_surviving_0_80": 0.9333333333333333,
+              "survives_0_80_on_mean_coverage": true
+            }
+          },
+          "scores": {
+            "uq_rel": 0.05318062012695754,
+            "uq_abs": 0.058754930934475036,
+            "random_score": 0.06360926410702496,
+            "size_only": 0.06363595030302384,
+            "best_applicability_score": {
+              "name": "density_ratio_knn",
+              "aurc_relative": 0.05168027831533603
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.9333333333333333,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.26666666666666666
+        },
+        "gp": {
+          "mape_percent": 3.6490155461460487,
+          "mape_ratio_vs_reference": 1.0,
+          "intervals": {
+            "native": {
+              "coverage": 0.8836879432624112,
+              "coverage_gap": -0.016312056737588686,
+              "mean_width_um": 21.449093076184727,
+              "fraction_of_repeats_surviving_0_80": 0.9333333333333333,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "split_conformal": {
+              "coverage": 0.8992907801418438,
+              "coverage_gap": -0.0007092198581560553,
+              "mean_width_um": 22.864470526038293,
+              "fraction_of_repeats_surviving_0_80": 0.9333333333333333,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "conformalised_native": {
+              "coverage": 0.8957446808510637,
+              "coverage_gap": -0.004255319148936199,
+              "mean_width_um": 22.53465237910727,
+              "fraction_of_repeats_surviving_0_80": 0.9333333333333333,
+              "survives_0_80_on_mean_coverage": true
+            }
+          },
+          "scores": {
+            "uq_rel": 0.033191869054073245,
+            "uq_abs": 0.03476516644485531,
+            "random_score": 0.0366074082177831,
+            "size_only": 0.03640682719510113,
+            "best_applicability_score": {
+              "name": "density_ratio_knn",
+              "aurc_relative": 0.031227348003522493
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 0.5333333333333333,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.26666666666666666
+        },
+        "deep_ensemble": {
+          "mape_percent": 5.118374089066424,
+          "mape_ratio_vs_reference": 1.0,
+          "intervals": {
+            "native": {
+              "coverage": 0.5354609929078014,
+              "coverage_gap": -0.36453900709219855,
+              "mean_width_um": 13.26239680986435,
+              "fraction_of_repeats_surviving_0_80": 0.0,
+              "survives_0_80_on_mean_coverage": false
+            },
+            "split_conformal": {
+              "coverage": 0.8936170212765957,
+              "coverage_gap": -0.006382978723404283,
+              "mean_width_um": 30.63817588911322,
+              "fraction_of_repeats_surviving_0_80": 1.0,
+              "survives_0_80_on_mean_coverage": true
+            },
+            "conformalised_native": {
+              "coverage": 0.8964539007092197,
+              "coverage_gap": -0.0035460992907801656,
+              "mean_width_um": 31.030905305246986,
+              "fraction_of_repeats_surviving_0_80": 1.0,
+              "survives_0_80_on_mean_coverage": true
+            }
+          },
+          "scores": {
+            "uq_rel": 0.04170387572437944,
+            "uq_abs": 0.04221762711794918,
+            "random_score": 0.052470713203982236,
+            "size_only": 0.0522185772650858,
+            "best_applicability_score": {
+              "name": "density_ratio_knn",
+              "aurc_relative": 0.04150087492039299
+            }
+          },
+          "rule3_uq_rel_useful_fraction_of_repeats": 1.0,
+          "uq_rel_beats_best_ad_fraction_of_repeats": 0.3333333333333333
+        }
+      }
+    }
+  },
+  "claim_boundary": "Retrospective, exploratory; same cells as W3; no sealed holdout; TX100 fold post-reveal retrospective; rule verdicts are descriptive; no candidate-level permutation test."
+}

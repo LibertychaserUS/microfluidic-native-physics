@@ -1,0 +1,71 @@
+{
+  "schema_version": "expanded-study-reproducibility-manifest-v1",
+  "test_evidence_status": "not_executed_by_analysis_script",
+  "test_evidence_note": "The analysis entry point does not claim to run its own tests. The command and an explicit unverified status are hashed below.",
+  "governed_files": [
+    {
+      "path": "src/expanded_study.py",
+      "sha256": "9b69ce812bce6dc50c2084b6d00161e02c348ae4175a6664179d5f4b0b76b4b8"
+    },
+    {
+      "path": "src/interval_experiments.py",
+      "sha256": "cf74569e2a1aab98731a181d2d70c6738d4f382be4b6b6eff8375c96696bcdf3"
+    },
+    {
+      "path": "src/study_core.py",
+      "sha256": "0917aa1ef4f0621347a37fa1cbde37b5540f9f7cd8427b6d8f630a0c0aa13b67"
+    },
+    {
+      "path": "src/strict_json.py",
+      "sha256": "a4d5d16e8b1fd5bf7e255aa9494061effedddf648ce34bccde75ae8e65e0dfbc"
+    },
+    {
+      "path": "src/dafd_reproduction.py",
+      "sha256": "fe3b59fe48e66d6930ce3e3d8b2bc6174bdd917da79e4e88bc66d9d63d26c4a8"
+    },
+    {
+      "path": "EXPERIMENT_PROTOCOL.md",
+      "sha256": "48f776147c2b1c8292d1752d95d74c5d6eb1dea87d08579b88bcc3b218735559"
+    },
+    {
+      "path": "PROTOCOL_DEVIATION_REGISTER.md",
+      "sha256": "e8a593c9ff180bf2dc15d141b8ddfb33af6644944916fd29132db8d8a645ba7e"
+    },
+    {
+      "path": "test_evidence.json",
+      "sha256": "ccb7b89592f2ec2ec1a1d813a0ab067c523eeb35aefd3ccdab7ea4f120c60524"
+    },
+    {
+      "path": "tests/test_blind_posthoc_analysis.py",
+      "sha256": "b1547ba707f4d83b60bd5d71a006b8ac678f56c335aa7ab7202d060d72caf23f"
+    },
+    {
+      "path": "tests/test_blind_workflow.py",
+      "sha256": "d32d63ca29bfbc70967177930c84d88ea45c6d3151ac1e88a076f5e38bba784a"
+    },
+    {
+      "path": "tests/test_data_contract.py",
+      "sha256": "7651ac9637eb1c5884ba7a68452209391376ca4e32aa509835ca895d91afcbcf"
+    },
+    {
+      "path": "tests/test_expanded_audit_fixes.py",
+      "sha256": "5efa1cf7b1a12b00cfe9ca03bd7eddfbe30635eefe2845929c57af893f38accb"
+    },
+    {
+      "path": "tests/test_interval_experiments.py",
+      "sha256": "b53ecc64182a4495857e481895e0a7388de28d1f93559abb54ed25f726f79640"
+    },
+    {
+      "path": "tests/test_native_physics_v2.py",
+      "sha256": "e64f22fc33860b32d77cbfe77d6c4947632b918a1d8d7655ef9d310f0024b8b7"
+    },
+    {
+      "path": "tests/test_strict_json.py",
+      "sha256": "389c5c6d6cfb6d5f53d610f8ee8d70b73026c1114beffc79bff25f131f73a983"
+    },
+    {
+      "path": "tests/test_study_core.py",
+      "sha256": "98a8483910f3308be99fe453935b52375ffbc06b067fa111742c722ebb3dc0f8"
+    }
+  ]
+}

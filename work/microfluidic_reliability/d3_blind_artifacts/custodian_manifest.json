@@ -1,0 +1,248 @@
+{
+  "schema_version": "d3-custodian-v1",
+  "protocol": {
+    "file": "D3_BLIND_PROTOCOL.md",
+    "sha256": "1fa4b404c964c1cfd2d78d2c1fbf5a9965e11560e4d07d2f4e005e15adc91419"
+  },
+  "binding": {
+    "file": "D3_BINDING.json",
+    "sha256": "c943ce8bfab2e2db225e7d3fa3947b8f15ca54ac9063b866af2c1ca9157d284f"
+  },
+  "raw_sources": {
+    "microfluidics_dataset.zip": "54272086fb390c788c25780856439ba32bfceeae3d40f19bc72af76529af13ee",
+    "README.pdf": "a474c9c842aef90e20f870a3a0eb064235225e3bbef6c982454e6fef33c1af35",
+    "microfluidics_dataset/raw_data/initial_formulations_raw.csv": "e2e00376eb840a05db97369925c037e93ae7132d07b591f2715c5649d311deec",
+    "microfluidics_dataset/raw_data/initial_formulations_raw.xlsx": "a82740eb7f9d905698c09e5b3d1dbdce17a6db2f113900e8e0fe12e26a9b9760",
+    "microfluidics_dataset/raw_data/new_formulations_raw.csv": "40134c4c0e5b54a949b762cab8a6a4cf801f9a66bc018979ea0d6d5dce55068e",
+    "microfluidics_dataset/raw_data/new_formulations_raw.xlsx": "e21315eab48c1f78e091d9f62e3083e3831a6152b4cef66b4a6ed0d03dee7069",
+    "microfluidics_dataset/raw_data/wet_lab_validation_raw.csv": "ea57d4bbddb131662193ea86de018656079fcad4ed6ad180f9ee77d7c239f897",
+    "microfluidics_dataset/raw_data/wet_lab_validation_raw.xlsx": "89c4431b926e805c2615af06a0102b7a689f9cd40e6d0751c1154a450e2fa759"
+  },
+  "artifacts": {
+    "development_labeled": {
+      "file": "development_labeled.csv",
+      "rows": 246,
+      "sha256": "5e57bbee8e18b811d209c7924c0377e13ba44ab77351b35dfd8f88ca01c2ada2"
+    },
+    "sealed_primary_features": {
+      "file": "sealed_primary_features.csv",
+      "rows": 57,
+      "sha256": "e26c7313596974188f2d34a0aacd95ee701cef774f4ad67fd6381b227b0cf00d"
+    },
+    "sealed_primary_sealed_labels": {
+      "file": "sealed_primary_sealed_labels.csv",
+      "rows": 57,
+      "sha256": "30e15e490d77a59b4a2d3b0a451d0fda4a2b13ac56d5db4e3d141525c29fb797",
+      "permissions": "0600",
+      "kept_outside_repository": true
+    },
+    "sealed_secondary_features": {
+      "file": "sealed_secondary_features.csv",
+      "rows": 12,
+      "sha256": "4d88b424c696b768a6b54ef51a303c0739d03fb73a87169df5450b53379c5d38"
+    },
+    "sealed_secondary_sealed_labels": {
+      "file": "sealed_secondary_sealed_labels.csv",
+      "rows": 12,
+      "sha256": "d07d094b545b596c2df34916b2ce119627dd8fdff052d055bf2a0f7ce0c62569",
+      "permissions": "0600",
+      "kept_outside_repository": true
+    }
+  },
+  "counts": {
+    "development": {
+      "raw_rows": 275,
+      "kept": 246,
+      "quarantined": 29
+    },
+    "sealed_primary": {
+      "raw_rows": 57,
+      "kept": 57,
+      "quarantined": 0
+    },
+    "sealed_secondary": {
+      "raw_rows": 19,
+      "kept": 12,
+      "quarantined": 7
+    }
+  },
+  "quarantine": {
+    "development": [
+      {
+        "row_index": 2,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 6,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 7,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 8,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 10,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 11,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 12,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 13,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 15,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 16,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 17,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 21,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 26,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 30,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 31,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 32,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 34,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 35,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 36,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 37,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 39,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 40,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 41,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 45,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 118,
+        "reason": "development_row_missing_SIZE"
+      },
+      {
+        "row_index": 130,
+        "reason": "missing_inputs:FRR"
+      },
+      {
+        "row_index": 150,
+        "reason": "missing_inputs:FRR"
+      },
+      {
+        "row_index": 158,
+        "reason": "development_row_missing_SIZE"
+      },
+      {
+        "row_index": 170,
+        "reason": "missing_inputs:FRR"
+      }
+    ],
+    "sealed_primary": [],
+    "sealed_secondary": [
+      {
+        "row_index": 2,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 3,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 4,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 6,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 10,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 11,
+        "reason": "CHIP=Droplet"
+      },
+      {
+        "row_index": 12,
+        "reason": "CHIP=Droplet"
+      }
+    ]
+  },
+  "cluster_report": {
+    "development": {
+      "n_rows": 246,
+      "n_unique_ids": 246
+    },
+    "sealed_primary": {
+      "n_rows": 57,
+      "n_unique_ids": 57
+    },
+    "sealed_secondary": {
+      "n_rows": 12,
+      "n_unique_ids": 12
+    }
+  },
+  "stratum_report": {
+    "development": {
+      "MQ": 231,
+      "PBS": 15
+    },
+    "sealed_primary": {
+      "PBS": 57
+    },
+    "sealed_secondary": {
+      "PBS": 7,
+      "MQ": 5
+    }
+  },
+  "policy": "development rows carry targets; sealed rows carry inputs only; sealed targets live in 0600 files outside the repository; this program prints counts and digests only"
+}

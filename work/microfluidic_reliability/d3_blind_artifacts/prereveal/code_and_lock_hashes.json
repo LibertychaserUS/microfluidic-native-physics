@@ -1,0 +1,10 @@
+{
+  "d3_predict.py": "30d99a478625d1a97d3e30453380d7ff4e900f2130b91625f836ac8cb04316e7",
+  "d3_reveal.py": "630d08d9eb0d1b7c239afa130d5335ada974d49a2145e2f301bf43f996857328",
+  "d3_custodian.py": "26f9afeff8b458c2296b41218fd1d9c90263377766686825340aa3a05887c639",
+  "evaluate.py": "ee595738a1f0e2e4673bc0b3de87066cf81102cbcb71a8e4ef6f5b8e68bff802",
+  "D3_BLIND_PROTOCOL.md": "1fa4b404c964c1cfd2d78d2c1fbf5a9965e11560e4d07d2f4e005e15adc91419",
+  "D3_BINDING.json": "c943ce8bfab2e2db225e7d3fa3947b8f15ca54ac9063b866af2c1ca9157d284f",
+  "D3_DEVIATION_REGISTER.md": "9cdd8374ff12edb430e7a4dd32b979f206f07917466d7aff5c24a684f921a3f1",
+  "custodian_manifest.json": "6f5503b19cdc1ea029319dc4e1d8afceb33f66564e148e32fcd64c99d7f4e1f0"
+}

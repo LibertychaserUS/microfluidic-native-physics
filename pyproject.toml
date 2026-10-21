@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "microfluidic-native-physics"
+version = "0.3.0"
+description = "Code and artifacts of the preprint 'Reliability Audits for Machine-Learned Droplet-Microfluidic Design Surrogates'"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "Zhiyuan Zhang" },
+]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/LibertychaserUS/microfluidic-native-physics"
+
+[tool.setuptools]
+packages = []
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

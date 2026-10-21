@@ -1,0 +1,5 @@
+{
+  "status": "not_executed_by_analysis_script",
+  "recommended_command": "python -m unittest discover -s work/microfluidic_reliability/tests -p 'test_*.py'",
+  "claim_boundary": "This placeholder is not evidence that tests passed; verification must be recorded by the release process after execution."
+}

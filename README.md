@@ -1,282 +1,164 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 
-# Microfluidic Native Physics
+# Microfluidic Native Physics — code and artifacts for the preprint
 
-[![Status: pre-release audit](https://img.shields.io/badge/status-pre--release%20audit-orange)](#release-status)
-[![Evidence: V1 negative result retained](https://img.shields.io/badge/evidence-V1%20negative%20result%20retained-blue)](#sealed-v1-result)
-[![License: Apache-2.0](https://img.shields.io/badge/code%20license-Apache--2.0-green)](LICENSE)
+Code, frozen protocols, deviation registers, number ledger, hash manifests and
+summary artifacts behind the preprint
 
-Reliability under chemistry shift for public droplet-microfluidics data: a
-sealed-label negative validation, applicability-domain audits, and a
-native-variable, physics-guided constrained regression protocol.
+> Zhiyuan Zhang, *Reliability Audits for Machine-Learned Droplet-Microfluidic
+> Design Surrogates* (2026; arXiv identifier to be added to `CITATION.cff` once
+> assigned).
 
-**GitHub is the canonical project and code repository.** The Hugging Face
-dataset repository is a secondary mirror for released tables, manifests, and
-reproducibility artifacts.
-
-- GitHub (primary):
-  [LibertychaserUS/microfluidic-native-physics](https://github.com/LibertychaserUS/microfluidic-native-physics)
-- Hugging Face (artifact mirror; publication pending):
-  [Chaser111/microfluidic-native-physics](https://huggingface.co/datasets/Chaser111/microfluidic-native-physics)
-
-> **Pre-release warning:** this staging tree intentionally contains
-> documentation and release metadata only. Audited source code, frozen
-> protocols, per-row predictions, figures, and deterministic-run evidence must
-> pass the [release checklist](docs/RELEASE_CHECKLIST.md) before publication.
-> The badges above report this pre-release state; they do not claim that CI or
-> the final reproduction has passed.
-
-## What this project asks
-
-Can public historical data, native experimental variables, physical-chemical
-transformations, uncertainty estimates, and explicit feasibility constraints
-reduce the search space for droplet-microfluidic experiments without running a
-new wet experiment?
-
-The project tests that question in a deliberately narrow setting:
-
-1. reproduce and stress-test public tabular ML baselines;
-2. hold out an entire surfactant-chemistry group rather than relying only on a
-   random row split;
-3. audit whether applicability-domain screens and uncertainty bands actually
-   identify safer predictions under shift;
-4. constrain a second-generation model using native inputs, deterministic
-   dimensionless features, a semi-empirical prior, and hard output bounds; and
-5. evaluate retrospective target retrieval without calling it prospective
-   discovery.
-
-This is **not** evidence that a material, formulation, device, or operating
-path is wet-lab feasible. It does not establish chemical compatibility,
-manufacturability, stable dripping, device safety, or clinical/industrial
-readiness.
-
-## Evidence status and claim boundaries
-
-| Component | Current status | Permitted claim | Not permitted |
-|---|---|---|---|
-| V1 chemistry holdout | Sealed prediction completed; negative result retained | The published-feature baseline failed to transfer reliably to the held-out TX100 chemistry in this test | General failure of ML, a new wet-lab result, or a clean atomic one-shot reveal |
-| Applicability/uncertainty audit | Retrospective public-data analysis; final release audit pending | Screens and intervals can be compared as shift diagnostics | Guaranteed safety or distribution-free coverage for a new chemistry |
-| V2 native-physics protocol | Frozen before V2 fitting; audited results pending | Physics-guided constrained regression with deterministic native-to-physics transforms | A classical PINN, PDE solution, or validated physical simulator |
-| Target search | Retrospective ranking/retrieval among historical conditions | Search-space pruning can be measured against already observed outcomes | Prospective materials discovery or experiment-free proof of feasibility |
-| Wet-lab validation | Not performed | None | Any claim of experimental validation |
-
-The narrow intended contribution is a reliability-under-shift evaluation. We
-do not claim to be the first microfluidic inverse-design or ML system.
-
-## Sealed V1 result
-
-V1 combined the 468 public Chagot rows, sealed the complete TX100 group
-(`CMC = 3.5 mM`, 87 rows), and trained only on the remaining 381 rows. Its fixed
-four inputs were continuous-flow rate, dispersed-flow rate, equilibrium
-interfacial tension, and concentration divided by CMC. Model settings and
-evaluation endpoints were frozen before label reveal.
-
-The held-out result was negative:
-
-| Endpoint | Held-out TX100 result |
-|---|---:|
-| MAPE | 19.8436% |
-| MAE | 0.02261 mm |
-| RMSE | 0.02868 mm |
-| R-squared | -0.2436 |
-| Nominal 90% interval coverage | 44.83% |
-| Mean interval width | 0.03281 mm |
-
-Predictions were biased high on 85.06% of the held-out rows. The strict
-training-range screen accepted all 87 rows, showing that this failure was not a
-simple marginal-range violation. The six locked V1 target-retrieval strategies
-did not improve the search endpoints: each answered 8 of 13 targets, with top-1,
-top-3, and top-5 success on 3, 6, and 8 targets respectively.
-
-The honest interpretation is conditional-shift failure: values of the four
-recorded predictors overlap training support, but the relationship between
-those predictors and droplet diameter changes with unseen surfactant chemistry.
-The public table omits potentially relevant state such as dynamic interfacial
-tension, adsorption kinetics, molecular chemistry, interfacial rheology, and
-wetting behavior. More model capacity alone cannot reconstruct unobserved
-physics.
-
-### Reveal incident disclosure
-
-The blind labels and prediction bundle were sealed and hash-checked before
-reveal. The original reveal gate was consumed and the locked scores were
-computed, but writing the result failed because a nested IEEE `NaN` reached a
-strict JSON writer. A separate serialization-only recovery revalidated the
-frozen hashes and recomputed the same locked endpoints while mapping undefined
-values to JSON `null`. The frozen prediction bundle, labels, and analysis code
-were not changed.
-
-Accordingly, this repository describes V1 as **a sealed prediction followed by
-a disclosed serialization-only recovery**, not as an uninterrupted atomic
-one-shot reveal. The incident report, frozen hashes, recovery code, and strict
-cross-parser regression tests are release requirements.
-
-## V2: native-variable physics-guided constraints
-
-V2 is intentionally called a **native-variable physics-guided constrained
-regressor**. It is not a classical physics-informed neural network (PINN): the
-public table has no pressure or velocity fields, interface coordinates,
-time-dependent observations, boundary-condition fields, or PDE collocation
-points.
-
-The user/search-facing state is restricted to native recorded quantities:
-
-```text
-[Qc, Qd, equilibrium interfacial tension, concentration, CMC,
- no-surfactant indicator]
-```
-
-Flow ratio, capillary numbers, Reynolds numbers, and normalized concentration
-are never trusted as caller-supplied inputs. They are recomputed deterministically
-with fixed units and documented device/fluid constants. The primary V2 model
-adds:
-
-- a semi-empirical Kalli/Chagot anchor;
-- a learned residual around that anchor;
-- a hard sigmoid parameterization enforcing `0 < predicted diameter < D`;
-- nested leave-one-chemistry-out model selection;
-- bounded uncertainty heuristics whose held-out-chemistry coverage is reported
-  as a transfer stress test, not a formal guarantee; and
-- a constrained target-search compiler that varies only allowed native process
-  variables and can abstain.
-
-TX100 labels have already been revealed. Every V2 result on TX100 is therefore
-retrospective and must not be described as a second blind validation. A new
-blind claim requires a different, never-inspected external dataset.
-
-## Authoritative public sources
-
-This independent project builds on, reproduces, or stress-tests public work; it
-does not imply endorsement by the source authors.
-
-- Chagot et al., *Surfactant-laden droplet size prediction in a flow-focusing
-  microchannel: a data-driven approach*, **Lab on a Chip** (2022):
-  [publisher article](https://pubs.rsc.org/en/content/articlehtml/2022/lc/d2lc00416j)
-- Chagot et al. public MATLAB tables, Zenodo record 7055018:
-  [dataset record](https://zenodo.org/records/7055018)
-- Lashkaripour et al., *Design automation of microfluidic single and double
-  emulsion droplets with machine learning*, **Nature Communications** (2024):
-  [publisher article](https://www.nature.com/articles/s41467-023-44068-3)
-- DAFD public deposit used by the reproduction:
-  [OSF project 938rs](https://osf.io/938rs/)
-- Romano, Patterson, and Candès, conformalized quantile regression:
-  [NeurIPS paper](https://proceedings.neurips.cc/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html)
-- Tibshirani et al., conformal prediction under covariate shift:
-  [NeurIPS paper](https://proceedings.neurips.cc/paper/2019/hash/8fb21ee7a2207526da55a679f0332de2-Abstract.html)
-
-Raw third-party data are not covered by this repository's Apache-2.0 code
-license. See [THIRD_PARTY_DATA.md](THIRD_PARTY_DATA.md) before downloading,
-redistributing, or publishing any data-derived artifact.
-
-## Reproducibility
-
-### Release state
-
-The current staging tree is not executable. After the audited source and lock
-files are synchronized, a verified release will support the following core
-workflow from the repository root:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --require-hashes -r requirements-lock.txt
-python -m unittest discover -s tests
-python src/dafd_reproduction.py
-python src/expanded_study.py --output-dir artifacts/expanded
-```
-
-The final V2 entry point and exact data-staging command will be documented only
-after implementation, protocol-lock verification, and two deterministic full
-runs. Until then, do not infer a command or a V2 result from this README.
-
-Every release-labeled result must include:
-
-- source URLs, source licenses/terms, raw-file hashes, and schema checks;
-- frozen protocol and split-manifest hashes;
-- per-row predictions rather than summary metrics alone;
-- inner-selection records and outer-fold leakage assertions;
-- strict JSON validation with JavaScript `JSON.parse` or Python
-  `json.loads(..., parse_constant=reject)`;
-- all locked negative results and ablations;
-- two complete runs in separate directories; and
-- a deterministic artifact comparison, with any expected non-deterministic
-  metadata explicitly excluded and justified.
-
-### Planned public repository layout
-
-Items marked `release sync` are intentionally absent from this documentation-only
-staging tree.
-
-```text
-.
-├── README.md
-├── LICENSE
-├── CITATION.cff
-├── THIRD_PARTY_DATA.md
-├── requirements-lock.txt              # release sync
-├── protocols/                         # frozen protocols + hashes; release sync
-├── src/                               # audited implementation; release sync
-├── tests/                             # unit/leakage/strict-JSON tests; release sync
-├── artifacts/
-│   ├── manifests/                     # hashes and environment records; release sync
-│   ├── predictions/                   # per-row outputs; release sync
-│   ├── metrics/                       # strict JSON/CSV summaries; release sync
-│   └── figures/                       # manuscript figures; release sync
-├── manuscript/                        # paper and supplement; release sync
-├── docs/
-│   └── RELEASE_CHECKLIST.md
-└── huggingface/
-    └── README.md                       # staged HF dataset card
-```
-
-## 中文快速开始
-
-本项目研究的是：在不做新湿实验的前提下，公开历史数据、原生实验变量、
-物理化学约束和不确定性筛选，能否缩小微流控液滴实验的候选空间。
-
-当前目录仍是**发布前文档骨架**，不能当作可运行版本。正式发布后：
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --require-hashes -r requirements-lock.txt
-python -m unittest discover -s tests
-```
-
-请先注意三条边界：
-
-1. V1 对整组 TX100 的盲留出结果是负结果，必须保留；
-2. V2 是“原生变量 + 物理引导 + 硬约束”的回归器，不是经典 PINN；
-3. 所有搜索都是公开历史数据上的回放，不代表材料、配方或实验路径已经
-   通过湿实验验证。
-
-GitHub 是主仓库；HF 仅镜像经审计的数据表、预测、清单和结果卡片。
-
-## License and citation
-
-Original software code, tests, and configuration are released under the
-[Apache License 2.0](LICENSE). Repository-authored paper/report text and
-original figures/results are released under
-[CC BY 4.0](LICENSES/CC-BY-4.0.txt), subject to any upstream rights in source
-data represented by a derived artifact. See [LICENSES/README.md](LICENSES/README.md)
-for the file-level boundary. Third-party data, papers, and upstream software
-retain their own terms and are not relicensed by this repository.
-
-The public author name is **Zhiyuan Zhang**. Citation metadata are provided in
-[CITATION.cff](CITATION.cff). The project does not yet have an arXiv identifier
-or DOI; none should be inferred from the working title or repository URL.
+The study is retrospective and reports mostly negative results: a sealed
+chemistry holdout (V1), a sealed cross-laboratory validation (D3), a frozen
+physics-guided constrained regressor (V2), an expanded shift audit on the DAFD
+tables, and a method-matrix benchmark with uncertainty-aware and
+covariate-shift-weighted comparison models (W3–W5). Nothing here is evidence of
+wet-lab feasibility of any device, material or formulation.
 
 ## Release status
 
-- [x] Public repository names and author name fixed.
-- [x] Claim boundaries and V1 negative result documented.
-- [x] Apache-2.0 code license selected.
-- [ ] Audited code and tests synchronized.
-- [ ] V2 implementation and result audit completed.
-- [ ] Two deterministic full runs compared.
-- [ ] Manuscript and supplement claim-checked against artifacts.
-- [ ] GitHub repository published and tagged.
-- [ ] HF artifact repository published from the matching GitHub commit/tag.
-- [ ] Cross-links verified in both repositories.
+- Tag `v0.3-preprint` accompanies manuscript draft v0.3.x. The code, registers,
+  ledger and hash manifests promised in the manuscript's *Data and code
+  availability* paragraph are in this repository; the compiled PDF is attached
+  to the GitHub release.
+- Every SHA-256 digest cited in the manuscript (Appendix D) is listed in
+  [`hashes/appendix_d_registry.json`](hashes/appendix_d_registry.json) with the
+  path of the released file or the reason the bytes are not redistributed.
+  `python3 scripts/verify_hash_registry.py` re-hashes the released files.
+- Every number printed in the manuscript is recomputed from the released
+  artifact files by the ledger script (standard library only):
 
-See the complete [release checklist](docs/RELEASE_CHECKLIST.md).
+  ```bash
+  python3 manuscript/tools/check_numbers.py --work work/microfluidic_reliability --skip-runpair
+  python3 scripts/verify_run_manifests.py
+  python3 scripts/verify_hash_registry.py
+  python3 scripts/release_manifest.py verify --root . --manifest hashes/release_manifest.json
+  ```
+
+  `--skip-runpair` only skips the re-hashing of the per-row files that are not
+  in this repository; `verify_run_manifests.py` performs the same check on the
+  released part of each run pair and reports the manifests as byte-identical.
+
+## What is in the repository
+
+```text
+work/microfluidic_reliability/   the experiment workspace, path-for-path as cited in the manuscript (Appendix C)
+  src/                           E0 reproduction, reliability and interval audits, expanded DAFD suite,
+                                 V1 custodian / prediction / reveal / recovery / post-hoc programs, V2 implementation
+  tests/                         unit, leakage and strict-JSON tests of the audited suite
+  *_PROTOCOL.md, *.sha256        frozen protocols (expanded suite, V1, V2) and the V1 pre-registration lock
+  PROTOCOL_DEVIATION_REGISTER.md deviation register D01–D19 of the expanded suite
+  BLIND_REVEAL_INCIDENT.md       V1 reveal incident record and JSON_SERIALIZATION_POSTMORTEM.md
+  artifacts/                     E0 / reliability summary artifacts and frozen figures
+  blind_artifacts/               V1 pre-reveal bundle, consumed gate, recovered result, corrected post-hoc analysis
+  d3_blind_artifacts/            D3 custodian manifest, pre-reveal bundle, reveal result, post-reveal correction
+  *_artifacts_canonical_run{1,2}/ the five canonical run pairs: full hash manifests, configuration, environment,
+                                 deviations and every summary artifact (per-row files > 1 MB stay in the workspace)
+  posthoc_review_round2/         the four post-hoc analyses of Section "Post-hoc analyses"
+scaleup/                         W3/W4/W5 protocols and runners, D3 protocol, binding, deviation register and programs
+manuscript/                      LaTeX source (English and Chinese mirror), bibliography, figures, numbers_ledger.json,
+                                 tools/check_numbers.py (ledger script) and tools/render_figures.py
+hashes/                          appendix_d_registry.json and release_manifest.json (SHA-256 of every released file)
+scripts/                         release tooling: manifests, run comparison, policy and strict-JSON validators,
+                                 public-data fetcher, hash-registry and run-manifest verifiers
+data/source_registry.json        authoritative URLs, sizes and digests of the three public datasets
+requirements/                    pinned analysis environment (the one that produced the artifacts) and CI subset
+```
+
+The workspace keeps its original layout (`work/microfluidic_reliability/`,
+`work/data/`) because the frozen programs and tests resolve their paths from
+it and because the manuscript cites artifact paths relative to that root.
+
+## What is deliberately not in the repository
+
+| Item | Why | Where the digest is |
+|---|---|---|
+| Raw third-party tables (OSF 938rs workbooks in `work/data/`, Zenodo 7055018 `.mat` files in `work/microfluidic_reliability/blind_raw/`, Zenodo 17867478 archive in `work/data/`) | public under their own licences; not redistributed | `data/source_registry.json`, Appendix D registry |
+| Sealed label files of V1 and D3 | rows of public datasets that the released custodian programs reconstruct deterministically; never released | custodian manifests, Appendix D registry |
+| Re-cut development / feature tables of V1 and D3 | same reason; the custodians regenerate them byte-for-byte (required before running V2, W3–W5 or the post-hoc analyses) | custodian manifests |
+| Per-row artifacts larger than 1 MB (predictions, split manifests, interval rows; about 26 MB per matrix run) | kept in the authors' workspace | each run's `artifact_hashes.json` |
+| E0 XGBoost model binary | regenerated by re-running E0 | Appendix D registry |
+| Superseded fast/smoke runs, pre-fix outputs, the uncorrected V1 post-hoc directory | excluded from the release inventory by the protocols | — |
+
+One released file was edited: `blind_artifacts/posthoc_analysis_corrected/blind_posthoc_summary.json`
+carried fourteen absolute workspace paths as keys of its read-only audit block;
+the path prefix was replaced by `<WORK>/`. No value changed; both digests are in
+the registry.
+
+## Reproducing the runs
+
+### Environment
+
+The artifacts were produced with Python 3.12 on macOS (arm64) with the pinned
+versions in [`requirements/analysis.in`](requirements/analysis.in)
+(numpy 2.5.1, pandas 3.0.3, scipy 1.18.0, scikit-learn 1.9.0, XGBoost 3.3.0,
+PyTorch 2.13.0, matplotlib 3.11.0, seaborn 0.13.2, openpyxl 3.1.5), single-threaded
+numerical libraries and `n_jobs=1`. Each run writes its own `environment.json`.
+
+```bash
+python3.12 -m venv .venv && source .venv/bin/activate
+python -m pip install -r requirements/analysis.in
+```
+
+### Data
+
+Download the three public datasets into `work/data/` as described in
+[`work/data/README.md`](work/data/README.md), verify them against
+`data/source_registry.json`, then run the two custodian programs once: they
+regenerate, byte-for-byte, the re-cut tables that V2, W3–W5 and the post-hoc
+analyses read through the custodian locks. Nothing in `work/data/` and none of
+the regenerated tables is tracked by git.
+
+### Commands
+
+All commands run from the repository root; `<WORK>` is `work/microfluidic_reliability`.
+
+| Suite | Command | Output compared with |
+|---|---|---|
+| Unit tests (audited suite) | `python -m unittest discover -s <WORK>/tests` | — |
+| Unit tests (W3–W5) | `cd scaleup && MICROFLUIDIC_WORK=../<WORK> python -m unittest w3.tests.test_w3 w3.tests.test_w4 w3.tests.test_w5` | — |
+| E0 reproduction | `python <WORK>/src/dafd_reproduction.py` | `<WORK>/artifacts/reproduction_metrics.json` |
+| Reliability / interval audits | `python <WORK>/src/reliability_analysis.py`, `python <WORK>/src/interval_experiments.py` | `<WORK>/artifacts/reliability_metrics.json` |
+| Expanded DAFD suite (two runs) | `python <WORK>/src/expanded_study.py --output-dir <WORK>/expanded_artifacts_canonical_run1` (and `run2`) | `expanded_artifacts_canonical_run{1,2}/artifact_hashes.json` |
+| V2 frozen protocol (two runs) | `python <WORK>/src/native_physics_v2.py --project-dir <WORK> --output-dir <WORK>/v2_artifacts_canonical_run1` (and `run2`) | `v2_artifacts_canonical_run{1,2}/artifact_hashes.json` |
+| Method matrix W3 (two runs, about 25 min each) | `cd scaleup && python -m w3.run_w3 run --work ../<WORK> --output-dir ../<WORK>/w3_artifacts_canonical_run1` (and `run2`), then `python -m w3.run_w3 compare --a … --b …` | `w3_artifacts_canonical_run{1,2}/artifact_hashes.json` |
+| W4, W5 | same pattern with `w3.run_w4` and `w3.run_w5` | `w4_…`, `w5_…/artifact_hashes.json` |
+| Post-hoc analyses | `cd scaleup && python -m w3.posthoc_round2 --work ../<WORK> --output-dir ../<WORK>/posthoc_review_round2_repro` | `posthoc_review_round2/artifact_hashes.json` |
+
+The sealed validations are one-time events and are not re-run: V1's gate was
+consumed on 2026-07-16 and D3's on 2026-10-17. Their programs are released so
+that the chronology can be audited: the custodians reproduce the splits and the
+sealed-label digests from the public files, the prediction programs reproduce
+the hashed pre-reveal bundles, and the reveal programs refuse a second reveal
+because the gate files exist. See [`scaleup/README.md`](scaleup/README.md) and
+[`work/microfluidic_reliability/README.md`](work/microfluidic_reliability/README.md).
+
+### Manuscript
+
+```bash
+cd manuscript && tectonic -X compile main.tex      # English
+cd manuscript && tectonic -X compile main_zh.tex   # Chinese mirror (XeTeX, system CJK fonts)
+```
+
+## Claim boundaries
+
+The intended contribution is a reliability-under-shift evaluation of
+machine-learned surrogates on public droplet-microfluidics data. The sealed
+chemistry holdout (V1) and the sealed cross-laboratory validation (D3) are
+negative results and are retained as such; V2 is a physics-guided constrained
+regressor, not a classical physics-informed neural network; every V2 result on
+the TX100 group is retrospective because those labels had already been
+revealed. Nothing in this repository establishes chemical compatibility,
+manufacturability, stable dripping, device safety, or prospective discovery.
+
+## Licences and citation
+
+Original software, tests and configuration: [Apache License 2.0](LICENSE).
+Manuscript text, original figures and repository-authored result summaries:
+[CC BY 4.0](LICENSES/CC-BY-4.0.txt); see [`LICENSES/README.md`](LICENSES/README.md)
+for the file-level boundary. Third-party data, papers and upstream software
+keep their own terms ([`THIRD_PARTY_DATA.md`](THIRD_PARTY_DATA.md)). This
+independent work reproduces, stress-tests or builds on public work by
+Lashkaripour et al., Chagot et al. and Lavagna et al.; it does not imply their
+endorsement. Citation metadata: [`CITATION.cff`](CITATION.cff).

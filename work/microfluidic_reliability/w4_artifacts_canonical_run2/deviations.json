@@ -1,0 +1,147 @@
+[
+  {
+    "id": "W4-C1",
+    "cell": "D1_random",
+    "repeat": 0,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_random",
+    "repeat": 5,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_random",
+    "repeat": 6,
+    "note": "GP optimiser emitted 2 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_random",
+    "repeat": 7,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_random",
+    "repeat": 8,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_random",
+    "repeat": 10,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 2,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 4,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 5,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 7,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 9,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 10,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 11,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 12,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 16,
+    "note": "GP optimiser emitted 2 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 17,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 18,
+    "note": "GP optimiser emitted 2 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 19,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 22,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 27,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_geometry",
+    "repeat": 28,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_external",
+    "repeat": 0,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-C1",
+    "cell": "D1_se_to_de",
+    "repeat": 0,
+    "note": "GP optimiser emitted 1 convergence warning(s); fit kept"
+  },
+  {
+    "id": "W4-D1",
+    "cell": "D1_de_to_se",
+    "repeat": 0,
+    "deviation": "calibration rule fell back from dependency_group to row",
+    "reason": "fewer than five dependency groups among the training rows (as W3-D1)"
+  }
+]

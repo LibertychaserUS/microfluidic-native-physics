@@ -1,0 +1,28 @@
+{
+  "n_comprehensive_rows": 868,
+  "n_external_rows": 64,
+  "n_exact_input_groups": 734,
+  "n_geometry_groups": 40,
+  "n_device_fluid_groups": 49,
+  "n_physical_experiment_clusters": 671,
+  "n_external_physical_clusters": 54,
+  "n_external_sources": 4,
+  "n_external_source_contexts": 8,
+  "n_rows_in_repeated_exact_inputs": 191,
+  "n_repeated_exact_input_groups": 57,
+  "n_repeated_input_groups_with_varying_target": 54,
+  "n_missing_required_comprehensive": 0,
+  "n_missing_required_external": 0,
+  "external_source_rows": {
+    "Galogahi et al": 24,
+    "Lashkaripour et al": 20,
+    "Roumpea et al": 14,
+    "Mazutis et al": 6
+  },
+  "data_sha256": {
+    "Comprehensive_normalized.xlsx": "aebb0136ff812f7233c8fd57ebc0f27f1b935736e8a9c1d4fdc20585f06b9c06",
+    "Generalizability_data_normalized.xlsx": "e90996da3e866e64922dc3b8aaef4b092ee6845fe95aac356c73e90ed108b303",
+    "Final_Comprehensive_plus_Generalizability_data_normalized.xlsx": "14ebfaae93a7bbc7e1a73be91a629c57b1720dffac0dd45cef6d7df4e7eb6ac3",
+    "Raw_SE_dataset.xlsx": "996862065c33a3f17a36ad2df825179937ddbd7f3c8da41765946a9c1db5e579"
+  }
+}

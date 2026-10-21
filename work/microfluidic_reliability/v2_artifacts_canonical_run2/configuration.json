@@ -1,0 +1,45 @@
+{
+  "device": "cpu",
+  "implementation_sha256": "21ab9ea25eb1bfb8421c49d6a21b216242283286d33999eea88550c5f63b08c7",
+  "implementation_test_sha256": "e64f22fc33860b32d77cbfe77d6c4947632b918a1d8d7655ef9d310f0024b8b7",
+  "interval_claim": "LOCO OOF bounded uncertainty heuristic only; no formal coverage guarantee",
+  "lambda_m_grid": [
+    0.01,
+    0.1
+  ],
+  "lambda_p_grid": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "locked_full_seeds": [
+    17,
+    42,
+    2024,
+    3407,
+    9001
+  ],
+  "max_epochs": 2000,
+  "neural_architecture": "native 6-32-32; physics 6-16-16; concat 48-16-1; SiLU",
+  "optimizer": "AdamW(lr=1e-3, weight_decay=1e-4), full batch",
+  "outer_groups_cmc_mm": [
+    0.0,
+    2.0,
+    3.5,
+    4.33,
+    11.0,
+    20.0
+  ],
+  "patience": 150,
+  "protocol_compliant_full_run": true,
+  "protocol_sha256": "5e4a1e4c4a8bb344ed0d1393477a7807b69cc57517eb359a03aec3cbf6471d55",
+  "run_mode": "locked_full_study",
+  "seeds": [
+    17,
+    42,
+    2024,
+    3407,
+    9001
+  ],
+  "tx100_status": "post_reveal_retrospective"
+}

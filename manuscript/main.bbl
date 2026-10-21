@@ -1,0 +1,284 @@
+\begin{thebibliography}{34}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Lashkaripour et~al.(2021)Lashkaripour, Rodriguez, Mehdipour, Mardian,
+  McIntyre, Ortiz, Campbell, and Densmore]{lashkaripour2021}
+Ali Lashkaripour, Christopher Rodriguez, Noushin Mehdipour, Rizki Mardian,
+  David McIntyre, Luis Ortiz, Joshua Campbell, and Douglas Densmore.
+\newblock Machine learning enables design automation of microfluidic
+  flow-focusing droplet generation.
+\newblock \emph{Nature Communications}, 12:\penalty0 25, 2021.
+\newblock \doi{10.1038/s41467-020-20284-z}.
+
+\bibitem[Lashkaripour et~al.(2024)Lashkaripour, McIntyre, Calhoun, Krauth,
+  Densmore, and Fordyce]{lashkaripour2024}
+Ali Lashkaripour, David~P. McIntyre, Suzanne G.~K. Calhoun, Karl Krauth,
+  Douglas~M. Densmore, and Polly~M. Fordyce.
+\newblock Design automation of microfluidic single and double emulsion droplets
+  with machine learning.
+\newblock \emph{Nature Communications}, 15:\penalty0 83, 2024.
+\newblock \doi{10.1038/s41467-023-44068-3}.
+\newblock Data: OSF project 938rs, \url{https://osf.io/938rs/}.
+
+\bibitem[Samari et~al.(2025)Samari, Jannati, and Jafari]{samari2025}
+Alireza Samari, Kamal Jannati, and Azadeh Jafari.
+\newblock A data driven framework for optimizing droplet microfluidics with
+  residual block and {Fourier} enhanced networks.
+\newblock \emph{Scientific Reports}, 15:\penalty0 29077, 2025.
+\newblock \doi{10.1038/s41598-025-14730-5}.
+
+\bibitem[Chagot et~al.(2022)Chagot, Quilodr{\'a}n-Casas, Kalli, Kovalchuk,
+  Simmons, Matar, Arcucci, and Angeli]{chagot2022}
+Lo{\"\i}c Chagot, C{\'e}sar Quilodr{\'a}n-Casas, Maria Kalli, Nina~M.
+  Kovalchuk, Mark J.~H. Simmons, Omar~K. Matar, Rossella Arcucci, and Panagiota
+  Angeli.
+\newblock Surfactant-laden droplet size prediction in a flow-focusing
+  microchannel: a data-driven approach.
+\newblock \emph{Lab on a Chip}, 22:\penalty0 3848--3859, 2022.
+\newblock \doi{10.1039/D2LC00416J}.
+\newblock Data: Zenodo record 7055018 (CC BY 4.0).
+
+\bibitem[Lee et~al.(2025)Lee, Mobarrat, and Chen]{lee2025}
+Andrew Lee, Mahir Mobarrat, and Xiaolin Chen.
+\newblock Periodicity-enforced neural network for designing deterministic
+  lateral displacement devices.
+\newblock In \emph{IEEE International Conference on Data Mining Workshops
+  (ICDMW)}, 2025.
+\newblock arXiv:2511.17754 (cs.LG, 21 November 2025).
+
+\bibitem[Liang et~al.(2026)Liang, Xie, Zhang, Huang, Pan, Tai, Xuan, Lapkin,
+  and Wang]{micromixer2026}
+Xiao Liang, Yue Xie, Jiyizhe Zhang, Wensheng Huang, Boyu Pan, Xin~Yee Tai, Jin
+  Xuan, Alexei~A. Lapkin, and Huizhi Wang.
+\newblock Autonomous in silico optimization framework for high-performance
+  micromixers.
+\newblock \emph{Chemical Engineering Journal}, 529:\penalty0 172957, 2026.
+\newblock \doi{10.1016/j.cej.2026.172957}.
+
+\bibitem[McIntyre et~al.(2023)McIntyre, Lashkaripour, Arguijo, Fordyce, and
+  Densmore]{mcintyre2023}
+David McIntyre, Ali Lashkaripour, Diana Arguijo, Polly Fordyce, and Douglas
+  Densmore.
+\newblock Versatility and stability optimization of flow-focusing droplet
+  generators via quality metric-driven design automation.
+\newblock \emph{Lab on a Chip}, 23:\penalty0 4997--5008, 2023.
+\newblock \doi{10.1039/D3LC00189J}.
+
+\bibitem[Vatandoust et~al.(2022)Vatandoust, Amiri, and
+  Mas-hafi]{vatandoust2022}
+Farzad Vatandoust, Hoseyn~A. Amiri, and Sima Mas-hafi.
+\newblock {DLDNN}: Deterministic lateral displacement design automation by
+  neural networks.
+\newblock arXiv:2208.14303, 2022.
+
+\bibitem[Li et~al.(2026)Li, Chen, Qiao, Zhang, Zhang, Zou, Zhao, Qian, and
+  Li]{li2026pathchip}
+Hongxia Li, Xuhui Chen, Du~Qiao, Xue Zhang, Jiang Zhang, Jianan Zou, Danyang
+  Zhao, Xuhong Qian, and Honglin Li.
+\newblock Deep learning-driven microfluidic chip architecture design for
+  intelligent particle motion control.
+\newblock \emph{Lab on a Chip}, 26:\penalty0 783, 2026.
+\newblock \doi{10.1039/d5lc01185j}.
+
+\bibitem[Birtek et~al.(2026)Birtek, Aktas, Aktas, Abdullah, Ozcan, and
+  Tasoglu]{mufg2026}
+Mehmet~Tugrul Birtek, Vural Aktas, Bora Aktas, Ahmed~Choukri Abdullah, Aydogan
+  Ozcan, and Savas Tasoglu.
+\newblock {ML}-automated microfluidic circuit design.
+\newblock \emph{Science Advances}, 12\penalty0 (5), 2026.
+\newblock \doi{10.1126/sciadv.aea7598}.
+
+\bibitem[Yang et~al.(2025)Yang, Jiang, Lin, Fan, Wu, Lam, So, and
+  Shum]{ceyehao2026}
+Zhenyu Yang, Zhongning Jiang, Haisong Lin, Xiaoxue Fan, Changjin Wu, Edmund~Y.
+  Lam, Hayden K.~H. So, and Ho~Cheung Shum.
+\newblock {CeyeHao}: {AI}-driven microfluidic flow programming with
+  hierarchically assembled obstacles and receptive field-augmented neural
+  network.
+\newblock \emph{Science Advances}, 11\penalty0 (31):\penalty0 eadx2826, 2025.
+\newblock \doi{10.1126/sciadv.adx2826}.
+
+\bibitem[Tang et~al.(2026)Tang, Chen, Zhou, Liu, and Chen]{bpgnn2026}
+Tao Tang, Xinkun Chen, Mingyong Zhou, Yuchen Liu, and Xueye Chen.
+\newblock Deconstructing the black box: Performance prediction and optimization
+  of electromagnetic micromixers based on {B-PGNN} framework and {SHAP}
+  analysis.
+\newblock \emph{International Journal of Heat and Mass Transfer}, 269:\penalty0
+  129134, 2026.
+\newblock \doi{10.1016/j.ijheatmasstransfer.2026.129134}.
+
+\bibitem[Hassanzadeh et~al.(2026)Hassanzadeh, Ghaderi, and
+  Bijarchi]{flexpinn2026}
+Meraj Hassanzadeh, Ehsan Ghaderi, and Mohamad~Ali Bijarchi.
+\newblock Performance analysis of a three-dimensional micromixer with baffles
+  using a flexible physics-informed neural network.
+\newblock \emph{Scientific Reports}, 16:\penalty0 10151, 2026.
+\newblock \doi{10.1038/s41598-026-40254-7}.
+
+\bibitem[Raissi et~al.(2019)Raissi, Perdikaris, and Karniadakis]{raissi2019}
+Maziar Raissi, Paris Perdikaris, and George~Em Karniadakis.
+\newblock Physics-informed neural networks: A deep learning framework for
+  solving forward and inverse problems involving nonlinear partial differential
+  equations.
+\newblock \emph{Journal of Computational Physics}, 378:\penalty0 686--707,
+  2019.
+\newblock \doi{10.1016/j.jcp.2018.10.045}.
+
+\bibitem[{Editorial}(2021)]{naturecs2021}
+{Editorial}.
+\newblock Can machines learn with hard constraints?
+\newblock \emph{Nature Computational Science}, 1, 2021.
+\newblock \doi{10.1038/s43588-021-00067-2}.
+
+\bibitem[Baty(2023)]{baty2023}
+Hubert Baty.
+\newblock Solving higher-order {Lane--Emden--Fowler} type equations using
+  physics-informed neural networks: benchmark tests comparing soft and hard
+  constraints.
+\newblock arXiv:2307.07302, 2023.
+
+\bibitem[Kim et~al.(2026)Kim, Lee, Kang, and Byun]{prnet2026}
+Yong-Woon Kim, Jihyeok Lee, Chulung Kang, and Yung-Cheol Byun.
+\newblock Hard-constraint physics-residual networks for hydrogen crossover
+  prediction and high-pressure extrapolation in {PEM} water electrolysis.
+\newblock \emph{Applied Energy}, 421:\penalty0 128220, 2026.
+\newblock \doi{10.1016/j.apenergy.2026.128220}.
+\newblock Preprint: arXiv:2511.05879.
+
+\bibitem[Lee and Kim(2026)]{filmpinn2026}
+Jaeseon Lee and Yujin Kim.
+\newblock A physics-constrained surrogate for subcooled flow boiling in
+  low-{GWP} immersion cooling microchannels: {FiLM} conditioning and
+  gradient-balanced training.
+\newblock \emph{International Communications in Heat and Mass Transfer},
+  180:\penalty0 112748, 2026.
+\newblock \doi{10.1016/j.icheatmasstransfer.2026.112748}.
+
+\bibitem[Xie et~al.(2022)Xie, Samaei, Guo, Liu, and Gan]{xie2022}
+Xiaoyu Xie, Arash Samaei, Jiachen Guo, Wing~Kam Liu, and Zhengtao Gan.
+\newblock Data-driven discovery of dimensionless numbers and governing laws
+  from scarce measurements.
+\newblock \emph{Nature Communications}, 13:\penalty0 7562, 2022.
+\newblock \doi{10.1038/s41467-022-35084-w}.
+
+\bibitem[Oppenheimer et~al.(2023)Oppenheimer, Doman, and
+  Merrick]{oppenheimer2023}
+Michael~W. Oppenheimer, David~B. Doman, and Justin~D. Merrick.
+\newblock Multi-scale physics-informed machine learning using the {Buckingham
+  Pi} theorem.
+\newblock \emph{Journal of Computational Physics}, 474:\penalty0 111810, 2023.
+\newblock \doi{10.1016/j.jcp.2022.111810}.
+
+\bibitem[Hormozinezhad et~al.(2025)Hormozinezhad, Barnes, Fabregat, Cito, and
+  Del~Giudice]{labchip2025dimless}
+Farnoosh Hormozinezhad, Claire Barnes, Alexandre Fabregat, Salvatore Cito, and
+  Francesco Del~Giudice.
+\newblock Dimensional analysis meets {AI} for non-{Newtonian} droplet
+  generation.
+\newblock \emph{Lab on a Chip}, 25:\penalty0 1681--1693, 2025.
+\newblock \doi{10.1039/D4LC00946K}.
+\newblock Full text read from the PubMed Central deposit (PMC11834948) on
+  2026-10-17.
+
+\bibitem[Schulam and Saria(2019)]{schulam2019}
+Peter Schulam and Suchi Saria.
+\newblock Can you trust this prediction? {Auditing} pointwise reliability after
+  learning.
+\newblock In \emph{Proceedings of the 22nd International Conference on
+  Artificial Intelligence and Statistics (AISTATS)}, 2019.
+\newblock arXiv:1901.00403.
+
+\bibitem[Hofman et~al.(2023)Hofman, Chatzimparmpas, Sharma, Watts, and
+  Hullman]{hofman2023}
+Jake~M. Hofman, Angelos Chatzimparmpas, Amit Sharma, Duncan~J. Watts, and
+  Jessica Hullman.
+\newblock Pre-registration for predictive modeling.
+\newblock arXiv:2311.18807, 2023.
+
+\bibitem[Karl et~al.(2024)Karl, Kemeter, Dax, and Sierak]{karl2024}
+Florian Karl, Lukas Kemeter, Gabriel Dax, and Paulina Sierak.
+\newblock Position: Embracing negative results in machine learning.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning (ICML)}, 2024.
+\newblock arXiv:2406.03980.
+
+\bibitem[Kapoor and Narayanan(2023)]{kapoor2023}
+Sayash Kapoor and Arvind Narayanan.
+\newblock Leakage and the reproducibility crisis in machine-learning-based
+  science.
+\newblock \emph{Patterns}, 4\penalty0 (9):\penalty0 100804, 2023.
+\newblock \doi{10.1016/j.patter.2023.100804}.
+
+\bibitem[Romano et~al.(2019)Romano, Patterson, and Cand{\`e}s]{romano2019}
+Yaniv Romano, Evan Patterson, and Emmanuel~J. Cand{\`e}s.
+\newblock Conformalized quantile regression.
+\newblock In \emph{Advances in Neural Information Processing Systems 32}, 2019.
+
+\bibitem[Tibshirani et~al.(2019)Tibshirani, Foygel~Barber, Cand{\`e}s, and
+  Ramdas]{tibshirani2019}
+Ryan~J. Tibshirani, Rina Foygel~Barber, Emmanuel~J. Cand{\`e}s, and Aaditya
+  Ramdas.
+\newblock Conformal prediction under covariate shift.
+\newblock In \emph{Advances in Neural Information Processing Systems 32}, 2019.
+
+\bibitem[Cieslak and Czyzewski(2026)]{cieslak2026}
+Daniel Cieslak and Andrzej Czyzewski.
+\newblock Input-schema identifiability limits in physics-informed surrogates
+  for mechanics-governed flow.
+\newblock arXiv:2606.20655 (cs.LG, 23 June 2026), 2026.
+
+\bibitem[Cheng et~al.(2025)Cheng, Anne, and Chen]{labchip2025review}
+Jinxiong Cheng, Rajiv Anne, and Yu-Chih Chen.
+\newblock Transforming microfluidics for single-cell analysis with robotics and
+  {AI}.
+\newblock \emph{Lab on a Chip}, 25:\penalty0 6100--6125, 2025.
+\newblock \doi{10.1039/d5lc00216h}.
+
+\bibitem[Das(2025)]{das2025}
+Shobhit Das.
+\newblock Synergizing microfluidics and machine learning for next generation
+  intelligent lab-on-a-chip devices.
+\newblock \emph{Microchemical Journal}, 218:\penalty0 114862, 2025.
+\newblock \doi{10.1016/j.microc.2025.114862}.
+
+\bibitem[Del~Giudice(2026)]{delgiudice2026}
+Francesco Del~Giudice.
+\newblock A perspective on machine learning applied to droplet microfluidics.
+\newblock \emph{Biomicrofluidics}, 20\penalty0 (2):\penalty0 021301, 2026.
+\newblock \doi{10.1063/5.0319799}.
+
+\bibitem[Lavagna et~al.(2026)Lavagna, Buttitta, Bonacorsi, Barbarito,
+  Moliterno, Saito, Oddone, Verdone, Raimondi, and
+  Panella]{smartmicrofluidics2026}
+Leonardo Lavagna, Giorgio Buttitta, Simone Bonacorsi, Chiara Barbarito, Mauro
+  Moliterno, Gabriele Saito, Irene Oddone, Giuliana Verdone, Sergio Raimondi,
+  and Massimo Panella.
+\newblock Smart microfluidics: A curated dataset of microfluidic liposome
+  formulations with cross-laboratory validation for machine-learning
+  applications.
+\newblock \emph{Data in Brief}, 66:\penalty0 112667, 2026.
+\newblock \doi{10.1016/j.dib.2026.112667}.
+\newblock Dataset: Zenodo record 17867478, v1.0, 9 December 2025, CC BY 4.0,
+  \url{https://doi.org/10.5281/zenodo.17867478}.
+
+\bibitem[Vepa(2026)]{vepa2026}
+Krishna~Teja Vepa.
+\newblock Computational references are not experiments: pre-registered
+  validation of machine-learned sodium-cathode voltages.
+\newblock arXiv:2606.23725, 2026.
+
+\bibitem[Kalli et~al.(2022)Kalli, Chagot, and Angeli]{kalli2022jcis}
+Maria Kalli, Lo{\"\i}c Chagot, and Panagiota Angeli.
+\newblock Comparison of surfactant mass transfer with drop formation times from
+  dynamic interfacial tension measurements in microchannels.
+\newblock \emph{Journal of Colloid and Interface Science}, 605:\penalty0
+  204--213, 2022.
+\newblock \doi{10.1016/j.jcis.2021.06.178}.
+\newblock Source of the anchor coefficients $k=0.642$, $\alpha=0.188$,
+  $\beta=0.161$ adopted as the physics-based benchmark in \cite{chagot2022}.
+
+\end{thebibliography}

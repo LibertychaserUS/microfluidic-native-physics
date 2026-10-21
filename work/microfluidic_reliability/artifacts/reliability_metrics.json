@@ -1,0 +1,154 @@
+{
+  "cqr_distribution_shift": {
+    "method": "90% conformalized quantile regression",
+    "nominal_coverage": 0.9,
+    "n_runs": 15,
+    "internal_random_split": {
+      "coverage": {
+        "mean": 0.910344827586207,
+        "std": 0.024363633188095684,
+        "min": 0.8620689655172413,
+        "max": 0.9482758620689655
+      },
+      "mean_width_um": {
+        "mean": 28.945480709434158,
+        "std": 1.8893054922486574,
+        "min": 25.647950436647896,
+        "max": 31.089046142959855
+      },
+      "median_width_um": {
+        "mean": 23.581290078759253,
+        "std": 3.5098610818945675,
+        "min": 12.291428232032947,
+        "max": 26.830156574577284
+      }
+    },
+    "external_literature_shift": {
+      "coverage": {
+        "mean": 0.5510416666666667,
+        "std": 0.04922199771975747,
+        "min": 0.5,
+        "max": 0.671875
+      },
+      "mean_width_um": {
+        "mean": 37.162867075143865,
+        "std": 4.939614885508017,
+        "min": 30.76648021477489,
+        "max": 50.043227763605046
+      },
+      "median_width_um": {
+        "mean": 30.86066075709722,
+        "std": 4.000793001855589,
+        "min": 23.75932546578766,
+        "max": 38.71485808267815
+      }
+    }
+  },
+  "label_free_applicability_pruning": {
+    "threshold_selection": "95th percentile of leave-one-out 5-nearest-neighbor distances in standardized comprehensive-training feature space",
+    "threshold": 0.9572114013140872,
+    "n_external_candidates": 64,
+    "n_retained": 26,
+    "n_pruned": 38,
+    "pruning_rate": 0.59375,
+    "candidate_reduction_factor": 2.4615384615384617,
+    "all_external": {
+      "n": 64,
+      "mape_percent": 11.258371856167436,
+      "mae_um": 12.22702390780177,
+      "median_absolute_error_um": 7.593399870395658,
+      "max_absolute_error_um": 43.79529414297258
+    },
+    "retained": {
+      "n": 26,
+      "mape_percent": 11.231088195875078,
+      "mae_um": 4.867643567329576,
+      "median_absolute_error_um": 3.865411180558201,
+      "max_absolute_error_um": 11.407521080970767
+    },
+    "pruned": {
+      "n": 38,
+      "mape_percent": 11.277039623735895,
+      "mae_um": 17.262389403914323,
+      "median_absolute_error_um": 15.976783869310566,
+      "max_absolute_error_um": 43.79529414297258
+    },
+    "distance_error_spearman": {
+      "rho": 0.7178506835828965,
+      "p_value": 2.4614168092629402e-11
+    },
+    "tolerance_analysis": [
+      {
+        "tolerance_um": 5.0,
+        "unfiltered_success_rate": 0.375,
+        "retained_success_rate_precision": 0.5769230769230769,
+        "successful_candidate_recall": 0.625,
+        "n_successful_unfiltered": 24,
+        "n_successful_retained": 15
+      },
+      {
+        "tolerance_um": 10.0,
+        "unfiltered_success_rate": 0.59375,
+        "retained_success_rate_precision": 0.9230769230769231,
+        "successful_candidate_recall": 0.631578947368421,
+        "n_successful_unfiltered": 38,
+        "n_successful_retained": 24
+      },
+      {
+        "tolerance_um": 15.0,
+        "unfiltered_success_rate": 0.6875,
+        "retained_success_rate_precision": 1.0,
+        "successful_candidate_recall": 0.5909090909090909,
+        "n_successful_unfiltered": 44,
+        "n_successful_retained": 26
+      },
+      {
+        "tolerance_um": 20.0,
+        "unfiltered_success_rate": 0.734375,
+        "retained_success_rate_precision": 1.0,
+        "successful_candidate_recall": 0.5531914893617021,
+        "n_successful_unfiltered": 47,
+        "n_successful_retained": 26
+      }
+    ],
+    "by_reference": {
+      "Galogahi et al": {
+        "n": 24,
+        "mape_percent": 8.353232751445178,
+        "mae_um": 10.953302716156243,
+        "median_absolute_error_um": 8.698200321197518,
+        "max_absolute_error_um": 27.893947559498997,
+        "n_retained": 0,
+        "retention_rate": 0.0
+      },
+      "Lashkaripour et al": {
+        "n": 20,
+        "mape_percent": 8.777176958413795,
+        "mae_um": 3.7681089938955603,
+        "median_absolute_error_um": 3.5207064384856004,
+        "max_absolute_error_um": 9.621167631371186,
+        "n_retained": 20,
+        "retention_rate": 1.0
+      },
+      "Mazutis et al": {
+        "n": 6,
+        "mape_percent": 19.410792320746026,
+        "mae_um": 8.532758812109629,
+        "median_absolute_error_um": 8.33478739261627,
+        "max_absolute_error_um": 11.407521080970767,
+        "n_retained": 6,
+        "retention_rate": 1.0
+      },
+      "Roumpea et al": {
+        "n": 14,
+        "mape_percent": 16.289279976234262,
+        "mae_um": 28.077966582928184,
+        "median_absolute_error_um": 28.679245276415003,
+        "max_absolute_error_um": 43.79529414297258,
+        "n_retained": 0,
+        "retention_rate": 0.0
+      }
+    }
+  },
+  "claim_boundary": "The external labels are retrospective evaluation only. The results do not establish wet-lab feasibility or conformal coverage under arbitrary future distribution shifts."
+}

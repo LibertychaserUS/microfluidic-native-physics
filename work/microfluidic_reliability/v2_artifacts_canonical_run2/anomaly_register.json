@@ -1,0 +1,38 @@
+{
+  "action": "never reassigned; excluded from 466-row main analysis; sensitivity only",
+  "anomaly": "recorded CMC 0.60 mM not listed among nominal source surfactants",
+  "main_group_counts": {
+    "0": 63,
+    "11": 178,
+    "2": 30,
+    "20": 93,
+    "3.5": 87,
+    "4.33": 15
+  },
+  "rows": [
+    {
+      "cmc_mm": 0.6,
+      "concentration_over_cmc": 83.33333333333334,
+      "continuous_flow_ml_min": 0.04,
+      "dispersed_flow_ml_min": 0.006,
+      "equilibrium_interfacial_tension_mn_m": 3.6,
+      "opaque_row_id": "6eef1406-a913-5740-bf2d-2752c2c0b5eb",
+      "source_index": 1,
+      "source_row_index": 5,
+      "surfactant_concentration_mm": 50.0,
+      "target_diameter_mm": 0.161
+    },
+    {
+      "cmc_mm": 0.6,
+      "concentration_over_cmc": 83.33333333333334,
+      "continuous_flow_ml_min": 0.04,
+      "dispersed_flow_ml_min": 0.003,
+      "equilibrium_interfacial_tension_mn_m": 3.6,
+      "opaque_row_id": "fb5b6355-b981-51de-a4cf-dac28721da30",
+      "source_index": 1,
+      "source_row_index": 71,
+      "surfactant_concentration_mm": 50.0,
+      "target_diameter_mm": 0.149
+    }
+  ]
+}

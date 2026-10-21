@@ -1,0 +1,7 @@
+{
+  "interpretation": "retrospective ranking/retrieval of observed historical candidates",
+  "outcome_column_present": false,
+  "selection_sha256": "3b616949d2616d58a99bc5b9346a69ea3f3fa3aec552da78a5bb1a67a3f8b6ee",
+  "selection_status": "written_and_hashed_before_outcome_scoring",
+  "tx100_status": "post_reveal_retrospective"
+}

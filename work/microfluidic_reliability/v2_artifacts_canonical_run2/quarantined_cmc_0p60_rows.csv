@@ -1,0 +1,3 @@
+opaque_row_id,source_index,source_row_index,continuous_flow_ml_min,dispersed_flow_ml_min,equilibrium_interfacial_tension_mn_m,surfactant_concentration_mm,cmc_mm,concentration_over_cmc,target_diameter_mm
+6eef1406-a913-5740-bf2d-2752c2c0b5eb,1,5,0.04,0.006,3.6,50,0.6,83.3333333333,0.161
+fb5b6355-b981-51de-a4cf-dac28721da30,1,71,0.04,0.003,3.6,50,0.6,83.3333333333,0.149

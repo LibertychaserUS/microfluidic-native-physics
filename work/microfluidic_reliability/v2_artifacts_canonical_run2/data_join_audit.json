@@ -1,0 +1,158 @@
+{
+  "custodian_lock": {
+    "all_expected_observed_checks_passed": true,
+    "artifacts": {
+      "blind_features": {
+        "expected_rows": 87,
+        "expected_sha256": "6f76c9aa91b4f6e01c6b6e600b17f8a2b6600fde4085b0253c68f6b1df3aa29b",
+        "file": "blind_features.csv",
+        "observed_rows": 87,
+        "observed_sha256": "6f76c9aa91b4f6e01c6b6e600b17f8a2b6600fde4085b0253c68f6b1df3aa29b",
+        "rows_match": true,
+        "sha256_match": true
+      },
+      "development_labeled": {
+        "expected_rows": 381,
+        "expected_sha256": "b2889726960774acb2b25319f7544c31a1be4f22f319b1a1f4df88f98c7d7ab0",
+        "file": "development_labeled.csv",
+        "observed_rows": 381,
+        "observed_sha256": "b2889726960774acb2b25319f7544c31a1be4f22f319b1a1f4df88f98c7d7ab0",
+        "rows_match": true,
+        "sha256_match": true
+      },
+      "sealed_blind_labels": {
+        "expected_rows": 87,
+        "expected_sha256": "0e4c9a2577449446875d69ac51713aba510f7f492d7dffc4b6e3595746cc4fb9",
+        "file": "sealed_blind_labels.csv",
+        "observed_rows": 87,
+        "observed_sha256": "0e4c9a2577449446875d69ac51713aba510f7f492d7dffc4b6e3595746cc4fb9",
+        "rows_match": true,
+        "sha256_match": true
+      }
+    },
+    "manifest_sha256": "24083606729f20afd7266d081c54647750b1952fe6b5f35e25d3aa37b12b373f",
+    "raw_sources": {
+      "matTestDataSet.mat": {
+        "expected_rows": 76,
+        "expected_sha256": "55f202bd19433331c86ddc65507e834036d294f7f9b4db2275f21ad91f6729da",
+        "observed_sha256": "55f202bd19433331c86ddc65507e834036d294f7f9b4db2275f21ad91f6729da",
+        "sha256_match": true,
+        "source_index": 1,
+        "url": "https://zenodo.org/records/7055018/files/matTestDataSet.mat?download=1",
+        "zenodo_md5": "a6c41bba18e4f232e7f25e2207fd183c"
+      },
+      "matTrainingDataSet.mat": {
+        "expected_rows": 392,
+        "expected_sha256": "7fab0693a7065198468a5d654226f5e2164985e334ed105f91355bdd49fb1a17",
+        "observed_sha256": "7fab0693a7065198468a5d654226f5e2164985e334ed105f91355bdd49fb1a17",
+        "sha256_match": true,
+        "source_index": 0,
+        "url": "https://zenodo.org/records/7055018/files/matTrainingDataSet.mat?download=1",
+        "zenodo_md5": "c5dd5f3fbfd7c218cea734b205ae502e"
+      }
+    },
+    "schema_version": "blind-custodian-v1"
+  },
+  "development_rows": 381,
+  "group_counts": {
+    "0": 63,
+    "0.6": 2,
+    "11": 178,
+    "2": 30,
+    "20": 93,
+    "3.5": 87,
+    "4.33": 15
+  },
+  "input_hashes": {
+    "blind_features.csv": "6f76c9aa91b4f6e01c6b6e600b17f8a2b6600fde4085b0253c68f6b1df3aa29b",
+    "development_labeled.csv": "b2889726960774acb2b25319f7544c31a1be4f22f319b1a1f4df88f98c7d7ab0",
+    "sealed_blind_labels.csv": "0e4c9a2577449446875d69ac51713aba510f7f492d7dffc4b6e3595746cc4fb9"
+  },
+  "join_type": "one_to_one opaque_row_id merge, followed by stable source row order",
+  "joined_rows": 468,
+  "main_rows": 466,
+  "quarantined_rows": 2,
+  "revealed_tx100_rows": 87,
+  "schema_evidence": {
+    "blind_features_expected": [
+      "opaque_row_id",
+      "source_index",
+      "source_row_index",
+      "continuous_flow_ml_min",
+      "dispersed_flow_ml_min",
+      "equilibrium_interfacial_tension_mn_m",
+      "surfactant_concentration_mm",
+      "cmc_mm",
+      "concentration_over_cmc"
+    ],
+    "blind_features_observed": [
+      "opaque_row_id",
+      "source_index",
+      "source_row_index",
+      "continuous_flow_ml_min",
+      "dispersed_flow_ml_min",
+      "equilibrium_interfacial_tension_mn_m",
+      "surfactant_concentration_mm",
+      "cmc_mm",
+      "concentration_over_cmc"
+    ],
+    "development_expected": [
+      "opaque_row_id",
+      "source_index",
+      "source_row_index",
+      "continuous_flow_ml_min",
+      "dispersed_flow_ml_min",
+      "equilibrium_interfacial_tension_mn_m",
+      "surfactant_concentration_mm",
+      "cmc_mm",
+      "concentration_over_cmc",
+      "target_diameter_mm"
+    ],
+    "development_observed": [
+      "opaque_row_id",
+      "source_index",
+      "source_row_index",
+      "continuous_flow_ml_min",
+      "dispersed_flow_ml_min",
+      "equilibrium_interfacial_tension_mn_m",
+      "surfactant_concentration_mm",
+      "cmc_mm",
+      "concentration_over_cmc",
+      "target_diameter_mm"
+    ],
+    "sealed_labels_expected": [
+      "opaque_row_id",
+      "target_diameter_mm"
+    ],
+    "sealed_labels_observed": [
+      "opaque_row_id",
+      "target_diameter_mm"
+    ]
+  },
+  "tx100_status": "post_reveal_retrospective",
+  "unit_evidence": {
+    "SI_conversion_contract": {
+      "mL/min_to_m3/s": 1.6666666666666667e-08,
+      "mN/m_to_N/m": 0.001
+    },
+    "declared_units": {
+      "cmc_mm": "mM",
+      "concentration_over_cmc": "dimensionless",
+      "continuous_flow_ml_min": "mL/min",
+      "dispersed_flow_ml_min": "mL/min",
+      "equilibrium_interfacial_tension_mn_m": "mN/m",
+      "surfactant_concentration_mm": "mM",
+      "target_diameter_mm": "mm"
+    },
+    "nonnegative_columns_checked": [
+      "surfactant_concentration_mm",
+      "cmc_mm"
+    ],
+    "positive_columns_checked": [
+      "continuous_flow_ml_min",
+      "dispersed_flow_ml_min",
+      "equilibrium_interfacial_tension_mn_m",
+      "target_diameter_mm"
+    ]
+  }
+}

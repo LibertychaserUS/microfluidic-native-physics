@@ -1,0 +1,36 @@
+{
+  "schema_version": "d3-binding-v1",
+  "bound_on": "2026-10-17",
+  "protocol_file": "D3_BLIND_PROTOCOL.md",
+  "protocol_sha256": "1fa4b404c964c1cfd2d78d2c1fbf5a9965e11560e4d07d2f4e005e15adc91419",
+  "inspection_scope": "zip file list; first line (header) of every CSV/XLSX; metadata/*.json|txt; in-zip README.md; code/logs/*.log. No data row of any file containing a target column was printed or loaded.",
+  "download": {
+    "directory": "<BASE>/work/data/zenodo_17867478",
+    "microfluidics_dataset.zip": {"bytes": 100784, "md5_record": "28fcc5379016033c8f7a634a9eac0795", "md5_observed": "28fcc5379016033c8f7a634a9eac0795", "sha256": "54272086fb390c788c25780856439ba32bfceeae3d40f19bc72af76529af13ee"},
+    "README.pdf": {"bytes": 244485, "md5_record": "c33f49a3e24bd726a96a98ee307fd7db", "md5_observed": "c33f49a3e24bd726a96a98ee307fd7db", "sha256": "a474c9c842aef90e20f870a3a0eb064235225e3bbef6c982454e6fef33c1af35"},
+    "license_record": "cc-by-4.0 (Zenodo API metadata.license.id), access_right open"
+  },
+  "finding_that_drives_the_binding": "data/formulations.csv (the cleaned table) has columns ESM,HSPC,CHOL,PEG,TFR,FRR,AQUEOUS,SIZE,PDI and NO laboratory field: the authors' slicer log shows it is the concatenation of initial_formulations_raw (251 Micromixer rows, laboratory A) and new_formulations_raw (57 Micromixer rows, laboratory B) after dropping ID/ML/CHIP/OUTPUT. Laboratory identity therefore lives in the raw_data files, which become the bound data files.",
+  "data_files": {
+    "development": {"path": "microfluidics_dataset/raw_data/initial_formulations_raw.csv", "laboratory": "A (Latina, operator A, equipment A)", "header": ["ID", "ML", "CHIP", "ESM", "HSPC", "CHOL", "PEG", "TFR", "FRR", "AQUEOUS", "OUTPUT", "SIZE", "PDI"], "data_rows_incl_invalid": 275, "expected_micromixer_rows": 251},
+    "sealed_primary": {"path": "microfluidics_dataset/raw_data/new_formulations_raw.csv", "laboratory": "B (Rome, operator A, equipment B)", "header": ["ID", "ML", "CHIP", "ESM", "HSPC", "CHOL", "PEG", "TFR", "FRR", "AQUEOUS", "OUTPUT", "SIZE", "PDI"], "data_rows_incl_invalid": 57, "expected_micromixer_rows": 57},
+    "sealed_secondary": {"path": "microfluidics_dataset/raw_data/wet_lab_validation_raw.csv", "laboratory": "A (operator B, equipment A) — operator shift, outside the frozen protocol's primary estimand; sealed anyway so a future amendment can use it blind", "header": ["ID", "ML", "CHIP", "ESM", "HSPC", "CHOL", "PEG", "TFR", "FRR", "AQUEOUS", "OUTPUT", "SIZE", "PDI"], "data_rows_incl_invalid": 19, "expected_micromixer_rows": 12},
+    "not_used": {"data/formulations.csv": "no laboratory field", "data/wet_lab_validation.csv": "no ID/CHIP fields", "data_extensions/*": "synthetic augmentation (SMOTE / Gaussian noise) — never used", "raw_data/*.xlsx": "source spreadsheets; the authors' checker (code/raw_data_checker.py) produced the CSVs with standardised names and out-of-bounds values set to NaN; digests recorded, CSVs used"}
+  },
+  "laboratory_rule": {"method": "file identity", "sealed_primary_rows": "all rows of new_formulations_raw.csv with CHIP == 'Micromixer'", "development_rows": "all rows of initial_formulations_raw.csv with CHIP == 'Micromixer'"},
+  "input_columns": {"ESM": "mg/mL", "HSPC": "mg/mL", "CHOL": "mg/mL", "PEG": "mg/mL", "TFR": "mL/min", "FRR": "aqueous:organic ratio", "AQUEOUS": "categorical {MQ, PBS}"},
+  "dropped_input_columns": {"CHIP": "constant Micromixer after quarantine", "ML": "main lipid, deterministic function of ESM/HSPC (mutually exclusive per authors' log) — excluded to avoid a redundant categorical", "ID": "identifier, used only as cluster_column"},
+  "target_columns": {"primary": "SIZE (nm)", "secondary": ["PDI", "OUTPUT (Formation, binary)"]},
+  "cluster_column": {"name": "ID", "rule": "if IDs are unique within a file, clusters degenerate to rows; the custodian reports n_rows and n_unique_ids only"},
+  "stratum_column": {"name": "AQUEOUS", "levels_expected": ["MQ", "PBS"], "note": "candidate-level strata inside the sealed set require >= 2 levels with >= 4 rows each"},
+  "quarantine_rules": [
+    "CHIP != 'Micromixer' (authors report no liposome formation on Droplet chips)",
+    "any required input (ESM, HSPC, CHOL, PEG, TFR, FRR, AQUEOUS) missing or non-finite",
+    "development rows with missing SIZE are dropped from development and counted; sealed rows keep their inputs regardless, missing sealed labels are handled only by the reveal program (count reported after reveal)"
+  ],
+  "known_metadata": {"features_bounds.json": {"ESM": [0, 25], "HSPC": [0, 25], "CHOL": [0, 25], "PEG": [0, 15], "TFR": [0, 3], "FRR": [1, 50], "SIZE": [0, 10000], "PDI": [0, 1]}, "readme_counts": {"seed_n": 276, "cross_lab_n": 58, "wet_lab_n": 12, "cleaned_n_readme": 304, "cleaned_n_slicer_log": 308}},
+  "deviations_from_protocol_text": [
+    {"id": "D3-B1", "text": "Protocol §3 expected the cleaned 304-row file in data/; it carries no laboratory field, so the bound data files are the authors' checker-processed raw CSVs. Development/sealed membership is by file identity, which is stronger (not inferred from values)."},
+    {"id": "D3-B2", "text": "README states 304 cleaned rows while the authors' slicer log reports 308; the custodian reports its own counts and does not reconcile the discrepancy."}
+  ]
+}

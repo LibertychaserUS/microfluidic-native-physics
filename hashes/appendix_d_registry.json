@@ -1,0 +1,379 @@
+{
+  "schema_version": "appendix-d-hash-registry-v1",
+  "description": "SHA-256 registry for the preprint 'Reliability Audits for Machine-Learned Droplet-Microfluidic Design Surrogates'. Section 'appendix_d' lists the 24 digests of the manuscript's Appendix D in order; 'supplementary' lists further frozen digests recorded in the artifact manifests. status: released = the file in release_path hashes to sha256; released_superset / released_redacted = the released file differs from the frozen bytes for the stated reason (released_sha256 gives the digest of the released file); not_redistributed_* = the bytes are not in this repository (third-party raw data, sealed labels, re-cut rows or a model binary); release_path is then where a local copy is expected after following work/data/README.md. Verify with scripts/verify_hash_registry.py.",
+  "entries": [
+    {
+      "object": "Comprehensive_normalized.xlsx",
+      "sha256": "aebb0136ff812f7233c8fd57ebc0f27f1b935736e8a9c1d4fdc20585f06b9c06",
+      "section": "appendix_d",
+      "release_path": "work/data/osf_938rs/Comprehensive_normalized.xlsx",
+      "status": "not_redistributed_third_party_raw",
+      "source": "https://osf.io/938rs/",
+      "licence": "see THIRD_PARTY_DATA.md"
+    },
+    {
+      "object": "Generalizability_data_normalized.xlsx",
+      "sha256": "e90996da3e866e64922dc3b8aaef4b092ee6845fe95aac356c73e90ed108b303",
+      "section": "appendix_d",
+      "release_path": "work/data/osf_938rs/Generalizability_data_normalized.xlsx",
+      "status": "not_redistributed_third_party_raw",
+      "source": "https://osf.io/938rs/"
+    },
+    {
+      "object": "Final_Comprehensive_plus_Generalizability_data_normalized.xlsx",
+      "sha256": "14ebfaae93a7bbc7e1a73be91a629c57b1720dffac0dd45cef6d7df4e7eb6ac3",
+      "section": "appendix_d",
+      "release_path": "work/data/osf_938rs/Final_Comprehensive_plus_Generalizability_data_normalized.xlsx",
+      "status": "not_redistributed_third_party_raw",
+      "source": "https://osf.io/938rs/"
+    },
+    {
+      "object": "Raw_SE_dataset.xlsx",
+      "sha256": "996862065c33a3f17a36ad2df825179937ddbd7f3c8da41765946a9c1db5e579",
+      "section": "appendix_d",
+      "release_path": "work/data/osf_938rs/Raw_SE_dataset.xlsx",
+      "status": "not_redistributed_third_party_raw",
+      "source": "https://osf.io/938rs/"
+    },
+    {
+      "object": "matTrainingDataSet.mat",
+      "sha256": "7fab0693a7065198468a5d654226f5e2164985e334ed105f91355bdd49fb1a17",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/blind_raw/matTrainingDataSet.mat",
+      "status": "not_redistributed_third_party_raw",
+      "source": "https://zenodo.org/records/7055018",
+      "zenodo_md5": "c5dd5f3fbfd7c218cea734b205ae502e",
+      "licence": "CC BY 4.0"
+    },
+    {
+      "object": "matTestDataSet.mat",
+      "sha256": "55f202bd19433331c86ddc65507e834036d294f7f9b4db2275f21ad91f6729da",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/blind_raw/matTestDataSet.mat",
+      "status": "not_redistributed_third_party_raw",
+      "source": "https://zenodo.org/records/7055018",
+      "zenodo_md5": "a6c41bba18e4f232e7f25e2207fd183c",
+      "licence": "CC BY 4.0"
+    },
+    {
+      "object": "microfluidics_dataset.zip (Zenodo 17867478)",
+      "sha256": "54272086fb390c788c25780856439ba32bfceeae3d40f19bc72af76529af13ee",
+      "section": "appendix_d",
+      "release_path": "work/data/zenodo_17867478/microfluidics_dataset.zip",
+      "status": "not_redistributed_third_party_raw",
+      "source": "https://zenodo.org/records/17867478",
+      "zenodo_md5": "28fcc5379016033c8f7a634a9eac0795",
+      "licence": "CC BY 4.0"
+    },
+    {
+      "object": "V1 protocol (BLIND_VALIDATION_PROTOCOL.md)",
+      "sha256": "1402752425f111a97222ae5c4cb7d13bd68ca1fdfabab978594ac79370e68b1c",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/BLIND_VALIDATION_PROTOCOL.md",
+      "status": "released"
+    },
+    {
+      "object": "V1 pre-registration lock",
+      "sha256": "1f6901bc79de2cd189c7813d63e16ba561b7c502ce42721f4ed9e15a2357edc7",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/BLIND_PREREGISTRATION_LOCK.json",
+      "status": "released"
+    },
+    {
+      "object": "V1 prediction bundle",
+      "sha256": "2b6eb42d709b367c563e62ca7c82ee764c06ac2b67dffc9f1127b3b732d6932d",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/blind_artifacts/prereveal/blind_prediction_bundle.json",
+      "status": "released"
+    },
+    {
+      "object": "V1 sealed labels",
+      "sha256": "0e4c9a2577449446875d69ac51713aba510f7f492d7dffc4b6e3595746cc4fb9",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/blind_artifacts/sealed_blind_labels.csv",
+      "status": "not_redistributed_sealed_labels",
+      "note": "87 TX100 rows of Zenodo 7055018; reconstructible with src/blind_custodian.py from the public .mat files; digest also recorded in blind_artifacts/custodian_manifest.json"
+    },
+    {
+      "object": "V1 frozen reveal implementation",
+      "sha256": "46a289ad4369b10b56f8d1c233ba3a401769dec8fbcf392b1235a0baebd27a48",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/src/blind_reveal.py",
+      "status": "released"
+    },
+    {
+      "object": "V1 consumed gate",
+      "sha256": "e285c4cb4ad7db74b9a3aca4b6240759081095c821865ae76852486f6fb13344",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/blind_artifacts/BLIND_REVEAL_CONSUMED.json",
+      "status": "released"
+    },
+    {
+      "object": "V1 recovery implementation",
+      "sha256": "06b6099e0d7c754681bcee7de8f16b8eec8c6c902d4ca996d3e9d0086e263a74",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/src/blind_reveal_recovery.py",
+      "status": "released"
+    },
+    {
+      "object": "V1 recovered result",
+      "sha256": "008d026163af37b7ecddf220d2ffc5aea0818784561a389419e088cf0eaa1624",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/blind_artifacts/blind_reveal_results_recovered.json",
+      "status": "released"
+    },
+    {
+      "object": "V1 incident record",
+      "sha256": "75615dd3fc6f1d3ea26224c5243b56dd25003dcba48d935e502a6fa72e7db162",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/BLIND_REVEAL_INCIDENT.md",
+      "status": "released"
+    },
+    {
+      "object": "V2 protocol (PHYSICS_CONSTRAINED_V2_PROTOCOL.md)",
+      "sha256": "5e4a1e4c4a8bb344ed0d1393477a7807b69cc57517eb359a03aec3cbf6471d55",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/PHYSICS_CONSTRAINED_V2_PROTOCOL.md",
+      "status": "released"
+    },
+    {
+      "object": "V2 implementation (native_physics_v2.py)",
+      "sha256": "21ab9ea25eb1bfb8421c49d6a21b216242283286d33999eea88550c5f63b08c7",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/src/native_physics_v2.py",
+      "status": "released"
+    },
+    {
+      "object": "Method-matrix protocol (W3_PROTOCOL.md)",
+      "sha256": "8f058306de4d51de1c3708443ed46d7c1556fef95ba3479a1cc7389ee46cb3f8",
+      "section": "appendix_d",
+      "release_path": "scaleup/W3_PROTOCOL.md",
+      "status": "released"
+    },
+    {
+      "object": "Uncertainty-aware comparison protocol (W4_PROTOCOL.md)",
+      "sha256": "23dc7d0ae5431aeb89e3fe9a9174552e0d0258824658f97a674ccb216e951aa8",
+      "section": "appendix_d",
+      "release_path": "scaleup/W4_PROTOCOL.md",
+      "status": "released"
+    },
+    {
+      "object": "Covariate-shift weighting protocol (W5_PROTOCOL.md)",
+      "sha256": "03af554431259a7971ca695db3a80e8cddc270814365c2f4c0c1f63960e60b40",
+      "section": "appendix_d",
+      "release_path": "scaleup/W5_PROTOCOL.md",
+      "status": "released"
+    },
+    {
+      "object": "D3 sealed protocol (D3_BLIND_PROTOCOL.md)",
+      "sha256": "1fa4b404c964c1cfd2d78d2c1fbf5a9965e11560e4d07d2f4e005e15adc91419",
+      "section": "appendix_d",
+      "release_path": "scaleup/D3_BLIND_PROTOCOL.md",
+      "status": "released"
+    },
+    {
+      "object": "D3 parameter binding (D3_BINDING.json)",
+      "sha256": "c943ce8bfab2e2db225e7d3fa3947b8f15ca54ac9063b866af2c1ca9157d284f",
+      "section": "appendix_d",
+      "release_path": "scaleup/D3_BINDING.json",
+      "status": "released"
+    },
+    {
+      "object": "D3 prediction bundle",
+      "sha256": "79be728c7673803e329ce85574def2c34a869f52d3e2526a1a3161343d296bd2",
+      "section": "appendix_d",
+      "release_path": "work/microfluidic_reliability/d3_blind_artifacts/prereveal/blind_prediction_bundle.json",
+      "status": "released"
+    },
+    {
+      "object": "V1 prediction program (blind_predict.py; digest recorded in the pre-registration lock)",
+      "sha256": "91ae4b08aaaee07fa94a5dfb51af234c0a17250ca1656e71b21ddcc9fb7a64cb",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/src/blind_predict.py",
+      "status": "released"
+    },
+    {
+      "object": "V1 workflow test (tests/test_blind_workflow.py; digest recorded in the pre-registration lock)",
+      "sha256": "d32d63ca29bfbc70967177930c84d88ea45c6d3151ac1e88a076f5e38bba784a",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/tests/test_blind_workflow.py",
+      "status": "released"
+    },
+    {
+      "object": "V2 implementation test (tests/test_native_physics_v2.py; digest recorded in v2 configuration.json)",
+      "sha256": "e64f22fc33860b32d77cbfe77d6c4947632b918a1d8d7655ef9d310f0024b8b7",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/tests/test_native_physics_v2.py",
+      "status": "released"
+    },
+    {
+      "object": "D3 frozen prediction program (d3_predict.py; code_and_lock_hashes.json)",
+      "sha256": "30d99a478625d1a97d3e30453380d7ff4e900f2130b91625f836ac8cb04316e7",
+      "section": "supplementary",
+      "release_path": "scaleup/w3/d3_predict.py",
+      "status": "released"
+    },
+    {
+      "object": "D3 frozen reveal program (d3_reveal.py)",
+      "sha256": "630d08d9eb0d1b7c239afa130d5335ada974d49a2145e2f301bf43f996857328",
+      "section": "supplementary",
+      "release_path": "scaleup/w3/d3_reveal.py",
+      "status": "released"
+    },
+    {
+      "object": "D3 custodian program (d3_custodian.py)",
+      "sha256": "26f9afeff8b458c2296b41218fd1d9c90263377766686825340aa3a05887c639",
+      "section": "supplementary",
+      "release_path": "scaleup/w3/d3_custodian.py",
+      "status": "released"
+    },
+    {
+      "object": "D3 shared evaluation module (evaluate.py)",
+      "sha256": "ee595738a1f0e2e4673bc0b3de87066cf81102cbcb71a8e4ef6f5b8e68bff802",
+      "section": "supplementary",
+      "release_path": "scaleup/w3/evaluate.py",
+      "status": "released"
+    },
+    {
+      "object": "D3 custodian manifest",
+      "sha256": "6f5503b19cdc1ea029319dc4e1d8afceb33f66564e148e32fcd64c99d7f4e1f0",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/d3_blind_artifacts/custodian_manifest.json",
+      "status": "released"
+    },
+    {
+      "object": "D3 deviation register as frozen before fitting (digest in code_and_lock_hashes.json)",
+      "sha256": "9cdd8374ff12edb430e7a4dd32b979f206f07917466d7aff5c24a684f921a3f1",
+      "section": "supplementary",
+      "release_path": "scaleup/D3_DEVIATION_REGISTER.md",
+      "status": "released_superset",
+      "note": "The released file appends the post-reveal entries D3-R1 and D3-P1 to the frozen text, so its digest differs; the pre-fit digest above is recorded in code_and_lock_hashes.json and re-verified by the reveal program before any label was read.",
+      "released_sha256": "4673d15ef816f229e68cf89a1a5ed77b0ad5dc8a0a7030663223f44cc54d159d"
+    },
+    {
+      "object": "D3 sealed primary labels (laboratory B, 57 rows)",
+      "sha256": "30e15e490d77a59b4a2d3b0a451d0fda4a2b13ac56d5db4e3d141525c29fb797",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/d3_blind_artifacts/sealed_primary_sealed_labels.csv",
+      "status": "not_redistributed_sealed_labels",
+      "note": "rows of Zenodo 17867478 raw_data/new_formulations_raw.csv; reconstructible with w3.d3_custodian"
+    },
+    {
+      "object": "D3 sealed secondary labels (operator B, 12 rows)",
+      "sha256": "d07d094b545b596c2df34916b2ce119627dd8fdff052d055bf2a0f7ce0c62569",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/d3_blind_artifacts/sealed_secondary_sealed_labels.csv",
+      "status": "not_redistributed_sealed_labels"
+    },
+    {
+      "object": "D3 development table (246 labelled laboratory-A rows)",
+      "sha256": "5e57bbee8e18b811d209c7924c0377e13ba44ab77351b35dfd8f88ca01c2ada2",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/d3_blind_artifacts/development_labeled.csv",
+      "status": "not_redistributed_derived_rows",
+      "note": "re-cut of third-party rows; reconstructible with w3.d3_custodian"
+    },
+    {
+      "object": "D3 sealed primary features (inputs only, 57 rows)",
+      "sha256": "e26c7313596974188f2d34a0aacd95ee701cef774f4ad67fd6381b227b0cf00d",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/d3_blind_artifacts/sealed_primary_features.csv",
+      "status": "not_redistributed_derived_rows"
+    },
+    {
+      "object": "D3 sealed secondary features (inputs only, 12 rows)",
+      "sha256": "4d88b424c696b768a6b54ef51a303c0739d03fb73a87169df5450b53379c5d38",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/d3_blind_artifacts/sealed_secondary_features.csv",
+      "status": "not_redistributed_derived_rows"
+    },
+    {
+      "object": "V1 development table (381 labelled rows)",
+      "sha256": "b2889726960774acb2b25319f7544c31a1be4f22f319b1a1f4df88f98c7d7ab0",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/blind_artifacts/development_labeled.csv",
+      "status": "not_redistributed_derived_rows",
+      "note": "re-cut of Zenodo 7055018 rows; reconstructible with src/blind_custodian.py"
+    },
+    {
+      "object": "V1 blind features (inputs only, 87 rows)",
+      "sha256": "6f76c9aa91b4f6e01c6b6e600b17f8a2b6600fde4085b0253c68f6b1df3aa29b",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/blind_artifacts/blind_features.csv",
+      "status": "not_redistributed_derived_rows"
+    },
+    {
+      "object": "Zenodo 17867478 README.pdf",
+      "sha256": "a474c9c842aef90e20f870a3a0eb064235225e3bbef6c982454e6fef33c1af35",
+      "section": "supplementary",
+      "release_path": "work/data/zenodo_17867478/README.pdf",
+      "status": "not_redistributed_third_party_raw",
+      "zenodo_md5": "c33f49a3e24bd726a96a98ee307fd7db"
+    },
+    {
+      "object": "E0 reproduction model (dafd3_xgb_reproduction.ubj)",
+      "sha256": "72103e5c1185e382de890530679b8d74649a4f7ba7cf8438ff53c05b345f70f4",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/artifacts/dafd3_xgb_reproduction.ubj",
+      "status": "not_redistributed_model_binary",
+      "note": "XGBoost model written by src/dafd_reproduction.py; regenerated by re-running E0"
+    },
+    {
+      "object": "V1 corrected post-hoc summary as written by blind_posthoc_analysis.py",
+      "sha256": "eac78b1f943b9204920c30964b8193ef17990ddc951e1a903e522675cfaba5d0",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/blind_artifacts/posthoc_analysis_corrected/blind_posthoc_summary.json",
+      "status": "released_redacted",
+      "note": "14 absolute workspace path prefixes in the read_only_audit keys were replaced by <WORK>/ before release; no value changed",
+      "released_sha256": "135340bfb571b971c780aaf4fe9d8102107b1beaeff8090fbd59383a57713861"
+    },
+    {
+      "object": "Zenodo 17867478 bound raw file microfluidics_dataset/raw_data/initial_formulations_raw.csv",
+      "sha256": "e2e00376eb840a05db97369925c037e93ae7132d07b591f2715c5649d311deec",
+      "section": "supplementary",
+      "release_path": "work/data/zenodo_17867478/microfluidics_dataset/raw_data/initial_formulations_raw.csv",
+      "status": "not_redistributed_third_party_raw",
+      "note": "inside microfluidics_dataset.zip"
+    },
+    {
+      "object": "Zenodo 17867478 bound raw file microfluidics_dataset/raw_data/initial_formulations_raw.xlsx",
+      "sha256": "a82740eb7f9d905698c09e5b3d1dbdce17a6db2f113900e8e0fe12e26a9b9760",
+      "section": "supplementary",
+      "release_path": "work/data/zenodo_17867478/microfluidics_dataset/raw_data/initial_formulations_raw.xlsx",
+      "status": "not_redistributed_third_party_raw",
+      "note": "inside microfluidics_dataset.zip"
+    },
+    {
+      "object": "Zenodo 17867478 bound raw file microfluidics_dataset/raw_data/new_formulations_raw.csv",
+      "sha256": "40134c4c0e5b54a949b762cab8a6a4cf801f9a66bc018979ea0d6d5dce55068e",
+      "section": "supplementary",
+      "release_path": "work/data/zenodo_17867478/microfluidics_dataset/raw_data/new_formulations_raw.csv",
+      "status": "not_redistributed_third_party_raw",
+      "note": "inside microfluidics_dataset.zip"
+    },
+    {
+      "object": "Zenodo 17867478 bound raw file microfluidics_dataset/raw_data/new_formulations_raw.xlsx",
+      "sha256": "e21315eab48c1f78e091d9f62e3083e3831a6152b4cef66b4a6ed0d03dee7069",
+      "section": "supplementary",
+      "release_path": "work/data/zenodo_17867478/microfluidics_dataset/raw_data/new_formulations_raw.xlsx",
+      "status": "not_redistributed_third_party_raw",
+      "note": "inside microfluidics_dataset.zip"
+    },
+    {
+      "object": "Zenodo 17867478 bound raw file microfluidics_dataset/raw_data/wet_lab_validation_raw.csv",
+      "sha256": "ea57d4bbddb131662193ea86de018656079fcad4ed6ad180f9ee77d7c239f897",
+      "section": "supplementary",
+      "release_path": "work/data/zenodo_17867478/microfluidics_dataset/raw_data/wet_lab_validation_raw.csv",
+      "status": "not_redistributed_third_party_raw",
+      "note": "inside microfluidics_dataset.zip"
+    },
+    {
+      "object": "Zenodo 17867478 bound raw file microfluidics_dataset/raw_data/wet_lab_validation_raw.xlsx",
+      "sha256": "89c4431b926e805c2615af06a0102b7a689f9cd40e6d0751c1154a450e2fa759",
+      "section": "supplementary",
+      "release_path": "work/data/zenodo_17867478/microfluidics_dataset/raw_data/wet_lab_validation_raw.xlsx",
+      "status": "not_redistributed_third_party_raw",
+      "note": "inside microfluidics_dataset.zip"
+    }
+  ]
+}

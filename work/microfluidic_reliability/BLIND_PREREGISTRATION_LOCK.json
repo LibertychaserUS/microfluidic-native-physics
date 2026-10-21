@@ -1,0 +1,43 @@
+{
+  "schema_version": "blind-preregistration-lock-v1",
+  "locked_utc": "2026-07-16T12:27:58Z",
+  "status": "frozen_before_raw_data_download_or_open",
+  "blind_holdout": {
+    "chemistry": "Triton X-100 (TX100)",
+    "identification_rule": "cmc_mm == 3.5",
+    "expected_rows": 87
+  },
+  "protocol": {
+    "file": "BLIND_VALIDATION_PROTOCOL.md",
+    "sha256": "1402752425f111a97222ae5c4cb7d13bd68ca1fdfabab978594ac79370e68b1c"
+  },
+  "frozen_code": {
+    "src/blind_custodian.py": "7ec02af7c1e45da257029da7b7b7fb95ca67c0c1a43d9f0b824fb6672f6a275f",
+    "src/blind_predict.py": "91ae4b08aaaee07fa94a5dfb51af234c0a17250ca1656e71b21ddcc9fb7a64cb",
+    "src/blind_reveal.py": "46a289ad4369b10b56f8d1c233ba3a401769dec8fbcf392b1235a0baebd27a48",
+    "tests/test_blind_workflow.py": "d32d63ca29bfbc70967177930c84d88ea45c6d3151ac1e88a076f5e38bba784a"
+  },
+  "prelock_test_result": {
+    "command_scope": "all microfluidic_reliability unit tests",
+    "tests_run": 16,
+    "failures": 0,
+    "errors": 0
+  },
+  "raw_sources": [
+    {
+      "url": "https://zenodo.org/records/7055018/files/matTrainingDataSet.mat?download=1",
+      "file": "matTrainingDataSet.mat",
+      "zenodo_md5": "c5dd5f3fbfd7c218cea734b205ae502e"
+    },
+    {
+      "url": "https://zenodo.org/records/7055018/files/matTestDataSet.mat?download=1",
+      "file": "matTestDataSet.mat",
+      "zenodo_md5": "a6c41bba18e4f232e7f25e2207fd183c"
+    }
+  ],
+  "prohibitions": [
+    "Do not inspect TX100 target values before the pre-reveal prediction bundle is frozen and hashed.",
+    "Do not choose or tune models, thresholds, target queries, or metrics using blind labels.",
+    "Do not overwrite the pre-reveal prediction artifact after reveal."
+  ]
+}

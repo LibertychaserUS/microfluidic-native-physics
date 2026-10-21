@@ -1,0 +1,174 @@
+{
+  "schema_version": "posthoc-round2-d3-log-target-v1",
+  "status": "retrospective; NOT pre-registered; laboratory-B labels were already revealed; the model was never part of the frozen protocol",
+  "model": "XGBRegressor(100 trees, depth 3, learning rate 0.3, seed 42) on log(SIZE); inputs identical to the frozen model (six numeric + one-hot aqueous medium)",
+  "development_reference_check": {
+    "frozen_reference_mape_percent": 39.41434454517279,
+    "recomputed_raw_scale_reference_mape_percent": 39.41434454517279,
+    "recomputation_matches_frozen_within_0_01": true,
+    "raw_scale_refit_predictions_match_frozen_bundle": true
+  },
+  "log_target_development_reference": {
+    "estimand": "mean over 5 grouped CV folds (GroupKFold over ID, shuffle, seed 42) of SIZE MAPE of the log-target model on development rows",
+    "folds": [
+      {
+        "fold": 0,
+        "n_held": 50,
+        "n": 50,
+        "mape_percent": 13.329118086979754,
+        "mdape_percent": 6.1053484918626815,
+        "smape_percent": 11.095643692552112,
+        "n_positive_predictions": 50,
+        "n_negative_or_zero_predictions": 0,
+        "mean_abs_log_ratio_positive_only": 0.11344644176249888,
+        "median_abs_log_ratio_positive_only": 0.061062804619422074,
+        "fraction_within_10pct_relative": 0.64
+      },
+      {
+        "fold": 1,
+        "n_held": 49,
+        "n": 49,
+        "mape_percent": 28.81827194344377,
+        "mdape_percent": 6.281633618526245,
+        "smape_percent": 12.704528444333748,
+        "n_positive_predictions": 49,
+        "n_negative_or_zero_predictions": 0,
+        "mean_abs_log_ratio_positive_only": 0.1419298719598673,
+        "median_abs_log_ratio_positive_only": 0.06487600334256484,
+        "fraction_within_10pct_relative": 0.6530612244897959
+      },
+      {
+        "fold": 2,
+        "n_held": 49,
+        "n": 49,
+        "mape_percent": 15.877996185121146,
+        "mdape_percent": 5.018056285571702,
+        "smape_percent": 13.223112490675126,
+        "n_positive_predictions": 49,
+        "n_negative_or_zero_predictions": 0,
+        "mean_abs_log_ratio_positive_only": 0.14172777219319324,
+        "median_abs_log_ratio_positive_only": 0.051483378616325584,
+        "fraction_within_10pct_relative": 0.673469387755102
+      },
+      {
+        "fold": 3,
+        "n_held": 49,
+        "n": 49,
+        "mape_percent": 15.816463218838232,
+        "mdape_percent": 7.075387946138699,
+        "smape_percent": 14.012565422052226,
+        "n_positive_predictions": 49,
+        "n_negative_or_zero_predictions": 0,
+        "mean_abs_log_ratio_positive_only": 0.14421332216682303,
+        "median_abs_log_ratio_positive_only": 0.07338164464414607,
+        "fraction_within_10pct_relative": 0.7142857142857143
+      },
+      {
+        "fold": 4,
+        "n_held": 49,
+        "n": 49,
+        "mape_percent": 10.601197297836562,
+        "mdape_percent": 6.336082533223678,
+        "smape_percent": 13.686729771529965,
+        "n_positive_predictions": 49,
+        "n_negative_or_zero_predictions": 0,
+        "mean_abs_log_ratio_positive_only": 0.16938664308751067,
+        "median_abs_log_ratio_positive_only": 0.06143448233884392,
+        "fraction_within_10pct_relative": 0.7551020408163265
+      }
+    ],
+    "reference_mape_percent": 16.888609346443893,
+    "thresholds_mape_percent": {
+      "reproduction_success": 21.110761683054868,
+      "strong_replication": 16.888609346443893
+    }
+  },
+  "laboratory_B": {
+    "log_target_model": {
+      "n": 57,
+      "mape_percent": 43.04605283463489,
+      "mdape_percent": 34.56836885844894,
+      "smape_percent": 52.93766310295134,
+      "n_positive_predictions": 57,
+      "n_negative_or_zero_predictions": 0,
+      "mean_abs_log_ratio_positive_only": 0.644432048767148,
+      "median_abs_log_ratio_positive_only": 0.4003972494437922,
+      "fraction_within_10pct_relative": 0.07017543859649122
+    },
+    "frozen_raw_scale_model": {
+      "n": 57,
+      "mape_percent": 240.38688260540923,
+      "mdape_percent": 206.74033459382716,
+      "smape_percent": 129.59724669968625,
+      "n_positive_predictions": 35,
+      "n_negative_or_zero_predictions": 22,
+      "mean_abs_log_ratio_positive_only": 0.9687085889348546,
+      "median_abs_log_ratio_positive_only": 0.9774800482361286,
+      "fraction_within_10pct_relative": 0.0
+    },
+    "log_target_size_quartile_bins": [
+      {
+        "bin": 1,
+        "observed_range": [
+          64.4,
+          92.9
+        ],
+        "n": 14,
+        "median_observed": 84.55423723269999,
+        "median_predicted": 100.6999740600586,
+        "mape_percent": 38.74014089800996,
+        "mdape_percent": 28.51139286432466,
+        "fraction_negative_predictions": 0.0
+      },
+      {
+        "bin": 2,
+        "observed_range": [
+          92.9,
+          98.8
+        ],
+        "n": 14,
+        "median_observed": 95.0,
+        "median_predicted": 67.80589294433594,
+        "mape_percent": 25.84706002739599,
+        "mdape_percent": 27.89459576465464,
+        "fraction_negative_predictions": 0.0
+      },
+      {
+        "bin": 3,
+        "observed_range": [
+          98.8,
+          130.2
+        ],
+        "n": 14,
+        "median_observed": 117.4,
+        "median_predicted": 66.68134307861328,
+        "mape_percent": 40.213160882721255,
+        "mdape_percent": 41.401578509111495,
+        "fraction_negative_predictions": 0.0
+      },
+      {
+        "bin": 4,
+        "observed_range": [
+          130.2,
+          7932.67265191
+        ],
+        "n": 15,
+        "median_observed": 220.67629924,
+        "median_predicted": 92.8138427734375,
+        "mape_percent": 65.7613297506939,
+        "mdape_percent": 57.89652136892567,
+        "fraction_negative_predictions": 0.0
+      }
+    ],
+    "log_target_meets_reproduction_threshold_of_its_own_reference": false,
+    "log_target_meets_frozen_raw_scale_reproduction_threshold": true,
+    "predicted_size_distribution_nm_log_target": {
+      "n": 57,
+      "min": 56.519405364990234,
+      "q25": 66.69503021240234,
+      "median": 83.35972595214844,
+      "q75": 124.8646011352539,
+      "max": 366.28924560546875
+    }
+  }
+}

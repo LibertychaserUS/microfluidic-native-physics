@@ -1,0 +1,88 @@
+{
+  "schema_version": "posthoc-round2-v1-reference-v1",
+  "status": "retrospective; NOT pre-registered; computed 2026-10-17 after both reveals",
+  "estimand": "leave-one-chemistry-out MAPE of the locked V1 model over the five development CMC groups of the V1 development table; the training side of every fold is the rest of the development table (the TX100 group is never used)",
+  "model": "XGBRegressor(n_estimators=100, max_depth=3, learning_rate=0.3, random_state=42, reg:squarederror)",
+  "features": [
+    "continuous_flow_ml_min",
+    "dispersed_flow_ml_min",
+    "equilibrium_interfacial_tension_mn_m",
+    "concentration_over_cmc"
+  ],
+  "n_development_rows": 381,
+  "n_rows_outside_listed_groups_kept_in_training_only": 2,
+  "folds": [
+    {
+      "held_out_cmc_mm": 0.0,
+      "n": 63,
+      "mape_percent": 6.5375362750798764,
+      "mdape_percent": 3.789688293277323,
+      "smape_percent": 5.407479391973085,
+      "n_positive_predictions": 63,
+      "n_negative_or_zero_predictions": 0,
+      "mean_abs_log_ratio_positive_only": 0.055048825890370544,
+      "median_abs_log_ratio_positive_only": 0.037196437740327576,
+      "fraction_within_10pct_relative": 0.9523809523809523
+    },
+    {
+      "held_out_cmc_mm": 2.0,
+      "n": 30,
+      "mape_percent": 5.0080359236075145,
+      "mdape_percent": 4.50432849009335,
+      "smape_percent": 5.173593190576699,
+      "n_positive_predictions": 30,
+      "n_negative_or_zero_predictions": 0,
+      "mean_abs_log_ratio_positive_only": 0.05176806069845482,
+      "median_abs_log_ratio_positive_only": 0.044948209125188224,
+      "fraction_within_10pct_relative": 0.9
+    },
+    {
+      "held_out_cmc_mm": 4.33,
+      "n": 15,
+      "mape_percent": 15.763206263769675,
+      "mdape_percent": 6.373484746405951,
+      "smape_percent": 19.90497119685286,
+      "n_positive_predictions": 15,
+      "n_negative_or_zero_predictions": 0,
+      "mean_abs_log_ratio_positive_only": 0.20621829890381818,
+      "median_abs_log_ratio_positive_only": 0.06585655999762338,
+      "fraction_within_10pct_relative": 0.6666666666666666
+    },
+    {
+      "held_out_cmc_mm": 11.0,
+      "n": 178,
+      "mape_percent": 5.463633507930136,
+      "mdape_percent": 3.7497141014637596,
+      "smape_percent": 5.732489298445598,
+      "n_positive_predictions": 178,
+      "n_negative_or_zero_predictions": 0,
+      "mean_abs_log_ratio_positive_only": 0.057469527155535986,
+      "median_abs_log_ratio_positive_only": 0.037924600766159236,
+      "fraction_within_10pct_relative": 0.8595505617977528
+    },
+    {
+      "held_out_cmc_mm": 20.0,
+      "n": 93,
+      "mape_percent": 6.455099048573717,
+      "mdape_percent": 4.47163239030018,
+      "smape_percent": 6.209805033574519,
+      "n_positive_predictions": 93,
+      "n_negative_or_zero_predictions": 0,
+      "mean_abs_log_ratio_positive_only": 0.06216204946024629,
+      "median_abs_log_ratio_positive_only": 0.045746939576448216,
+      "fraction_within_10pct_relative": 0.7849462365591398
+    }
+  ],
+  "macro_mape_percent": 7.845502203792184,
+  "pooled_mape_percent": 6.257005100062593,
+  "retrospective_thresholds_mape_percent": {
+    "reproduction_success": 9.80687775474023,
+    "strong_replication": 7.845502203792184
+  },
+  "sealed_tx100_mape_percent_from_recovered_result": 19.843641119336333,
+  "sealed_over_macro_reference_ratio": 2.5293015799224117,
+  "pre_registered_thresholds_for_comparison": {
+    "reproduction_success_percent": 11.4,
+    "strong_replication_percent": 6.0
+  }
+}

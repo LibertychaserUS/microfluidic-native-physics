@@ -1,21 +1,25 @@
 cff-version: 1.2.0
 message: >-
-  If you use this software or its released artifacts, please cite this
-  repository using the metadata below. No paper DOI or arXiv identifier has
-  been assigned yet.
-title: "Microfluidic Native Physics: Reliability Audits and Physics-Guided Constraints"
+  If you use this software or its released artifacts, please cite the
+  repository release below and the accompanying preprint once its arXiv
+  identifier is assigned (it will be added here).
+title: "Microfluidic Native Physics: Reliability Audits for Machine-Learned Droplet-Microfluidic Design Surrogates — code and artifacts"
 type: software
+version: "0.3-preprint"
+date-released: "2026-10-21"
 authors:
   - family-names: Zhang
     given-names: Zhiyuan
 repository-code: "https://github.com/LibertychaserUS/microfluidic-native-physics"
-repository-artifact: "https://huggingface.co/datasets/Chaser111/microfluidic-native-physics"
 url: "https://github.com/LibertychaserUS/microfluidic-native-physics"
 abstract: >-
-  Reproducible public-data studies of reliability under chemistry shift in
-  droplet microfluidics, including a sealed-label negative validation and a
-  native-variable physics-guided constrained regression protocol. The work is
-  retrospective and does not claim wet-lab feasibility.
+  Code, frozen protocols, deviation registers, number ledger, hash manifests
+  and summary artifacts of a retrospective reliability-under-shift study of
+  machine-learned surrogates for droplet microfluidics: a sealed chemistry
+  holdout, a sealed cross-laboratory validation, a frozen physics-guided
+  constrained regressor, an expanded shift audit on public DAFD data and a
+  method-matrix benchmark. The results are mostly negative and no wet-lab
+  feasibility is claimed.
 license: Apache-2.0
 keywords:
   - microfluidics
@@ -25,3 +29,4 @@ keywords:
   - physics-guided regression
   - applicability domain
   - conformal prediction
+  - reproducibility

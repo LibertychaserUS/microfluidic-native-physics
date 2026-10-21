@@ -1,0 +1,85 @@
+{
+  "schema_version": "posthoc-round2-d3-metrics-v1",
+  "status": "retrospective; NOT pre-registered; from already-revealed scored rows",
+  "frozen_model_laboratory_B": {
+    "n": 57,
+    "mape_percent": 240.38688260540923,
+    "mdape_percent": 206.74033459382716,
+    "smape_percent": 129.59724669968625,
+    "n_positive_predictions": 35,
+    "n_negative_or_zero_predictions": 22,
+    "mean_abs_log_ratio_positive_only": 0.9687085889348546,
+    "median_abs_log_ratio_positive_only": 0.9774800482361286,
+    "fraction_within_10pct_relative": 0.0
+  },
+  "frozen_model_size_quartile_bins": [
+    {
+      "bin": 1,
+      "observed_range": [
+        64.4,
+        92.9
+      ],
+      "n": 14,
+      "median_observed": 84.55423723269999,
+      "median_predicted": 237.2439727785,
+      "mape_percent": 249.8676545287402,
+      "mdape_percent": 208.66207351398677,
+      "fraction_negative_predictions": 0.2857142857142857
+    },
+    {
+      "bin": 2,
+      "observed_range": [
+        92.9,
+        98.8
+      ],
+      "n": 14,
+      "median_observed": 95.0,
+      "median_predicted": -295.2696380615,
+      "mape_percent": 306.5305849416201,
+      "mdape_percent": 402.3754813209731,
+      "fraction_negative_predictions": 0.5714285714285714
+    },
+    {
+      "bin": 3,
+      "observed_range": [
+        98.8,
+        130.2
+      ],
+      "n": 14,
+      "median_observed": 117.4,
+      "median_predicted": 170.46282196049998,
+      "mape_percent": 241.12256150341045,
+      "mdape_percent": 201.57442992851622,
+      "fraction_negative_predictions": 0.35714285714285715
+    },
+    {
+      "bin": 4,
+      "observed_range": [
+        130.2,
+        7932.67265191
+      ],
+      "n": 15,
+      "median_observed": 220.67629924,
+      "median_predicted": 245.772583008,
+      "mape_percent": 169.11740632503577,
+      "mdape_percent": 102.63092732688996,
+      "fraction_negative_predictions": 0.3333333333333333
+    }
+  ],
+  "observed_size_distribution_nm": {
+    "n": 57,
+    "min": 64.4,
+    "q25": 92.9,
+    "median": 98.8,
+    "q75": 130.2,
+    "max": 7932.67265191
+  },
+  "predicted_size_distribution_nm": {
+    "n": 57,
+    "min": -336.348602295,
+    "q25": -302.679779053,
+    "median": 200.04800415,
+    "q75": 254.678726196,
+    "max": 4036.07470703
+  }
+}

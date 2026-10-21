@@ -1,0 +1,20 @@
+{
+  "selection_sha256": "2117b19a94dea7e25934db5ae2a2c7c315bd53daa978a9a973f7275455e4cf2a",
+  "selection_rows": 103194,
+  "selection_columns": [
+    "replay_scope",
+    "context",
+    "target_um",
+    "tolerance_kind",
+    "tolerance_um",
+    "strategy",
+    "top_k",
+    "context_candidate_count",
+    "allowed_candidate_count",
+    "eligible_candidate_count",
+    "answered",
+    "selected_row_ids"
+  ],
+  "observed_outcome_columns_present": false,
+  "claim_boundary": "Retrospective label-free ranking of already observed historical candidates; not a prospective blind search or feasibility validation."
+}

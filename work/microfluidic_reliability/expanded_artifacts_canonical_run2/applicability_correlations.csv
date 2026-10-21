@@ -1,0 +1,351 @@
+method,scope,outcome,n,spearman_rho,row_naive_p_value
+random_score,ALL,absolute_relative_error,64,0.10123626373626374,0.4260460785621919
+random_score,ALL,absolute_normalized_error,64,0.0526098901098901,0.6797018161996932
+random_score,ALL,absolute_error_um,64,-0.04711538461538461,0.7116062908073797
+random_score,ALL,observed_diameter_um,64,-0.13090809190523303,0.3025083735686489
+random_score,ALL,hydraulic_diameter_um,64,-0.08299296755888524,0.5144113994620445
+random_score,Galogahi et al,absolute_relative_error,24,-0.34695652173913033,0.09670236783045821
+random_score,Galogahi et al,absolute_normalized_error,24,-0.3608695652173913,0.08319459278354288
+random_score,Galogahi et al,absolute_error_um,24,-0.3208695652173913,0.1263216392307609
+random_score,Galogahi et al,observed_diameter_um,24,0.08045227413496715,0.7086272179096589
+random_score,Galogahi et al,hydraulic_diameter_um,24,0.0,1.0
+random_score,Lashkaripour et al,absolute_relative_error,20,0.2721804511278195,0.24566887828037726
+random_score,Lashkaripour et al,absolute_normalized_error,20,0.28872180451127816,0.2169926666873039
+random_score,Lashkaripour et al,absolute_error_um,20,0.38947368421052625,0.08961904769837135
+random_score,Lashkaripour et al,observed_diameter_um,20,0.0781954887218045,0.7431490742332264
+random_score,Lashkaripour et al,hydraulic_diameter_um,20,-0.1213953957333768,0.6101689948464967
+random_score,Mazutis et al,absolute_relative_error,6,-0.2571428571428572,0.6227871720116619
+random_score,Mazutis et al,absolute_normalized_error,6,-0.2571428571428572,0.6227871720116619
+random_score,Mazutis et al,absolute_error_um,6,-0.2571428571428572,0.6227871720116619
+random_score,Mazutis et al,observed_diameter_um,6,-0.2571428571428572,0.6227871720116619
+random_score,Mazutis et al,hydraulic_diameter_um,6,,
+random_score,Roumpea et al,absolute_relative_error,14,0.3098901098901099,0.2809332808692584
+random_score,Roumpea et al,absolute_normalized_error,14,-0.02417582417582418,0.9346189946036425
+random_score,Roumpea et al,absolute_error_um,14,-0.02417582417582418,0.9346189946036425
+random_score,Roumpea et al,observed_diameter_um,14,-0.42857142857142855,0.12627388815931276
+random_score,Roumpea et al,hydraulic_diameter_um,14,,
+axis_aligned,ALL,absolute_relative_error,64,0.5726737571019146,7.628956795532232e-07
+axis_aligned,ALL,absolute_normalized_error,64,0.48692555117800995,4.5022470609987236e-05
+axis_aligned,ALL,absolute_error_um,64,0.6466371319643972,7.829317822327557e-09
+axis_aligned,ALL,observed_diameter_um,64,0.514889600792555,1.3427353375686428e-05
+axis_aligned,ALL,hydraulic_diameter_um,64,0.40478987974823977,0.0009075325747216335
+axis_aligned,Galogahi et al,absolute_relative_error,24,0.3490151776110869,0.09460715659442046
+axis_aligned,Galogahi et al,absolute_normalized_error,24,0.36320278645706605,0.081076111185335
+axis_aligned,Galogahi et al,absolute_error_um,24,0.4341408306869617,0.03403042120295362
+axis_aligned,Galogahi et al,observed_diameter_um,24,0.6130379857625633,0.001446847659267317
+axis_aligned,Galogahi et al,hydraulic_diameter_um,24,0.8333333333333333,4.29847877602942e-07
+axis_aligned,Lashkaripour et al,absolute_relative_error,20,,
+axis_aligned,Lashkaripour et al,absolute_normalized_error,20,,
+axis_aligned,Lashkaripour et al,absolute_error_um,20,,
+axis_aligned,Lashkaripour et al,observed_diameter_um,20,,
+axis_aligned,Lashkaripour et al,hydraulic_diameter_um,20,,
+axis_aligned,Mazutis et al,absolute_relative_error,6,,
+axis_aligned,Mazutis et al,absolute_normalized_error,6,,
+axis_aligned,Mazutis et al,absolute_error_um,6,,
+axis_aligned,Mazutis et al,observed_diameter_um,6,,
+axis_aligned,Mazutis et al,hydraulic_diameter_um,6,,
+axis_aligned,Roumpea et al,absolute_relative_error,14,,
+axis_aligned,Roumpea et al,absolute_normalized_error,14,,
+axis_aligned,Roumpea et al,absolute_error_um,14,,
+axis_aligned,Roumpea et al,observed_diameter_um,14,,
+axis_aligned,Roumpea et al,hydraulic_diameter_um,14,,
+knn_3,ALL,absolute_relative_error,64,0.21447377463895947,0.08878547099332572
+knn_3,ALL,absolute_normalized_error,64,0.03324251929715726,0.7942693090091975
+knn_3,ALL,absolute_error_um,64,0.7072735183519829,6.450347726752481e-11
+knn_3,ALL,observed_diameter_um,64,0.9407145392513971,8.276808150511637e-31
+knn_3,ALL,hydraulic_diameter_um,64,0.8951191430039122,1.9895711481901848e-23
+knn_3,Galogahi et al,absolute_relative_error,24,0.7372771467365657,3.954265024060263e-05
+knn_3,Galogahi et al,absolute_normalized_error,24,0.7451066385603168,2.9514361259361712e-05
+knn_3,Galogahi et al,absolute_error_um,24,0.7699000293355287,1.086853458932637e-05
+knn_3,Galogahi et al,observed_diameter_um,24,0.39808571748932464,0.054030062584688544
+knn_3,Galogahi et al,hydraulic_diameter_um,24,0.3065856781845576,0.14507857359357942
+knn_3,Lashkaripour et al,absolute_relative_error,20,-0.3413533834586466,0.14076469716030823
+knn_3,Lashkaripour et al,absolute_normalized_error,20,-0.5473684210526315,0.012490190369603563
+knn_3,Lashkaripour et al,absolute_error_um,20,-0.024060150375939848,0.9197997451459456
+knn_3,Lashkaripour et al,observed_diameter_um,20,0.8165413533834586,1.1247209263971725e-05
+knn_3,Lashkaripour et al,hydraulic_diameter_um,20,0.8671099695241199,7.503138172108955e-07
+knn_3,Mazutis et al,absolute_relative_error,6,0.7714285714285715,0.07239650145772594
+knn_3,Mazutis et al,absolute_normalized_error,6,0.7714285714285715,0.07239650145772594
+knn_3,Mazutis et al,absolute_error_um,6,0.7714285714285715,0.07239650145772594
+knn_3,Mazutis et al,observed_diameter_um,6,0.7714285714285715,0.07239650145772594
+knn_3,Mazutis et al,hydraulic_diameter_um,6,,
+knn_3,Roumpea et al,absolute_relative_error,14,-0.3098901098901099,0.2809332808692584
+knn_3,Roumpea et al,absolute_normalized_error,14,0.0945054945054945,0.7479382611415479
+knn_3,Roumpea et al,absolute_error_um,14,0.0945054945054945,0.7479382611415479
+knn_3,Roumpea et al,observed_diameter_um,14,0.7626373626373627,0.0015142307860533167
+knn_3,Roumpea et al,hydraulic_diameter_um,14,,
+knn_5,ALL,absolute_relative_error,64,0.22216625844326035,0.07766070615673724
+knn_5,ALL,absolute_normalized_error,64,0.04537649672656039,0.7218100231443569
+knn_5,ALL,absolute_error_um,64,0.7167517573251393,2.7260406750514625e-11
+knn_5,ALL,observed_diameter_um,64,0.9403024371874258,1.0196422929712164e-30
+knn_5,ALL,hydraulic_diameter_um,64,0.8951191430039122,1.9895711481901848e-23
+knn_5,Galogahi et al,absolute_relative_error,24,0.7894737588949065,4.512681413938447e-06
+knn_5,Galogahi et al,absolute_normalized_error,24,0.7955633636467131,3.3690235552911335e-06
+knn_5,Galogahi et al,absolute_error_um,24,0.8160070367420631,1.1709123272457736e-06
+knn_5,Galogahi et al,observed_diameter_um,24,0.4015662483526192,0.05177380603778323
+knn_5,Galogahi et al,hydraulic_diameter_um,24,0.3065856781845576,0.14507857359357942
+knn_5,Lashkaripour et al,absolute_relative_error,20,-0.26917293233082706,0.25113145369079015
+knn_5,Lashkaripour et al,absolute_normalized_error,20,-0.4947368421052631,0.026578647405457144
+knn_5,Lashkaripour et al,absolute_error_um,20,0.05413533834586466,0.8206745196973448
+knn_5,Lashkaripour et al,observed_diameter_um,20,0.8421052631578947,3.2174929874707044e-06
+knn_5,Lashkaripour et al,hydraulic_diameter_um,20,0.8671099695241199,7.503138172108955e-07
+knn_5,Mazutis et al,absolute_relative_error,6,0.942857142857143,0.004804664723032055
+knn_5,Mazutis et al,absolute_normalized_error,6,0.942857142857143,0.004804664723032055
+knn_5,Mazutis et al,absolute_error_um,6,0.942857142857143,0.004804664723032055
+knn_5,Mazutis et al,observed_diameter_um,6,0.942857142857143,0.004804664723032055
+knn_5,Mazutis et al,hydraulic_diameter_um,6,,
+knn_5,Roumpea et al,absolute_relative_error,14,-0.4945054945054946,0.07224967403413254
+knn_5,Roumpea et al,absolute_normalized_error,14,0.02857142857142857,0.9227613765698747
+knn_5,Roumpea et al,absolute_error_um,14,0.02857142857142857,0.9227613765698747
+knn_5,Roumpea et al,observed_diameter_um,14,0.6835164835164835,0.007036743639884643
+knn_5,Roumpea et al,hydraulic_diameter_um,14,,
+knn_10,ALL,absolute_relative_error,64,0.21451956323303276,0.08871573244872391
+knn_10,ALL,absolute_normalized_error,64,0.035257217436378906,0.7820990960556468
+knn_10,ALL,absolute_error_um,64,0.7084182332038134,5.823638307777113e-11
+knn_10,ALL,observed_diameter_um,64,0.9419966345615308,4.283887553848059e-31
+knn_10,ALL,hydraulic_diameter_um,64,0.8951191430039122,1.9895711481901848e-23
+knn_10,Galogahi et al,absolute_relative_error,24,0.725967880768925,5.929448852927544e-05
+knn_10,Galogahi et al,absolute_normalized_error,24,0.7320574855207316,4.779087189294385e-05
+knn_10,Galogahi et al,absolute_error_um,24,0.755980932759971,1.931751868625351e-05
+knn_10,Galogahi et al,observed_diameter_um,24,0.4033065137842666,0.050673509239245504
+knn_10,Galogahi et al,hydraulic_diameter_um,24,0.3065856781845576,0.14507857359357942
+knn_10,Lashkaripour et al,absolute_relative_error,20,-0.3233082706766917,0.1643897370386501
+knn_10,Lashkaripour et al,absolute_normalized_error,20,-0.5398496240601504,0.014013555304583487
+knn_10,Lashkaripour et al,absolute_error_um,20,-0.009022556390977442,0.9698849998123449
+knn_10,Lashkaripour et al,observed_diameter_um,20,0.8360902255639097,4.401254248076887e-06
+knn_10,Lashkaripour et al,hydraulic_diameter_um,20,0.8671099695241199,7.503138172108955e-07
+knn_10,Mazutis et al,absolute_relative_error,6,1.0,0.0
+knn_10,Mazutis et al,absolute_normalized_error,6,1.0,0.0
+knn_10,Mazutis et al,absolute_error_um,6,1.0,0.0
+knn_10,Mazutis et al,observed_diameter_um,6,1.0,0.0
+knn_10,Mazutis et al,hydraulic_diameter_um,6,,
+knn_10,Roumpea et al,absolute_relative_error,14,-0.3362637362637363,0.239792202257253
+knn_10,Roumpea et al,absolute_normalized_error,14,0.2,0.49300373504
+knn_10,Roumpea et al,absolute_error_um,14,0.2,0.49300373504
+knn_10,Roumpea et al,observed_diameter_um,14,0.7758241758241758,0.0011084786677787394
+knn_10,Roumpea et al,hydraulic_diameter_um,14,,
+knn_20,ALL,absolute_relative_error,64,0.21177224758863955,0.09297687282807716
+knn_20,ALL,absolute_normalized_error,64,0.03260147898013219,0.7981520699804926
+knn_20,ALL,absolute_error_um,64,0.7088303305504723,5.6125793278034654e-11
+knn_20,ALL,observed_diameter_um,64,0.941264008670026,6.252714653632365e-31
+knn_20,ALL,hydraulic_diameter_um,64,0.8951191430039122,1.9895711481901848e-23
+knn_20,Galogahi et al,absolute_relative_error,24,0.7494563562401786,2.4974782344762732e-05
+knn_20,Galogahi et al,absolute_normalized_error,24,0.755545960991985,1.965593346871617e-05
+knn_20,Galogahi et al,absolute_error_um,24,0.7794694082312246,7.149992858408046e-06
+knn_20,Galogahi et al,observed_diameter_um,24,0.39721558477350094,0.054605866971476916
+knn_20,Galogahi et al,hydraulic_diameter_um,24,0.3065856781845576,0.14507857359357942
+knn_20,Lashkaripour et al,absolute_relative_error,20,-0.3413533834586466,0.14076469716030823
+knn_20,Lashkaripour et al,absolute_normalized_error,20,-0.5789473684210527,0.007479660209668748
+knn_20,Lashkaripour et al,absolute_error_um,20,-0.07218045112781954,0.7623392575365605
+knn_20,Lashkaripour et al,observed_diameter_um,20,0.8165413533834586,1.1247209263971725e-05
+knn_20,Lashkaripour et al,hydraulic_diameter_um,20,0.8671099695241199,7.503138172108955e-07
+knn_20,Mazutis et al,absolute_relative_error,6,1.0,0.0
+knn_20,Mazutis et al,absolute_normalized_error,6,1.0,0.0
+knn_20,Mazutis et al,absolute_error_um,6,1.0,0.0
+knn_20,Mazutis et al,observed_diameter_um,6,1.0,0.0
+knn_20,Mazutis et al,hydraulic_diameter_um,6,,
+knn_20,Roumpea et al,absolute_relative_error,14,-0.3362637362637363,0.239792202257253
+knn_20,Roumpea et al,absolute_normalized_error,14,0.2,0.49300373504
+knn_20,Roumpea et al,absolute_error_um,14,0.2,0.49300373504
+knn_20,Roumpea et al,observed_diameter_um,14,0.7758241758241758,0.0011084786677787394
+knn_20,Roumpea et al,hydraulic_diameter_um,14,,
+mahalanobis_oas,ALL,absolute_relative_error,64,0.36246251068360447,0.003246839978463011
+mahalanobis_oas,ALL,absolute_normalized_error,64,0.16181689145475725,0.20144024427828264
+mahalanobis_oas,ALL,absolute_error_um,64,0.771789647401149,8.340127685205857e-14
+mahalanobis_oas,ALL,observed_diameter_um,64,0.8758771478532138,2.7431761610299112e-21
+mahalanobis_oas,ALL,hydraulic_diameter_um,64,0.8640192764921606,3.86326553941597e-20
+mahalanobis_oas,Galogahi et al,absolute_relative_error,24,0.7103088971214229,0.0001007175409521552
+mahalanobis_oas,Galogahi et al,absolute_normalized_error,24,0.7198782760171187,7.316189051770584e-05
+mahalanobis_oas,Galogahi et al,absolute_error_um,24,0.7177034171771878,7.876254083976345e-05
+mahalanobis_oas,Galogahi et al,observed_diameter_um,24,0.23276050148282915,0.2737199395443494
+mahalanobis_oas,Galogahi et al,hydraulic_diameter_um,24,0.3065856781845576,0.14507857359357942
+mahalanobis_oas,Lashkaripour et al,absolute_relative_error,20,0.12180451127819547,0.6089566221649011
+mahalanobis_oas,Lashkaripour et al,absolute_normalized_error,20,0.10075187969924812,0.6725564354857819
+mahalanobis_oas,Lashkaripour et al,absolute_error_um,20,0.23157894736842105,0.325898627038793
+mahalanobis_oas,Lashkaripour et al,observed_diameter_um,20,0.2556390977443609,0.27666444989581596
+mahalanobis_oas,Lashkaripour et al,hydraulic_diameter_um,20,0.1213953957333768,0.6101689948464967
+mahalanobis_oas,Mazutis et al,absolute_relative_error,6,1.0,0.0
+mahalanobis_oas,Mazutis et al,absolute_normalized_error,6,1.0,0.0
+mahalanobis_oas,Mazutis et al,absolute_error_um,6,1.0,0.0
+mahalanobis_oas,Mazutis et al,observed_diameter_um,6,1.0,0.0
+mahalanobis_oas,Mazutis et al,hydraulic_diameter_um,6,,
+mahalanobis_oas,Roumpea et al,absolute_relative_error,14,-0.059340659340659345,0.8403017626906825
+mahalanobis_oas,Roumpea et al,absolute_normalized_error,14,0.2,0.49300373504
+mahalanobis_oas,Roumpea et al,absolute_error_um,14,0.2,0.49300373504
+mahalanobis_oas,Roumpea et al,observed_diameter_um,14,0.6571428571428571,0.010661967747329814
+mahalanobis_oas,Roumpea et al,hydraulic_diameter_um,14,,
+isolation_forest,ALL,absolute_relative_error,64,0.16319941765344978,0.19756448105193863
+isolation_forest,ALL,absolute_normalized_error,64,-0.015319266228449263,0.904367735158315
+isolation_forest,ALL,absolute_error_um,64,0.6546982671712898,4.403178379161127e-09
+isolation_forest,ALL,observed_diameter_um,64,0.9323334294631431,4.400986714988502e-29
+isolation_forest,ALL,hydraulic_diameter_um,64,0.8979397139875736,8.921650704355956e-24
+isolation_forest,Galogahi et al,absolute_relative_error,24,0.5084819967758378,0.011175193374404273
+isolation_forest,Galogahi et al,absolute_normalized_error,24,0.5206612062794508,0.00909364236214865
+isolation_forest,Galogahi et al,absolute_error_um,24,0.5524141453424415,0.005123713940180994
+isolation_forest,Galogahi et al,observed_diameter_um,24,0.4298455616168882,0.03604497524967481
+isolation_forest,Galogahi et al,hydraulic_diameter_um,24,0.6387201628844948,0.0007815863649574777
+isolation_forest,Lashkaripour et al,absolute_relative_error,20,-0.5744360902255639,0.008072760656054084
+isolation_forest,Lashkaripour et al,absolute_normalized_error,20,-0.6766917293233082,0.0010509401983731896
+isolation_forest,Lashkaripour et al,absolute_error_um,20,-0.2556390977443609,0.27666444989581596
+isolation_forest,Lashkaripour et al,observed_diameter_um,20,0.8360902255639097,4.401254248076887e-06
+isolation_forest,Lashkaripour et al,hydraulic_diameter_um,20,0.8671099695241199,7.503138172108955e-07
+isolation_forest,Mazutis et al,absolute_relative_error,6,1.0,0.0
+isolation_forest,Mazutis et al,absolute_normalized_error,6,1.0,0.0
+isolation_forest,Mazutis et al,absolute_error_um,6,1.0,0.0
+isolation_forest,Mazutis et al,observed_diameter_um,6,1.0,0.0
+isolation_forest,Mazutis et al,hydraulic_diameter_um,6,,
+isolation_forest,Roumpea et al,absolute_relative_error,14,-0.3180867587792566,0.2677281467547679
+isolation_forest,Roumpea et al,absolute_normalized_error,14,0.15008318900148024,0.608566820139345
+isolation_forest,Roumpea et al,absolute_error_um,14,0.15008318900148024,0.608566820139345
+isolation_forest,Roumpea et al,observed_diameter_um,14,0.6630540887229573,0.00974645565148201
+isolation_forest,Roumpea et al,hydraulic_diameter_um,14,,
+local_outlier_factor,ALL,absolute_relative_error,64,-0.202889260338435,0.10785799356334043
+local_outlier_factor,ALL,absolute_normalized_error,64,0.056274182115986594,0.6587274519814389
+local_outlier_factor,ALL,absolute_error_um,64,-0.3052954509831901,0.014163016384529789
+local_outlier_factor,ALL,observed_diameter_um,64,-0.27358998135886,0.028705795090391395
+local_outlier_factor,ALL,hydraulic_diameter_um,64,-0.37551928370159976,0.0022304790454955024
+local_outlier_factor,Galogahi et al,absolute_relative_error,24,0.1953023238257923,0.3604247547952053
+local_outlier_factor,Galogahi et al,absolute_normalized_error,24,0.1883427755380135,0.37812488936039906
+local_outlier_factor,Galogahi et al,absolute_error_um,24,0.11483254674835004,0.5931315161752643
+local_outlier_factor,Galogahi et al,observed_diameter_um,24,-0.5077224396831058,0.011317045636618686
+local_outlier_factor,Galogahi et al,hydraulic_diameter_um,24,-0.5109761303075959,0.01071967546679777
+local_outlier_factor,Lashkaripour et al,absolute_relative_error,20,0.31127819548872177,0.18157577037037334
+local_outlier_factor,Lashkaripour et al,absolute_normalized_error,20,0.5759398496240601,0.007870940177445083
+local_outlier_factor,Lashkaripour et al,absolute_error_um,20,0.09323308270676692,0.6958288642370746
+local_outlier_factor,Lashkaripour et al,observed_diameter_um,20,-0.7533834586466165,0.0001256121573080167
+local_outlier_factor,Lashkaripour et al,hydraulic_diameter_um,20,-0.8671099695241199,7.503138172108955e-07
+local_outlier_factor,Mazutis et al,absolute_relative_error,6,-0.7714285714285715,0.07239650145772594
+local_outlier_factor,Mazutis et al,absolute_normalized_error,6,-0.7714285714285715,0.07239650145772594
+local_outlier_factor,Mazutis et al,absolute_error_um,6,-0.7714285714285715,0.07239650145772594
+local_outlier_factor,Mazutis et al,observed_diameter_um,6,-0.7714285714285715,0.07239650145772594
+local_outlier_factor,Mazutis et al,hydraulic_diameter_um,6,,
+local_outlier_factor,Roumpea et al,absolute_relative_error,14,-0.3054945054945055,0.2881698858754571
+local_outlier_factor,Roumpea et al,absolute_normalized_error,14,-0.01978021978021978,0.9464892274080116
+local_outlier_factor,Roumpea et al,absolute_error_um,14,-0.01978021978021978,0.9464892274080116
+local_outlier_factor,Roumpea et al,observed_diameter_um,14,0.367032967032967,0.19673887170748847
+local_outlier_factor,Roumpea et al,hydraulic_diameter_um,14,,
+one_class_svm,ALL,absolute_relative_error,64,0.4223082031373022,0.0005089238209207573
+one_class_svm,ALL,absolute_normalized_error,64,0.31319398346082045,0.011738266972425955
+one_class_svm,ALL,absolute_error_um,64,0.7673939423701199,1.4026264681210715e-13
+one_class_svm,ALL,observed_diameter_um,64,0.7990430074816378,2.5127191265209618e-15
+one_class_svm,ALL,hydraulic_diameter_um,64,0.7532666175413548,6.924109985109155e-13
+one_class_svm,Galogahi et al,absolute_relative_error,24,0.6381035836357178,0.0007937365239148273
+one_class_svm,Galogahi et al,absolute_normalized_error,24,0.6520226802112755,0.0005557325351748014
+one_class_svm,Galogahi et al,absolute_error_um,24,0.6585472567310681,0.0004673352709076565
+one_class_svm,Galogahi et al,observed_diameter_um,24,0.3397868255291394,0.10426906477847865
+one_class_svm,Galogahi et al,hydraulic_diameter_um,24,0.4428459795999165,0.030222104847794404
+one_class_svm,Lashkaripour et al,absolute_relative_error,20,0.5052631578947367,0.023059229474174218
+one_class_svm,Lashkaripour et al,absolute_normalized_error,20,0.7338345864661654,0.0002306890933683326
+one_class_svm,Lashkaripour et al,absolute_error_um,20,0.29624060150375936,0.20471829742862163
+one_class_svm,Lashkaripour et al,observed_diameter_um,20,-0.6736842105263157,0.0011280967372370514
+one_class_svm,Lashkaripour et al,hydraulic_diameter_um,20,-0.8671099695241199,7.503138172108955e-07
+one_class_svm,Mazutis et al,absolute_relative_error,6,1.0,0.0
+one_class_svm,Mazutis et al,absolute_normalized_error,6,1.0,0.0
+one_class_svm,Mazutis et al,absolute_error_um,6,1.0,0.0
+one_class_svm,Mazutis et al,observed_diameter_um,6,1.0,0.0
+one_class_svm,Mazutis et al,hydraulic_diameter_um,6,,
+one_class_svm,Roumpea et al,absolute_relative_error,14,-0.3362637362637363,0.239792202257253
+one_class_svm,Roumpea et al,absolute_normalized_error,14,0.2,0.49300373504
+one_class_svm,Roumpea et al,absolute_error_um,14,0.2,0.49300373504
+one_class_svm,Roumpea et al,observed_diameter_um,14,0.7758241758241758,0.0011084786677787394
+one_class_svm,Roumpea et al,hydraulic_diameter_um,14,,
+hydraulic_diameter_only,ALL,absolute_relative_error,64,0.6914223963966188,2.5306657616211564e-10
+hydraulic_diameter_only,ALL,absolute_normalized_error,64,0.5610844473444098,1.4166984243766052e-06
+hydraulic_diameter_only,ALL,absolute_error_um,64,0.5791869402683277,5.331130954659784e-07
+hydraulic_diameter_only,ALL,observed_diameter_um,64,0.13897303649513515,0.27343043561987895
+hydraulic_diameter_only,ALL,hydraulic_diameter_um,64,0.18840579710144925,0.13598049215131913
+hydraulic_diameter_only,Galogahi et al,absolute_relative_error,24,0.7831560082980487,6.051430977181004e-06
+hydraulic_diameter_only,Galogahi et al,absolute_normalized_error,24,0.7888310518364402,4.651485502005664e-06
+hydraulic_diameter_only,Galogahi et al,absolute_error_um,24,0.7916685736056361,4.065965713773069e-06
+hydraulic_diameter_only,Galogahi et al,observed_diameter_um,24,0.30651899288128165,0.1451705450510255
+hydraulic_diameter_only,Galogahi et al,hydraulic_diameter_um,24,0.3333333333333333,0.11144594445105944
+hydraulic_diameter_only,Lashkaripour et al,absolute_relative_error,20,0.520265981714472,0.018692511424373955
+hydraulic_diameter_only,Lashkaripour et al,absolute_normalized_error,20,0.7457145737907432,0.00016045623027801027
+hydraulic_diameter_only,Lashkaripour et al,absolute_error_um,20,0.2254485920762712,0.33922451688543853
+hydraulic_diameter_only,Lashkaripour et al,observed_diameter_um,20,-0.8671099695241199,7.503138172108955e-07
+hydraulic_diameter_only,Lashkaripour et al,hydraulic_diameter_um,20,-1.0,0.0
+hydraulic_diameter_only,Mazutis et al,absolute_relative_error,6,,
+hydraulic_diameter_only,Mazutis et al,absolute_normalized_error,6,,
+hydraulic_diameter_only,Mazutis et al,absolute_error_um,6,,
+hydraulic_diameter_only,Mazutis et al,observed_diameter_um,6,,
+hydraulic_diameter_only,Mazutis et al,hydraulic_diameter_um,6,,
+hydraulic_diameter_only,Roumpea et al,absolute_relative_error,14,,
+hydraulic_diameter_only,Roumpea et al,absolute_normalized_error,14,,
+hydraulic_diameter_only,Roumpea et al,absolute_error_um,14,,
+hydraulic_diameter_only,Roumpea et al,observed_diameter_um,14,,
+hydraulic_diameter_only,Roumpea et al,hydraulic_diameter_um,14,,
+predicted_size_only,ALL,absolute_relative_error,64,0.17171775403160092,0.17485464309391874
+predicted_size_only,ALL,absolute_normalized_error,64,0.005610194657653317,0.9649065512530479
+predicted_size_only,ALL,absolute_error_um,64,0.6510115678248318,5.741241832887007e-09
+predicted_size_only,ALL,observed_diameter_um,64,0.8647469842449077,3.3083899888688343e-20
+predicted_size_only,ALL,hydraulic_diameter_um,64,0.911357043874467,1.3851550745251874e-25
+predicted_size_only,Galogahi et al,absolute_relative_error,24,0.3202786243453402,0.12706092247627038
+predicted_size_only,Galogahi et al,absolute_normalized_error,24,0.3389905548437772,0.10513563812885171
+predicted_size_only,Galogahi et al,absolute_error_um,24,0.45256762135754597,0.026379631427109675
+predicted_size_only,Galogahi et al,observed_diameter_um,24,0.9660502602998071,2.033535123646591e-14
+predicted_size_only,Galogahi et al,hydraulic_diameter_um,24,0.8690376751535211,3.6096978081396023e-08
+predicted_size_only,Lashkaripour et al,absolute_relative_error,20,0.21654135338345865,0.35914578257040036
+predicted_size_only,Lashkaripour et al,absolute_normalized_error,20,0.3654135338345864,0.11312213950560131
+predicted_size_only,Lashkaripour et al,absolute_error_um,20,-0.037593984962406006,0.8749652018566715
+predicted_size_only,Lashkaripour et al,observed_diameter_um,20,-0.7097744360902255,0.0004558392343877837
+predicted_size_only,Lashkaripour et al,hydraulic_diameter_um,20,-0.6069769786668839,0.004540706093944382
+predicted_size_only,Mazutis et al,absolute_relative_error,6,-0.8116794499134278,0.049857585101340404
+predicted_size_only,Mazutis et al,absolute_normalized_error,6,-0.8116794499134278,0.049857585101340404
+predicted_size_only,Mazutis et al,absolute_error_um,6,-0.8116794499134278,0.049857585101340404
+predicted_size_only,Mazutis et al,observed_diameter_um,6,-0.8116794499134278,0.049857585101340404
+predicted_size_only,Mazutis et al,hydraulic_diameter_um,6,,
+predicted_size_only,Roumpea et al,absolute_relative_error,14,-0.29914366164646855,0.29881607992334225
+predicted_size_only,Roumpea et al,absolute_normalized_error,14,0.13171250773986298,0.6535473080186778
+predicted_size_only,Roumpea et al,absolute_error_um,14,0.13171250773986298,0.6535473080186778
+predicted_size_only,Roumpea et al,observed_diameter_um,14,0.7054432617931646,0.0048239941542030885
+predicted_size_only,Roumpea et al,hydraulic_diameter_um,14,,
+bootstrap_disagreement,ALL,absolute_relative_error,64,-0.08291163983496394,0.5148250761232448
+bootstrap_disagreement,ALL,absolute_normalized_error,64,-0.2594280252223533,0.03844232610870786
+bootstrap_disagreement,ALL,absolute_error_um,64,0.3903784997366197,0.001427484854246297
+bootstrap_disagreement,ALL,observed_diameter_um,64,0.7662945874558915,1.5945439024987127e-13
+bootstrap_disagreement,ALL,hydraulic_diameter_um,64,0.8435256948938054,2.17792821391942e-18
+bootstrap_disagreement,Galogahi et al,absolute_relative_error,24,-0.1822531707862071,0.3940127499412991
+bootstrap_disagreement,Galogahi et al,absolute_normalized_error,24,-0.17703350957037298,0.4079247784402252
+bootstrap_disagreement,Galogahi et al,absolute_error_um,24,-0.12614181271599056,0.5569814998735823
+bootstrap_disagreement,Galogahi et al,observed_diameter_um,24,0.3115075122648704,0.13840447991007118
+bootstrap_disagreement,Galogahi et al,hydraulic_diameter_um,24,0.5876225498537354,0.0025326598206698216
+bootstrap_disagreement,Lashkaripour et al,absolute_relative_error,20,-0.24060150375939846,0.30686109167827574
+bootstrap_disagreement,Lashkaripour et al,absolute_normalized_error,20,-0.2857142857142857,0.22203494893940118
+bootstrap_disagreement,Lashkaripour et al,absolute_error_um,20,-0.27518796992481204,0.2402830280811373
+bootstrap_disagreement,Lashkaripour et al,observed_diameter_um,20,-0.156390977443609,0.5102566899029022
+bootstrap_disagreement,Lashkaripour et al,hydraulic_diameter_um,20,0.10405319634289441,0.6624265026477675
+bootstrap_disagreement,Mazutis et al,absolute_relative_error,6,-0.9856107606091624,0.0003090856678496653
+bootstrap_disagreement,Mazutis et al,absolute_normalized_error,6,-0.9856107606091624,0.0003090856678496653
+bootstrap_disagreement,Mazutis et al,absolute_error_um,6,-0.9856107606091624,0.0003090856678496653
+bootstrap_disagreement,Mazutis et al,observed_diameter_um,6,-0.9856107606091624,0.0003090856678496653
+bootstrap_disagreement,Mazutis et al,hydraulic_diameter_um,6,,
+bootstrap_disagreement,Roumpea et al,absolute_relative_error,14,-0.3648771480037262,0.19958259978828277
+bootstrap_disagreement,Roumpea et al,absolute_normalized_error,14,-0.16241482807482938,0.5790669664001509
+bootstrap_disagreement,Roumpea et al,absolute_error_um,14,-0.16241482807482938,0.5790669664001509
+bootstrap_disagreement,Roumpea et al,observed_diameter_um,14,0.47612018093169156,0.08524801198889315
+bootstrap_disagreement,Roumpea et al,hydraulic_diameter_um,14,,
+oof_residual_risk,ALL,absolute_relative_error,64,-0.5073641826173558,1.879087497132776e-05
+oof_residual_risk,ALL,absolute_normalized_error,64,-0.5257849382277494,8.13653153190127e-06
+oof_residual_risk,ALL,absolute_error_um,64,-0.4117648304670364,0.0007235447133632474
+oof_residual_risk,ALL,observed_diameter_um,64,-0.09601440078683156,0.45041555051050725
+oof_residual_risk,ALL,hydraulic_diameter_um,64,-0.011609958860854239,0.9274511760097041
+oof_residual_risk,Galogahi et al,absolute_relative_error,24,-0.4065030428468352,0.04869999026460482
+oof_residual_risk,Galogahi et al,absolute_normalized_error,24,-0.40208453151154355,0.051444193074226804
+oof_residual_risk,Galogahi et al,absolute_error_um,24,-0.32962094561275984,0.11573516006324883
+oof_residual_risk,Galogahi et al,observed_diameter_um,24,0.4026139169252518,0.05110920691395262
+oof_residual_risk,Galogahi et al,hydraulic_diameter_um,24,0.3114345329970047,0.13850180541261342
+oof_residual_risk,Lashkaripour et al,absolute_relative_error,20,-0.1573922951199196,0.5075180945965123
+oof_residual_risk,Lashkaripour et al,absolute_normalized_error,20,-0.3040880264938252,0.19240889736942812
+oof_residual_risk,Lashkaripour et al,absolute_error_um,20,-0.2681781339179212,0.252955214967214
+oof_residual_risk,Lashkaripour et al,observed_diameter_um,20,-0.04660645632191794,0.8453028931043063
+oof_residual_risk,Lashkaripour et al,hydraulic_diameter_um,20,0.2290948974763285,0.33126035935822606
+oof_residual_risk,Mazutis et al,absolute_relative_error,6,-0.6546536707079772,0.15830242337545788
+oof_residual_risk,Mazutis et al,absolute_normalized_error,6,-0.6546536707079772,0.15830242337545788
+oof_residual_risk,Mazutis et al,absolute_error_um,6,-0.6546536707079772,0.15830242337545788
+oof_residual_risk,Mazutis et al,observed_diameter_um,6,-0.6546536707079772,0.15830242337545788
+oof_residual_risk,Mazutis et al,hydraulic_diameter_um,6,,
+oof_residual_risk,Roumpea et al,absolute_relative_error,14,-0.24883867868087656,0.39096118170060673
+oof_residual_risk,Roumpea et al,absolute_normalized_error,14,-0.14285183405754023,0.6261304395700173
+oof_residual_risk,Roumpea et al,absolute_error_um,14,-0.14285183405754023,0.6261304395700173
+oof_residual_risk,Roumpea et al,observed_diameter_um,14,0.2972239773132692,0.3020783564565925
+oof_residual_risk,Roumpea et al,hydraulic_diameter_um,14,,

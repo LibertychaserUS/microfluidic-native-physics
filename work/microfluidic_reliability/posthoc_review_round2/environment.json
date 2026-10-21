@@ -1,0 +1,15 @@
+{
+  "python": "3.12.13",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "numpy": "2.5.1",
+  "pandas": "3.0.3",
+  "scikit_learn": "1.9.0",
+  "xgboost": "3.3.0",
+  "inputs": {
+    "blind_artifacts/development_labeled.csv": "b2889726960774acb2b25319f7544c31a1be4f22f319b1a1f4df88f98c7d7ab0",
+    "d3_blind_artifacts/reveal/sealed_primary_scored_rows.csv": "fff8e81112ed7419b37dc2a305142cd14ab3a3e6f77fbe04ecb137f340bcb98a",
+    "d3_blind_artifacts/sealed_primary_features.csv": "e26c7313596974188f2d34a0aacd95ee701cef774f4ad67fd6381b227b0cf00d",
+    "d3_blind_artifacts/development_labeled.csv": "5e57bbee8e18b811d209c7924c0377e13ba44ab77351b35dfd8f88ca01c2ada2",
+    "w3_artifacts_canonical_run2/point_predictions.csv": "7148f5067ba394f4c4fcb3e5997dbec6488a316d5aece9fd75684a145d1bbce0"
+  }
+}

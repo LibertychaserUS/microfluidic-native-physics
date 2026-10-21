@@ -1,0 +1,52 @@
+{
+  "artifacts": {
+    "blind_features": {
+      "file": "blind_features.csv",
+      "rows": 87,
+      "sha256": "6f76c9aa91b4f6e01c6b6e600b17f8a2b6600fde4085b0253c68f6b1df3aa29b"
+    },
+    "development_labeled": {
+      "file": "development_labeled.csv",
+      "rows": 381,
+      "sha256": "b2889726960774acb2b25319f7544c31a1be4f22f319b1a1f4df88f98c7d7ab0"
+    },
+    "sealed_blind_labels": {
+      "file": "sealed_blind_labels.csv",
+      "permissions": "0600",
+      "rows": 87,
+      "sha256": "0e4c9a2577449446875d69ac51713aba510f7f492d7dffc4b6e3595746cc4fb9"
+    }
+  },
+  "blind_rule": {
+    "column": "cmc_mm",
+    "equals_mm": 3.5
+  },
+  "counts": {
+    "blind": 87,
+    "combined": 468,
+    "development": 381
+  },
+  "protocol": {
+    "file": "BLIND_VALIDATION_PROTOCOL.md",
+    "sha256": "1402752425f111a97222ae5c4cb7d13bd68ca1fdfabab978594ac79370e68b1c"
+  },
+  "raw_sources": [
+    {
+      "file": "matTrainingDataSet.mat",
+      "local_sha256": "7fab0693a7065198468a5d654226f5e2164985e334ed105f91355bdd49fb1a17",
+      "rows": 392,
+      "source_index": 0,
+      "url": "https://zenodo.org/records/7055018/files/matTrainingDataSet.mat?download=1",
+      "zenodo_md5": "c5dd5f3fbfd7c218cea734b205ae502e"
+    },
+    {
+      "file": "matTestDataSet.mat",
+      "local_sha256": "55f202bd19433331c86ddc65507e834036d294f7f9b4db2275f21ad91f6729da",
+      "rows": 76,
+      "source_index": 1,
+      "url": "https://zenodo.org/records/7055018/files/matTestDataSet.mat?download=1",
+      "zenodo_md5": "a6c41bba18e4f232e7f25e2207fd183c"
+    }
+  ],
+  "schema_version": "blind-custodian-v1"
+}

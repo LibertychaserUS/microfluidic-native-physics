@@ -1,0 +1,46 @@
+# Expanded-study protocol deviation and correction register
+
+Status: mandatory disclosure for the exploratory DAFD analysis  
+Date opened: 2026-07-16
+
+The 64-row DAFD stress set had already been inspected before the expanded
+protocol was written. The expanded study is therefore retrospective and
+exploratory. This register prevents implementation corrections from being
+misrepresented as prospective choices.
+
+| ID | Initial implementation deviation or defect | Detection | Correction before full runs | Reporting consequence |
+|---|---|---|---|---|
+| D01 | Normalized split conformal used in-sample residuals for its scale model, although the protocol required out-of-fold residuals. | Independent code audit after the first fast run. | Replaced with dependency-grouped OOF residuals inside proper training. | Only corrected full-run results are used; the initial fast artifact is diagnostic and excluded. |
+| D02 | Geometry-group conformal used row nonconformity quantiles even though only a small number of independent calibration groups existed. | Independent code audit. | Calibration scores are aggregated by dependency-group maximum and finite-sample quantiles operate on groups; simultaneous group coverage is reported. | Row coverage remains descriptive; group coverage is primary for grouped intervals. |
+| D03 | Initial AURC omitted the first four retained candidates and allowed row order to break score ties. | Independent code audit. | Replaced with the full discrete tie-invariant AURC and released attainable threshold curves that admit whole ties. | Initial AURC values are discarded. |
+| D04 | LOF novelty scores were evaluated on the fitted training rows; bootstrap disagreement and supervised residual-risk thresholds were not consistently out-of-fit. | Independent code audit. | Applicability models now use a dependency-grouped fit/calibration split; thresholds use held-out calibration scores. Bootstrap resampling uses dependency groups and supervised risk scores are cross-fitted. | Binary threshold results are exploratory and no threshold is selected using external outcomes. |
+| D05 | Strict min--max conditional risk was mislabeled as `aurc`. | Independent code audit. | Split into `conditional_risk` and `aurc` fields with an explicit metric-kind column. | The mislabeled fast table is excluded. |
+| D06 | Initial controls omitted several locked tolerances, shuffled-label prediction, random-score AURC, multiplicity correction, hierarchical uncertainty, source macros, and pooled replay. | Protocol-to-code audit. | Added all tolerance sensitivities, negative controls, within-source/context physical-cluster permutations, BH adjustment, source/cluster bootstrap, source macros, and pooled replay sensitivity. | Only the completed matrix is summarized in the paper. |
+| D07 | Initial replay used source/device/fluid contexts although the protocol named source pools, and it combined median endpoints from multiple CQR fits. | Independent code audit. | Source pools are primary; source-context and pooled analyses are sensitivities. The interval strategy uses the fixed seed-0 geometry-group 90% CQR fit rather than a median of intervals. | The analysis is called retrospective label-free retrieval of observed candidates, never prospective search. |
+| D08 | Initial replay selections were scored in memory before their feature-only table was written. | Integrity review. | Selection inputs explicitly exclude outcome/error columns; the combined selection table is written and hashed before retrospective scoring. | The ranking is auditable but remains non-blind because historical outcomes had been inspected earlier. |
+| D09 | Figure 2 silently averaged row-random and geometry-group interval protocols. | Independent figure audit. | Protocols are faceted and seed variation is displayed separately. | The initial figure is excluded. |
+| D10 | Row-level matched-budget random controls ignored paired DE experiments and produced non-unit p-values for degenerate all-retained masks. | Independent statistical audit. | Added source/context-stratified physical-cluster permutations, explicit floating tolerance, p=1 for degenerate nulls, and BH adjustment. | Naive row controls are retained only as labeled sensitivity analyses. |
+| D11 | JSON summaries used Python's permissive bare `NaN` tokens, which are not valid strict JSON. | Reproducibility audit after the first corrected full runs. | Added recursive non-finite-to-null conversion and `allow_nan=False`; the affected runs are excluded and repeated. | Released JSON is standards-compliant and missing statistics are explicit nulls. |
+| D12 | The physical-cluster permutation helper automatically conditioned on both source and source-context, so the protocol's source-only permutation null was absent. | Protocol-to-artifact audit after the first corrected full runs. | Added separate source-only and source-plus-context physical-cluster permutation families with explicit names and separate BH correction. | Both null hypotheses are retained; neither may be silently substituted for the other. |
+| D13 | Figure 1 used unseeded strip-plot jitter, causing a byte-level PNG difference despite identical numerical artifacts. | Two-run hash comparison. | Seeded figure-only jitter before plotting; the affected runs are excluded and repeated. | Figure hashes are now part of the deterministic reproduction gate. |
+| D14 | Context-conditioned physical-cluster permutations formed context strata before clusters, splitting paired DE rows when inner and outer events carried different context labels. | Dependency-unit audit of the external 20-row DE block. | Physical clusters are now formed intact within source first. Source-only nulls stratify whole blocks by size; context-conditioned nulls stratify whole blocks by block size and the sorted member-context signature. | All earlier cluster-permutation controls are discarded; corrected controls never separate a DE pair. |
+| D15 | Source-macro interval code averaged every numeric column, including integer calibration metadata and booleans, and omitted calibration-score and physical-bound audit tables. | Fast-artifact schema audit. | Source macros now average only named endpoint statistics, sum explicitly named evaluation counts, and copy invariant metadata exactly. Exact row/unit calibration scores and negative-lower, above-hydraulic-diameter descriptive, and maximum-width diagnostics are exported. | No averaged metadata field is interpreted as an estimate; above-diameter endpoints are descriptive and not automatically called invalid. |
+| D16 | Split and applicability artifacts obscured the SE/DE composition of fit, threshold-calibration, and test partitions. Geometry-plus-DE connected components placed the comprehensive DE rows in only two large components, and the locked applicability calibration contained no DE rows. | Dependency/event-type composition audit. | Per-split row/group/SE/DE counts, DE-pair allocations, and applicability calibration-score composition are exported. | Applicability thresholds calibrated only on SE rows cannot support a general DE applicability claim; interval partition results must be read with their component composition. |
+| D17 | Retained-minus-full hierarchical bootstrap output reported only the number of nonempty-retention replicates as if it were the requested repetition count. | Statistical estimand audit. | The artifact now reports requested and valid repetitions, the valid fraction, and labels the interval as conditional on nonempty retention. | The conditional interval is not a total-population estimand and is interpreted only with its retention-validity fraction. |
+| D18 | Output hashes covered generated artifacts but not the analysis source, frozen protocol, deviation register, or test-evidence state. | Reproducibility manifest audit. | A governed-file manifest hashes code, protocol, register, tests, and an explicit not-executed-by-script test-evidence placeholder. | The placeholder never claims tests passed; release verification must separately execute and record the test command. |
+| D19 | The first D14--D18 full-run pair produced identical numerical, tabular, and figure artifacts, but the reproducibility manifest embedded the caller-selected `run1` or `run2` output-directory name in the path of `test_evidence.json`. | Required byte-level comparison of two separate full-run directories. | The output-local evidence path is now recorded canonically as `test_evidence.json`; a regression test proves invariance to the surrounding output-directory name. | The affected full-run pair is excluded and repeated; only the post-D19 pair may satisfy the deterministic artifact gate. |
+
+## Blind-validation incident is separate
+
+The TX100 run was prospectively sealed under its own protocol. Its post-reveal
+JSON serialization incident and recovery are documented in
+`BLIND_REVEAL_INCIDENT.md`; they are not part of the retrospective deviations
+above.
+
+## Claim boundary after corrections
+
+The corrected study may support conclusions about reliability loss, interval
+transfer, abstention, and retrospective filtering under documented dataset
+shift. It cannot establish wet-lab feasibility, discovery of a new material or
+microfluidic route, prospective iterative search performance, or a universal
+applicability domain.

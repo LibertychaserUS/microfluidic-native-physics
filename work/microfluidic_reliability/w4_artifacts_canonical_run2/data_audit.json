@@ -1,0 +1,180 @@
+{
+  "D1": {
+    "workbook_sha256": {
+      "Comprehensive_normalized.xlsx": "aebb0136ff812f7233c8fd57ebc0f27f1b935736e8a9c1d4fdc20585f06b9c06",
+      "Generalizability_data_normalized.xlsx": "e90996da3e866e64922dc3b8aaef4b092ee6845fe95aac356c73e90ed108b303"
+    },
+    "n_comprehensive": 868,
+    "n_external": 64,
+    "n_se_rows": 474,
+    "n_de_rows": 394,
+    "n_geometry_groups": 37,
+    "external_sources": {
+      "Galogahi et al": 24,
+      "Lashkaripour et al": 20,
+      "Roumpea et al": 14,
+      "Mazutis et al": 6
+    }
+  },
+  "D2": {
+    "join_type": "one_to_one opaque_row_id merge, followed by stable source row order",
+    "development_rows": 381,
+    "revealed_tx100_rows": 87,
+    "joined_rows": 468,
+    "main_rows": 466,
+    "quarantined_rows": 2,
+    "group_counts": {
+      "0": 63,
+      "0.6": 2,
+      "2": 30,
+      "3.5": 87,
+      "4.33": 15,
+      "11": 178,
+      "20": 93
+    },
+    "input_hashes": {
+      "development_labeled.csv": "b2889726960774acb2b25319f7544c31a1be4f22f319b1a1f4df88f98c7d7ab0",
+      "blind_features.csv": "6f76c9aa91b4f6e01c6b6e600b17f8a2b6600fde4085b0253c68f6b1df3aa29b",
+      "sealed_blind_labels.csv": "0e4c9a2577449446875d69ac51713aba510f7f492d7dffc4b6e3595746cc4fb9"
+    },
+    "custodian_lock": {
+      "manifest_sha256": "24083606729f20afd7266d081c54647750b1952fe6b5f35e25d3aa37b12b373f",
+      "schema_version": "blind-custodian-v1",
+      "artifacts": {
+        "development_labeled": {
+          "file": "development_labeled.csv",
+          "expected_sha256": "b2889726960774acb2b25319f7544c31a1be4f22f319b1a1f4df88f98c7d7ab0",
+          "observed_sha256": "b2889726960774acb2b25319f7544c31a1be4f22f319b1a1f4df88f98c7d7ab0",
+          "sha256_match": true,
+          "expected_rows": 381,
+          "observed_rows": 381,
+          "rows_match": true
+        },
+        "blind_features": {
+          "file": "blind_features.csv",
+          "expected_sha256": "6f76c9aa91b4f6e01c6b6e600b17f8a2b6600fde4085b0253c68f6b1df3aa29b",
+          "observed_sha256": "6f76c9aa91b4f6e01c6b6e600b17f8a2b6600fde4085b0253c68f6b1df3aa29b",
+          "sha256_match": true,
+          "expected_rows": 87,
+          "observed_rows": 87,
+          "rows_match": true
+        },
+        "sealed_blind_labels": {
+          "file": "sealed_blind_labels.csv",
+          "expected_sha256": "0e4c9a2577449446875d69ac51713aba510f7f492d7dffc4b6e3595746cc4fb9",
+          "observed_sha256": "0e4c9a2577449446875d69ac51713aba510f7f492d7dffc4b6e3595746cc4fb9",
+          "sha256_match": true,
+          "expected_rows": 87,
+          "observed_rows": 87,
+          "rows_match": true
+        }
+      },
+      "raw_sources": {
+        "matTrainingDataSet.mat": {
+          "expected_sha256": "7fab0693a7065198468a5d654226f5e2164985e334ed105f91355bdd49fb1a17",
+          "observed_sha256": "7fab0693a7065198468a5d654226f5e2164985e334ed105f91355bdd49fb1a17",
+          "sha256_match": true,
+          "expected_rows": 392,
+          "source_index": 0,
+          "url": "https://zenodo.org/records/7055018/files/matTrainingDataSet.mat?download=1",
+          "zenodo_md5": "c5dd5f3fbfd7c218cea734b205ae502e"
+        },
+        "matTestDataSet.mat": {
+          "expected_sha256": "55f202bd19433331c86ddc65507e834036d294f7f9b4db2275f21ad91f6729da",
+          "observed_sha256": "55f202bd19433331c86ddc65507e834036d294f7f9b4db2275f21ad91f6729da",
+          "sha256_match": true,
+          "expected_rows": 76,
+          "source_index": 1,
+          "url": "https://zenodo.org/records/7055018/files/matTestDataSet.mat?download=1",
+          "zenodo_md5": "a6c41bba18e4f232e7f25e2207fd183c"
+        }
+      },
+      "all_expected_observed_checks_passed": true
+    },
+    "schema_evidence": {
+      "development_expected": [
+        "opaque_row_id",
+        "source_index",
+        "source_row_index",
+        "continuous_flow_ml_min",
+        "dispersed_flow_ml_min",
+        "equilibrium_interfacial_tension_mn_m",
+        "surfactant_concentration_mm",
+        "cmc_mm",
+        "concentration_over_cmc",
+        "target_diameter_mm"
+      ],
+      "development_observed": [
+        "opaque_row_id",
+        "source_index",
+        "source_row_index",
+        "continuous_flow_ml_min",
+        "dispersed_flow_ml_min",
+        "equilibrium_interfacial_tension_mn_m",
+        "surfactant_concentration_mm",
+        "cmc_mm",
+        "concentration_over_cmc",
+        "target_diameter_mm"
+      ],
+      "blind_features_expected": [
+        "opaque_row_id",
+        "source_index",
+        "source_row_index",
+        "continuous_flow_ml_min",
+        "dispersed_flow_ml_min",
+        "equilibrium_interfacial_tension_mn_m",
+        "surfactant_concentration_mm",
+        "cmc_mm",
+        "concentration_over_cmc"
+      ],
+      "blind_features_observed": [
+        "opaque_row_id",
+        "source_index",
+        "source_row_index",
+        "continuous_flow_ml_min",
+        "dispersed_flow_ml_min",
+        "equilibrium_interfacial_tension_mn_m",
+        "surfactant_concentration_mm",
+        "cmc_mm",
+        "concentration_over_cmc"
+      ],
+      "sealed_labels_expected": [
+        "opaque_row_id",
+        "target_diameter_mm"
+      ],
+      "sealed_labels_observed": [
+        "opaque_row_id",
+        "target_diameter_mm"
+      ]
+    },
+    "unit_evidence": {
+      "declared_units": {
+        "continuous_flow_ml_min": "mL/min",
+        "dispersed_flow_ml_min": "mL/min",
+        "equilibrium_interfacial_tension_mn_m": "mN/m",
+        "surfactant_concentration_mm": "mM",
+        "cmc_mm": "mM",
+        "concentration_over_cmc": "dimensionless",
+        "target_diameter_mm": "mm"
+      },
+      "positive_columns_checked": [
+        "continuous_flow_ml_min",
+        "dispersed_flow_ml_min",
+        "equilibrium_interfacial_tension_mn_m",
+        "target_diameter_mm"
+      ],
+      "nonnegative_columns_checked": [
+        "surfactant_concentration_mm",
+        "cmc_mm"
+      ],
+      "SI_conversion_contract": {
+        "mL/min_to_m3/s": 1.6666666666666667e-08,
+        "mN/m_to_N/m": 0.001
+      }
+    },
+    "tx100_status": "post_reveal_retrospective",
+    "anchor_invalid_rows": 6,
+    "feature_contract": "B1 four published inputs (Qc, Qd, gamma_eq, c/CMC)",
+    "size_proxy": "Kalli/Chagot anchor diameter (label-free), um"
+  }
+}

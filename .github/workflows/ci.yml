@@ -1,0 +1,50 @@
+name: release integrity
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    name: manifests, ledger and policy (standard library)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Release-infrastructure tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Repository publication policy (no raw data, sealed labels, model binaries, secrets or private paths)
+        run: python scripts/validate_repository_policy.py .
+      - name: Strict JSON (no NaN / Infinity, no duplicate keys)
+        run: python scripts/validate_strict_json.py .
+      - name: Release file manifest
+        run: python scripts/release_manifest.py verify --root . --manifest hashes/release_manifest.json
+      - name: Appendix D hash registry
+        run: python scripts/verify_hash_registry.py
+      - name: Canonical run-pair manifests
+        run: python scripts/verify_run_manifests.py
+      - name: Manuscript number ledger (English)
+        run: python manuscript/tools/check_numbers.py --work work/microfluidic_reliability --skip-runpair
+      - name: Manuscript number ledger (Chinese mirror)
+        run: python manuscript/tools/check_numbers.py --work work/microfluidic_reliability --skip-runpair --tex manuscript/main_zh.tex --literal-field literal_zh --cooccur-field cooccur_zh
+
+  unit-tests:
+    name: unit tests without data (Python 3.12)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install the CI subset of the pinned environment
+        run: python -m pip install -r requirements/ci.txt
+      - name: W3 / W4 / W5 invariant tests (data-dependent cases skip without MICROFLUIDIC_WORK)
+        working-directory: scaleup
+        run: python -m unittest w3.tests.test_w3 w3.tests.test_w4 w3.tests.test_w5 -v
+      - name: Audited-suite tests that need neither the raw data nor PyTorch
+        run: python -m unittest work.microfluidic_reliability.tests.test_strict_json work.microfluidic_reliability.tests.test_blind_workflow work.microfluidic_reliability.tests.test_blind_posthoc_analysis work.microfluidic_reliability.tests.test_expanded_audit_fixes -v

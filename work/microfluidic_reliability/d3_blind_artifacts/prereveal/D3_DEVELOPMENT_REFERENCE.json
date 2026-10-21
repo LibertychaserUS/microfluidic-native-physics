@@ -1,0 +1,41 @@
+{
+  "schema_version": "d3-development-reference-v1",
+  "estimand": "mean over 5 grouped CV folds (GroupKFold over ID, shuffle, seed 42) of SIZE MAPE on development rows",
+  "n_development_rows": 246,
+  "reference_mape_percent": 39.41434454517279,
+  "folds": [
+    {
+      "fold": 0,
+      "n_held": 50,
+      "mape_percent": 51.30446071517629
+    },
+    {
+      "fold": 1,
+      "n_held": 49,
+      "mape_percent": 31.264026757801034
+    },
+    {
+      "fold": 2,
+      "n_held": 49,
+      "mape_percent": 35.24510414806708
+    },
+    {
+      "fold": 3,
+      "n_held": 49,
+      "mape_percent": 41.035276771757836
+    },
+    {
+      "fold": 4,
+      "n_held": 49,
+      "mape_percent": 38.22285433306171
+    }
+  ],
+  "criteria_thresholds_mape_percent": {
+    "reproduction_success": 49.267930681465984,
+    "strong_replication": 39.41434454517279
+  },
+  "multipliers": {
+    "reproduction_success": 1.25,
+    "strong_replication": 1.0
+  }
+}

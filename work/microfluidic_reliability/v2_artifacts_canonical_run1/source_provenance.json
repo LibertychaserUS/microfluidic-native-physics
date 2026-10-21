@@ -1,0 +1,14 @@
+{
+  "dataset_license": "CC BY 4.0",
+  "dataset_url": "https://zenodo.org/records/7055018",
+  "joined_input_sha256": {
+    "blind_features.csv": "6f76c9aa91b4f6e01c6b6e600b17f8a2b6600fde4085b0253c68f6b1df3aa29b",
+    "development_labeled.csv": "b2889726960774acb2b25319f7544c31a1be4f22f319b1a1f4df88f98c7d7ab0",
+    "sealed_blind_labels.csv": "0e4c9a2577449446875d69ac51713aba510f7f492d7dffc4b6e3595746cc4fb9"
+  },
+  "raw_mat_sha256": {
+    "matTestDataSet.mat": "55f202bd19433331c86ddc65507e834036d294f7f9b4db2275f21ad91f6729da",
+    "matTrainingDataSet.mat": "7fab0693a7065198468a5d654226f5e2164985e334ed105f91355bdd49fb1a17"
+  },
+  "source_article_doi": "10.1039/D2LC00416J"
+}

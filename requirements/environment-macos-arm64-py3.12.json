@@ -1,0 +1,21 @@
+{
+  "python": "3.12.13",
+  "platform": "macOS (arm64)",
+  "numpy": "2.5.1",
+  "pandas": "3.0.3",
+  "scipy": "1.18.0",
+  "scikit_learn": "1.9.0",
+  "xgboost": "3.3.0",
+  "torch": "2.13.0",
+  "matplotlib": "3.11.0",
+  "seaborn": "0.13.2",
+  "openpyxl": "3.1.5",
+  "thread_environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "note": "Consolidated from the environment.json files written by the canonical runs; each run directory keeps its own record."
+}

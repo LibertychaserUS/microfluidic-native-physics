@@ -1,0 +1,102 @@
+{
+  "split_protocols": [
+    {
+      "name": "row_random_reproduction",
+      "repeats": 15,
+      "group_columns": null,
+      "dependency_aware": false
+    },
+    {
+      "name": "exact_input_dependency_group",
+      "repeats": 15,
+      "group_columns": [
+        "Orifice width (um)",
+        "viscosity ratio",
+        "Capillary number",
+        "Flow rate ratio",
+        "Normalized channel depth",
+        "Normalized dispersed inlet",
+        "Normalized continuous inlet",
+        "Normalized outlet width"
+      ],
+      "dependency_aware": true
+    },
+    {
+      "name": "geometry_dependency_group",
+      "repeats": 30,
+      "group_columns": [
+        "Orifice width (um)",
+        "Normalized channel depth",
+        "Normalized dispersed inlet",
+        "Normalized continuous inlet",
+        "Normalized outlet width"
+      ],
+      "dependency_aware": true
+    },
+    {
+      "name": "device_fluid_dependency_group",
+      "repeats": 30,
+      "group_columns": [
+        "Orifice width (um)",
+        "Normalized channel depth",
+        "Normalized dispersed inlet",
+        "Normalized continuous inlet",
+        "Normalized outlet width",
+        "viscosity ratio"
+      ],
+      "dependency_aware": true
+    }
+  ],
+  "models": [
+    "xgboost",
+    "random_forest",
+    "hist_gradient_boosting"
+  ],
+  "risk_quantiles": [
+    0.9,
+    0.95,
+    0.975,
+    0.99
+  ],
+  "relative_tolerances": [
+    0.05,
+    0.1,
+    0.15,
+    0.2
+  ],
+  "absolute_tolerances_um": [
+    5.0,
+    10.0,
+    15.0,
+    20.0
+  ],
+  "target_grid_um": [
+    30.0,
+    40.0,
+    50.0,
+    60.0,
+    70.0,
+    80.0,
+    90.0,
+    100.0,
+    110.0,
+    120.0,
+    130.0,
+    140.0,
+    150.0,
+    160.0,
+    170.0,
+    180.0,
+    190.0,
+    200.0,
+    210.0,
+    220.0,
+    230.0
+  ],
+  "top_k": [
+    1,
+    3,
+    5
+  ],
+  "fast_mode": false
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "w3-benchmark-v0",
+  "protocol_file": "W3_PROTOCOL.md",
+  "protocol_sha256": "8f058306de4d51de1c3708443ed46d7c1556fef95ba3479a1cc7389ee46cb3f8",
+  "run_mode": "locked_full_study",
+  "settings": {
+    "fast": false,
+    "n_random_seeds": 15,
+    "n_geometry_seeds": 30,
+    "permutations": 2000,
+    "ensemble_members": 20,
+    "nominal_coverage": 0.9,
+    "threshold_quantile": 0.95
+  },
+  "point_models": [
+    "xgboost",
+    "random_forest",
+    "mlp"
+  ],
+  "interval_methods": [
+    "split_conformal",
+    "cqr",
+    "mondrian_group_conformal",
+    "ensemble_variance"
+  ],
+  "applicability_scores": [
+    "knn_5",
+    "mahalanobis_oas",
+    "isolation_forest",
+    "domain_classifier",
+    "density_ratio_knn",
+    "random_score",
+    "size_only"
+  ],
+  "candidate_level_reference_model": "xgboost",
+  "cell_families": [
+    "D1_de_to_se",
+    "D1_external",
+    "D1_geometry",
+    "D1_random",
+    "D1_se_to_de",
+    "D2_chemistry_loco",
+    "D2_random"
+  ],
+  "n_cells": 69
+}

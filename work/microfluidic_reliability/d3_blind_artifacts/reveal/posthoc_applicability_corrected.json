@@ -1,0 +1,445 @@
+{
+  "schema_version": "d3-posthoc-applicability-correction-v1",
+  "status": "post-reveal recomputation; frozen reveal artifacts unchanged",
+  "defect": "applicability_block received signed relative error; protocol defines risk on |relative error|",
+  "source_hashes": {
+    "blind_reveal_results.json": "1f6a96c14000eae6fea409c0dfa11f6968596ce3ac4fa6a66b1f1770b70b6d13",
+    "sealed_primary_scored_rows.csv": "fff8e81112ed7419b37dc2a305142cd14ab3a3e6f77fbe04ecb137f340bcb98a",
+    "sealed_secondary_scored_rows.csv": "94f3a1d0e6c741ea4ffb54442084ea9eb49f5d0c86a5c53c3b56b4696a242b27"
+  },
+  "sets": {
+    "sealed_primary_laboratory_B": {
+      "n_rows": 57,
+      "physically_invalid_point_predictions": {
+        "n_negative_predicted_size": 22,
+        "fraction_negative_predicted_size": 0.38596491228070173,
+        "n_negative_interval_lower": 46,
+        "fraction_negative_interval_lower": 0.8070175438596491
+      },
+      "frozen_full_pool_value_was_signed_mean": -0.6997482566719311,
+      "corrected_applicability": {
+        "full_pool_relative_risk": 2.4038688260540924,
+        "n_reliable_full_pool": 0,
+        "reliable_definition": "absolute relative error <= 0.1",
+        "rules": {
+          "knn_5": {
+            "retained_count": 7,
+            "retention_fraction": 0.12280701754385964,
+            "candidate_reduction_fraction": 0.8771929824561404,
+            "retained_relative_risk": 1.0788093155300496,
+            "full_pool_relative_risk": 2.4038688260540924,
+            "risk_lower_than_full_pool": true,
+            "reliable_candidate_precision": 0.0,
+            "reliable_candidate_recall": null,
+            "strict_minmax_retention_fraction": 0.3157894736842105,
+            "strict_minmax_relative_risk": 1.61362493391045,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": false,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 7,
+              "observed_relative_risk": 1.0788093155300496,
+              "random_mean_risk": 2.408118636597175,
+              "random_risk_95_interval": [
+                1.3879500830354505,
+                3.4726262567403126
+              ],
+              "one_sided_p_random_risk_le_observed": 0.0045995400459954,
+              "survives_at_0_05": true,
+              "degenerate_null": false,
+              "repetitions": 10000
+            },
+            "beneficial_under_all_locked_criteria": true,
+            "bh_adjusted_p_across_four_rules": 0.0183981601839816,
+            "bh_significant_at_0_05": true
+          },
+          "mahalanobis_oas": {
+            "retained_count": 2,
+            "retention_fraction": 0.03508771929824561,
+            "candidate_reduction_fraction": 0.9649122807017544,
+            "retained_relative_risk": 1.294620073245874,
+            "full_pool_relative_risk": 2.4038688260540924,
+            "risk_lower_than_full_pool": true,
+            "reliable_candidate_precision": 0.0,
+            "reliable_candidate_recall": null,
+            "strict_minmax_retention_fraction": 0.3157894736842105,
+            "strict_minmax_relative_risk": 1.61362493391045,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": false,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 2,
+              "observed_relative_risk": 1.294620073245874,
+              "random_mean_risk": 2.4246191857235124,
+              "random_risk_95_interval": [
+                0.5675113906474335,
+                4.434868698545987
+              ],
+              "one_sided_p_random_risk_le_observed": 0.16878312168783122,
+              "survives_at_0_05": false,
+              "degenerate_null": false,
+              "repetitions": 10000
+            },
+            "beneficial_under_all_locked_criteria": false,
+            "bh_adjusted_p_across_four_rules": 0.22504416225044163,
+            "bh_significant_at_0_05": false
+          },
+          "isolation_forest": {
+            "retained_count": 0,
+            "retention_fraction": 0.0,
+            "candidate_reduction_fraction": 1.0,
+            "retained_relative_risk": null,
+            "full_pool_relative_risk": 2.4038688260540924,
+            "risk_lower_than_full_pool": false,
+            "reliable_candidate_precision": null,
+            "reliable_candidate_recall": null,
+            "strict_minmax_retention_fraction": 0.3157894736842105,
+            "strict_minmax_relative_risk": 1.61362493391045,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": false,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 0,
+              "observed_relative_risk": null,
+              "random_mean_risk": null,
+              "one_sided_p_random_risk_le_observed": 1.0,
+              "survives_at_0_05": false,
+              "degenerate_null": true,
+              "repetitions": 0
+            },
+            "beneficial_under_all_locked_criteria": false,
+            "bh_adjusted_p_across_four_rules": 1.0,
+            "bh_significant_at_0_05": false
+          },
+          "domain_classifier": {
+            "retained_count": 1,
+            "retention_fraction": 0.017543859649122806,
+            "candidate_reduction_fraction": 0.9824561403508771,
+            "retained_relative_risk": 0.23719740190100042,
+            "full_pool_relative_risk": 2.4038688260540924,
+            "risk_lower_than_full_pool": true,
+            "reliable_candidate_precision": 0.0,
+            "reliable_candidate_recall": null,
+            "strict_minmax_retention_fraction": 0.3157894736842105,
+            "strict_minmax_relative_risk": 1.61362493391045,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": false,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 1,
+              "observed_relative_risk": 0.23719740190100042,
+              "random_mean_risk": 2.4173596748931097,
+              "random_risk_95_interval": [
+                0.18580523730955584,
+                4.772604779274293
+              ],
+              "one_sided_p_random_risk_le_observed": 0.0527947205279472,
+              "survives_at_0_05": false,
+              "degenerate_null": false,
+              "repetitions": 10000
+            },
+            "beneficial_under_all_locked_criteria": false,
+            "bh_adjusted_p_across_four_rules": 0.1055894410558944,
+            "bh_significant_at_0_05": false
+          },
+          "random_score": {
+            "retained_count": 57,
+            "retention_fraction": 1.0,
+            "candidate_reduction_fraction": 0.0,
+            "retained_relative_risk": 2.4038688260540924,
+            "full_pool_relative_risk": 2.4038688260540924,
+            "risk_lower_than_full_pool": false,
+            "reliable_candidate_precision": 0.0,
+            "reliable_candidate_recall": null,
+            "strict_minmax_retention_fraction": 0.3157894736842105,
+            "strict_minmax_relative_risk": 1.61362493391045,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": false,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 57,
+              "observed_relative_risk": 2.4038688260540924,
+              "random_mean_risk": 2.4038688260540924,
+              "one_sided_p_random_risk_le_observed": 1.0,
+              "survives_at_0_05": false,
+              "degenerate_null": true,
+              "repetitions": 0
+            },
+            "beneficial_under_all_locked_criteria": false
+          },
+          "predicted_size_only": {
+            "retained_count": 23,
+            "retention_fraction": 0.40350877192982454,
+            "candidate_reduction_fraction": 0.5964912280701755,
+            "retained_relative_risk": 1.2044698446169813,
+            "full_pool_relative_risk": 2.4038688260540924,
+            "risk_lower_than_full_pool": true,
+            "reliable_candidate_precision": 0.0,
+            "reliable_candidate_recall": null,
+            "strict_minmax_retention_fraction": 0.3157894736842105,
+            "strict_minmax_relative_risk": 1.61362493391045,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": true,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 23,
+              "observed_relative_risk": 1.2044698446169813,
+              "random_mean_risk": 2.401678397768545,
+              "random_risk_95_interval": [
+                1.934001213203214,
+                2.87453990810147
+              ],
+              "one_sided_p_random_risk_le_observed": 9.999000099990002e-05,
+              "survives_at_0_05": true,
+              "degenerate_null": false,
+              "repetitions": 10000
+            },
+            "beneficial_under_all_locked_criteria": false
+          },
+          "strict_minmax": {
+            "retained_count": 18,
+            "retention_fraction": 0.3157894736842105,
+            "candidate_reduction_fraction": 0.6842105263157895,
+            "retained_relative_risk": 1.61362493391045,
+            "full_pool_relative_risk": 2.4038688260540924,
+            "risk_lower_than_full_pool": true,
+            "reliable_candidate_precision": 0.0,
+            "reliable_candidate_recall": null,
+            "strict_minmax_retention_fraction": 0.3157894736842105,
+            "strict_minmax_relative_risk": 1.61362493391045,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": true,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 18,
+              "observed_relative_risk": 1.61362493391045,
+              "random_mean_risk": 2.4052390456142345,
+              "random_risk_95_interval": [
+                1.836487264459328,
+                2.97854145462102
+              ],
+              "one_sided_p_random_risk_le_observed": 0.0026997300269973002,
+              "survives_at_0_05": true,
+              "degenerate_null": false,
+              "repetitions": 10000
+            },
+            "beneficial_under_all_locked_criteria": false
+          }
+        }
+      },
+      "median_abs_relative_error_by_strict_minmax": {
+        "False": 2.7546606845573773,
+        "True": 0.8844530550417229
+      }
+    },
+    "sealed_secondary_operator_B": {
+      "n_rows": 12,
+      "physically_invalid_point_predictions": {
+        "n_negative_predicted_size": 3,
+        "fraction_negative_predicted_size": 0.25,
+        "n_negative_interval_lower": 11,
+        "fraction_negative_interval_lower": 0.9166666666666666
+      },
+      "frozen_full_pool_value_was_signed_mean": -0.25205584832750877,
+      "corrected_applicability": {
+        "full_pool_relative_risk": 2.2026543375492262,
+        "n_reliable_full_pool": 3,
+        "reliable_definition": "absolute relative error <= 0.1",
+        "rules": {
+          "knn_5": {
+            "retained_count": 9,
+            "retention_fraction": 0.75,
+            "candidate_reduction_fraction": 0.25,
+            "retained_relative_risk": 2.2379816046085934,
+            "full_pool_relative_risk": 2.2026543375492262,
+            "risk_lower_than_full_pool": false,
+            "reliable_candidate_precision": 0.2222222222222222,
+            "reliable_candidate_recall": 0.6666666666666666,
+            "strict_minmax_retention_fraction": 1.0,
+            "strict_minmax_relative_risk": 2.2026543375492262,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": false,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 9,
+              "observed_relative_risk": 2.2379816046085934,
+              "random_mean_risk": 2.20210940339626,
+              "random_risk_95_interval": [
+                1.3802318973828163,
+                2.8765025284054886
+              ],
+              "one_sided_p_random_risk_le_observed": 0.5095490450954905,
+              "survives_at_0_05": false,
+              "degenerate_null": false,
+              "repetitions": 10000
+            },
+            "beneficial_under_all_locked_criteria": false,
+            "bh_adjusted_p_across_four_rules": 0.680931906809319,
+            "bh_significant_at_0_05": false
+          },
+          "mahalanobis_oas": {
+            "retained_count": 7,
+            "retention_fraction": 0.5833333333333334,
+            "candidate_reduction_fraction": 0.41666666666666663,
+            "retained_relative_risk": 2.2923779170346665,
+            "full_pool_relative_risk": 2.2026543375492262,
+            "risk_lower_than_full_pool": false,
+            "reliable_candidate_precision": 0.2857142857142857,
+            "reliable_candidate_recall": 0.6666666666666666,
+            "strict_minmax_retention_fraction": 1.0,
+            "strict_minmax_relative_risk": 2.2026543375492262,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": false,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 7,
+              "observed_relative_risk": 2.2923779170346665,
+              "random_mean_risk": 2.2100435656263473,
+              "random_risk_95_interval": [
+                1.0304371265661105,
+                3.450809318839711
+              ],
+              "one_sided_p_random_risk_le_observed": 0.5661433856614339,
+              "survives_at_0_05": false,
+              "degenerate_null": false,
+              "repetitions": 10000
+            },
+            "beneficial_under_all_locked_criteria": false,
+            "bh_adjusted_p_across_four_rules": 0.680931906809319,
+            "bh_significant_at_0_05": false
+          },
+          "isolation_forest": {
+            "retained_count": 8,
+            "retention_fraction": 0.6666666666666666,
+            "candidate_reduction_fraction": 0.33333333333333337,
+            "retained_relative_risk": 1.5850941408889716,
+            "full_pool_relative_risk": 2.2026543375492262,
+            "risk_lower_than_full_pool": true,
+            "reliable_candidate_precision": 0.375,
+            "reliable_candidate_recall": 1.0,
+            "strict_minmax_retention_fraction": 1.0,
+            "strict_minmax_relative_risk": 2.2026543375492262,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": false,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 8,
+              "observed_relative_risk": 1.5850941408889716,
+              "random_mean_risk": 2.199964377902299,
+              "random_risk_95_interval": [
+                1.2223907087601515,
+                3.13994216576725
+              ],
+              "one_sided_p_random_risk_le_observed": 0.11828817118288171,
+              "survives_at_0_05": false,
+              "degenerate_null": false,
+              "repetitions": 10000
+            },
+            "beneficial_under_all_locked_criteria": false,
+            "bh_adjusted_p_across_four_rules": 0.47315268473152683,
+            "bh_significant_at_0_05": false
+          },
+          "domain_classifier": {
+            "retained_count": 7,
+            "retention_fraction": 0.5833333333333334,
+            "candidate_reduction_fraction": 0.41666666666666663,
+            "retained_relative_risk": 2.455826547570959,
+            "full_pool_relative_risk": 2.2026543375492262,
+            "risk_lower_than_full_pool": false,
+            "reliable_candidate_precision": 0.0,
+            "reliable_candidate_recall": 0.0,
+            "strict_minmax_retention_fraction": 1.0,
+            "strict_minmax_relative_risk": 2.2026543375492262,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": false,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 7,
+              "observed_relative_risk": 2.455826547570959,
+              "random_mean_risk": 2.2042556921768983,
+              "random_risk_95_interval": [
+                1.0304371265661105,
+                3.4486161859127655
+              ],
+              "one_sided_p_random_risk_le_observed": 0.680931906809319,
+              "survives_at_0_05": false,
+              "degenerate_null": false,
+              "repetitions": 10000
+            },
+            "beneficial_under_all_locked_criteria": false,
+            "bh_adjusted_p_across_four_rules": 0.680931906809319,
+            "bh_significant_at_0_05": false
+          },
+          "random_score": {
+            "retained_count": 12,
+            "retention_fraction": 1.0,
+            "candidate_reduction_fraction": 0.0,
+            "retained_relative_risk": 2.2026543375492262,
+            "full_pool_relative_risk": 2.2026543375492262,
+            "risk_lower_than_full_pool": false,
+            "reliable_candidate_precision": 0.25,
+            "reliable_candidate_recall": 1.0,
+            "strict_minmax_retention_fraction": 1.0,
+            "strict_minmax_relative_risk": 2.2026543375492262,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": true,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 12,
+              "observed_relative_risk": 2.2026543375492262,
+              "random_mean_risk": 2.2026543375492262,
+              "one_sided_p_random_risk_le_observed": 1.0,
+              "survives_at_0_05": false,
+              "degenerate_null": true,
+              "repetitions": 0
+            },
+            "beneficial_under_all_locked_criteria": false
+          },
+          "predicted_size_only": {
+            "retained_count": 6,
+            "retention_fraction": 0.5,
+            "candidate_reduction_fraction": 0.5,
+            "retained_relative_risk": 0.334880460358194,
+            "full_pool_relative_risk": 2.2026543375492262,
+            "risk_lower_than_full_pool": true,
+            "reliable_candidate_precision": 0.5,
+            "reliable_candidate_recall": 1.0,
+            "strict_minmax_retention_fraction": 1.0,
+            "strict_minmax_relative_risk": 2.2026543375492262,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": false,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 6,
+              "observed_relative_risk": 0.334880460358194,
+              "random_mean_risk": 2.193218106731821,
+              "random_risk_95_interval": [
+                0.8624092006998606,
+                3.535052623177631
+              ],
+              "one_sided_p_random_risk_le_observed": 0.0040995900409959,
+              "survives_at_0_05": true,
+              "degenerate_null": false,
+              "repetitions": 10000
+            },
+            "beneficial_under_all_locked_criteria": false
+          },
+          "strict_minmax": {
+            "retained_count": 12,
+            "retention_fraction": 1.0,
+            "candidate_reduction_fraction": 0.0,
+            "retained_relative_risk": 2.2026543375492262,
+            "full_pool_relative_risk": 2.2026543375492262,
+            "risk_lower_than_full_pool": false,
+            "reliable_candidate_precision": 0.25,
+            "reliable_candidate_recall": 1.0,
+            "strict_minmax_retention_fraction": 1.0,
+            "strict_minmax_relative_risk": 2.2026543375492262,
+            "retention_comparable_to_strict_minmax_within_10pct_pool": true,
+            "not_weaker_than_strict_minmax_when_comparable": true,
+            "matched_budget_random_retention": {
+              "retained_count": 12,
+              "observed_relative_risk": 2.2026543375492262,
+              "random_mean_risk": 2.2026543375492262,
+              "one_sided_p_random_risk_le_observed": 1.0,
+              "survives_at_0_05": false,
+              "degenerate_null": true,
+              "repetitions": 0
+            },
+            "beneficial_under_all_locked_criteria": false
+          }
+        }
+      },
+      "median_abs_relative_error_by_strict_minmax": {
+        "True": 0.7186743667310405
+      }
+    }
+  }
+}

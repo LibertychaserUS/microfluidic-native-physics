@@ -1,0 +1,2122 @@
+% SPDX-License-Identifier: CC-BY-4.0
+% Manuscript draft v0.3.2 (2026-10-21). Every number in this file is checked by
+% tools/check_numbers.py against the artifact files named in numbers_ledger.json.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf,justification=raggedright,singlelinecheck=false}
+
+\graphicspath{{figures/}}
+\newcommand{\hashtrunc}[2]{\texttt{#1\ldots#2}}
+\newcommand{\um}{\textmu m}
+\newcommand{\tox}{TX100}
+
+\title{Reliability Audits for Machine-Learned Droplet-Microfluidic Design Surrogates:\\
+A Sealed Negative Validation, Shift Diagnostics, and Physics-Guided Hard Constraints}
+\author{Zhiyuan Zhang\thanks{Independent research. Correspondence: see the public
+  repository \url{https://github.com/LibertychaserUS/microfluidic-native-physics}.
+  Manuscript text and original figures are released under CC~BY~4.0; code under
+  Apache-2.0. No arXiv identifier or DOI has been assigned to this work.}}
+\date{Draft v0.3.2 --- 21 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Machine-learned surrogates increasingly guide droplet-microfluidic design, yet
+their reliability is usually reported on random train/test splits. We present a retrospective reliability audit on public tabular data.
+Reproducing a published flow-focusing baseline, random-split diameter error
+(5.27\% MAPE) roughly doubles on external literature sources (10.97\%),
+nominal 90\% conformal intervals cover only 55.1\% of external rows, and
+label-free applicability pruning raises the 10~\um{} success rate from 59.4\%
+of all external candidates to 92.3\% of retained candidates while keeping
+63.2\% of all successful candidates---a gain that a dependency-aware
+re-analysis attributes to which literature sources are retained rather than
+to within-source discrimination. Two pre-registered sealed validations
+returned negative results: a frozen model predicting an entire held-out
+surfactant chemistry (87 rows) reached 19.84\% MAPE with 44.8\% coverage
+although every row lay inside the marginal training ranges, and a second predicting an independent laboratory's liposome sizes (57 rows) reached
+240.39\% MAPE with negative diameters on 38.6\% of rows; a post-hoc log-target
+refit removes the negative predictions but still errs at about two and a half
+times its own development reference. A physics-guided regressor with hard
+structural constraints---not a classical PINN---frozen before fitting does
+not reduce chemistry-macro error relative to the published baseline, though
+its bounds eliminate physically invalid predictions. A method matrix over
+seven shift cells on both datasets, extended to three uncertainty-aware model
+families and to covariate-shift-weighted conformal intervals, shows that
+device-type shift between single and double emulsions is the largest shift in
+these data (error ratios 3.30 and 10.31 relative to the random-split
+reference) and that no model family or reweighting restores interval
+coverage where training and test supports do not overlap. To our knowledge,
+no prior peer-reviewed sealed-prediction audit of microfluidic design
+surrogates exists; the search basis is documented. All analyses are
+retrospective on public data; no wet-lab validation is performed or claimed.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+Automated experimentation in droplet microfluidics faces a combinatorial design
+space: channel geometry, flow rates, fluid properties and surfactant chemistry
+interact to set droplet size and generation rate. Machine-learned (ML)
+surrogates trained on public experimental tables are now used to navigate
+that space~\cite{lashkaripour2021,lashkaripour2024,samari2025}. Their reported
+accuracy, however, almost always comes from random row-level train/test
+splits, which do not represent how a surrogate is deployed: a practitioner
+applies it to a new device, a new fluid pair, or a new surfactant that the
+training table never contained.
+
+Two numbers from our independent reproduction of the DAFD~3.0
+baseline~\cite{lashkaripour2024} motivate this paper. On 15 random 80/20
+splits of the 868-row comprehensive table, the published XGBoost configuration
+reaches a diameter MAPE of $5.268\% \pm 0.421\%$; on the 64-row external
+literature set released with the same paper, the error is
+$10.971\% \pm 0.552\%$---roughly a doubling. Nominal 90\% conformalised
+quantile-regression intervals calibrated on random splits cover 91.03\% of
+internal test rows but only 55.10\% of external rows.
+
+Rather than proposing another inverse-design algorithm or a general
+physics-informed architecture, this work presents a systematic reliability
+audit of microfluidic ML design surrogates under deployment shift, together
+with the evidence that audit produced; it makes no claim about hard versus
+soft constraints in general. That evidence is specific to
+droplet-microfluidic surrogates and could not have been obtained without
+sealed tests: a failure on an unseen surfactant chemistry that occurs while
+every held-out row lies inside the marginal training ranges, so that
+marginal applicability screens are blind to it; a quantified account of what
+label-free pruning actually buys on literature data---a source-level gain
+that a hydraulic-diameter proxy matches; a frozen test of whether physics
+guidance with hard structural bounds changes any of this; a method-matrix
+benchmark over seven shift cells on both public datasets; and a second
+sealed validation on an independent public dataset under laboratory shift.
+Six components are reported together:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+\item \textbf{A distribution-shift benchmark.} We reproduce the DAFD~3.0
+  baseline and quantify the degradation from random splits to grouped splits
+  and to external literature sources, including the loss of conformal coverage
+  (Sections~\ref{sec:r1}--\ref{sec:r3}, \ref{sec:r7}).
+\item \textbf{A sealed negative validation (V1).} We sealed the complete
+  Triton~X-100 (\tox{}) surfactant group of the public Chagot et
+  al.~\cite{chagot2022} dataset before any label was seen, froze the model,
+  endpoints and decision criteria, and revealed the labels once. The result is
+  negative and is retained in full, together with a complete record of the
+  reveal (Sections~\ref{sec:v1protocol}, \ref{sec:incident},
+  \ref{sec:r5}).
+\item \textbf{A precision--recall account of label-free pruning.} Applicability
+  screens built only from training inputs raise the success rate of retained
+  candidates but discard successful candidates; we report both numbers with
+  their denominators, together with negative controls that show the gain is
+  source-level rather than candidate-level (Sections~\ref{sec:r4},
+  \ref{sec:r7}).
+\item \textbf{An audited design-side object (V2).} A native-variable,
+  physics-guided regressor with hard structural constraints---not a classical
+  PINN---was frozen under its own protocol before fitting and evaluated only
+  retrospectively after the \tox{} reveal. Its locked decision rule returns a
+  negative/mixed verdict: it does not reduce chemistry-macro error relative to
+  the published-feature baseline, while its hard output bounds eliminate
+  physically invalid point predictions (Sections~\ref{sec:v2protocol},
+  \ref{sec:r6}).
+\item \textbf{A method-matrix benchmark across shift types.} Under its own
+  frozen protocol, three point models, four interval estimators and five
+  applicability scores (plus random and size-only controls) were run on seven
+  shift cells spanning both datasets---random reference, device geometry,
+  cross-literature, single-to-double and double-to-single emulsion, and
+  whole-chemistry leave-one-out---in two independent runs with byte-identical
+  artifact manifests; two further frozen protocols rerun the same cells for
+  three uncertainty-aware model families and for covariate-shift-weighted
+  conformal intervals (Sections~\ref{sec:w3protocol}, \ref{sec:w4protocol},
+  \ref{sec:w5protocol}, \ref{sec:r8}).
+\item \textbf{A second sealed validation on an independent dataset.} The
+  sealed-prediction protocol was instantiated a second time, before download,
+  on a public cross-laboratory liposome dataset, with the entire second
+  laboratory sealed; the result is negative and is retained with its full
+  chronology (Sections~\ref{sec:d3protocol}, \ref{sec:r9}).
+\end{enumerate}
+
+Section~\ref{sec:outlook} states, as a plan rather than a result, what these
+failure modes imply for collecting data and building surrogates that stay
+accurate on larger devices and new materials.
+
+We make two deliberately limited claims, each qualified by the search basis in
+Appendix~\ref{app:search}. First, to our knowledge, no peer-reviewed work
+applies a sealed-prediction reliability audit to microfluidic ML design
+surrogates; this paper reports two such audits on two independent public
+datasets. Second, to our knowledge, no peer-reviewed work unifies physics
+guidance, architecture-level hard constraints and inverse-design evaluation
+for microfluidics in a single framework; the nearest neighbours are a
+periodicity-enforcing network for deterministic-lateral-displacement
+design~\cite{lee2025} and an optimisation-layer repair
+operator~\cite{micromixer2026}, which differ from ours in how the components
+are combined rather than in kind. We do not claim to be the first microfluidic
+inverse-design or ML system, the first physics-guided microfluidic model, or
+the first to publish a negative result.
+
+\paragraph{Pre-stated hypotheses.} The project record of 16~July~2026 fixed
+four falsifiable hypotheses before the expanded analysis was implemented
+(translated here from the original record; wording otherwise unchanged):
+\begin{description}[leftmargin=*,itemsep=1pt]
+\item[H1] Random 80/20 splitting overestimates model reliability under
+  cross-literature, cross-device and cross-fluid conditions.
+\item[H2] Uncertainty intervals that achieve nominal coverage on
+  in-distribution random splits lose coverage markedly under independent
+  literature shift.
+\item[H3] A label-free applicability domain built only from the training-input
+  distribution can identify a subset of high-risk external candidates and
+  raise the fraction of retained candidates that meet a diameter tolerance.
+\item[H4] Coupling the droplet-diameter model with the volume-conservation
+  relation unifies geometry and flow-rate search into an engineering-executable
+  diameter--frequency target.
+\end{description}
+H1--H3 are evaluated directly; H4 is addressed only at the level of the
+mass-conservation frequency reproduction (Section~\ref{sec:r1}) and is
+otherwise left open.
+
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{ML for droplet and device design.} Design automation of
+flow-focusing droplet generators has progressed from DAFD~1.0
+\cite{lashkaripour2021} through versatility/stability
+optimisation~\cite{mcintyre2023} to DAFD~3.0's single- and double-emulsion
+predictor with constrained search and reported wet-lab
+tests~\cite{lashkaripour2024}. Simulation-trained surrogates
+(DesignFlow~\cite{samari2025}), deterministic-lateral-displacement design
+networks~\cite{vatandoust2022}, modular chip-architecture
+design~\cite{li2026pathchip}, ML-automated microfluidic circuit
+design~\cite{mufg2026} and flow-programming networks~\cite{ceyehao2026}
+cover inverse design across device classes. We treat this literature as the
+object of audit, not as a gap to fill.
+
+\paragraph{Physics-guided modelling and hard constraints.} Physics-guided
+microfluidic models mostly impose physics as soft penalties or as
+physics-informed neural networks that evaluate differential-equation residuals
+\cite{bpgnn2026,flexpinn2026,raissi2019}; a Bayesian-optimised physics-guided
+network for electromagnetic micromixers explicitly lists the efficient
+embedding of macroscopic constraints without full Navier--Stokes solution as
+unresolved~\cite{bpgnn2026}. Architecture-level hard constraints appear in a
+periodicity-enforcing network for DLD devices~\cite{lee2025}, and
+constraint-aware optimisation with repair operators appears in autonomous
+micromixer design~\cite{micromixer2026}. That hard constraints are a concept
+distinct from PINN penalties, and that they can outperform soft penalties
+under extrapolation, is already established in general
+settings~\cite{naturecs2021,baty2023,prnet2026}; we do not re-litigate it. A
+physics-constrained boiling surrogate reports that constraints help inside
+the training envelope but hurt outside it~\cite{filmpinn2026}, which is the
+kind of regime-dependent question our audit quantifies for one microfluidic
+object. The V2 model below is therefore called a physics-guided regressor with
+hard structural constraints, not a classical PINN: the public tables contain
+no velocity or pressure fields, interface coordinates, time coordinates or
+boundary-condition observations at which a PDE residual could be evaluated.
+
+\paragraph{Dimensionless learning versus native variables.} A substantial
+line of work embeds dimensional invariance into learning, discovering
+governing dimensionless groups from scarce data~\cite{xie2022,oppenheimer2023},
+and a recent droplet study that combines dimensional analysis with learning
+reports $R^2$ of 0.80--0.83 on unseen viscosity curves in its training device
+but 0.46 for a strongly shear-thinning fluid and 0.48 for a new channel
+depth~\cite{labchip2025dimless}---degradation under rheology and device
+shift rather than a failure of extrapolation as such. We do not
+claim that modelling in native recorded variables is new or better; most
+tabular microfluidic ML already operates on raw quantities. Our position is an
+\emph{interface discipline}: V2 trusts only natively recorded quantities
+(flow rates, equilibrium interfacial tension, concentration, CMC, a
+no-surfactant indicator), and recomputes flow ratio, capillary and Reynolds
+numbers deterministically from fixed units and device constants; a caller
+cannot supply a dimensionless number independently. The only comparative
+evidence we offer is an ablation under one protocol and one split: a
+native-input XGBoost baseline (B2) has a chemistry-macro MAPE of 9.13\%
+compared with 10.27\% for the published four-input baseline (B1)
+(Section~\ref{sec:r6}). This is a within-protocol ablation, not a reliability
+conclusion about native variables under chemistry shift, and it is not a
+property of V2, which does not beat B1.
+
+\paragraph{Reliability audits, preregistration and negative results.}
+Auditing pointwise reliability after training was framed by Schulam and
+Saria~\cite{schulam2019}; preregistration for predictive modelling has been
+proposed for ML~\cite{hofman2023}; publishing negative results is an
+established practice with its own venues and a recent position
+paper~\cite{karl2024}; leakage is a recognised driver of inflated
+claims~\cite{kapoor2023}. Conformal prediction gives finite-sample marginal
+coverage under exchangeability~\cite{romano2019}, and coverage under covariate
+shift requires additional structure such as a known or estimated density
+ratio~\cite{tibshirani2019}; we claim neither for chemistry-held-out
+transfer. A pre-training identifiability audit for physics-informed surrogates
+in mechanics-governed flow~\cite{cieslak2026} is the closest methodological
+relative outside microfluidics. Within microfluidics, reviews name the lack of
+standardised benchmarks, cross-laboratory generalisation and explicit
+external validation as open problems~\cite{labchip2025review,das2025,
+delgiudice2026}, and a curated cross-laboratory liposome dataset addresses the
+data layer~\cite{smartmicrofluidics2026}; we found no implementation of a
+sealed-prediction audit on a microfluidic design surrogate
+(Appendix~\ref{app:search}).
+
+\paragraph{Relation to Vepa (2026).} Closest to our work, Vepa~\cite{vepa2026}
+pre-registered a validation of machine-learned sodium-cathode voltages compared with
+experimentally anchored literature values and reported its failure. We share
+the preregistration ethos but differ in domain (droplet microfluidics rather
+than materials informatics), in the audited object (a frozen physics-guided,
+hard-constrained design surrogate evaluated alongside the published-feature
+baseline), and in the search-space endpoints (precision and recall of label-free
+pruning, and retrospective target-retrieval coverage). Where Vepa pre-registered a follow-up
+calibration audit, we state that any new blind claim for V2 requires a
+different, never-inspected dataset, and we carried out one such further
+sealed test---for the published-feature baseline, on a third dataset---whose
+negative outcome is reported in Section~\ref{sec:r9}.
+
+\section{Data and Provenance}
+\label{sec:data}
+Three public datasets are used and are referred to as D1, D2 and D3
+throughout. D1 and D2 carry the droplet-diameter audit; D3 serves only the
+second sealed validation and is never pooled with them.
+
+\paragraph{D1: DAFD~3.0 (OSF 938rs).} The comprehensive table has 868 rows and
+the external generalisability table 64 rows from four literature sources
+(Galogahi et al., $n=24$; Lashkaripour et al., $n=20$; Roumpea et al.,
+$n=14$; Mazutis et al., $n=6$)~\cite{lashkaripour2024}. Eight published
+inputs are used: orifice width, viscosity ratio, capillary number, flow-rate
+ratio, and four normalised geometry descriptors; the target is droplet
+diameter. The 868 rows contain 474 single-emulsion rows and 197
+double-emulsion conditions represented by paired inner/outer rows (394 rows);
+the external 64 rows contain 44 single-emulsion rows and 10 double-emulsion
+conditions (20 rows). SHA-256 digests of the four downloaded workbooks are
+listed in Appendix~\ref{app:hashes}. The OSF deposit is not redistributed; its
+object-level redistribution terms remain to be verified before any mirror.
+
+\paragraph{D2: Chagot et al.\ (Zenodo 7055018, CC~BY~4.0).} Two MATLAB tables
+(392 and 76 rows) give 468 configurations on a fixed oval flow-focusing
+junction (195~\um{} $\times$ 190~\um{}) with continuous and dispersed flow
+rates, equilibrium interfacial tension, surfactant concentration and critical
+micelle concentration (CMC) as inputs and droplet diameter (mm) as
+output~\cite{chagot2022}. Chemistry groups are defined only by the recorded
+CMC value. The row arithmetic is as follows. The complete \tox{} group
+(CMC~$=3.5$~mM, 87 rows) was the sealed holdout, so the V1 development set is
+the remaining $468-87=381$ rows. Two rows with CMC~$=0.60$~mM, a value not
+listed among the paper's surfactants, are included there because V1 was
+sealed before any quarantine rule existed. Every later analysis (V2 and the method matrix)
+quarantines those two rows and never reassigns them, leaving 466 rows in six
+groups (CMC 0, 2, 3.5, 4.33, 11 and 20~mM with 63, 30, 87, 15, 178 and 93
+rows), of which the five non-\tox{} groups hold 379 rows.
+
+\paragraph{D3: Smart Microfluidics liposome dataset (Zenodo 17867478,
+CC~BY~4.0).} Used only for the second sealed validation
+(Section~\ref{sec:d3protocol}). The record documents microfluidic liposome
+production on a micromixer chip with four lipid components (ESM, HSPC, CHOL,
+DSPE-PEG2000; mg/mL), total flow rate (mL/min), flow-rate ratio and aqueous
+medium (MQ or PBS) as inputs, and liposome size (nm), polydispersity index
+and a formation flag as outputs~\cite{smartmicrofluidics2026}. The cleaned
+table released by the authors carries no laboratory field, so we bind the
+authors' checker-processed raw files instead: laboratory A (Latina,
+operator A, equipment A) supplies the development set, 246 rows after
+quarantining Droplet-chip rows and rows with missing inputs or size;
+laboratory B (Rome, operator A, equivalent equipment B) supplies the sealed
+set, 57 rows. A 12-row operator-B set from laboratory A was sealed as a
+secondary set outside the primary estimand. The target differs from D1 and D2
+(liposome size rather than droplet diameter), which is one reason D3 results
+are reported apart from them.
+
+\paragraph{Licensing boundary.} Manuscript text and original figures are
+CC~BY~4.0 and code is Apache-2.0; neither relicenses the source papers or
+datasets. No raw third-party data are included in the release tree.
+
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Baseline reproduction (E0)}
+\label{sec:e0}
+We re-implemented the published XGBoost configuration from the method
+parameters stated in~\cite{lashkaripour2024} without copying upstream code
+(100 trees, squared error, learning rate 0.3, maximum depth 6, L2
+regularisation 1, minimum child weight 1) and repeated 15 random 80/20 splits
+of the 868-row table. Generation frequency is derived from mass conservation,
+$F = 6Q_d/(\pi d^3)$, and compared with the published frequency error.
+External evaluation trains on all 868 rows and predicts the 64 external rows.
+Frozen library versions are recorded (XGBoost~3.3.0, scikit-learn~1.9.0,
+Python~3.12.13).
+
+\subsection{Expanded retrospective protocol on DAFD}
+\label{sec:expanded}
+Because the 64-row external set had been inspected during the pilot, the
+expanded DAFD analysis is retrospective and exploratory; a frozen protocol
+fixed every method, threshold, endpoint and negative control before
+implementation so that no outcome-driven change could be made afterwards.
+Evaluation protocols are: 15 row-random splits (reproduction only); 15
+exact-input grouped splits; 30 splits grouped by device geometry; 30 splits grouped by geometry plus viscosity ratio (geometry-plus-fluid); and full training followed by the
+fixed external set. Group identifiers are connected components of the grouping
+relation and the double-emulsion inner/outer pair links, so a pair never
+crosses a fit/test boundary. Models are the published XGBoost configuration
+(focal), random forest and histogram gradient boosting (robustness only).
+Intervals compare split conformal, conformalised quantile regression (CQR) and
+normalised split conformal, calibrated without external labels under both
+row-random and geometry-grouped protocols; grouped calibration aggregates
+non-conformity by dependency-group maximum. Applicability scores are
+per-feature min--max, standardised $k$-nearest-neighbour distance
+($k\in\{3,5,10,20\}$), OAS-shrinkage Mahalanobis distance, Isolation Forest,
+Local Outlier Factor, one-class SVM, bootstrap-ensemble disagreement and an
+out-of-fold residual-risk model; thresholds are the 0.90/0.95/0.975/0.99
+quantiles of held-out calibration scores, and continuous risk--coverage curves
+summarised by a tie-invariant area under the risk--coverage curve (AURC) are
+primary. Mandatory negative controls are random
+scores and random retention at matched budgets, within-source and
+within-source-context physical-cluster permutations, hydraulic-diameter-only
+and predicted-size-only scores, and a shuffled-label predictor. The
+retrospective target-search replay uses a separate candidate pool per external
+source, a fixed target grid of 30--230~\um{}, hidden outcomes during ranking,
+and reports precision among answered queries only together with query coverage
+and successful-target recall. Benjamini--Hochberg (BH) adjustment is applied
+within each test family.
+
+\subsection{Sealed chemistry holdout (V1)}
+\label{sec:v1protocol}
+The V1 protocol was written and hashed before either MATLAB file was
+downloaded or opened (lock 2026-07-16T12:27:58Z). A custodian program split
+the combined 468 rows by the published \tox{} CMC value, wrote a labelled
+381-row development table, an input-only 87-row blind table and a separately
+sealed label file with owner-only permissions, and printed only counts and
+hashes. The point
+model reproduces the source paper's XGBoost settings (100 estimators, depth 3,
+learning rate 0.3, seed 42) on four published inputs, fitted once on the
+development set with no blind-label tuning. A 90\% split-conformal interval was
+calibrated on development chemistry groups. Four applicability screens
+(strict min--max, 5-NN at the 95th development percentile, OAS Mahalanobis,
+Isolation Forest) and six target-search strategies over 13 fixed targets
+(0.06--0.18~mm) were frozen. Pre-declared endpoints were blind MAPE compared with a
+reproduction criterion ($<11.4\%$, the published semi-empirical benchmark) and
+a strong-replication criterion ($\le 6.0\%$), plus four conditions under which
+an applicability rule may be called beneficial. The complete pre-reveal
+prediction bundle (87 predictions, 78 query--strategy pairs, 240 ranked
+candidates) was hashed (digest in Appendix~\ref{app:hashes}) before the one-time
+reveal gate was consumed. The two thresholds deserve a note on provenance.
+The 11.4\% figure is the error of the source paper's physics-based
+benchmark---the Kalli et al.\ correlation described in
+Section~\ref{sec:v2protocol}---on the source paper's random 76-row test
+split, and 6.0\% is a tolerance around the source paper's 3.9\% random-split
+XGBoost result~\cite{chagot2022}. Both are therefore anchored to
+in-distribution performance, which this paper argues overstates reliability
+under shift; a development-side leave-one-chemistry-out reference in the
+style later used for D3 was not pre-registered for V1 and is computed
+retrospectively (Sections~\ref{sec:posthoc}, \ref{sec:r5}).
+
+\subsection{Reveal incident and serialisation-only recovery}
+\label{sec:incident}
+The reveal gate was consumed at 2026-07-16T12:30:53Z. The program verified all
+frozen hashes, joined predictions to labels by opaque row identifier, computed
+every locked endpoint, and then failed at the final write because unanswered
+target-search queries carried IEEE \texttt{NaN} fields that a strict JSON
+writer correctly rejected. The intended result file was never created. A
+separate recovery program, added without modifying the frozen reveal
+implementation (digest in Appendix~\ref{app:hashes}), re-validated all hashes,
+re-verified exact opaque-ID set equality, recomputed the same locked metrics
+from the already-unsealed labels, and converted only undefined \texttt{NaN}
+query fields to JSON \texttt{null}. Recovery completed at 2026-07-16T12:32:58Z;
+the recovered result file's digest is listed in Appendix~\ref{app:hashes}. No model
+was refit, no ranking recomputed, no metric redefined, and no pre-reveal
+artifact modified. The validation therefore remains prospective with respect
+to all predictions, masks, rankings and decision rules, but we describe it as
+a sealed prediction followed by a disclosed serialisation-only recovery, not
+as an operationally flawless one-shot reveal. A postmortem traced the root
+cause to Python's permissive \texttt{allow\_nan=True} default and the absence
+of a single strict artifact-boundary writer; the pre-fix expanded summary
+contained 279 non-finite fields. A shared strict writer and cross-parser
+regression tests were added, and all expanded outputs generated before the fix
+were excluded and regenerated.
+
+\subsection{Frozen V2 protocol}
+\label{sec:v2protocol}
+The V2 protocol was locked before any V2 fitting (digest in
+Appendix~\ref{app:hashes}). V2 is a native-variable physics-guided
+constrained regressor. The only caller-facing state is
+\[
+x_{\mathrm{native}}=[Q_c,\;Q_d,\;\gamma_{\mathrm{eq}},\;c,\;\mathrm{CMC},\;I_{\mathrm{no\,surf}}];
+\]
+a non-trainable physics layer recomputes flow ratio, capillary and Reynolds
+numbers and normalised concentration from fixed device constants
+($D=195$~\um, oval area $\pi\cdot195\cdot190/4$~\um$^2$, published phase
+densities and viscosities). The locked semi-empirical anchor and the bounded
+output parameterisation are
+\[
+y_{\mathrm{phys}} = \frac{d_{\mathrm{phys}}}{D} = 0.642\, r_Q^{0.188}\,(1/Ca_c)^{0.161},
+\qquad
+\hat d = D\bigl[\epsilon + (1-2\epsilon)\,\sigma(\mathrm{logit}(y_{\mathrm{phys}})+\delta_\theta)\bigr],
+\]
+with $\epsilon=10^{-4}$, so every V2 point prediction satisfies $0<\hat d<D$.
+
+\paragraph{Provenance of the anchor.} The coefficients $k=0.642$,
+$\alpha=0.188$ and $\beta=0.161$ are those the source paper adopts as its
+physics-based benchmark from an earlier study by the same group on the same
+junction~\cite{kalli2022jcis,chagot2022}; they were not fitted on the audited
+table, and the source paper reports their 11.4\% MAPE on its own test split.
+We did not verify the surfactant set of that earlier study; the group's
+contemporaneous work used DTAB, SDS and \tox{}, so B0 and the three V2
+variants may carry prior information about \tox{} behaviour through three
+published coefficients. This is one more reason every V2 result on \tox{} is
+labelled retrospective. The sealed V1 model and the D3 model use no anchor
+and are unaffected.
+
+\paragraph{What the bound is and is not.} The bound $0<\hat d<D$ is not a
+physical law. It is an empirical property of the regime that the source
+dataset documents: Chagot et al.\ report that every measured droplet is
+smaller than the 0.195~mm channel depth, i.e.\ the data lie in the
+spherical-droplet (dripping) regime of one fixed junction. Confined, plug or
+jetting droplets with $d>D$ exist in other regimes and devices, and this
+parameterisation would clip them wrongly; the frozen protocol therefore
+restricts the bound to the Chagot table and forbids transferring it to DAFD,
+where normalised diameter exceeds one. Throughout this paper ``physically
+invalid'' for V2 means ``outside the open interval $(0,D)$ observed for this
+dataset's regime'', not ``impossible in general''. A bounded output inside
+$(0,D)$ is admissible for this regime; it is not thereby accurate, and the
+results keep the two notions apart. The second sealed validation
+(Section~\ref{sec:r9}) shows the complementary failure: an unbounded
+regressor on an independent dataset returned negative diameters for 38.6\% of 57 sealed rows.
+
+The model matrix is B0 (deterministic anchor), B1 (published four-input
+XGBoost), B2 (native-input XGBoost), B3 (native-plus-physics MLP, unconstrained
+output), V2-H (B3 with bounded output), V2-P (bounded residual MLP plus anchor
+prior; primary) and V2-M (V2-P plus a local flow-monotonicity penalty;
+sensitivity). Evaluation is nested leave-one-chemistry-out over the six main
+CMC groups with inner-group selection of $\lambda_p\in\{0.01,0.1,1.0\}$ and
+early-stopping epoch, five seeds $\{17,42,2024,3407,9001\}$, and equal weight
+per held-out chemistry group (chemistry-macro MAPE). V2-P may be called
+beneficial only if all six locked conditions hold: (1) lower chemistry-macro
+MAPE than B1; (2) lower MAPE in at least four of six groups; (3) worst-group
+MAPE no more than 2 percentage points worse than B1; (4) zero point and
+interval physical-invalid rates; (5) retrospective search reports coverage,
+recall and precision together; (6) no outer outcome used for selection.
+Because \tox{} labels had already been revealed, every V2 result on \tox{} is
+a post-reveal retrospective analysis and is never called a blind validation.
+
+\subsection{Method-matrix benchmark across shift cells}
+\label{sec:w3protocol}
+A separate frozen protocol (hashed before any run) defines seven evaluation
+cells: D1 row-random 80/20 (15 seeds, reference); D1 dependency-group splits
+by geometry (30 seeds); D1 comprehensive-table training with the 64-row
+external literature test; D1 single emulsion to double emulsion (SE$\to$DE,
+474~$\to$~394 rows) and the reverse (DE$\to$SE); D2 row-random 80/20 (15
+seeds, reference); and D2 leave-one-chemistry-out (LOCO; six folds, with the
+\tox{} fold labelled post-reveal retrospective). In every cell the
+training rows are divided into a fit partition and a 20\% calibration
+partition (by dependency group for D1, by row for D2); point models are the
+published XGBoost configuration, a random forest and a fixed-architecture
+multilayer perceptron (64--64, early stopping), all untuned; interval methods
+at nominal 0.90 are split conformal, CQR, group-maximum (Mondrian)
+conformal and a 20-member cluster-bootstrap ensemble-variance interval;
+applicability scores are 5-NN distance, OAS Mahalanobis distance, Isolation
+Forest, a transductive domain classifier (balanced logistic regression
+separating fit-partition inputs from the test inputs, scored as the
+probability of belonging to the test batch) and a $k$-NN density ratio (5-NN
+distance to the fit set divided by 5-NN distance to the other test inputs).
+The controls are a random score and a size-only score,
+$|s-\tilde{s}_{\mathrm{fit}}|/\mathrm{IQR}_{\mathrm{fit}}(s)$, where the
+label-free proxy $s$ is the hydraulic diameter for D1 and the deterministic
+anchor-equation diameter for D2. Binary rules threshold at the 0.95
+calibration quantile; hyperparameters and software are listed in
+Appendix~\ref{app:impl}. A
+pre-registered candidate-level rule asks whether a score's within-test-group
+AURC beats both controls, with a within-group permutation $p<0.05$ that
+survives BH adjustment. Because point models here see only the fit partition, the
+reference-cell errors are higher than in Section~\ref{sec:r1}; shift ratios
+are therefore computed within this protocol only. Two complete runs in
+separate directories produced byte-identical hash manifests.
+
+\subsection{Uncertainty-aware comparison models on the same cells}
+\label{sec:w4protocol}
+Because every interval in the method matrix is built around one point model,
+a further frozen protocol (hashed and committed before any run) reruns the
+seven cells, with identical seeds and fit/calibration partitions, for three
+model families that carry their own predictive uncertainty: a quantile
+regression forest (400 trees, minimum leaf 5; Meinshausen leaf weights,
+native interval between the 0.05 and 0.95 weighted quantiles, uncertainty
+score the quantile gap), a Gaussian process on standardised inputs
+(anisotropic RBF with a constant factor and a white-noise term, two optimiser
+restarts; native interval mean $\pm 1.645\sigma$, score $\sigma$) and a deep
+ensemble of five independently initialised 64--64 perceptrons on the full fit
+partition (native interval mean $\pm 1.645$ times the member standard
+deviation, score that deviation; no heteroscedastic likelihood head). None is
+tuned per cell. Each native interval is reported alongside two
+calibration-partition corrections at nominal 0.90: split conformal around the
+point prediction and a conformalised version of the native interval widened by
+the finite-sample quantile of its conformity score. The native uncertainty,
+divided by the absolute point prediction, is also evaluated as a
+selective-prediction score compared with the random, size-only and five
+applicability scores of Section~\ref{sec:w3protocol}, computed in the same
+cells with the same seeds. Pre-registered reading rules are descriptive: a
+native interval ``survives'' a cell if its coverage is at least 0.80; the
+uncertainty score counts as useful in a cell only if its AURC is below both
+controls; no permutation test is run. Two complete runs must produce
+byte-identical manifests.
+
+\subsection{Covariate-shift-weighted intervals on the same cells}
+\label{sec:w5protocol}
+The coverage losses of Sections~\ref{sec:w3protocol} and \ref{sec:w4protocol}
+could have two different causes: a covariate shift, in which the inputs move
+but the conditional law does not---and which conformal prediction can in
+principle repair by reweighting calibration residuals with the input density
+ratio~\cite{tibshirani2019}---or a conditional shift or support mismatch,
+which no input-only reweighting can repair. A third frozen protocol (hashed
+and committed before any run) tests this on the seven cells with the
+reference XGBoost model: calibration residuals are reweighted by two
+label-free, transductive density-ratio estimates already computed in the
+matrix---the odds of the class-balanced domain classifier, and a
+$k$-nearest-neighbour density ratio $(r_{\mathrm{fit}}/r_{\mathrm{test}})^{d}$
+built from the 5-NN distances---and the weighted finite-sample quantile of
+Tibshirani et al.\ is used as the radius, with the test point's own mass
+placed at infinity so that an interval becomes infinite when the calibration
+set has too little mass near the test input. An unweighted branch must
+reproduce the matrix's split-conformal coverage cell by cell. Endpoints are
+coverage (an infinite interval covers), the fraction of infinite intervals,
+coverage and width over finite intervals only, and the effective sample size
+of the calibration weights. Pre-registered expectations are descriptive:
+weighting should leave the reference cells unchanged, may raise coverage
+under SE$\to$DE shift, should recover DE$\to$SE only through infinite
+intervals, and should not reach 0.80 in most whole-chemistry folds, where the
+\tox{} evidence already points to conditional shift.
+
+\subsection{Second sealed validation under laboratory shift}
+\label{sec:d3protocol}
+The sealed protocol was instantiated for the Smart Microfluidics dataset and
+hashed before the record was downloaded. After download, only file lists,
+column headers, metadata dictionaries and the authors' processing logs were
+inspected; the resulting parameter binding (which files, which columns,
+which rows are laboratory B) was hashed and committed before a custodian
+program separated development rows, sealed-set inputs and sealed-set labels
+(owner-only permissions, never committed). The locked model is the sealed-V1 configuration
+(XGBoost, 100 trees, depth 3, learning rate 0.3, seed 42) on the six numeric
+inputs plus one-hot aqueous medium, fitted on all 246 development rows; a 90\%
+split-conformal interval is calibrated on a 20\% development partition;
+applicability screens are strict min--max, 5-NN, OAS Mahalanobis, Isolation
+Forest and a transductive domain classifier with random and predicted-size
+controls. Because no published held-out size error for this dataset was
+retrieved before the lock, the success criteria are relative to a
+development reference frozen before reveal: the mean 5-fold grouped
+cross-validation MAPE on laboratory A. Reproduction success requires sealed
+MAPE $\le 1.25\times$ this reference and strong replication $\le 1.00\times$.
+Two facts were recorded from inputs alone before any fit, and one amendment
+followed from them. First, every sealed row uses PBS buffer while the
+development set has 231 MQ and 15 PBS rows; the protocol's candidate-level
+stratum (buffer) therefore has a single level in the sealed set, and an
+amendment adds main lipid (ESM or HSPC, derived from inputs) as the stratum.
+Second, the strict min--max screen accepts 31.6\% of sealed rows (PEG within
+the development range for 0.316 of rows, HSPC for 0.684). Prediction and
+reveal programs were frozen after a dry run on a pseudo-sealed split of
+laboratory A rows only; the reveal gate is a single exclusive file and was
+consumed once. After the reveal, a scoring-definition defect was found in the
+applicability-benefit block (it had received signed rather than absolute
+relative error); the primary endpoint, both criteria, the interval and
+candidate-level blocks were unaffected, and the block was recomputed in a
+separate, disclosed file without modifying any frozen artifact.
+
+\subsection{Post-hoc analyses (not pre-registered)}
+\label{sec:posthoc}
+Four analyses were added after both reveals in response to reviewer-style
+concerns. None is part of a frozen protocol, every label they touch was
+already open, and their outputs are hashed in a separate directory with their
+own environment record. (i)~A retrospective development reference for V1:
+the locked V1 model is refitted leave-one-chemistry-out over the five
+development CMC groups of the V1 development table (the \tox{} rows are never
+used), giving the reference that the D3-style criterion would have used.
+(ii)~Alternative point metrics for the D3 sealed set from the revealed scored
+rows: symmetric MAPE, median APE, absolute log-ratio error over positive
+predictions, and errors within quartile bins of observed size. (iii)~A
+log-target baseline for D3: the locked configuration and inputs fitted to
+$\log(\mathrm{size})$ on the 246 development rows, with the same grouped
+five-fold development reference as the frozen model, whose folds and
+predictions it reproduces exactly before the transform is applied, then
+scored on laboratory B. (iv)~Metric robustness for the method matrix: median
+APE, symmetric MAPE and log-ratio error for every cell from the canonical
+per-row predictions, ratios to the reference cell under each metric,
+row-bootstrap 95\% intervals (2000 resamples) for the single-split cells,
+size-quartile bins for the two device-type cells, and the observed-size
+distributions of single- and double-emulsion rows. Bins are quartiles of
+observed size, a rule fixed before the values were seen. Every number from
+these analyses is marked post hoc where it appears.
+
+\subsection{Deviation registers}
+\label{sec:deviations}
+Implementation defects and protocol amendments found by code,
+protocol-to-code, statistical and reproducibility audits are recorded in
+numbered registers that are part of the released repository rather than
+reproduced here: D01--D19 for the expanded DAFD and V2 suites
+(\texttt{PROTOCOL\_DEVIATION\_REGISTER.md}, hashed in the reproducibility
+manifest), W3-C1 and W3-D1 for the method matrix, and D3-B1 to D3-R1 for the
+second sealed validation. For the expanded and V2 suites only the run pair
+produced after the last registered correction is used in this paper.
+
+\subsection{Statistical reporting}
+Four external sources and six chemistry groups are too few for
+population-level inference. Source- and cluster-level bootstrap intervals are
+descriptive; row-level Wilson intervals are conditional summaries;
+seed standard deviations are algorithmic sensitivity, not sampling
+uncertainty; $R^2$ is labelled unstable for small or narrow-range groups and
+is never used alone to support a conclusion; BH-adjusted and unadjusted
+$p$-values are reported together, with effect sizes taking precedence.
+
+\section{Results}
+\label{sec:results}
+Results are numbered R1--R9. R1--R4 concern D1: baseline reproduction,
+cross-literature degradation, interval coverage loss and label-free pruning.
+R5 is the sealed \tox{} validation on D2 and R6 the retrospective V2 verdict
+on the same dataset. R7 reports the expanded shift diagnostics and negative
+controls on D1. R8 is the method-matrix benchmark across both D1 and D2, and
+R9 the second sealed validation on D3.
+
+\subsection{R1: Baseline reproduction}
+\label{sec:r1}
+Table~\ref{tab:repro} compares our reproduction with the published figures.
+Random-split diameter MAPE is $5.268\% \pm 0.421\%$ (published 5.4\%) with
+MAE $4.502$~\um{} and $R^2=0.960$; mass-conservation frequency MAPE is
+$16.697\% \pm 1.819\%$ (published 16.6\%). The reproduction is within the
+published tolerances, so the degradation reported below is not an artifact of
+a weak baseline.
+
+\begin{table}[t]
+\centering\small
+\caption{Baseline reproduction on 15 random 80/20 splits of the 868-row
+DAFD~3.0 comprehensive table (mean $\pm$ SD over splits).}
+\label{tab:repro}
+\begin{tabular}{lrr}
+\toprule
+Metric & Published~\cite{lashkaripour2024} & This reproduction \\
+\midrule
+Diameter MAPE & 5.4\% & $5.268\% \pm 0.421\%$ \\
+Diameter MAE & --- & $4.502 \pm 0.529$~\um \\
+Diameter $R^2$ & --- & $0.960 \pm 0.010$ \\
+Frequency MAPE (mass conservation) & 16.6\% & $16.697\% \pm 1.819\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{R2: Cross-literature degradation}
+\label{sec:r2}
+Across the 15 split models, external MAPE is $10.971\% \pm 0.552\%$; a single
+model trained on all 868 rows gives external MAPE 11.258\%, MAE 12.227~\um{}
+and $R^2=0.917$. Table~\ref{tab:sources} gives the per-source breakdown. The
+Mazutis source ($n=6$) has $R^2=-10.18$ because its diameters span a very
+narrow range; we report it for completeness and draw no conclusion from
+small-sample $R^2$ alone. H1 is supported.
+
+\begin{table}[t]
+\centering\small
+\caption{External literature set after training on all 868 comprehensive rows. $R^2$ for $n\le 14$ sources is unstable and not interpreted alone.}
+\label{tab:sources}
+\begin{tabular}{lrrrr}
+\toprule
+Source & $n$ & MAPE & MAE (\um) & $R^2$ \\
+\midrule
+Galogahi et al. & 24 & 8.35\% & 10.95 & 0.812 \\
+Lashkaripour et al. & 20 & 8.78\% & 3.77 & 0.724 \\
+Mazutis et al. & 6 & 19.41\% & 8.53 & $-10.18$ \\
+Roumpea et al. & 14 & 16.29\% & 28.08 & 0.272 \\
+\midrule
+All external & 64 & 11.26\% & 12.23 & 0.917 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{R3: Coverage loss of nominal 90\% intervals}
+\label{sec:r3}
+With CQR calibrated on random internal splits (15 runs of 60/20/20), observed
+coverage is $0.9103 \pm 0.0244$ internally (mean width 28.95~\um) and
+$0.5510 \pm 0.0492$ on the external set (mean width 37.16~\um;
+Figure~\ref{fig:cqr}). This is not a failure of conformal theory: the random
+calibration set and the external literature rows are not exchangeable. H2 is
+supported. Section~\ref{sec:r7} shows that geometry-grouped calibration
+recovers much of the external coverage at the cost of roughly threefold wider
+intervals.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\linewidth]{figure_cqr_coverage_shift}
+\caption{Nominal 90\% CQR coverage on internal random test rows versus the
+external literature set over 15 runs.}
+\label{fig:cqr}
+\end{figure}
+
+\subsection{R4: Label-free applicability pruning (pilot and canonical)}
+\label{sec:r4}
+\paragraph{Pilot rule.} Using only the 868 training inputs, we standardised the
+eight features, computed leave-one-out 5-NN distances and took their 95th
+percentile (0.9572) as the threshold. Of 64 external candidates, 26 were
+retained and 38 pruned (pruning rate 59.375\%, a $2.46\times$ reduction).
+Distance and absolute error correlate (Spearman $\rho=0.718$,
+$p=2.46\times10^{-11}$, row-naive; Figure~\ref{fig:distance}). Retained
+candidates have MAE 4.87~\um{} versus 17.26~\um{} for pruned ones. At a
+10~\um{} tolerance, 38 of all 64 external candidates succeed (59.4\%); among
+the 26 retained candidates, 24 succeed (92.3\%); the recall of successful
+candidates is therefore 24/38 = 63.2\%. At 15 and 20~\um{} the retained
+precision is 1.0 with recall 0.591 and 0.553. The denominators differ and
+must not be conflated: 59.4\% is over all external candidates, 92.3\% over
+retained candidates. Retention is entirely blocked by source---Galogahi 0/24,
+Roumpea 0/14, Lashkaripour 20/20, Mazutis 6/6---so the pilot rule removes
+whole literature sources rather than individual candidates
+(Figure~\ref{fig:pruning}).
+
+\paragraph{Canonical rule.} In the frozen expanded suite
+(Section~\ref{sec:expanded}), thresholds are calibrated on a dependency-grouped
+held-out calibration partition (104 single-emulsion rows) rather than on
+leave-one-out training scores, and the 5-NN threshold becomes 1.5647. The rule
+then retains 32 of 64 candidates (Galogahi 6/24, Lashkaripour 20/20, Mazutis
+6/6, Roumpea 0/14). At the 10~\um{} tolerance its precision is 93.8\% (30/32)
+and its recall 78.9\% (30/38); at 10\% relative error its precision is 62.5\%
+and recall 71.4\%, relative to a full-pool success rate of 43.8\% (28/64).
+Table~\ref{tab:pruning} reports both rules side by side. H3 is supported in
+its precision clause, but the dependency-aware controls in
+Section~\ref{sec:r7} qualify the mechanism.
+
+\begin{table}[t]
+\centering\small
+\caption{Label-free 5-NN pruning of the 64 external candidates: pilot rule
+(leave-one-out training threshold) and canonical rule (dependency-grouped
+calibration threshold). Precision is over retained candidates; recall is over
+all successful candidates in the full pool.}
+\label{tab:pruning}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrr}
+\toprule
+ & Pilot (LOO q95) & Canonical (grouped q95) \\
+\midrule
+Threshold (standardised distance) & 0.9572 & 1.5647 \\
+Retained / pruned & 26 / 38 & 32 / 32 \\
+Retention by source (G/L/M/R) & 0/24, 20/20, 6/6, 0/14 & 6/24, 20/20, 6/6, 0/14 \\
+Full-pool success, 10~\um & 59.4\% (38/64) & 59.4\% (38/64) \\
+Retained precision, 10~\um & 92.3\% (24/26) & 93.8\% (30/32) \\
+Successful-candidate recall, 10~\um & 63.2\% (24/38) & 78.9\% (30/38) \\
+Retained precision / recall, 10\% relative & --- & 62.5\% / 71.4\% \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.75\linewidth]{figure_distance_vs_error}
+\caption{Pilot rule: standardised 5-NN distance to the training inputs versus
+absolute external error, with the 95th-percentile threshold.}
+\label{fig:distance}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.75\linewidth]{figure_pruning_precision}
+\caption{Pilot rule: fraction of candidates within tolerance before and after
+pruning. Precision rises while recall falls; both must be read together.}
+\label{fig:pruning}
+\end{figure}
+
+\subsection{R5: Sealed \tox{} validation --- a negative result}
+\label{sec:r5}
+Table~\ref{tab:v1} lists every locked endpoint. The frozen point model reached
+a blind MAPE of 19.8436\% on the 87 \tox{} rows, failing both pre-declared
+criteria (reproduction $<11.4\%$: false; strong replication $\le 6\%$: false),
+with MAE 0.022615~mm, RMSE 0.028681~mm and $R^2=-0.2436$ (about $-0.24$). The 90\%
+split-conformal interval covered 0.4483 of rows (mean width 0.03281~mm). A
+post-reveal descriptive analysis found over-prediction on 85.06\% of rows with
+a signed relative bias of 0.1895; conditional on the 87 rows, a row bootstrap
+places MAPE in $[16.4\%, 23.5\%]$ and the Wilson interval for coverage in
+$[0.348, 0.553]$. The strict min--max screen accepted all 87 rows
+(candidate reduction 0.0): the failure is not a marginal-range violation but
+a conditional shift---the four recorded predictors overlap training support
+while their relationship to diameter changes with the unseen surfactant
+(Figure~\ref{fig:v1diag}).
+
+Among the locked applicability rules, only Isolation Forest met all four
+pre-declared benefit conditions (candidate reduction 0.1034, retained relative
+risk 0.1861 versus 0.1984 for the full pool, matched-budget one-sided
+$p=0.0266$, surviving at 0.05); 5-NN ($p=0.111$) and Mahalanobis ($p=0.675$)
+did not. After BH adjustment across the four locked tests, however, the
+Isolation Forest result is no longer significant (adjusted $p=0.106$), so we
+report it as suggestive only (Figure~\ref{fig:v1risk}). All six target-search
+strategies answered the same 8 of 13 fixed targets (coverage 0.615), with
+success@1 of 0.2308 and success@3/@5 of 0.4615/0.6154 over all queries, and
+oracle-achievable recall at 1/3/5 of 0.25/0.50/0.667; screening did not change
+which candidate was ranked first except for Mahalanobis on one query. An
+independent recomputation agreed with the recovered result to within
+$10^{-12}$ on every metric, and all frozen source hashes were unchanged before
+and after the post-reveal analysis.
+
+\paragraph{Retrospective development reference (post hoc).} The pre-declared
+thresholds are anchored to the source paper's in-distribution figures
+(Section~\ref{sec:v1protocol}). Under the development-side criterion later
+used for D3, the locked V1 model's leave-one-chemistry-out MAPE over the five
+development groups is 6.54\% (CMC 0, $n=63$), 5.01\% (2~mM, 30), 15.76\%
+(4.33~mM, 15), 5.46\% (11~mM, 178) and 6.46\% (20~mM, 93): macro 7.85\%,
+pooled 6.26\%, with 2 rows of unlisted CMC kept on the training side only.
+The $1.25\times$ reproduction threshold would have been 9.81\%; the sealed
+19.8436\% is 2.53 times the macro reference and fails this criterion as
+well. The result is therefore negative under both the pre-registered and the
+retrospective criterion, and the \tox{} error exceeds every development fold,
+the nearest being the 15-row 4.33~mM group at 15.76\%.
+
+\begin{table}[t]
+\centering\small
+\caption{Locked V1 endpoints on the sealed \tox{} group ($n=87$).}
+\label{tab:v1}
+\begin{tabular}{lr}
+\toprule
+Endpoint & Value \\
+\midrule
+MAPE & 19.8436\% \\
+Reproduction criterion ($<11.4\%$) & not met \\
+Strong-replication criterion ($\le 6.0\%$) & not met \\
+MAE / RMSE & 0.022615 / 0.028681~mm \\
+$R^2$ & $-0.2436$ \\
+Nominal 90\% coverage (mean width) & 0.4483 (0.03281~mm) \\
+Over-predicted rows & 85.06\% \\
+Signed relative bias & 0.1895 \\
+Strict min--max candidate reduction & 0.0 \\
+Isolation Forest q95: reduction / $p$ / BH $p$ & 0.1034 / 0.0266 / 0.106 \\
+Target queries answered & 8 of 13 \\
+Success@1 / @3 / @5 (all queries) & 0.2308 / 0.4615 / 0.6154 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{v1_figure_1_blind_prediction_diagnostics}
+\caption{Negative result. Left: frozen V1 predictions versus observed \tox{}
+diameters (87 rows), coloured by absolute relative error. Right: signed
+residuals versus prediction; the dashed line is the mean bias
+(0.0213~mm).}
+\label{fig:v1diag}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\linewidth]{v1_figure_2_blind_risk_coverage}
+\caption{Negative result, applicability view. Tie-aware selective risk on the
+\tox{} rows for the four locked screens. No screen brings the retained risk below the full-pool risk except at a large loss of retention; the only pre-declared benefit
+(Isolation Forest) does not survive BH adjustment.}
+\label{fig:v1risk}
+\end{figure}
+
+\subsection{R6: V2 retrospective results --- a negative/mixed verdict}
+\label{sec:r6}
+Two complete canonical runs in separate directories produced byte-identical
+artifact-hash manifests. Table~\ref{tab:v2} gives the model matrix. Against
+the frozen decision rule, condition~1 fails: V2-P chemistry-macro MAPE is
+12.0496\% versus 10.2680\% for B1. Condition~2 fails: V2-P beats B1 in only
+2 of 6 held-out groups (CMC 3.5~mM, the post-reveal \tox{} group,
+$-8.138$~pp; CMC 4.33~mM, $-1.011$~pp; four groups required;
+Figure~\ref{fig:v2paired}). Conditions 3--6 hold: V2-P's worst group is
+14.847\% versus 19.960\% for B1; V2-H, V2-M and V2-P have zero point and
+interval physical-invalid rates compared with 3.22\% for B1 and 13.73\% for the
+unconstrained B3; the retrospective search reports coverage, recall and
+precision together; no outer outcome was used for selection. The locked decision file
+records \texttt{beneficial\_claim\_allowed = false}: V2-P does not meet the
+pre-registered criteria for overall superiority, so the verdict is mixed.
+Hard structural bounds do not reduce chemistry-macro error relative to B1,
+but they eliminate all physically invalid point predictions in these
+retrospective analyses and narrow the worst-group error.
+
+The native-input XGBoost ablation B2 reaches 9.13\% chemistry-macro MAPE
+compared with B1's 10.27\%; this is reported as an ablation under one protocol and
+is not attributed to V2. V2's bounded LOCO out-of-fold uncertainty heuristic
+reaches a mean held-out-group coverage of 0.744 (V2-P) as a transfer stress
+test with no nominal guarantee. The retrospective constrained retrieval
+abstained on almost every query: under the 10\% relative tolerance B3 and V2-H
+answered 1 of 78 queries and every other model answered none; under the
+0.01~mm absolute tolerance no model answered any query. We report this as a
+null search endpoint rather than omitting it.
+
+\begin{table}[t]
+\centering\small
+\caption{Frozen V2 model matrix under nested leave-one-chemistry-out
+evaluation (466 rows, six groups, five seeds; \tox{} is post-reveal
+retrospective).}
+\label{tab:v2}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Model & Macro MAPE & Worst group & Row MAPE & Point invalid & Interval invalid \\
+\midrule
+B0 anchor equation & 18.38\% & 28.31\% & 13.99\% & 1.29\% & --- \\
+B1 four-input XGBoost & 10.27\% & 19.96\% & 9.12\% & 3.22\% & --- \\
+B2 native-input XGBoost & 9.13\% & 16.94\% & 8.86\% & 2.58\% & --- \\
+B3 native+physics MLP (unbounded) & 16.64\% & 32.50\% & 14.45\% & 13.73\% & 0 \\
+V2-H bounded MLP & 10.59\% & 14.63\% & 10.72\% & 0 & 0 \\
+V2-M V2-P + monotonic penalty & 12.05\% & 14.84\% & 11.30\% & 0 & 0 \\
+V2-P bounded residual + anchor (primary) & 12.05\% & 14.85\% & 11.30\% & 0 & 0 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.8\linewidth, height=6cm, ybar, bar width=14pt,
+  ylabel={V2-P minus B1 MAPE (pp)},
+  xlabel={Held-out chemistry group (CMC, mM)},
+  xtick=data, xticklabels={0, 2, {3.5 (\tox{})}, 4.33, 11, 20},
+  x tick label style={font=\small},
+  ymajorgrids, grid style={dashed,gray!30},
+  nodes near coords, nodes near coords style={font=\scriptsize,/pgf/number format/fixed,/pgf/number format/precision=2},
+  enlarge x limits=0.12,
+]
+\addplot+[fill=gray!60, draw=black] table[col sep=comma, x expr=\coordindex,
+  y=V2_P_minus_B1_mape_percentage_points]{data/paired_group_differences_v2p_vs_b1.csv};
+\draw[black] (axis cs:-0.5,0) -- (axis cs:5.5,0);
+\end{axis}
+\end{tikzpicture}
+\caption{Negative/mixed result. Paired difference in held-out-group MAPE,
+V2-P minus B1, for the six chemistry groups (negative favours V2-P). The
+\tox{} group is a post-reveal retrospective analysis, not a blind test. V2-P
+wins only two groups, failing locked condition~2.}
+\label{fig:v2paired}
+\end{figure}
+
+\subsection{R7: Expanded shift diagnostics and negative controls on DAFD}
+\label{sec:r7}
+\paragraph{Grouped splits.} For the focal XGBoost model, mean diameter MAPE is
+5.27\% on row-random splits, 5.74\% on exact-input grouped splits, 11.69\% on
+geometry-grouped splits (median 11.07\%, range 6.39--23.58\% over 30 splits)
+and 10.18\% on geometry-plus-fluid grouped splits (Figure~\ref{fig:splits}).
+Row-random splits leak: on average 79\% of double-emulsion pairs cross the
+train/test boundary and 99.5\% of test geometries appear in training. Random
+forest and histogram gradient boosting show the same pattern (5.81/6.32/10.67/9.39\% and 5.01/5.41/11.33/10.12\%). A shuffled-label control gives external
+MAPE 33.4\% (range 23.0--46.8\% over 30 seeds), confirming that the models
+learn signal. Equal-weight source-macro external MAPE is 13.21\% for XGBoost
+versus 11.26\% row-micro.
+
+\paragraph{Interval transfer.} Under the expanded suite's calibration protocol, with row-level random calibration, nominal 90\% CQR coverage falls from 0.900 internally to 0.521 externally (mean width
+28.3 to 34.1~\um); split and normalised split conformal behave alike
+(0.908~$\to$~0.469; 0.912~$\to$~0.524). With geometry-grouped calibration,
+external CQR coverage is 0.848 with mean width 89.8~\um{}, split conformal
+0.890 (66.7~\um) and normalised split conformal 0.936 (104.2~\um); the
+equal-weight source-macro external coverage for CQR is 0.750, and simultaneous
+dependency-group coverage is 0.714. Grouped calibration therefore buys
+coverage with roughly threefold wider intervals and a finite-sample ceiling of
+0.95 from the small number of calibration groups.
+
+\paragraph{Applicability scores against controls.} On the continuous
+relative-risk curve, the full-pool mean absolute relative error is 0.1126 and
+AURC values are 0.1053 (5-NN), 0.0951 (Mahalanobis), 0.1082 (Isolation
+Forest) and 0.109 (random score). The hydraulic-diameter-only control reaches
+0.0734 and the one-class SVM 0.0882; the out-of-fold residual-risk model
+(0.1431) and bootstrap disagreement (0.1273) are worse than random. Because
+no applicability score beats the size-only control on continuous relative
+risk, none of them supports a candidate-level benefit claim under our
+pre-registered criteria (Figure~\ref{fig:riskcov}). The binary 5-NN
+rule at q95 does lower retained relative risk (0.0961 versus 0.1126) relative
+to matched-budget random retention (global $p=0.020$, BH 0.036;
+source-stratified $p=0.0013$, BH 0.0039; within-source physical-cluster
+permutation $p=0.0030$, BH 0.0076), but under a within-source-context
+permutation that preserves which contexts are retained the effect vanishes
+($p=1.0$): the benefit is explained by which source contexts the rule keeps
+(Figure~\ref{fig:retention}). The overall Spearman correlation between 5-NN
+distance and relative error is 0.222 ($p=0.078$, row-naive) with opposite
+signs within sources (Galogahi 0.79, Lashkaripour $-0.27$, Roumpea $-0.49$),
+whereas hydraulic diameter alone correlates 0.69 with relative error.
+Source-then-cluster hierarchical bootstrap intervals for retained-minus-full
+relative risk include zero for 5-NN ($-0.016$, 95\% interval
+$[-0.088, 0.027]$) and Mahalanobis ($-0.021$, $[-0.056, 0.021]$).
+
+\paragraph{Retrospective target-search replay.} Over 84 context--target
+queries in per-source pools (30 oracle-achievable at 10\% relative tolerance),
+unscreened point ranking answers 26.2\% of queries with success@1 precision
+0.50 and successful-target recall 0.367 (success@3: 0.636/0.467). The 5-NN q95
+screen raises answered precision to 0.60 but answers only 6.0\% of queries
+with recall 0.10; the Mahalanobis and strict min--max screens answer 14.3\%
+with precision 0.667 and recall 0.267; conformal target inclusion answers
+25.0\% with precision 0.524 and recall 0.367; a random-score screen at the
+same quantile answers 26.2\% with precision 0.455 and recall 0.333. Screening
+trades query coverage and recall for precision and never dominates the
+unscreened or random strategies on all three endpoints at once.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\linewidth]{expanded_figure_1_split_generalization}
+\caption{Focal XGBoost diameter MAPE under four split protocols on the 868-row
+table. Grouped protocols prevent double-emulsion pairs and device geometries
+from crossing the fit/test boundary.}
+\label{fig:splits}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\linewidth]{expanded_figure_3_relative_risk_coverage}
+\caption{Relative-risk versus retained-coverage curves for applicability
+scores and controls on the 64 external rows. The hydraulic-diameter-only
+control has the lowest AURC; no label-free applicability score beats it.}
+\label{fig:riskcov}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\linewidth]{expanded_figure_4_source_retention}
+\caption{Retention rate by external source for binary rules at the 95\%
+calibration quantile. Retention is blocked by source for every rule,
+which is why within-source-context permutation nulls explain the observed
+risk reduction.}
+\label{fig:retention}
+\end{figure}
+
+\subsection{R8: Method-matrix benchmark across shift cells}
+\label{sec:r8}
+Two complete runs of the frozen matrix protocol (Section~\ref{sec:w3protocol})
+in separate directories produced byte-identical artifact-hash manifests (13 entries each), and all 69 cell--repeat splits (across the seven cells) have zero dependency-unit overlap between fit, calibration and test rows. Table~\ref{tab:w3matrix} gives the
+matrix for the reference XGBoost model, the two alternative point models and
+the four interval methods. Because the point models see only the fit
+partition, the reference cells sit above the E0 errors of
+Section~\ref{sec:r1} (D1 6.71\% versus 5.27\%); the ratios in the table are
+internal to this protocol.
+
+\begin{table}[t]
+\centering\small
+\caption{Method-matrix benchmark. XGBoost MAPE and its ratio to the dataset's
+random-split reference, the alternative point models, and empirical coverage
+of nominal 90\% intervals (XGBoost; means over repeats). Reference cells use
+the fit partition and are not comparable with Table~\ref{tab:repro}.}
+\label{tab:w3matrix}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrrrrrrrr}
+\toprule
+Cell & Shift & Repeats & XGB & Ratio & RF & MLP & Split & CQR & Mondrian & Ens. \\
+\midrule
+D1 random & reference & 15 & 6.71\% & 1.00 & 6.86\% & 14.52\% & 0.959 & 0.948 & 0.998 & 0.917 \\
+D1 geometry & device geometry & 30 & 12.43\% & 1.85 & 11.78\% & 55.67\% & 0.860 & 0.866 & 0.970 & 0.854 \\
+D1 external & cross-literature & 1 & 11.66\% & 1.74 & 11.80\% & 16.70\% & 0.453 & 0.484 & 0.734 & 0.547 \\
+D1 SE$\to$DE & device type & 1 & 22.12\% & 3.30 & 21.19\% & 266.34\% & 0.330 & 0.414 & 0.525 & 0.586 \\
+D1 DE$\to$SE & device type & 1 & 69.18\% & 10.31 & 73.67\% & 3592.49\% & 0.065 & 0.051 & 0.097 & 0.259 \\
+D2 random & reference & 15 & 3.91\% & 1.00 & 5.32\% & 5.35\% & 0.904 & 0.911 & 0.989 & 0.891 \\
+D2 chemistry LOCO & whole chemistry & 6 & 10.24\% & 2.62 & 9.07\% & 21.16\% & 0.528 & 0.786 & 0.857 & 0.670 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[t]
+\centering\small
+\caption{Method-matrix benchmark. AURC of the relative-error risk--coverage
+curve (lower is better) for each applicability score and control, XGBoost,
+means over repeats; bold marks the best entry in each cell.}
+\label{tab:w3aurc}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Cell & Full pool & Random & Size-only & 5-NN & Mahalanobis & Isol.\ Forest & Domain clf. & Density ratio \\
+\midrule
+D1 random & 0.0671 & 0.0662 & 0.0541 & \textbf{0.0466} & 0.0516 & 0.0535 & 0.0653 & 0.0543 \\
+D1 geometry & 0.1243 & 0.1255 & 0.1141 & \textbf{0.1085} & 0.1142 & 0.1225 & 0.1153 & 0.1097 \\
+D1 external & 0.1166 & 0.1107 & \textbf{0.0913} & 0.1135 & 0.0957 & 0.1178 & 0.1161 & 0.1039 \\
+D1 SE$\to$DE & 0.2212 & 0.2256 & 0.3128 & 0.1442 & 0.1467 & 0.2219 & \textbf{0.1394} & 0.1737 \\
+D1 DE$\to$SE & 0.6918 & 0.6734 & 0.6423 & 0.6017 & 0.5874 & \textbf{0.4182} & 0.5729 & 0.5263 \\
+D2 random & 0.0391 & 0.0388 & 0.0398 & 0.0365 & 0.0379 & 0.0371 & 0.0368 & \textbf{0.0324} \\
+D2 chemistry LOCO & 0.1024 & 0.1102 & 0.0884 & 0.0893 & 0.1089 & \textbf{0.0816} & 0.1013 & 0.1036 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\paragraph{Device-type shift is the largest shift in these data.} Training on the
+474 single-emulsion rows and testing on the 394 double-emulsion rows raises
+XGBoost MAPE to 22.12\% (ratio 3.30 to the D1 reference); the reverse
+direction gives 69.18\% (ratio 10.31). Geometry grouping (12.43\%, ratio
+1.85), cross-literature transfer (11.66\%, 1.74) and whole-chemistry
+leave-one-out on D2 (10.24\%, 2.62) are all smaller. Random forest tracks
+XGBoost in every cell (21.19\% and 73.67\% under device-type shift). The
+fixed-architecture multilayer perceptron, whose early stopping triggered
+within 75--696 iterations in every fit, extrapolates to 266.34\% and
+3592.49\% under device-type shift and to 55.67\% under geometry grouping: an
+unbounded regressor has nothing to hold it inside the physical range once it
+leaves the training support. The matrix also reproduces the quantities of
+Sections~\ref{sec:r2}, \ref{sec:r5} and \ref{sec:r6} up to the fit-partition
+difference: the \tox{} fold of the leave-one-chemistry-out cell gives 20.75\%
+($n=87$, signed relative bias 0.203) compared with the sealed 19.84\%, the other
+five folds range from 5.22\% to 16.15\%, the six-fold macro is 10.24\% versus B1's 10.27\%, and the external cell is 11.66\% (Galogahi 7.71\%,
+Lashkaripour 9.03\%, Mazutis 17.87\%, Roumpea 19.52\%; source-macro
+13.53\%) compared with 11.26\% for the 868-row model.
+
+\paragraph{Interval transfer.} On the reference cells the three row-level
+methods sit near nominal (D1: split conformal 0.959, CQR 0.948, ensemble
+variance 0.917; D2: 0.904, 0.911, 0.891) and group-maximum Mondrian
+conformal over-covers (0.998, 0.989). Under geometry grouping the row-level
+methods fall to 0.854--0.866, while Mondrian reaches 0.970 row-level coverage at a mean width of 78.4~\um{} versus 43.9~\um{} for split conformal (though with few calibration groups its finite-sample group-level guarantee has an attainable ceiling of 0.857 against the 90\% target). Under cross-literature
+shift coverage is 0.453 (split), 0.484 (CQR), 0.547 (ensemble) and 0.734
+(Mondrian, 36.8~\um{} versus 26.3~\um). Under whole-chemistry leave-one-out,
+CQR holds 0.786 where split conformal holds 0.528 and ensemble variance
+0.670; Mondrian reaches 0.857 only by widening to 87.2~\um{} versus 21.6~\um. Under device-type shift every interval calibrated inside the
+training device type is near failure (0.330--0.586 for SE$\to$DE;
+0.051--0.259 for DE$\to$SE).
+
+\paragraph{Applicability scores versus controls.} Table~\ref{tab:w3aurc}
+gives the AURC of each score and control in each cell. The cross-literature
+cell reproduces Section~\ref{sec:r7}: the size-only control (0.0913) beats
+every applicability score, the nearest being Mahalanobis (0.0957). Under
+device-type shift the picture inverts---the size-only control is worse than
+random (0.3128 versus 0.2256 for SE$\to$DE) while the domain classifier
+(0.1394), 5-NN (0.1442) and Mahalanobis (0.1467) lie well below the
+full-pool risk of 0.2212---so droplet size is not a proxy for a change of
+device type. Binary rules thresholded at the 0.95 calibration quantile retain
+almost no double-emulsion row (5-NN retention 0.000 in both directions;
+Isolation Forest 0.023 in SE$\to$DE, with precision 1.000 and recall 0.043
+at 10~\um). This is the formal counterpart of a warning already in our own
+deviation register: the canonical pruning thresholds of Section~\ref{sec:r4}
+are calibrated on single-emulsion rows and support no claim about
+double-emulsion candidates. Under whole-chemistry leave-one-out the global 5-NN
+rule lowers precision (0.416 at 10~\um{} relative to a full-pool rate of 0.514;
+retention 0.785, recall 0.824) while Isolation Forest raises it (0.541;
+retention 0.894, recall 0.945): being near the training chemistries is not
+the same as being reliable on a new one. In the cross-literature cell the
+5-NN rule retains 0.688 of rows with precision 0.886 and recall 0.975
+compared with a full-pool rate of 0.625 for the fit-partition model.
+
+\paragraph{Candidate-level rule.} The pre-registered within-group criterion
+is met by no score in the cross-literature cell (0 of 5 scores), in agreement
+with Section~\ref{sec:r7}. In the geometry-grouped cell the transductive
+domain classifier meets it in 12 of 30 seeds (within-group AURC 0.1126 versus 0.1238 for random and 0.1244 for size-only), 5-NN in 1, Mahalanobis
+in 2, density ratio in 3 and Isolation Forest in 0; the domain classifier
+sees the test inputs and so describes batch screening, not
+candidate-by-candidate arrival. In the two reference cells the criterion
+fires in 1--2 of 15 seeds per score, the order of the 5\% false-positive
+rate. Although the device-type cells nominally pass the within-group test, these
+passes are vacuous in practice: SE$\to$DE contains only 2 test groups, and in
+DE$\to$SE (35 groups) the reference model has already failed (full-pool risk
+0.6918), so within-group ordering ranks a failed model. The leave-one-chemistry-out cell has a single test group per fold
+and is not evaluable under the criterion.
+
+\paragraph{Metric robustness and the size confound (post hoc).} The two
+device-type cells are single fixed splits, so their uncertainty is over rows,
+not seeds: row-bootstrap 95\% intervals for XGBoost MAPE are 20.66--23.56\%
+(SE$\to$DE), 65.38--73.28\% (DE$\to$SE) and 9.75--13.62\% (cross-literature).
+Table~\ref{tab:w3robust} recomputes every cell under median APE, symmetric
+MAPE and absolute log-ratio error. The ranking of the five shift cells by
+ratio to the reference cell is identical under MAPE, symmetric MAPE and
+log-ratio error (DE$\to$SE, SE$\to$DE, whole chemistry, geometry,
+cross-literature); under median APE the cross-literature cell (2.89) moves
+above chemistry (2.66) and geometry (2.21), and the two device-type cells
+remain first (15.02 and 4.92). Device type is confounded with droplet size:
+single-emulsion rows have observed diameters of 28.11--245.1~\um{} (median
+85.71) and double-emulsion rows 15.57--54.21~\um{} (median 35.12); 0.698 of
+double-emulsion rows lie inside the single-emulsion size range but only 0.141
+of single-emulsion rows inside the double-emulsion range. Size-quartile bins
+show that the error is not confined to out-of-range sizes. For SE$\to$DE the
+MAPE rises with droplet size---6.43\% (15.6--27.2~\um, $n=99$), 12.78\%
+(27.2--35.1~\um), 33.02\% (35.1--40.6~\um) and 36.25\% (40.6--54.2~\um)---so
+the largest errors fall on double-emulsion rows whose sizes the
+single-emulsion training set covers. For DE$\to$SE the smallest
+single-emulsion quartile (28.1--63.3~\um, $n=119$), which overlaps the
+double-emulsion range, has the highest MAPE at 104.20\%, falling to 77.90\%
+(63.3--85.7~\um, $n=118$), 61.46\% (85.7--118.3~\um, $n=118$) and 33.15\%
+(118.3--245.1~\um, $n=119$) for the larger quartiles. Device-type shift therefore
+degrades predictions inside the overlapping size range as well as outside
+it.
+
+\begin{table}[t]
+\centering\small
+\caption{Post-hoc metric robustness of the method matrix (XGBoost; means over
+repeats; not part of the frozen protocol). Median APE and symmetric MAPE in
+percent; log-ratio error is the mean absolute $\log(\hat d/d)$. Ratios are to
+the same dataset's random-split reference cell under the same metric.}
+\label{tab:w3robust}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Cell & MdAPE & sMAPE & Log-ratio & Ratio MdAPE & Ratio sMAPE & Ratio log \\
+\midrule
+D1 random & 4.39\% & 6.80\% & 0.068 & 1.00 & 1.00 & 1.00 \\
+D1 geometry & 9.71\% & 12.45\% & 0.125 & 2.21 & 1.83 & 1.84 \\
+D1 external & 12.69\% & 11.66\% & 0.117 & 2.89 & 1.71 & 1.71 \\
+D1 SE$\to$DE & 21.60\% & 25.89\% & 0.263 & 4.92 & 3.81 & 3.85 \\
+D1 DE$\to$SE & 65.92\% & 47.47\% & 0.492 & 15.02 & 6.98 & 7.20 \\
+D2 random & 2.88\% & 3.83\% & 0.038 & 1.00 & 1.00 & 1.00 \\
+D2 chemistry LOCO & 7.69\% & 10.21\% & 0.103 & 2.66 & 2.67 & 2.69 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\paragraph{Uncertainty-aware families: point error and shift ordering.}
+Table~\ref{tab:w4} reports the quantile forest, the Gaussian process and the
+deep ensemble of Section~\ref{sec:w4protocol} on the same cells, seeds and
+partitions, from two runs with byte-identical 11-entry manifests. The shift
+ordering is a property of the data, not of XGBoost: for every family the
+DE$\to$SE cell has the largest error ratio to its own reference (9.37, 8.93
+and 226.33) and SE$\to$DE the second largest for the forest and the process
+(2.77 and 3.96). The deep ensemble, like the matrix's single perceptron,
+explodes under device-type shift (302.83\% and 3271.87\%).
+
+\paragraph{Uncertainty-aware families: interval coverage and the
+Gaussian-process exception.} No interval calibrated inside the training
+device type holds coverage in the DE$\to$SE direction: native coverage is
+0.072 (forest), 0.652 (process) and 0.000 (ensemble), and conformalisation
+does not help (0.072, 0.629, 0.000). The one departure from the
+pre-registered expectation that no native interval would survive either
+device-type cell is the Gaussian process in SE$\to$DE, whose native interval
+covers 0.959 of double-emulsion rows (0.982 after conformalisation) because
+its predictive standard deviation grows outside the training support---at a
+mean width of 49.2~\um{} versus 9.7~\um{} for the forest, on rows whose
+median diameter is 35.12~\um; the same mechanism fails in the opposite
+direction (0.652 at 162.0~\um). Under whole-chemistry shift the forest's
+native interval reaches 0.830 (width 51.4~\um), above the matrix's CQR at
+0.786 and the highest coverage of any interval in either protocol; under
+cross-literature shift the conformalised forest reaches 0.812 and the
+conformalised ensemble 0.906 at 84.2~\um{} where the XGBoost split-conformal
+interval covered 0.453. Conformalisation restores near-nominal coverage on
+both reference cells for all three families (0.903--0.953 on D1,
+0.894--0.896 on D2; the process over-covers D1 at 0.953, marginally outside
+the pre-registered 0.05 band), whereas the deep ensemble's native interval is
+badly under-dispersed even in distribution (0.403 and 0.535), the known
+behaviour of mean--variance ensembles without a likelihood head.
+
+\paragraph{Uncertainty-aware families: native uncertainty as a score.}
+Model-native uncertainty is a good in-distribution ranking score---it beats
+both controls in 0.93 of the D1 random-split repeats for the forest and for
+the process---but, as the pre-registered expectation anticipated, every
+family is beaten by the size-only control or by the random score in at least
+one shift cell: the forest's quantile gap ranks double-emulsion candidates
+worse than random in SE$\to$DE (0.3072 versus 0.2132) and is beaten by
+size-only in the cross-literature cell (0.1115 versus 0.0994); the process
+is beaten by size-only in both device-type cells (0.3760 versus 0.3145;
+0.8487 versus 0.7968); the ensemble's score fails in DE$\to$SE. The interval
+findings of the matrix are therefore not XGBoost-specific: the collapse is a
+property of the shift, with the one qualification that a model whose
+uncertainty grows with distance from the training inputs can buy coverage
+under one direction of device-type shift by widening to the scale of the
+quantity it predicts.
+
+\begin{table}[t]
+\centering\small
+\caption{Uncertainty-aware model families on the method-matrix cells (frozen
+W4 protocol; means over repeats; two runs byte-identical). Ratio is MAPE
+relative to the same model's random-split reference cell. Coverage of
+nominal 90\% intervals: native, split conformal around the point prediction,
+and the conformalised native interval. AURC of each model's relative-error risk--coverage curve (lower is better) for its relative uncertainty score and for the size-only control.}
+\label{tab:w4}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrrrrrr}
+\toprule
+Cell & Model & MAPE & Ratio & Native & Split & Conformalised & AURC uncert. & AURC size-only \\
+\midrule
+D1 random & QRF & 7.65\% & 1.00 & 0.908 & 0.947 & 0.903 & 0.0540 & 0.0622 \\
+ & GP & 9.51\% & 1.00 & 0.860 & 0.974 & 0.953 & 0.0596 & 0.0679 \\
+ & Deep ens. & 14.46\% & 1.00 & 0.403 & 0.960 & 0.914 & 0.0784 & 0.1065 \\
+D1 geometry & QRF & 12.00\% & 1.57 & 0.859 & 0.863 & 0.873 & 0.1047 & 0.1115 \\
+ & GP & 20.81\% & 2.19 & 0.709 & 0.862 & 0.885 & 0.1847 & 0.1907 \\
+ & Deep ens. & 39.81\% & 2.75 & 0.608 & 0.847 & 0.885 & 0.3328 & 0.3838 \\
+D1 external & QRF & 11.95\% & 1.56 & 0.781 & 0.531 & 0.812 & 0.1115 & 0.0994 \\
+ & GP & 20.51\% & 2.16 & 0.734 & 0.625 & 0.734 & 0.1500 & 0.2180 \\
+ & Deep ens. & 17.80\% & 1.23 & 0.328 & 0.906 & 0.906 & 0.1202 & 0.1226 \\
+D1 SE$\to$DE & QRF & 21.18\% & 2.77 & 0.525 & 0.411 & 0.525 & 0.3072 & 0.3064 \\
+ & GP & 37.60\% & 3.96 & 0.959 & 0.122 & 0.982 & 0.3760 & 0.3145 \\
+ & Deep ens. & 302.83\% & 20.95 & 0.330 & 0.030 & 0.391 & 1.4859 & 4.5986 \\
+D1 DE$\to$SE & QRF & 71.65\% & 9.37 & 0.072 & 0.044 & 0.072 & 0.5954 & 0.6664 \\
+ & GP & 84.87\% & 8.93 & 0.652 & 0.017 & 0.629 & 0.8487 & 0.7968 \\
+ & Deep ens. & 3271.87\% & 226.33 & 0.000 & 0.000 & 0.000 & 35.0508 & 32.0161 \\
+D2 random & QRF & 6.39\% & 1.00 & 0.928 & 0.907 & 0.894 & 0.0532 & 0.0636 \\
+ & GP & 3.65\% & 1.00 & 0.884 & 0.899 & 0.896 & 0.0332 & 0.0364 \\
+ & Deep ens. & 5.12\% & 1.00 & 0.535 & 0.894 & 0.896 & 0.0417 & 0.0522 \\
+D2 chemistry LOCO & QRF & 9.85\% & 1.54 & 0.830 & 0.702 & 0.758 & 0.0825 & 0.0967 \\
+ & GP & 16.60\% & 4.55 & 0.699 & 0.359 & 0.716 & 0.1382 & 0.1333 \\
+ & Deep ens. & 20.89\% & 4.08 & 0.274 & 0.359 & 0.447 & 0.1751 & 0.1877 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\paragraph{Covariate-shift weighting does not rescue the intervals.}
+Table~\ref{tab:w5} reports the reweighted split-conformal intervals of
+Section~\ref{sec:w5protocol} for the reference XGBoost model (two runs,
+byte-identical 7-entry manifests; the unweighted branch reproduces the matrix's split-conformal coverage across all 69 cell--repeat splits to machine precision). On
+the reference cells the domain-classifier weights stay close to one and move
+coverage by at most 0.005 (0.959 to 0.955 on D1, 0.904 to 0.899 on D2), as
+expected. The $k$-NN density ratio is too crude in eight dimensions---its
+effective sample size is 0.137 of the calibration set even in
+distribution---and lowers D1 coverage to 0.863, outside the pre-registered
+0.03 band. Under device-type and cross-literature shift both weightings drive
+every test weight orders of magnitude above the calibration weights, so every
+interval becomes infinite: the reported coverage of 1.000 is abstention, not
+prediction, and no finite-interval coverage exists. This is the method's
+correct behaviour when the test input lies outside the calibration support,
+and it agrees with the applicability screens that retain no double-emulsion
+row; it also means that the covariate-shift repair has nothing to offer in
+exactly the cells where coverage was lost. Under geometry shift, the mildest
+shift here, domain weighting restores nominal coverage (0.908 versus 0.860)
+at the price of 0.209 of intervals infinite and finite intervals of
+52.1~\um{} versus 43.9~\um. Under whole-chemistry shift it reaches 0.848 versus 0.528, but 0.326 of intervals are infinite and the finite ones cover
+only 0.662 at 77.5~\um{} versus 21.6~\um; by the pre-declared coverage
+endpoint domain weighting survives 4 of 6 folds, which is more than the
+pre-registered expectation allowed, and it does so largely by abstaining (on
+the \tox{} fold about three quarters of its intervals are infinite). The
+chemistry failure is therefore not repaired by any input-only reweighting,
+consistent with the conditional-shift reading of the \tox{} result, and the
+device-type failure is a support mismatch that reweighting can name but not
+fix.
+
+\begin{table}[t]
+\centering\small
+\caption{Covariate-shift-weighted split conformal for the reference XGBoost
+model (frozen W5 protocol; means over repeats; two runs byte-identical).
+``Cov.'' counts infinite intervals as covering; ``inf.'' is the fraction of
+infinite intervals; ``fin.\ cov.'' and ``width'' are over finite intervals
+only; ESS is the effective sample size of the calibration weights divided by
+the calibration size. Dashes: every interval infinite.}
+\label{tab:w5}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrr|rrrrr|rrrrr}
+\toprule
+ & \multicolumn{2}{c|}{Unweighted} & \multicolumn{5}{c|}{Domain-classifier odds} & \multicolumn{5}{c}{$k$-NN density ratio} \\
+Cell & Cov. & Width & Cov. & Inf. & Fin.\ cov. & Width & ESS & Cov. & Inf. & Fin.\ cov. & Width & ESS \\
+\midrule
+D1 random & 0.959 & 33.0 & 0.955 & 0.000 & 0.955 & 32.4 & 0.841 & 0.863 & 0.002 & 0.862 & 24.1 & 0.137 \\
+D1 geometry & 0.860 & 43.9 & 0.908 & 0.209 & 0.880 & 52.1 & 0.420 & 0.886 & 0.553 & 0.788 & 42.0 & 0.168 \\
+D1 external & 0.453 & 26.3 & 1.000 & 1.000 & --- & --- & 0.076 & 1.000 & 1.000 & --- & --- & 0.281 \\
+D1 SE$\to$DE & 0.330 & 8.9 & 1.000 & 1.000 & --- & --- & 0.998 & 1.000 & 1.000 & --- & --- & 0.416 \\
+D1 DE$\to$SE & 0.065 & 21.2 & 1.000 & 1.000 & --- & --- & 0.836 & 1.000 & 1.000 & --- & --- & 0.018 \\
+D2 random & 0.904 & 23.8 & 0.899 & 0.000 & 0.899 & 23.7 & 0.963 & 0.917 & 0.004 & 0.917 & 26.7 & 0.431 \\
+D2 chemistry LOCO & 0.528 & 21.6 & 0.848 & 0.326 & 0.662 & 77.5 & 0.243 & 0.852 & 0.568 & 0.546 & 37.6 & 0.151 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+
+
+\subsection{R9: Second sealed validation under laboratory shift --- a negative result}
+\label{sec:r9}
+The reveal gate for the Smart Microfluidics sealed set was consumed once
+(2026-10-17T03:41:48Z), after the reveal program had re-verified the digests
+of the protocol, binding, deviation register, custodian manifest, prediction
+bundle and three frozen program files. Table~\ref{tab:d3} lists the locked
+endpoints. The frozen XGBoost size surrogate, fitted on 246 laboratory-A
+rows, reached a MAPE of 240.39\% on the 57 sealed laboratory-B rows compared with a frozen development reference of 39.41\% (reproduction threshold 49.27\%);
+both pre-declared criteria fail. No sealed row (0/57, fraction 0.000) is
+within 10\% relative error; the median absolute percentage error (MdAPE,
+descriptive) is 206.74\%, MAE 595.3~nm, RMSE 1335.0~nm, $R^2=0.026$, and the
+signed relative bias is $-0.700$ with over-prediction on 0.456 of rows. The nominal 90\% split-conformal interval
+(calibration radius 344.19~nm from 50 calibration rows; 196 fit rows) covered
+0.719 of rows at a mean width of 688.4~nm. Observed sizes have median
+98.8~nm (range 64.4--7932.7~nm); predictions have median 200.0~nm but range
+from $-336.3$ to 4036.1~nm: 22 of 57 point predictions (38.6\%) are negative
+diameters and 46 of 57 interval lower bounds (80.7\%) are at or below zero.
+Nothing in the frozen configuration bounds the output, and these rows are
+physically impossible.
+
+\paragraph{Why it failed.} Two facts were on record from the inputs before
+any fit (Section~\ref{sec:d3protocol}): every laboratory-B row uses PBS
+buffer where the development set has 231 MQ and 15 PBS rows, and only 18 of
+57 rows (31.6\%) fall inside the per-feature development range (PEG support
+fraction 0.316, HSPC 0.684). After reveal, the 18 in-range rows have median
+absolute relative error 0.884 and the 39 out-of-range rows 2.755. Range
+violation is therefore strongly associated with error, but a median error of
+88\% inside the marginal range is, as with \tox{}, a conditional shift as
+well: the same PBS formulations give different sizes on another laboratory's
+equipment. Unlike the \tox{} case, the marginal screens did flag the problem
+before reveal; what they could not do is turn a flagged batch into reliable
+candidates.
+
+\paragraph{Applicability rules.} In the corrected applicability block
+(Section~\ref{sec:d3protocol}) the full-pool mean absolute relative error is
+2.404 and the number of reliable rows (within 10\%) is zero under any rule.
+The 5-NN rule at the 0.95 quantile retains 7 of 57 rows (0.123) at a
+retained risk of 1.079, with matched-budget random $p=0.0046$ and
+BH-adjusted $p=0.018$ across four rules; it meets the four locked conditions
+formally, but with zero reliable candidates and compared with a predicted-size-only
+control that retains 23 of 57 rows (0.404) at risk 1.204 ($p=0.0001$), we
+make no benefit claim. Mahalanobis retains 2 rows (risk 1.295, $p=0.169$, BH
+0.225), the domain classifier 1 row (0.237, $p=0.053$, BH 0.106), Isolation
+Forest none (0/57) and strict min--max 18 rows (1.614, $p=0.0027$). At the
+candidate level the pre-registered buffer stratum is not evaluable (one level
+in the sealed set); under the amended main-lipid stratum (ESM 27, HSPC 30)
+all four scores beat the random control (within-stratum AURC 2.105): 5-NN
+1.926 ($p=0.0025$, BH 0.0033), Mahalanobis 1.850 ($p=0.0005$, BH 0.0010),
+Isolation Forest 2.023 ($p=0.016$), domain classifier 1.806 ($p=0.0005$).
+None beats the predicted-size-only control (1.562), so the verdict is no
+candidate-level benefit, as in Sections~\ref{sec:r7} and \ref{sec:r8}.
+
+\paragraph{Alternative metrics and a log-target baseline (post hoc).} The
+headline MAPE is not a tail artifact: on the same 57 rows the symmetric MAPE
+is 129.60\%, the median APE 206.74\%, and the mean absolute log-ratio error
+over the 35 positive predictions is 0.969; every quartile of observed size
+carries a large error and some negative predictions (MAPE 249.9\%, 306.5\%,
+241.1\% and 169.1\%, median APE 208.7\%, 402.4\%, 201.6\% and 102.6\%, for
+sizes 64.4--92.9, 92.9--98.8, 98.8--130.2 and 130.2--7932.7~nm, with negative
+fractions 0.286, 0.571, 0.357 and 0.333; $n=14$, 14, 14 and 15). Refitting the locked configuration to
+$\log(\mathrm{size})$ changes the picture. Its grouped five-fold development
+reference is 16.89\% versus 39.41\% for the raw-scale model (whose folds and
+predictions the refit reproduces exactly), so the raw-scale target was
+already costly inside laboratory A. On laboratory B the log-target model
+gives MAPE 43.05\%, median APE 34.57\%, symmetric MAPE 52.94\%, mean absolute
+log-ratio 0.644, 0.070 of rows within 10\% and no negative prediction; its
+predictions span 56.5--366.3~nm compared with observed sizes up to 7932.7~nm, and
+its largest-size quartile remains the worst (65.8\% versus 38.7\%, 25.8\%
+and 40.2\% for the smaller quartiles). This 43.05\% lies below the frozen
+reproduction threshold of 49.27\% but is 2.55 times the model's own
+development reference (threshold 21.11\%), so it fails the like-for-like
+criterion. We read the frozen result as two separable components: a
+target-scale choice inherited from the published configuration, which
+produced the negative predictions and most of the magnitude, and a residual
+laboratory shift of about two and a half times the development error, which
+survives the correction. Because the log-target model was chosen after the
+reveal, it is a diagnosis, not a validation result.
+
+\paragraph{Secondary endpoints.} PDI is predicted with MAPE 41.24\% (MdAPE
+31.44\%; 0.105 of rows within 10\%). The formation classifier reaches
+accuracy 0.912 and F1 0.954, but 53 of 57 sealed rows are positive, so the
+majority-class baseline is 0.930 and the classifier does not beat it. The
+12-row secondary sealed set (operator B, laboratory A, same equipment),
+outside the primary estimand and reported descriptively only, gives MAPE
+220.27\%, MdAPE 71.87\%, 0.25 of rows within 10\%, coverage 0.833 and 3/12
+negative predictions; the median error under operator shift is far below that
+under laboratory shift, but 12 rows support no stronger statement.
+
+\paragraph{Disclosure.} After the reveal, the applicability-benefit block of
+the frozen reveal program was found to have received signed rather than
+absolute relative error, which is why the frozen result file shows a
+full-pool ``risk'' of $-0.700$. The primary endpoint, both criteria, the
+interval block, the candidate-level block and every point metric use absolute
+error and were unaffected. The block was recomputed by a separate program on
+the already-revealed rows into a separate file; no frozen artifact was
+modified. We describe the D3 reveal as \emph{a sealed prediction followed by
+a disclosed post-reveal scoring correction of the applicability block}. The
+gate is consumed: the laboratory-B and operator-B labels are no longer blind,
+and any further analysis of them is retrospective.
+
+\begin{table}[t]
+\centering\small
+\caption{Locked endpoints of the second sealed validation (Smart
+Microfluidics, laboratory A $\to$ laboratory B, $n=57$).}
+\label{tab:d3}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lr}
+\toprule
+Endpoint & Value \\
+\midrule
+Development reference MAPE (laboratory A, grouped 5-fold CV, frozen pre-reveal) & 39.41\% \\
+Reproduction ($\le 1.25\times$) / strong-replication ($\le 1.00\times$) thresholds & 49.27\% / 39.41\% \\
+Sealed laboratory-B MAPE & 240.39\% \\
+Reproduction / strong-replication criteria & not met / not met \\
+MdAPE (descriptive) & 206.74\% \\
+MAE / RMSE & 595.3 / 1335.0~nm \\
+$R^2$ & 0.026 \\
+Rows within 10\% relative error & 0/57 (0.000) \\
+Signed relative bias / over-predicted fraction & $-0.700$ / 0.456 \\
+Nominal 90\% coverage (mean width) & 0.719 (688.4~nm) \\
+Negative point predictions & 22/57 (38.6\%) \\
+Interval lower bound $\le 0$ & 46/57 (80.7\%) \\
+Strict min--max acceptance (recorded pre-reveal) & 18/57 (31.6\%) \\
+Candidate-level benefit (main-lipid stratum) & none: 4 of 4 scores beat random, 0 of 4 beat size-only \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{What the evidence supports.} Public experimental tables can train
+useful microfluidic surrogates (R1). Random test sets understate deployment
+risk under cross-literature, cross-device and cross-chemistry shift (R2, R5,
+R7). Nominal conformal coverage calibrated on exchangeable rows does not
+transfer to shifted sources, and grouped calibration recovers coverage only at
+a large width cost (R3, R7). Label-free screens can raise the success rate of
+retained candidates while losing recall, and on these data the gain operates
+at the level of literature sources (R4, R7). A frozen physics-guided
+hard-constrained regressor does not improve macro error under
+leave-one-chemistry-out evaluation, while hard bounds remove physically
+invalid outputs (R6). Across a seven-cell method matrix, device-type shift
+between single and double emulsions degrades error more than geometry,
+literature or chemistry shift; label-free screens calibrated on one device
+type retain almost nothing of the other; and quantile-regression intervals
+hold coverage under whole-chemistry shift better than symmetric residual
+intervals (R8). A second sealed test on an independent liposome dataset under
+laboratory shift failed by a wide margin and produced negative diameters from
+an unbounded surrogate, with the covariate-support gap visible from inputs
+alone before reveal (R9).
+
+\paragraph{What it does not support.} No material, formulation, device or
+operating path is shown to be wet-lab feasible; no chemical compatibility,
+manufacturability, stable dripping or prospective discovery is claimed.
+Conformal coverage is not guaranteed for any new chemistry or device. The
+negative \tox{} result is one sealed test of one published-feature baseline
+on one dataset, not a general failure of ML. No applicability rule here is a
+final or optimal pruning algorithm, and none is shown to work at the candidate
+level within a source. The second sealed result is one frozen configuration
+(laboratory-A data, the XGBoost configuration of V1) under one two-laboratory
+shift that is confounded with buffer; it is not an evaluation of the Smart Microfluidics
+dataset or of its authors' models, and it says nothing about formulation
+quality or clinical relevance. The candidate-level pass of the transductive
+domain classifier under geometry shift (12 of 30 seeds) is a batch-screening
+observation made with the test inputs in hand, not a guarantee for
+candidates that arrive one at a time.
+
+\paragraph{What sealing adds.} The sealed \tox{} error (19.84\%) is matched
+by the retrospective leave-one-chemistry-out fold on the same group
+(20.75\%), and the other five folds lie between 5.22\% and 16.15\%; a
+cross-validation would have shown the same magnitude. Sealing did not make
+the failure larger or more surprising than that, and we do not present it as
+such. What it adds is narrower: the model, endpoints and decision rule were
+fixed before any label was seen, so the negative result cannot be the
+residue of tuning on the held-out group; the estimate is prospective rather
+than selected; and the chronology is auditable. The agreement with the
+retrospective fold is evidence that the sealed number is representative, not
+that the seal was unnecessary. The same holds for D3, where the post-hoc
+log-target refit shows how much of the frozen result was a modelling
+choice---visible precisely because the choice was fixed before the outcome
+was known.
+
+\paragraph{What the nine results say together.} Read jointly, the results
+support six observations that no single result establishes alone. First,
+within these data the shifts order themselves by severity: row-random and
+exact-input splits are nearly interchangeable; geometry grouping and
+cross-literature transfer multiply the reference error by 1.74--1.85;
+whole-chemistry holdout by 2.62; device-type shift by 3.30 and 10.31; and the
+cross-laboratory liposome test lies far above its own development reference
+(Table~\ref{tab:d3}). Second, failures come in two layers that need
+different detectors: a support gap, which marginal screens see from inputs
+alone (D3: PEG and HSPC support fractions 0.316 and 0.684), and a conditional
+shift, which they cannot see (\tox{}: every row in range; D3: median error
+0.884 even inside the marginal range). Only the first layer is addressable
+label-free; the second requires either the unrecorded state variables or
+labels from the target domain. Third, the right negative control depends on
+the shift type: a size proxy outranks every applicability score under
+cross-literature and cross-laboratory shift, yet is worse than random under
+device-type shift, so both controls must be reported whenever an
+applicability benefit is claimed. Fourth, every interval method loses
+coverage under shift; what differs is the price of recovery (grouped
+calibration at two- to fourfold width) and the robustness ranking
+(quantile-regression intervals above symmetric residual intervals under
+chemistry shift). The three uncertainty-aware families confirm that this is
+a property of the shift rather than of XGBoost; the only interval that
+survives a device-type cell does so by growing to the size of the quantity it
+predicts. Reweighting calibration residuals by estimated input density ratios
+does not change this: where the shift is large the weights diverge and every
+interval becomes infinite, and where it is mild nominal coverage is bought
+with one interval in five infinite. Fifth, the three unbounded regressors in this paper---B3,
+the fixed-architecture perceptron and the frozen liposome surrogate---all
+produced physically impossible outputs under shift, while the bounded V2
+variants produced none. The post-hoc log-target refit of the liposome model
+shows that positivity alone is bought by a target transform with no
+architecture-level bound; what the $(0,D)$ parameterisation adds is the
+regime's upper limit and the anchor, and neither form of bound buys accuracy.
+Sixth, the
+frozen pipelines agree with one another where they overlap (the \tox{} fold
+at 20.75\% versus the sealed 19.84\%; the chemistry macro at 10.24\% versus 10.27\%), so the shift effects are properties of the data rather than of one
+implementation.
+
+\paragraph{Conditional shift and unobserved state.} The \tox{} failure
+occurred with every row inside the marginal training ranges. The public table
+omits dynamic interfacial tension, adsorption kinetics, molecular descriptors,
+interfacial rheology and wetting behaviour---state that the source authors
+themselves flag as relevant~\cite{chagot2022}. More model capacity or more
+physics on the four recorded predictors cannot reconstruct unobserved physics;
+the V2 verdict is consistent with this reading.
+
+\paragraph{The role of hard constraints.} We do not argue that hard
+constraints beat soft penalties; that comparison is established
+elsewhere~\cite{naturecs2021,baty2023,prnet2026}. The audit's quantitative
+product is narrower: physics guidance plus architecture-level bounds did not
+buy accuracy under chemistry shift here, but bounds did guarantee physically
+admissible outputs where the unconstrained B3 produced 13.73\% invalid points.
+Two further observations point the same way without changing the verdict: in
+the method matrix an unbounded multilayer perceptron with fixed
+hyperparameters extrapolates to 266.34\% and 3592.49\% error under
+device-type shift where the tree models stay at 73.67\% or below, and on the
+liposome dataset the unbounded frozen surrogate returned negative diameters
+for 38.6\% of 57 sealed rows. Neither shows that bounds buy accuracy; both
+show what their absence permits. The liposome case also bounds the claim
+from the other side: refitting the same configuration to the logarithm of
+size removes every negative prediction (Section~\ref{sec:r9}), so the
+cheapest insurance against a sign error is a positivity-preserving target
+transform, and the case for architecture-level bounds rests on the upper
+limit and on regime-specific constraints rather than on positivity. A last
+connection is speculative and we offer it as such: a hard
+structural bound fixed before fitting also acts as a guard against post-reveal
+tuning impulses, because it cannot be relaxed to fit a revealed group without
+breaking the frozen protocol. We found no explicit treatment of this link in
+the literature we searched.
+
+\paragraph{Incident disclosure as a methodological object.} The serialisation
+failure at the reveal boundary is an engineering fact, not a scientific
+finding, and we present it as a reproducibility case report: what was frozen,
+what failed, what the recovery touched and what it did not. Its value is in
+making the chronology auditable, not in being novel.
+
+\paragraph{Limitations.} The external set has 64 rows from four sources with
+per-source $n$ as small as 6; $R^2$ is unstable there. Retention is
+source-blocked, so candidate-level applicability benefit is untested.
+Only six chemistry groups exist for V2, so group-level conformal calibration
+is not finite-sample attainable and all V2 intervals are heuristics. The
+\tox{} reveal gate is consumed; any new blind claim, for V1 or V2, requires a
+different, never-inspected dataset. The DAFD normalised workbook lacks
+row-level viscosities, interfacial tensions and densities, so V2 cannot be
+transferred to DAFD as a fully native model. The matrix models are untuned,
+so the multilayer-perceptron figures describe one fixed configuration rather
+than the architecture's limit; the matrix reference cells use the fit
+partition and are not comparable with Table~\ref{tab:repro}; the SE$\to$DE
+cell has two test groups. The uncertainty-aware families are likewise
+untuned: the deep ensemble has no likelihood head, so its under-dispersion
+does not bound what a proper deep ensemble could do, and the Gaussian
+process's length scales reach their fixed bounds on several features. The
+liposome development reference is a grouped
+cross-validation MAPE on laboratory A rather than a published held-out error,
+because none was retrieved before the lock; the sealed laboratory is
+confounded with buffer; the 12-row operator set supports no inference; and
+both D3 label sets are now open, so no further blind claim can be made on
+them. The V1 development reference and the D3 log-target baseline are
+retrospective; neither is a validation result, and the latter was chosen
+after the reveal. No wet experiment was performed.
+
+\section{Outlook: Toward More Accurate Surrogates for Larger Devices and New Materials}
+\label{sec:outlook}
+The audits above say where current surrogates fail; they do not say how to
+build better ones. The programme below is what we would run next, stated as
+hypotheses and designs rather than results. Nothing in it has been executed.
+
+\paragraph{Record the state that the failures point to.} Both sealed failures
+occurred where the recorded inputs omit variables that plausibly govern the
+outcome: for \tox{}, dynamic interfacial tension, adsorption kinetics and
+wetting; for the liposome dataset, buffer ionic strength and
+equipment-specific mixing. A schema for future collections should carry, per
+row, the surfactant or lipid identity with molecular descriptors,
+time-resolved interfacial tension where measurable, viscosity curves for
+non-Newtonian phases, contact angle or a wettability class, temperature,
+buffer composition, chip material and fabrication batch, equipment and
+operator identifiers, and a flow-regime label (dripping, squeezing, jetting).
+The unified long-format row schema in our repository already reserves fields for device class,
+experiment cluster and shift-group keys so that sealed splits can be drawn
+mechanically; the state variables listed here are the additions it needs.
+
+\paragraph{Fill support gaps by design, not by chance.} The liposome failure
+was predictable from inputs alone: two formulation components had support
+fractions of 0.316 and 0.684, and the buffer was confounded with the
+laboratory. A prospective collection should place design points along the
+boundary of the existing data's applicability domain rather than inside
+it---space-filling designs over the full component ranges, both buffers in
+both laboratories, both device types in one study---so that calibration
+partitions contain the regions a deployment will visit. The applicability
+scores audited here could not certify predictions, but they remain
+candidates for choosing where to measure next.
+
+\paragraph{Measure the laboratory effect and learn how many target rows
+recalibration needs.} A multi-laboratory round robin with the same
+formulations on the same chip model, each laboratory's rows sealed in turn
+under the protocol used here, would separate the equipment, operator and
+buffer effects that D3 could not disentangle. On top of it we would test
+few-shot recalibration: freeze the source model, reveal $n$ target-laboratory
+rows chosen by an applicability score, fit only a bias and scale correction
+(or a hierarchical model with laboratory and device random effects), and
+evaluate on the sealed remainder. The curve of sealed error as a function of $n$ is
+the quantity a practitioner moving to new equipment needs. The operator-B set
+hints that operator shift is milder than laboratory shift, but with twelve
+rows it cannot say by how much.
+
+\paragraph{Treat scale-up as regime change.} Larger channels and higher flow
+rates move a device across capillary-, Reynolds- and Weber-number regimes and
+across the confinement ratio $d/D$. The bound $0<\hat d<D$ that held for one
+oval junction fails for plugs and jets, and dimensionless features---the
+natural transfer prior---lost most of their accuracy on a new channel depth
+in the one droplet study that tested them~\cite{labchip2025dimless}, and did
+not prevent the 3.30 and 10.31 error ratios under device-type shift here. We would therefore (i)~train a
+regime classifier from recorded inputs and fit regime-specific anchors and
+bounds; (ii)~use dimensionless groups as a prior to be tested by a sealed
+holdout on the larger device, not as a guarantee; (iii)~make a hard bound
+appropriate to the regime a mandatory baseline for every model, since the
+unbounded models here produced negative diameters and errors above 200\%;
+and (iv)~audit the input schema for identifiability before training,
+following~\cite{cieslak2026}, so that the model is not asked for a quantity
+its inputs cannot determine.
+
+\paragraph{Uncertainty that survives shift.} Weighted conformal prediction
+with estimated density ratios~\cite{tibshirani2019} is the natural candidate
+under covariate shift. Tested here with the transductive estimates already in
+hand (Section~\ref{sec:r8}), it abstains on every row under device-type and
+cross-literature shift and repairs geometry shift only with one interval in
+five infinite, so the next step is better-calibrated density-ratio estimators
+together with an explicit abstention rule, not more reweighting.
+Group-conditional (Mondrian) calibration needs roughly ten independent
+calibration groups before a 90\% group-level target becomes attainable, and
+collections should be planned with that count in mind. Quantile-regression
+intervals are the sensible default when groups are few, given their behaviour
+under chemistry shift here.
+
+\paragraph{An evaluation standard.} For each new dataset: a protocol hashed
+before download; a sealed whole-group holdout (laboratory, device type or
+chemistry) revealed once; a reference error computed on development data
+before reveal; both a random and a size-proxy control for every
+applicability claim; batch-level and candidate-by-candidate deployment
+reported separately; a bounded baseline beside every unbounded model; two
+independent runs with byte-identical manifests; and publication of the
+result whatever its sign. The method matrix of Section~\ref{sec:r8} is the
+template, with the cross-laboratory row to be filled by the round robin above
+and a real-versus-simulation row from public CFD data whose licence is still
+to be verified.
+
+\section{Reproducibility}
+\label{sec:repro}
+Data provenance is fixed by SHA-256 digests of the four OSF workbooks, the
+two Zenodo MATLAB tables and the Zenodo 17867478 archive
+(Appendix~\ref{app:hashes}); the Zenodo MD5 values match their records, and
+the six bound raw files of the liposome dataset are hashed individually in
+the custodian manifest. The V1 protocol (\hashtrunc{14027524}{e68b1c}),
+pre-registration lock (\hashtrunc{1f6901bc}{57edc7}), prediction bundle,
+consumed gate (\hashtrunc{e285c4cb}{b13344}), recovery implementation
+(\hashtrunc{06b6099e}{263a74}) and incident record
+(\hashtrunc{75615dd3}{7db162}) are hashed and cross-referenced. The V2
+protocol digest is recorded in each run's configuration before fitting; the
+V2 implementation (\hashtrunc{21ab9ea2}{3b08c7}) and its tests are hashed in
+the same file. Both the V2 and the expanded DAFD suites were run twice in
+separate directories; the two \texttt{artifact\_hashes.json} manifests (24 and
+45 entries) are byte-identical, and every listed file in both runs
+re-hashes to its manifest entry. Per-row predictions for every model, fold and
+seed, split manifests proving zero prohibited overlap, inner-selection
+records, applicability calibration metadata and label-free selection files
+hashed before scoring are retained. All released JSON passes a strict parser
+that rejects \texttt{NaN} and infinities. Superseded fast/smoke outputs and
+pre-fix JSON are excluded from the release inventory. The test-evidence
+placeholder in each run states explicitly that the analysis script did not
+execute the unit tests; test execution is recorded separately by the release
+process. All numbers in this manuscript are checked programmatically against
+the artifact files by a ledger-driven script, including a prefix-and-suffix
+match for every truncated digest and a denominator check for the pruning
+percentages.
+
+The method-matrix protocol (\hashtrunc{8f058306}{6cb3f8}) was hashed and
+committed before any run; its two canonical runs in separate directories
+produced byte-identical 13-entry manifests, and every listed file re-hashes
+to its entry. The uncertainty-aware comparison protocol was likewise
+committed before its two runs (digest \hashtrunc{23dc7d0a}{951aa8}); the
+two 11-entry manifests are byte-identical, and the 24 register entries are Gaussian-process optimiser convergence clarifications (W4-C1) plus the same DE$\to$SE calibration fallback as the matrix (W4-D1). The covariate-shift-weighting protocol
+was committed before its two runs (digest \hashtrunc{03af5544}{e60b40}); the
+7-entry manifests are byte-identical, and the unweighted branch reproduces the
+matrix's split-conformal coverage in every cell. The second sealed validation is bound by
+a protocol hashed before download (\hashtrunc{1fa4b404}{c91419}), a parameter binding hashed
+after inspecting headers and metadata only (\hashtrunc{c943ce8b}{7d284f}), a
+custodian manifest, a numbered deviation register, frozen prediction and
+reveal programs with recorded digests, a prediction bundle containing inputs
+and predictions only (\hashtrunc{79be728c}{296bd2}) and a one-time gate
+file; each step is a separate commit, so the order cannot be changed without
+rewriting history. The reveal program re-verified every digest before reading
+a label; the single post-reveal correction lives in a separate file and
+touched no frozen artifact. The four post-hoc analyses of
+Section~\ref{sec:posthoc} write to a separate directory with their own hash
+manifest and environment record, read only revealed or never-sealed labels,
+and are marked post hoc wherever their numbers appear.
+
+\paragraph{Data and code availability.} All three datasets are public under
+their own licences (OSF 938rs; Zenodo 7055018, CC~BY~4.0; Zenodo 17867478,
+CC~BY~4.0) and are not redistributed. The protocols, binding file, deviation
+registers, ledgers, reconciliation script, matrix runner, custodian,
+prediction and reveal programs and byte-copies of the summary artifacts are
+version-controlled on our release branch; the full per-row artifacts
+of the canonical runs (about 26~MB per matrix run) and the custodian's
+sealed-label files are held in our workspace. The sealed-label files
+will not be released, because they are rows of the public dataset that any
+reader can reconstruct from the binding file. At the time of this draft the
+public repository is documentation-only; the code, registers, ledgers and
+hash manifests are scheduled to be published with the tagged release that
+accompanies the preprint. Until that tag exists, the chronology asserted in
+this paper---protocol before download, binding before fit, one consumed
+gate---is auditable only from our commit history, and we state this
+rather than imply otherwise. After the release, independent verification
+requires re-downloading the public datasets, re-running the canonical runs in
+the pinned environment, comparing manifests, and executing the ledger script,
+which re-derives every number in this manuscript from the artifact files.
+
+\paragraph{Acknowledgement of sources.} This independent work reproduces,
+stress-tests or builds on public work by Lashkaripour et al.\ and Chagot et
+al.; it does not imply their endorsement.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\appendix
+
+\section{Search basis for the two limited claims}
+\label{app:search}
+Both ``to our knowledge'' statements in Section~\ref{sec:intro} rest on two
+structured web searches (16~October~2026) whose full records are kept in the
+project repository. We summarise scope, findings and
+limits here; this appendix is the documented basis required by our own release
+checklist and is not a systematic review.
+
+\paragraph{Scope.} Five axes were searched for the design side: ML/DL for
+microfluidic device and inverse design; physics-guided or physics-informed
+microfluidic modelling, including hard constraints; the phrase ``native
+variables'' and its contrast with dimensionless learning; reliability audits,
+preregistration and sealed prediction in ML for science; and ML--microfluidics
+reviews and benchmarks. Five further questions were searched for the
+methodology side: negative-result publication venues; preregistration and
+blind holdout in ML; hard-versus-soft constraint comparisons; use of the
+phrase ``reliability audit''; and disclosure of engineering incidents in
+scientific ML.
+
+\paragraph{Findings that forbid absolute claims.} ML inverse design of
+microfluidic devices is saturated across droplet generators, DLD, micromixers,
+chip architecture and circuits~\cite{lashkaripour2024,vatandoust2022,
+samari2025,li2026pathchip,mufg2026,ceyehao2026}. Physics-guided microfluidic
+modelling is occupied, predominantly with soft penalties or
+PINNs~\cite{bpgnn2026,flexpinn2026}. Publishing negative results, preregistering
+predictive modelling, and comparing hard with soft constraints are each
+established~\cite{karl2024,hofman2023,naturecs2021,baty2023,prnet2026}.
+``Reliability audit'' is a descriptive phrase used across several
+communities~\cite{schulam2019} and is not claimed as a term. Materials
+informatics already has pre-registered negative validations~\cite{vepa2026}.
+
+\paragraph{Findings that permit the two qualified claims.} No retrieved
+peer-reviewed work implements a sealed-prediction or preregistered reliability
+audit on a microfluidic ML design surrogate; microfluidic reviews name the gap
+without filling it~\cite{labchip2025review,das2025}. No retrieved work unifies
+physics guidance, architecture-level hard constraints and inverse-design
+evaluation for microfluidics; the nearest are a periodicity-enforcing network
+for DLD~\cite{lee2025} and an optimisation-layer repair
+operator~\cite{micromixer2026}, and one physics-guided micromixer paper lists
+the combination as an open gap~\cite{bpgnn2026}.
+
+\paragraph{Items not retrieved.} (i)~Any peer-reviewed paper disclosing a
+self-inflicted reveal or serialisation incident in a sealed holdout as a
+methodological section; (ii)~``native variables'' as an established modelling
+term; (iii)~a microfluidic ML paper titled or framed as a reliability audit;
+(iv)~a benchmark review of reliability for microfluidic ML design surrogates.
+Non-retrieval is not evidence of absence. (v)~One item was resolved on
+17~October~2026: the full text of the dimensional-analysis droplet
+paper~\cite{labchip2025dimless}, unavailable during the scan, was read from
+its PubMed Central deposit, and Section~\ref{sec:related} now follows its
+reported $R^2$ values.
+
+\paragraph{Limits.} Web search is not exhaustive; several 2026 hits on
+``sealed holdout'', ``preregistration'' and ``negative result'' come from
+non-peer-reviewed self-archives and are neither cited as prior art nor relied
+upon. Because they occupy the vocabulary, we avoid any unqualified ``first''.
+Bibliographic metadata (author lists, titles, volumes, article numbers and
+DOIs) were checked against Crossref, arXiv and Zenodo records on
+17~October~2026.
+
+\section{Implementation details and code organisation}
+\label{app:impl}
+This appendix records the configuration constants and program structure
+behind Sections~\ref{sec:w3protocol} and \ref{sec:d3protocol}, so that the
+runs can be repeated without reading the code. Values here are design
+constants fixed in the frozen protocols, not measured results.
+
+\paragraph{Software environment.} Python~3.12.13, numpy~2.5.1,
+pandas~3.0.3, scikit-learn~1.9.0 and XGBoost~3.3.0 on macOS (arm64), with
+single-threaded numerical libraries and \texttt{n\_jobs=1} everywhere; each
+run writes its own environment record. The earlier suites (E0, expanded
+DAFD, V1, V2) record their versions in their own reproducibility manifests.
+
+\paragraph{Method matrix: partitions and models.} Within each cell the
+training rows are split into fit and calibration partitions by
+\texttt{GroupShuffleSplit} (test size 0.20, random state equal to the seed)
+on dependency groups for D1 and by row for D2; zero group overlap is
+asserted. Point models are XGBoost in the published D1 configuration (100
+trees, depth 6, learning rate 0.3, L2 regularisation 1, minimum child weight
+1) and in the depth-3 B1 configuration for D2; a random forest with 400 trees
+and minimum leaf size 2; and a multilayer perceptron on standardised inputs
+with two hidden layers of 64 units, ReLU activations, Adam at learning rate
+$10^{-3}$, early stopping on a 15\% internal validation split with 30
+iterations of patience and at most 2000 iterations, the D2 response
+standardised. No model is tuned per cell. TabPFN was excluded because its
+weights require a network download that the runs do not perform.
+
+\paragraph{Method matrix: intervals and applicability.} All interval
+calibration happens in model-response space on the calibration partition and
+is mapped to micrometres through the dataset's monotone positive map. Split
+conformal uses the finite-sample quantile of absolute residuals. CQR fits
+gradient-boosted quantile regressors at 0.05 and 0.95 (300 trees, depth 3,
+learning rate 0.03, minimum leaf 5), the same hyperparameters as the expanded
+suite. Mondrian conformal aggregates absolute-residual scores by group
+maximum over the calibration partition's test-group key and takes the
+finite-sample order statistic, reporting the attainable coverage ceiling when
+the number of groups is too small. The ensemble-variance interval refits the
+point model on 20 cluster-bootstrap resamples, takes the per-row standard
+deviation, and sets the radius to $q\cdot\max(\mathrm{sd},\mathrm{floor})$
+with $q$ the finite-sample 0.90 quantile of $|\mathrm{residual}|/\mathrm{sd}$
+on the calibration partition. Applicability scores are fitted on
+fit-partition inputs with thresholds taken from calibration-partition scores:
+standardised 5-NN distance; OAS-shrinkage Mahalanobis distance (the expanded
+suite's implementation); Isolation Forest with 400 trees and automatic
+contamination; a class-balanced logistic regression separating fit inputs
+from test inputs (transductive, recorded as such); and the 5-NN density ratio
+of Section~\ref{sec:w3protocol}. Rule (a) thresholds at the 0.95 calibration
+quantile; rule (b) keeps the lower-scoring half of every test group. Point
+endpoints are MAPE, MAE in micrometres and $R^2$ (flagged unstable for test
+groups with fewer than 15 rows), with an equal-weight macro over test groups;
+interval endpoints are empirical coverage, mean width, simultaneous group
+coverage and the attainability flag; applicability endpoints are Spearman
+correlation with relative error, the tie-aware AURC, within-group AURC over
+groups with at least four rows, and precision, recall and retention of both
+rules at 10\% relative and 10~\um{} absolute error. The candidate-level test
+permutes scores within each test group (2000 permutations, one-sided) and
+applies BH across the five scores of a cell.
+
+\paragraph{Method matrix: code.} The runner is a small package whose modules
+mirror the protocol: a workspace loader that reuses the audited suite's
+frozen data loaders and core functions; dataset specifications with units and
+size proxies; cell construction with the fit/calibration split and overlap
+assertions; point fits that never see rows outside the supplied fit index;
+interval and applicability modules in which no function accepts a target
+column; an evaluation module that is the only place test labels enter; and an
+orchestrator that writes CSV with twelve-significant-digit floats, JSON
+through a strict writer that rejects non-finite values, a hash manifest of
+every artifact and a \texttt{compare} command for the two-run check. Seven
+unit tests pin the invariants: the AURC equals the expanded suite's
+risk-curve scalar under ties; the within-group median rule keeps half of
+every group; BH adjustment is monotone and bounded; grouped cells have zero
+unit overlap and the expected sizes; fit and calibration partitions are
+disjoint and grouped; scores and intervals are label-free and deterministic;
+D2 models predict in micrometres. A canonical run takes about 25 minutes on
+one core; fast runs with two seeds and 200 permutations are labelled
+non-inferential and never summarised.
+
+\paragraph{Second sealed validation: programs.} Four programs implement the
+D3 protocol. The custodian is the only program that reads laboratory-B
+targets before the reveal; it assigns each row an opaque identifier (a UUID
+derived from the source-file digest and row index), quarantines rows by index
+without reading targets, writes the labelled development table, the
+input-only sealed tables and the sealed label files (mode 0600), and prints
+nothing but counts and digests. The prediction program reads development
+labels and sealed inputs only, never opens a label file, fits the locked
+XGBoost (100 trees, depth 3, learning rate 0.3, seed 42) on six numeric
+inputs plus one-hot aqueous medium over the development levels, fits the
+secondary PDI regressor and formation classifier in the same configuration,
+calibrates the 90\% split-conformal radius on a 20\% \texttt{GroupShuffleSplit}
+partition of the development clusters, computes applicability scores with
+thresholds at the 0.95 calibration quantile, and writes a hashed bundle
+containing inputs, predictions, interval endpoints, scores and masks together
+with an environment record and the digests of the protocol, binding, register
+and program files. The reveal program verifies every one of those digests,
+creates the gate file with an exclusive-create flag so that a second reveal
+is refused, joins labels to the bundle by opaque identifier, and scores every
+pre-declared endpoint (matched-budget random retention with 10\,000
+repetitions; within-stratum permutations with 2000 draws over strata of at
+least four rows), writing through the strict JSON writer regardless of the
+result's sign. The correction program for register entry D3-R1 recomputes
+only the applicability block from the already-revealed scored rows into a
+separate file. Before the real run, the prediction and reveal programs were
+exercised on a pseudo-sealed split of laboratory-A rows, and a second reveal
+attempt was refused by the gate.
+
+\paragraph{Uncertainty-aware comparison models.} The W4 runner reuses the
+matrix's cells, partitions, loaders, applicability scores and endpoint
+functions and adds one module with the three model families. The quantile
+forest is a scikit-learn random forest (400 trees, minimum leaf size 5,
+seeded) whose leaf assignments on the fit rows give each query row a weight
+vector---one over the leaf size for every tree, averaged over trees, checked
+to sum to one---from which weighted empirical quantiles at 0.05, 0.95 are
+read; the implementation is tested against a brute-force inverse CDF. The
+Gaussian process uses a constant-times-anisotropic-RBF kernel plus a white
+noise term with bounds $[10^{-3},10^{3}]$, $[10^{-2},10^{2}]$ and
+$[10^{-6},10]$, target normalisation, two optimiser restarts and the cell seed
+as random state; optimiser convergence warnings are counted and logged as register clarifications (W4-C1), never suppressed. The deep ensemble fits five copies of the
+matrix's 64--64 perceptron with random states $1000\,s+m$ for seed $s$ and
+member $m$ on the same fit rows and reports the member mean and standard
+deviation. The native uncertainty, the two conformal corrections and all
+scores are computed in response space and mapped to micrometres as in the
+matrix. Six unit tests pin the weighted-quantile arithmetic, row-stochastic
+weights, interval ordering and determinism of all three models.
+
+\paragraph{Covariate-shift-weighted intervals.} The W5 runner adds one pure
+module: a weighted radius that sorts calibration residuals, accumulates the
+normalised weights $w_i/(\sum_j w_j + w(x))$ and returns the first residual at
+which the cumulative mass reaches 0.90, or $+\infty$ if it never does; the
+domain-classifier odds with probabilities clipped to
+$[10^{-6},1-10^{-6}]$; the $k$-NN density ratio
+$(r_{\mathrm{fit}}/r_{\mathrm{test}})^{d}\,n_{\mathrm{fit}}/n_{\mathrm{test}}$;
+and the effective sample size $(\sum w)^2/\sum w^2$. Seven unit tests check
+that constant weights reproduce the matrix's clamped finite-sample quantile
+whenever that quantile is attainable and return an infinite radius otherwise,
+that the radius is monotone in the test weight and in up-weighting of large
+residuals, and the scaling of the two weight estimators. Infinite radii are
+written as \texttt{inf} in CSV and never enter a mean width.
+
+\paragraph{Post-hoc analyses.} A single script implements the four analyses
+of Section~\ref{sec:posthoc}. It refuses a non-empty output directory, reads
+the V1 development table, the D3 development table, the D3 sealed inputs and
+revealed scored rows, and the matrix's canonical per-row predictions; it
+re-derives the frozen D3 development reference and the frozen raw-scale
+predictions before fitting the log-target model, and aborts if either
+differs; bootstrap resampling uses a fixed seed; outputs pass the strict JSON
+writer and are listed in a hash manifest with an environment record.
+
+\paragraph{Number reconciliation.} A standard-library script reads a ledger
+in which every printed number names the artifact file and the JSON path or
+CSV selector it is recomputed from. It fails if a printed value disagrees
+with the artifact at the stated precision, if the printed string is absent
+from the manuscript, if a percentage that needs its denominator is not
+accompanied by the denominator wording nearby, if any truncated digest does
+not match one registered SHA-256 on both prefix and suffix, or if any of the
+three canonical run pairs differ in their hash manifests or fail to re-hash;
+files evicted by the cloud file system are reported as warnings, never
+passed silently.
+
+\clearpage
+\section{Artifact sources of tables and figures}
+\label{app:sources}
+Every table and figure is derived from the artifact files below (paths
+relative to the workspace root); the ledger script of
+Appendix~\ref{app:impl} recomputes every printed number from them. Figures
+re-rendered for this version from the same artifact data are marked.
+\begin{center}\scriptsize
+\begin{tabular}{lp{0.80\linewidth}}
+\toprule
+Object & Artifact file(s) \\
+\midrule
+Table~\ref{tab:repro} & \texttt{artifacts/\allowbreak reproduction\_\allowbreak metrics.json}. \\
+Figure~\ref{fig:cqr} & \texttt{artifacts/\allowbreak figure\_\allowbreak cqr\_\allowbreak coverage\_\allowbreak shift.png} (re-rendered for v0.3 by \texttt{tools/\allowbreak render\_\allowbreak figures.py} from the artifact data behind that file). \\
+Table~\ref{tab:sources} & MAPE, MAE and $R^2$: \texttt{artifacts/\allowbreak reproduction\_\allowbreak metrics.json}; $n$: \texttt{artifacts/\allowbreak reliability\_\allowbreak metrics.json}. \\
+Table~\ref{tab:pruning} & \texttt{artifacts/\allowbreak reliability\_\allowbreak metrics.json}; \texttt{expanded\_\allowbreak artifacts\_\allowbreak canonical\_\allowbreak run2/\allowbreak applicability\_\allowbreak binary\_\allowbreak summary.csv} and \texttt{applicability\_\allowbreak source\_\allowbreak binary\_\allowbreak summary.csv}. \\
+Figure~\ref{fig:distance} & \texttt{artifacts/\allowbreak figure\_\allowbreak distance\_\allowbreak vs\_\allowbreak error.png} (re-rendered for v0.3 by \texttt{tools/\allowbreak render\_\allowbreak figures.py} from the artifact data behind that file). \\
+Figure~\ref{fig:pruning} & \texttt{artifacts/\allowbreak figure\_\allowbreak pruning\_\allowbreak precision.png}. \\
+Table~\ref{tab:v1} & \texttt{blind\_\allowbreak artifacts/\allowbreak blind\_\allowbreak reveal\_\allowbreak results\_\allowbreak recovered.json}; bias and BH-adjusted values from \texttt{blind\_\allowbreak artifacts/\allowbreak posthoc\_\allowbreak analysis\_\allowbreak corrected/\allowbreak blind\_\allowbreak posthoc\_\allowbreak summary.json}. \\
+Figure~\ref{fig:v1diag} & \texttt{blind\_\allowbreak artifacts/\allowbreak posthoc\_\allowbreak analysis\_\allowbreak corrected/\allowbreak figure\_\allowbreak 1\_\allowbreak blind\_\allowbreak prediction\_\allowbreak diagnostics.png} (re-rendered for v0.3.2 by \texttt{tools/\allowbreak render\_\allowbreak figures.py} from \texttt{blind\_\allowbreak tx100\_\allowbreak merged\_\allowbreak diagnostics.csv} in the same directory, with wider panel spacing). \\
+Figure~\ref{fig:v1risk} & \texttt{blind\_\allowbreak artifacts/\allowbreak posthoc\_\allowbreak analysis\_\allowbreak corrected/\allowbreak figure\_\allowbreak 2\_\allowbreak blind\_\allowbreak risk\_\allowbreak coverage.png}. \\
+Table~\ref{tab:v2} & \texttt{v2\_\allowbreak artifacts\_\allowbreak canonical\_\allowbreak run2/\allowbreak model\_\allowbreak summary\_\allowbreak metrics.csv}; run1 is byte-identical by hash manifest. \\
+Figure~\ref{fig:v2paired} & \texttt{v2\_\allowbreak artifacts\_\allowbreak canonical\_\allowbreak run2/\allowbreak paired\_\allowbreak group\_\allowbreak differences\_\allowbreak v2p\_\allowbreak vs\_\allowbreak b1.csv}. \\
+Figure~\ref{fig:splits} & \texttt{expanded\_\allowbreak artifacts\_\allowbreak canonical\_\allowbreak run2/\allowbreak figure\_\allowbreak 1\_\allowbreak split\_\allowbreak generalization.png}. \\
+Figure~\ref{fig:riskcov} & \texttt{expanded\_\allowbreak artifacts\_\allowbreak canonical\_\allowbreak run2/\allowbreak figure\_\allowbreak 3\_\allowbreak relative\_\allowbreak risk\_\allowbreak coverage.png} (re-rendered for v0.3 by \texttt{tools/\allowbreak render\_\allowbreak figures.py} from the artifact data behind that file). \\
+Figure~\ref{fig:retention} & \texttt{expanded\_\allowbreak artifacts\_\allowbreak canonical\_\allowbreak run2/\allowbreak figure\_\allowbreak 4\_\allowbreak source\_\allowbreak retention.png} (re-rendered for v0.3 by \texttt{tools/\allowbreak render\_\allowbreak figures.py} from the artifact data behind that file). \\
+Table~\ref{tab:w3matrix} & \texttt{w3\_\allowbreak artifacts\_\allowbreak canonical\_\allowbreak run2/\allowbreak matrix\_\allowbreak summary.json} and \texttt{summary\_\allowbreak interval.csv}; run1 is byte-identical by hash manifest. \\
+Table~\ref{tab:w3aurc} & \texttt{w3\_\allowbreak artifacts\_\allowbreak canonical\_\allowbreak run2/\allowbreak summary\_\allowbreak ad.csv}. \\
+Table~\ref{tab:w3robust} & \texttt{posthoc\_\allowbreak review\_\allowbreak round2/\allowbreak w3\_\allowbreak metric\_\allowbreak robustness.json}. \\
+Table~\ref{tab:w4} & \texttt{w4\_\allowbreak artifacts\_\allowbreak canonical\_\allowbreak run2/\allowbreak w4\_\allowbreak summary.json}. \\
+Table~\ref{tab:w5} & \texttt{w5\_\allowbreak artifacts\_\allowbreak canonical\_\allowbreak run2/\allowbreak w5\_\allowbreak summary.json}. \\
+Table~\ref{tab:d3} & \texttt{d3\_\allowbreak blind\_\allowbreak artifacts/\allowbreak reveal/\allowbreak blind\_\allowbreak reveal\_\allowbreak results.json}; thresholds and pre-reveal acceptance from \texttt{d3\_\allowbreak blind\_\allowbreak artifacts/\allowbreak prereveal/\allowbreak blind\_\allowbreak prediction\_\allowbreak bundle.json}; negative-prediction counts from \texttt{d3\_\allowbreak blind\_\allowbreak artifacts/\allowbreak reveal/\allowbreak posthoc\_\allowbreak applicability\_\allowbreak corrected.json}. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Hash registry}
+\label{app:hashes}
+Full SHA-256 digests for the truncated values cited in the text.
+\begin{center}\scriptsize
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{ll}
+\toprule
+Object & SHA-256 \\
+\midrule
+Comprehensive\_normalized.xlsx & \texttt{aebb0136ff812f7233c8fd57ebc0f27f1b935736e8a9c1d4fdc20585f06b9c06} \\
+Generalizability\_data\_normalized.xlsx & \texttt{e90996da3e866e64922dc3b8aaef4b092ee6845fe95aac356c73e90ed108b303} \\
+Final\_Comprehensive\_plus\_Generalizability\_data\_normalized.xlsx & \texttt{14ebfaae93a7bbc7e1a73be91a629c57b1720dffac0dd45cef6d7df4e7eb6ac3} \\
+Raw\_SE\_dataset.xlsx & \texttt{996862065c33a3f17a36ad2df825179937ddbd7f3c8da41765946a9c1db5e579} \\
+matTrainingDataSet.mat & \texttt{7fab0693a7065198468a5d654226f5e2164985e334ed105f91355bdd49fb1a17} \\
+matTestDataSet.mat & \texttt{55f202bd19433331c86ddc65507e834036d294f7f9b4db2275f21ad91f6729da} \\
+microfluidics\_dataset.zip (Zenodo 17867478) & \texttt{54272086fb390c788c25780856439ba32bfceeae3d40f19bc72af76529af13ee} \\
+V1 protocol (BLIND\_VALIDATION\_PROTOCOL.md) & \texttt{1402752425f111a97222ae5c4cb7d13bd68ca1fdfabab978594ac79370e68b1c} \\
+V1 pre-registration lock & \texttt{1f6901bc79de2cd189c7813d63e16ba561b7c502ce42721f4ed9e15a2357edc7} \\
+V1 prediction bundle & \texttt{2b6eb42d709b367c563e62ca7c82ee764c06ac2b67dffc9f1127b3b732d6932d} \\
+V1 sealed labels & \texttt{0e4c9a2577449446875d69ac51713aba510f7f492d7dffc4b6e3595746cc4fb9} \\
+V1 frozen reveal implementation & \texttt{46a289ad4369b10b56f8d1c233ba3a401769dec8fbcf392b1235a0baebd27a48} \\
+V1 consumed gate & \texttt{e285c4cb4ad7db74b9a3aca4b6240759081095c821865ae76852486f6fb13344} \\
+V1 recovery implementation & \texttt{06b6099e0d7c754681bcee7de8f16b8eec8c6c902d4ca996d3e9d0086e263a74} \\
+V1 recovered result & \texttt{008d026163af37b7ecddf220d2ffc5aea0818784561a389419e088cf0eaa1624} \\
+V1 incident record & \texttt{75615dd3fc6f1d3ea26224c5243b56dd25003dcba48d935e502a6fa72e7db162} \\
+V2 protocol (PHYSICS\_CONSTRAINED\_V2\_PROTOCOL.md) & \texttt{5e4a1e4c4a8bb344ed0d1393477a7807b69cc57517eb359a03aec3cbf6471d55} \\
+V2 implementation (native\_physics\_v2.py) & \texttt{21ab9ea25eb1bfb8421c49d6a21b216242283286d33999eea88550c5f63b08c7} \\
+Method-matrix protocol (W3\_PROTOCOL.md) & \texttt{8f058306de4d51de1c3708443ed46d7c1556fef95ba3479a1cc7389ee46cb3f8} \\
+Uncertainty-aware comparison protocol (W4\_PROTOCOL.md) & \texttt{23dc7d0ae5431aeb89e3fe9a9174552e0d0258824658f97a674ccb216e951aa8} \\
+Covariate-shift weighting protocol (W5\_PROTOCOL.md) & \texttt{03af554431259a7971ca695db3a80e8cddc270814365c2f4c0c1f63960e60b40} \\
+D3 sealed protocol (D3\_BLIND\_PROTOCOL.md) & \texttt{1fa4b404c964c1cfd2d78d2c1fbf5a9965e11560e4d07d2f4e005e15adc91419} \\
+D3 parameter binding (D3\_BINDING.json) & \texttt{c943ce8bfab2e2db225e7d3fa3947b8f15ca54ac9063b866af2c1ca9157d284f} \\
+D3 prediction bundle & \texttt{79be728c7673803e329ce85574def2c34a869f52d3e2526a1a3161343d296bd2} \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\end{document}

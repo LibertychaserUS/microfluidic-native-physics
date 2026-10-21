@@ -2,6 +2,10 @@
 
 # Public release checklist
 
+> Historical document: this checklist guided the documentation-only staging
+> phase (July 2026). The release state is described in the root `README.md`;
+> the Hugging Face mirror named below was not created.
+
 GitHub is the primary release. Hugging Face is published only after the GitHub
 commit/tag is fixed and all shared artifacts can point back to it.
 

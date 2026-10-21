@@ -1,0 +1,9 @@
+[
+  {
+    "id": "W5-D1",
+    "cell": "D1_de_to_se",
+    "repeat": 0,
+    "deviation": "calibration rule fell back from dependency_group to row",
+    "reason": "fewer than five dependency groups among the training rows (as W3-D1)"
+  }
+]

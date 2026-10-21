@@ -1,0 +1,547 @@
+method,scope,scope_id,outcome,n,aurc,full_coverage_risk
+random_score,row_micro,ALL,relative,64,0.10899299996598284,0.11258371856167436
+random_score,row_micro,ALL,normalized,64,0.13998064049099823,0.1384838036052568
+random_score,row_micro,ALL,absolute_um,64,11.786762979769014,12.22702390780177
+random_score,source,Galogahi et al,relative,24,0.09413565164171979,0.08353232751445178
+random_score,source,Galogahi et al,normalized,24,0.1158688734093377,0.10441951684980337
+random_score,source,Galogahi et al,absolute_um,24,11.638567132091497,10.953302716156243
+random_score,source,Lashkaripour et al,relative,20,0.07349485461505285,0.08777176958413795
+random_score,source,Lashkaripour et al,normalized,20,0.09141538124342982,0.11333272527350813
+random_score,source,Lashkaripour et al,absolute_um,20,3.0857658561301458,3.7681089938955603
+random_score,source,Mazutis et al,relative,6,0.20259107043752267,0.19410792320746026
+random_score,source,Mazutis et al,normalized,6,0.3610146365536584,0.3413103524843852
+random_score,source,Mazutis et al,absolute_um,6,9.02536591384146,8.532758812109629
+random_score,source,Roumpea et al,relative,14,0.14946171092780453,0.1628927997623426
+random_score,source,Roumpea et al,normalized,14,0.1419753381931412,0.14588417185462013
+random_score,source,Roumpea et al,absolute_um,14,27.325643013277308,28.077966582928184
+random_score,source_context,context_00,relative,14,0.14946171092780453,0.1628927997623426
+random_score,source_context,context_00,normalized,14,0.1419753381931412,0.14588417185462013
+random_score,source_context,context_00,absolute_um,14,27.325643013277308,28.077966582928184
+random_score,source_context,context_01,relative,10,0.09675586195562647,0.11148220047806501
+random_score,source_context,context_01,normalized,10,0.1348281908789456,0.1602526169550454
+random_score,source_context,context_01,absolute_um,10,3.466973475528399,4.120737426982081
+random_score,source_context,context_02,relative,6,0.1543778210474428,0.1504724169319934
+random_score,source_context,context_02,normalized,6,0.19860845876691968,0.19341073490520147
+random_score,source_context,context_02,absolute_um,6,26.48112783558931,25.788097987360207
+random_score,source_context,context_03,relative,6,0.023739417996266488,0.025929874089537074
+random_score,source_context,context_03,normalized,6,0.026338460255298346,0.028746355473748153
+random_score,source_context,context_03,absolute_um,6,2.633846025529837,2.8746355473748175
+random_score,source_context,context_04,relative,6,0.05222927063333332,0.04937013435333957
+random_score,source_context,context_04,normalized,6,0.06674831402036878,0.06347236585617066
+random_score,source_context,context_04,absolute_um,6,6.674831402036877,6.347236585617066
+random_score,source_context,context_05,relative,6,0.20259107043752267,0.19410792320746026
+random_score,source_context,context_05,normalized,6,0.3610146365536584,0.3413103524843852
+random_score,source_context,context_05,absolute_um,6,9.02536591384146,8.532758812109629
+random_score,source_context,context_06,relative,10,0.05095694034042636,0.06406133869021088
+random_score,source_context,context_06,normalized,10,0.05197728353570754,0.0664128335919709
+random_score,source_context,context_06,absolute_um,10,2.6730887980261007,3.4154805608090393
+random_score,source_context,context_07,relative,6,0.11727647285633297,0.10835688468293703
+random_score,source_context,context_07,normalized,6,0.13961195191807227,0.13204861116409314
+random_score,source_context,context_07,absolute_um,6,9.307463461204819,8.803240744272875
+axis_aligned,row_micro,ALL,relative,64,0.08931112166922038,0.11258371856167436
+axis_aligned,row_micro,ALL,normalized,64,0.10998426300447292,0.1384838036052568
+axis_aligned,row_micro,ALL,absolute_um,64,7.0431178702584285,12.22702390780177
+axis_aligned,source,Galogahi et al,relative,24,0.07510447378529593,0.08353232751445178
+axis_aligned,source,Galogahi et al,normalized,24,0.09294955404883964,0.10441951684980337
+axis_aligned,source,Galogahi et al,absolute_um,24,7.708026057398083,10.953302716156243
+axis_aligned,source,Lashkaripour et al,relative,20,0.08777176958413793,0.08777176958413795
+axis_aligned,source,Lashkaripour et al,normalized,20,0.11333272527350816,0.11333272527350813
+axis_aligned,source,Lashkaripour et al,absolute_um,20,3.7681089938955603,3.7681089938955603
+axis_aligned,source,Mazutis et al,relative,6,0.19410792320746026,0.19410792320746026
+axis_aligned,source,Mazutis et al,normalized,6,0.3413103524843852,0.3413103524843852
+axis_aligned,source,Mazutis et al,absolute_um,6,8.532758812109629,8.532758812109629
+axis_aligned,source,Roumpea et al,relative,14,0.16289279976234258,0.1628927997623426
+axis_aligned,source,Roumpea et al,normalized,14,0.14588417185462008,0.14588417185462013
+axis_aligned,source,Roumpea et al,absolute_um,14,28.07796658292818,28.077966582928184
+axis_aligned,source_context,context_00,relative,14,0.16289279976234258,0.1628927997623426
+axis_aligned,source_context,context_00,normalized,14,0.14588417185462008,0.14588417185462013
+axis_aligned,source_context,context_00,absolute_um,14,28.07796658292818,28.077966582928184
+axis_aligned,source_context,context_01,relative,10,0.11148220047806501,0.11148220047806501
+axis_aligned,source_context,context_01,normalized,10,0.1602526169550454,0.1602526169550454
+axis_aligned,source_context,context_01,absolute_um,10,4.120737426982081,4.120737426982081
+axis_aligned,source_context,context_02,relative,6,0.1504724169319934,0.1504724169319934
+axis_aligned,source_context,context_02,normalized,6,0.19341073490520147,0.19341073490520147
+axis_aligned,source_context,context_02,absolute_um,6,25.788097987360207,25.788097987360207
+axis_aligned,source_context,context_03,relative,6,0.025929874089537074,0.025929874089537074
+axis_aligned,source_context,context_03,normalized,6,0.028746355473748153,0.028746355473748153
+axis_aligned,source_context,context_03,absolute_um,6,2.8746355473748175,2.8746355473748175
+axis_aligned,source_context,context_04,relative,6,0.04937013435333957,0.04937013435333957
+axis_aligned,source_context,context_04,normalized,6,0.06347236585617066,0.06347236585617066
+axis_aligned,source_context,context_04,absolute_um,6,6.347236585617066,6.347236585617066
+axis_aligned,source_context,context_05,relative,6,0.19410792320746026,0.19410792320746026
+axis_aligned,source_context,context_05,normalized,6,0.3413103524843852,0.3413103524843852
+axis_aligned,source_context,context_05,absolute_um,6,8.532758812109629,8.532758812109629
+axis_aligned,source_context,context_06,relative,10,0.06406133869021088,0.06406133869021088
+axis_aligned,source_context,context_06,normalized,10,0.0664128335919709,0.0664128335919709
+axis_aligned,source_context,context_06,absolute_um,10,3.4154805608090393,3.4154805608090393
+axis_aligned,source_context,context_07,relative,6,0.10835688468293703,0.10835688468293703
+axis_aligned,source_context,context_07,normalized,6,0.13204861116409314,0.13204861116409314
+axis_aligned,source_context,context_07,absolute_um,6,8.803240744272875,8.803240744272875
+knn_3,row_micro,ALL,relative,64,0.10660350368364811,0.11258371856167436
+knn_3,row_micro,ALL,normalized,64,0.14990242213565652,0.1384838036052568
+knn_3,row_micro,ALL,absolute_um,64,6.137798917128844,12.22702390780177
+knn_3,source,Galogahi et al,relative,24,0.04700600190064714,0.08353232751445178
+knn_3,source,Galogahi et al,normalized,24,0.05661691438653913,0.10441951684980337
+knn_3,source,Galogahi et al,absolute_um,24,5.345869922243608,10.953302716156243
+knn_3,source,Lashkaripour et al,relative,20,0.09756105213622882,0.08777176958413795
+knn_3,source,Lashkaripour et al,normalized,20,0.13444623648102777,0.11333272527350813
+knn_3,source,Lashkaripour et al,absolute_um,20,3.6925928911392942,3.7681089938955603
+knn_3,source,Mazutis et al,relative,6,0.17483444390888578,0.19410792320746026
+knn_3,source,Mazutis et al,normalized,6,0.297781279402309,0.3413103524843852
+knn_3,source,Mazutis et al,absolute_um,6,7.444531985057723,8.532758812109629
+knn_3,source,Roumpea et al,relative,14,0.18338445146605784,0.1628927997623426
+knn_3,source,Roumpea et al,normalized,14,0.146092670452133,0.14588417185462013
+knn_3,source,Roumpea et al,absolute_um,14,28.11809579351443,28.077966582928184
+knn_3,source_context,context_00,relative,14,0.18338445146605784,0.1628927997623426
+knn_3,source_context,context_00,normalized,14,0.146092670452133,0.14588417185462013
+knn_3,source_context,context_00,absolute_um,14,28.11809579351443,28.077966582928184
+knn_3,source_context,context_01,relative,10,0.10270903683762318,0.11148220047806501
+knn_3,source_context,context_01,normalized,10,0.1434078318720433,0.1602526169550454
+knn_3,source_context,context_01,absolute_um,10,3.687590451538502,4.120737426982081
+knn_3,source_context,context_02,relative,6,0.15631451068523192,0.1504724169319934
+knn_3,source_context,context_02,normalized,6,0.19956481478934285,0.19341073490520147
+knn_3,source_context,context_02,absolute_um,6,26.60864197191239,25.788097987360207
+knn_3,source_context,context_03,relative,6,0.0251390618526144,0.025929874089537074
+knn_3,source_context,context_03,normalized,6,0.02786708367751264,0.028746355473748153
+knn_3,source_context,context_03,absolute_um,6,2.786708367751263,2.8746355473748175
+knn_3,source_context,context_04,relative,6,0.0395421732799002,0.04937013435333957
+knn_3,source_context,context_04,normalized,6,0.04842205798096127,0.06347236585617066
+knn_3,source_context,context_04,absolute_um,6,4.842205798096125,6.347236585617066
+knn_3,source_context,context_05,relative,6,0.17483444390888578,0.19410792320746026
+knn_3,source_context,context_05,normalized,6,0.297781279402309,0.3413103524843852
+knn_3,source_context,context_05,absolute_um,6,7.444531985057723,8.532758812109629
+knn_3,source_context,context_06,relative,10,0.05348868175529875,0.06406133869021088
+knn_3,source_context,context_06,normalized,10,0.0544847548550471,0.0664128335919709
+knn_3,source_context,context_06,absolute_um,10,2.802043084190241,3.4154805608090393
+knn_3,source_context,context_07,relative,6,0.1252475219150331,0.10835688468293703
+knn_3,source_context,context_07,normalized,6,0.1521757724391091,0.13204861116409314
+knn_3,source_context,context_07,absolute_um,6,10.145051495940606,8.803240744272875
+knn_5,row_micro,ALL,relative,64,0.10533189504931353,0.11258371856167436
+knn_5,row_micro,ALL,normalized,64,0.14806706856040658,0.1384838036052568
+knn_5,row_micro,ALL,absolute_um,64,6.0894054442876895,12.22702390780177
+knn_5,source,Galogahi et al,relative,24,0.04734279429253798,0.08353232751445178
+knn_5,source,Galogahi et al,normalized,24,0.05694544780216441,0.10441951684980337
+knn_5,source,Galogahi et al,absolute_um,24,5.440593634775503,10.953302716156243
+knn_5,source,Lashkaripour et al,relative,20,0.09404481237265644,0.08777176958413795
+knn_5,source,Lashkaripour et al,normalized,20,0.1293160152259936,0.11333272527350813
+knn_5,source,Lashkaripour et al,absolute_um,20,3.550149558206295,3.7681089938955603
+knn_5,source,Mazutis et al,relative,6,0.17225407357625355,0.19410792320746026
+knn_5,source,Mazutis et al,normalized,6,0.2905406846178902,0.3413103524843852
+knn_5,source,Mazutis et al,absolute_um,6,7.263517115447255,8.532758812109629
+knn_5,source,Roumpea et al,relative,14,0.1761945432328973,0.1628927997623426
+knn_5,source,Roumpea et al,normalized,14,0.14161453445073277,0.14588417185462013
+knn_5,source,Roumpea et al,absolute_um,14,27.256200007270905,28.077966582928184
+knn_5,source_context,context_00,relative,14,0.1761945432328973,0.1628927997623426
+knn_5,source_context,context_00,normalized,14,0.14161453445073277,0.14588417185462013
+knn_5,source_context,context_00,absolute_um,14,27.256200007270905,28.077966582928184
+knn_5,source_context,context_01,relative,10,0.09638383909938945,0.11148220047806501
+knn_5,source_context,context_01,normalized,10,0.13396599145244054,0.1602526169550454
+knn_5,source_context,context_01,absolute_um,10,3.444802870680688,4.120737426982081
+knn_5,source_context,context_02,relative,6,0.15631451068523192,0.1504724169319934
+knn_5,source_context,context_02,normalized,6,0.19956481478934285,0.19341073490520147
+knn_5,source_context,context_02,absolute_um,6,26.60864197191239,25.788097987360207
+knn_5,source_context,context_03,relative,6,0.03323040835860711,0.025929874089537074
+knn_5,source_context,context_03,normalized,6,0.03660566185633765,0.028746355473748153
+knn_5,source_context,context_03,absolute_um,6,3.660566185633769,2.8746355473748175
+knn_5,source_context,context_04,relative,6,0.0395421732799002,0.04937013435333957
+knn_5,source_context,context_04,normalized,6,0.04842205798096127,0.06347236585617066
+knn_5,source_context,context_04,absolute_um,6,4.842205798096125,6.347236585617066
+knn_5,source_context,context_05,relative,6,0.17225407357625355,0.19410792320746026
+knn_5,source_context,context_05,normalized,6,0.2905406846178902,0.3413103524843852
+knn_5,source_context,context_05,absolute_um,6,7.263517115447255,8.532758812109629
+knn_5,source_context,context_06,relative,10,0.05181898139209914,0.06406133869021088
+knn_5,source_context,context_06,normalized,10,0.0525638076880144,0.0664128335919709
+knn_5,source_context,context_06,absolute_um,10,2.7032525740962017,3.4154805608090393
+knn_5,source_context,context_07,relative,6,0.07668158519647221,0.10835688468293703
+knn_5,source_context,context_07,normalized,6,0.09663568358686242,0.13204861116409314
+knn_5,source_context,context_07,absolute_um,6,6.442378905790828,8.803240744272875
+knn_10,row_micro,ALL,relative,64,0.10616354605975895,0.11258371856167436
+knn_10,row_micro,ALL,normalized,64,0.14915516360770775,0.1384838036052568
+knn_10,row_micro,ALL,absolute_um,64,6.111207929248514,12.22702390780177
+knn_10,source,Galogahi et al,relative,24,0.04872095465989577,0.08353232751445178
+knn_10,source,Galogahi et al,normalized,24,0.05844518526254369,0.10441951684980337
+knn_10,source,Galogahi et al,absolute_um,24,5.527598103733232,10.953302716156243
+knn_10,source,Lashkaripour et al,relative,20,0.0964046034131745,0.08777176958413795
+knn_10,source,Lashkaripour et al,normalized,20,0.13261246666776874,0.11333272527350813
+knn_10,source,Lashkaripour et al,absolute_um,20,3.645439315456433,3.7681089938955603
+knn_10,source,Mazutis et al,relative,6,0.16971394033727863,0.19410792320746026
+knn_10,source,Mazutis et al,normalized,6,0.2843540475342008,0.3413103524843852
+knn_10,source,Mazutis et al,absolute_um,6,7.108851188355021,8.532758812109629
+knn_10,source,Roumpea et al,relative,14,0.173297221653587,0.1628927997623426
+knn_10,source,Roumpea et al,normalized,14,0.13820758339587902,0.14588417185462013
+knn_10,source,Roumpea et al,absolute_um,14,26.600472544505546,28.077966582928184
+knn_10,source_context,context_00,relative,14,0.173297221653587,0.1628927997623426
+knn_10,source_context,context_00,normalized,14,0.13820758339587902,0.14588417185462013
+knn_10,source_context,context_00,absolute_um,14,26.600472544505546,28.077966582928184
+knn_10,source_context,context_01,relative,10,0.10039613939151452,0.11148220047806501
+knn_10,source_context,context_01,normalized,10,0.13974029224552525,0.1602526169550454
+knn_10,source_context,context_01,absolute_um,10,3.5932833001727777,4.120737426982081
+knn_10,source_context,context_02,relative,6,0.15631451068523192,0.1504724169319934
+knn_10,source_context,context_02,normalized,6,0.19956481478934285,0.19341073490520147
+knn_10,source_context,context_02,absolute_um,6,26.60864197191239,25.788097987360207
+knn_10,source_context,context_03,relative,6,0.031012620617793422,0.025929874089537074
+knn_10,source_context,context_03,normalized,6,0.034128255249080114,0.028746355473748153
+knn_10,source_context,context_03,absolute_um,6,3.412825524908017,2.8746355473748175
+knn_10,source_context,context_04,relative,6,0.041506167273614024,0.04937013435333957
+knn_10,source_context,context_04,normalized,6,0.05121008632712892,0.06347236585617066
+knn_10,source_context,context_04,absolute_um,6,5.121008632712892,6.347236585617066
+knn_10,source_context,context_05,relative,6,0.16971394033727863,0.19410792320746026
+knn_10,source_context,context_05,normalized,6,0.2843540475342008,0.3413103524843852
+knn_10,source_context,context_05,absolute_um,6,7.108851188355021,8.532758812109629
+knn_10,source_context,context_06,relative,10,0.05348868175529875,0.06406133869021088
+knn_10,source_context,context_06,normalized,10,0.0544847548550471,0.0664128335919709
+knn_10,source_context,context_06,absolute_um,10,2.802043084190241,3.4154805608090393
+knn_10,source_context,context_07,relative,6,0.1268995823996979,0.10835688468293703
+knn_10,source_context,context_07,normalized,6,0.15283511610560963,0.13204861116409314
+knn_10,source_context,context_07,absolute_um,6,10.189007740373974,8.803240744272875
+knn_20,row_micro,ALL,relative,64,0.10740371157757427,0.11258371856167436
+knn_20,row_micro,ALL,normalized,64,0.15130285153540202,0.1384838036052568
+knn_20,row_micro,ALL,absolute_um,64,6.156230995857228,12.22702390780177
+knn_20,source,Galogahi et al,relative,24,0.04649490500032422,0.08353232751445178
+knn_20,source,Galogahi et al,normalized,24,0.05598864605764264,0.10441951684980337
+knn_20,source,Galogahi et al,absolute_um,24,5.28816676194799,10.953302716156243
+knn_20,source,Lashkaripour et al,relative,20,0.10046587106450555,0.08777176958413795
+knn_20,source,Lashkaripour et al,normalized,20,0.13959798288461853,0.11333272527350813
+knn_20,source,Lashkaripour et al,absolute_um,20,3.806868431339619,3.7681089938955603
+knn_20,source,Mazutis et al,relative,6,0.16971394033727863,0.19410792320746026
+knn_20,source,Mazutis et al,normalized,6,0.2843540475342008,0.3413103524843852
+knn_20,source,Mazutis et al,absolute_um,6,7.108851188355021,8.532758812109629
+knn_20,source,Roumpea et al,relative,14,0.173297221653587,0.1628927997623426
+knn_20,source,Roumpea et al,normalized,14,0.13820758339587902,0.14588417185462013
+knn_20,source,Roumpea et al,absolute_um,14,26.600472544505546,28.077966582928184
+knn_20,source_context,context_00,relative,14,0.173297221653587,0.1628927997623426
+knn_20,source_context,context_00,normalized,14,0.13820758339587902,0.14588417185462013
+knn_20,source_context,context_00,absolute_um,14,26.600472544505546,28.077966582928184
+knn_20,source_context,context_01,relative,10,0.10971965270280001,0.11148220047806501
+knn_20,source_context,context_01,normalized,10,0.15512662468327248,0.1602526169550454
+knn_20,source_context,context_01,absolute_um,10,3.988927609419845,4.120737426982081
+knn_20,source_context,context_02,relative,6,0.15631451068523192,0.1504724169319934
+knn_20,source_context,context_02,normalized,6,0.19956481478934285,0.19341073490520147
+knn_20,source_context,context_02,absolute_um,6,26.60864197191239,25.788097987360207
+knn_20,source_context,context_03,relative,6,0.023662682990811024,0.025929874089537074
+knn_20,source_context,context_03,normalized,6,0.02633513160055247,0.028746355473748153
+knn_20,source_context,context_03,absolute_um,6,2.6335131600552457,2.8746355473748175
+knn_20,source_context,context_04,relative,6,0.03707926942379921,0.04937013435333957
+knn_20,source_context,context_04,normalized,6,0.04577439804342059,0.06347236585617066
+knn_20,source_context,context_04,absolute_um,6,4.577439804342057,6.347236585617066
+knn_20,source_context,context_05,relative,6,0.16971394033727863,0.19410792320746026
+knn_20,source_context,context_05,normalized,6,0.2843540475342008,0.3413103524843852
+knn_20,source_context,context_05,absolute_um,6,7.108851188355021,8.532758812109629
+knn_20,source_context,context_06,relative,10,0.0507767338171509,0.06406133869021088
+knn_20,source_context,context_06,normalized,10,0.05130411209267449,0.0664128335919709
+knn_20,source_context,context_06,absolute_um,10,2.638468923320903,3.4154805608090393
+knn_20,source_context,context_07,relative,6,0.11981372364561199,0.10835688468293703
+knn_20,source_context,context_07,normalized,6,0.14312789332601772,0.13204861116409314
+knn_20,source_context,context_07,absolute_um,6,9.541859555067846,8.803240744272875
+mahalanobis_oas,row_micro,ALL,relative,64,0.09512676085310677,0.11258371856167436
+mahalanobis_oas,row_micro,ALL,normalized,64,0.12842681484454543,0.1384838036052568
+mahalanobis_oas,row_micro,ALL,absolute_um,64,5.720055264025967,12.22702390780177
+mahalanobis_oas,source,Galogahi et al,relative,24,0.05168278376873914,0.08353232751445178
+mahalanobis_oas,source,Galogahi et al,normalized,24,0.0635607592813131,0.10441951684980337
+mahalanobis_oas,source,Galogahi et al,absolute_um,24,6.115426916158835,10.953302716156243
+mahalanobis_oas,source,Lashkaripour et al,relative,20,0.08430756668958055,0.08777176958413795
+mahalanobis_oas,source,Lashkaripour et al,normalized,20,0.1084092457346634,0.11333272527350813
+mahalanobis_oas,source,Lashkaripour et al,absolute_um,20,3.3333248446844763,3.7681089938955603
+mahalanobis_oas,source,Mazutis et al,relative,6,0.16971394033727863,0.19410792320746026
+mahalanobis_oas,source,Mazutis et al,normalized,6,0.2843540475342008,0.3413103524843852
+mahalanobis_oas,source,Mazutis et al,absolute_um,6,7.108851188355021,8.532758812109629
+mahalanobis_oas,source,Roumpea et al,relative,14,0.17748539584700085,0.1628927997623426
+mahalanobis_oas,source,Roumpea et al,normalized,14,0.14313436765495538,0.14588417185462013
+mahalanobis_oas,source,Roumpea et al,absolute_um,14,27.548718553849852,28.077966582928184
+mahalanobis_oas,source_context,context_00,relative,14,0.17748539584700085,0.1628927997623426
+mahalanobis_oas,source_context,context_00,normalized,14,0.14313436765495538,0.14588417185462013
+mahalanobis_oas,source_context,context_00,absolute_um,14,27.548718553849852,28.077966582928184
+mahalanobis_oas,source_context,context_01,relative,10,0.11354299253336135,0.11148220047806501
+mahalanobis_oas,source_context,context_01,normalized,10,0.15605273187891938,0.1602526169550454
+mahalanobis_oas,source_context,context_01,absolute_um,10,4.012741539295137,4.120737426982081
+mahalanobis_oas,source_context,context_02,relative,6,0.15631451068523192,0.1504724169319934
+mahalanobis_oas,source_context,context_02,normalized,6,0.19956481478934285,0.19341073490520147
+mahalanobis_oas,source_context,context_02,absolute_um,6,26.60864197191239,25.788097987360207
+mahalanobis_oas,source_context,context_03,relative,6,0.031012620617793422,0.025929874089537074
+mahalanobis_oas,source_context,context_03,normalized,6,0.034128255249080114,0.028746355473748153
+mahalanobis_oas,source_context,context_03,absolute_um,6,3.412825524908017,2.8746355473748175
+mahalanobis_oas,source_context,context_04,relative,6,0.0395421732799002,0.04937013435333957
+mahalanobis_oas,source_context,context_04,normalized,6,0.04842205798096127,0.06347236585617066
+mahalanobis_oas,source_context,context_04,absolute_um,6,4.842205798096125,6.347236585617066
+mahalanobis_oas,source_context,context_05,relative,6,0.16971394033727863,0.19410792320746026
+mahalanobis_oas,source_context,context_05,normalized,6,0.2843540475342008,0.3413103524843852
+mahalanobis_oas,source_context,context_05,absolute_um,6,7.108851188355021,8.532758812109629
+mahalanobis_oas,source_context,context_06,relative,10,0.04927550426078039,0.06406133869021088
+mahalanobis_oas,source_context,context_06,normalized,10,0.05031117590309662,0.0664128335919709
+mahalanobis_oas,source_context,context_06,absolute_um,10,2.5874041807071047,3.4154805608090393
+mahalanobis_oas,source_context,context_07,relative,6,0.07704538803359197,0.10835688468293703
+mahalanobis_oas,source_context,context_07,normalized,6,0.09022589775986149,0.13204861116409314
+mahalanobis_oas,source_context,context_07,absolute_um,6,6.015059850657433,8.803240744272875
+isolation_forest,row_micro,ALL,relative,64,0.10820060800553777,0.11258371856167436
+isolation_forest,row_micro,ALL,normalized,64,0.1500270614886971,0.1384838036052568
+isolation_forest,row_micro,ALL,absolute_um,64,6.303791653866671,12.22702390780177
+isolation_forest,source,Galogahi et al,relative,24,0.06023484051499489,0.08353232751445178
+isolation_forest,source,Galogahi et al,normalized,24,0.07402082029140479,0.10441951684980337
+isolation_forest,source,Galogahi et al,absolute_um,24,6.5550904034286965,10.953302716156243
+isolation_forest,source,Lashkaripour et al,relative,20,0.10289234892682309,0.08777176958413795
+isolation_forest,source,Lashkaripour et al,normalized,20,0.13986976820488436,0.11333272527350813
+isolation_forest,source,Lashkaripour et al,absolute_um,20,3.937324882126808,3.7681089938955603
+isolation_forest,source,Mazutis et al,relative,6,0.16971394033727863,0.19410792320746026
+isolation_forest,source,Mazutis et al,normalized,6,0.2843540475342008,0.3413103524843852
+isolation_forest,source,Mazutis et al,absolute_um,6,7.108851188355021,8.532758812109629
+isolation_forest,source,Roumpea et al,relative,14,0.1738875664761721,0.1628927997623426
+isolation_forest,source,Roumpea et al,normalized,14,0.14385600126981193,0.14588417185462013
+isolation_forest,source,Roumpea et al,absolute_um,14,27.68760959504692,28.077966582928184
+isolation_forest,source_context,context_00,relative,14,0.1738875664761721,0.1628927997623426
+isolation_forest,source_context,context_00,normalized,14,0.14385600126981193,0.14588417185462013
+isolation_forest,source_context,context_00,absolute_um,14,27.68760959504692,28.077966582928184
+isolation_forest,source_context,context_01,relative,10,0.10582555870888707,0.11148220047806501
+isolation_forest,source_context,context_01,normalized,10,0.14606704440890528,0.1602526169550454
+isolation_forest,source_context,context_01,absolute_um,10,3.755969469835726,4.120737426982081
+isolation_forest,source_context,context_02,relative,6,0.14501631956764494,0.1504724169319934
+isolation_forest,source_context,context_02,normalized,6,0.1872094676061398,0.19341073490520147
+isolation_forest,source_context,context_02,absolute_um,6,24.961262347485313,25.788097987360207
+isolation_forest,source_context,context_03,relative,6,0.022230914362513787,0.025929874089537074
+isolation_forest,source_context,context_03,normalized,6,0.024784007715655716,0.028746355473748153
+isolation_forest,source_context,context_03,absolute_um,6,2.4784007715655707,2.8746355473748175
+isolation_forest,source_context,context_04,relative,6,0.03589718892882258,0.04937013435333957
+isolation_forest,source_context,context_04,normalized,6,0.0440599855926302,0.06347236585617066
+isolation_forest,source_context,context_04,absolute_um,6,4.405998559263017,6.347236585617066
+isolation_forest,source_context,context_05,relative,6,0.16971394033727863,0.19410792320746026
+isolation_forest,source_context,context_05,normalized,6,0.2843540475342008,0.3413103524843852
+isolation_forest,source_context,context_05,absolute_um,6,7.108851188355021,8.532758812109629
+isolation_forest,source_context,context_06,relative,10,0.07883416340644789,0.06406133869021088
+isolation_forest,source_context,context_06,normalized,10,0.08194535749907028,0.0664128335919709
+isolation_forest,source_context,context_06,absolute_um,10,4.214287517171359,3.4154805608090393
+isolation_forest,source_context,context_07,relative,6,0.07704538803359197,0.10835688468293703
+isolation_forest,source_context,context_07,normalized,6,0.09022589775986149,0.13204861116409314
+isolation_forest,source_context,context_07,absolute_um,6,6.015059850657433,8.803240744272875
+local_outlier_factor,row_micro,ALL,relative,64,0.13166311212220558,0.11258371856167436
+local_outlier_factor,row_micro,ALL,normalized,64,0.1347816582847441,0.1384838036052568
+local_outlier_factor,row_micro,ALL,absolute_um,64,17.854026522041686,12.22702390780177
+local_outlier_factor,source,Galogahi et al,relative,24,0.06664623185752086,0.08353232751445178
+local_outlier_factor,source,Galogahi et al,normalized,24,0.08327701956191605,0.10441951684980337
+local_outlier_factor,source,Galogahi et al,absolute_um,24,9.479753993960914,10.953302716156243
+local_outlier_factor,source,Lashkaripour et al,relative,20,0.08497202062610645,0.08777176958413795
+local_outlier_factor,source,Lashkaripour et al,normalized,20,0.09662163967454748,0.11333272527350813
+local_outlier_factor,source,Lashkaripour et al,absolute_um,20,4.296054899033127,3.7681089938955603
+local_outlier_factor,source,Mazutis et al,relative,6,0.21082119384875006,0.19410792320746026
+local_outlier_factor,source,Mazutis et al,normalized,6,0.37876913732422723,0.3413103524843852
+local_outlier_factor,source,Mazutis et al,absolute_um,6,9.469228433105682,8.532758812109629
+local_outlier_factor,source,Roumpea et al,relative,14,0.1694670524283097,0.1628927997623426
+local_outlier_factor,source,Roumpea et al,normalized,14,0.14132085623509383,0.14588417185462013
+local_outlier_factor,source,Roumpea et al,absolute_um,14,27.199676485767405,28.077966582928184
+local_outlier_factor,source_context,context_00,relative,14,0.1694670524283097,0.1628927997623426
+local_outlier_factor,source_context,context_00,normalized,14,0.14132085623509383,0.14588417185462013
+local_outlier_factor,source_context,context_00,absolute_um,14,27.199676485767405,28.077966582928184
+local_outlier_factor,source_context,context_01,relative,10,0.10939960883418712,0.11148220047806501
+local_outlier_factor,source_context,context_01,normalized,10,0.1539816133030326,0.1602526169550454
+local_outlier_factor,source_context,context_01,absolute_um,10,3.959484775109071,4.120737426982081
+local_outlier_factor,source_context,context_02,relative,6,0.15631451068523192,0.1504724169319934
+local_outlier_factor,source_context,context_02,normalized,6,0.19956481478934285,0.19341073490520147
+local_outlier_factor,source_context,context_02,absolute_um,6,26.60864197191239,25.788097987360207
+local_outlier_factor,source_context,context_03,relative,6,0.031012620617793422,0.025929874089537074
+local_outlier_factor,source_context,context_03,normalized,6,0.034128255249080114,0.028746355473748153
+local_outlier_factor,source_context,context_03,absolute_um,6,3.412825524908017,2.8746355473748175
+local_outlier_factor,source_context,context_04,relative,6,0.05058834614389162,0.04937013435333957
+local_outlier_factor,source_context,context_04,normalized,6,0.06366063334676951,0.06347236585617066
+local_outlier_factor,source_context,context_04,absolute_um,6,6.3660633346769515,6.347236585617066
+local_outlier_factor,source_context,context_05,relative,6,0.21082119384875006,0.19410792320746026
+local_outlier_factor,source_context,context_05,normalized,6,0.37876913732422723,0.3413103524843852
+local_outlier_factor,source_context,context_05,absolute_um,6,9.469228433105682,8.532758812109629
+local_outlier_factor,source_context,context_06,relative,10,0.09036196686046671,0.06406133869021088
+local_outlier_factor,source_context,context_06,normalized,10,0.0964829001341311,0.0664128335919709
+local_outlier_factor,source_context,context_06,absolute_um,10,4.961924556377376,3.4154805608090393
+local_outlier_factor,source_context,context_07,relative,6,0.10585673688004964,0.10835688468293703
+local_outlier_factor,source_context,context_07,normalized,6,0.13382305814690074,0.13204861116409314
+local_outlier_factor,source_context,context_07,absolute_um,6,8.92153720979338,8.803240744272875
+one_class_svm,row_micro,ALL,relative,64,0.0881704219108176,0.11258371856167436
+one_class_svm,row_micro,ALL,normalized,64,0.11246499174094854,0.1384838036052568
+one_class_svm,row_micro,ALL,absolute_um,64,5.741379299344568,12.22702390780177
+one_class_svm,source,Galogahi et al,relative,24,0.054801818523345515,0.08353232751445178
+one_class_svm,source,Galogahi et al,normalized,24,0.06717479633532855,0.10441951684980337
+one_class_svm,source,Galogahi et al,absolute_um,24,6.301588647608145,10.953302716156243
+one_class_svm,source,Lashkaripour et al,relative,20,0.06891010101890913,0.08777176958413795
+one_class_svm,source,Lashkaripour et al,normalized,20,0.07757707588172721,0.11333272527350813
+one_class_svm,source,Lashkaripour et al,absolute_um,20,3.3274319393673317,3.7681089938955603
+one_class_svm,source,Mazutis et al,relative,6,0.16971394033727863,0.19410792320746026
+one_class_svm,source,Mazutis et al,normalized,6,0.2843540475342008,0.3413103524843852
+one_class_svm,source,Mazutis et al,absolute_um,6,7.108851188355021,8.532758812109629
+one_class_svm,source,Roumpea et al,relative,14,0.173297221653587,0.1628927997623426
+one_class_svm,source,Roumpea et al,normalized,14,0.13820758339587902,0.14588417185462013
+one_class_svm,source,Roumpea et al,absolute_um,14,26.600472544505546,28.077966582928184
+one_class_svm,source_context,context_00,relative,14,0.173297221653587,0.1628927997623426
+one_class_svm,source_context,context_00,normalized,14,0.13820758339587902,0.14588417185462013
+one_class_svm,source_context,context_00,absolute_um,14,26.600472544505546,28.077966582928184
+one_class_svm,source_context,context_01,relative,10,0.11354299253336135,0.11148220047806501
+one_class_svm,source_context,context_01,normalized,10,0.15605273187891938,0.1602526169550454
+one_class_svm,source_context,context_01,absolute_um,10,4.012741539295137,4.120737426982081
+one_class_svm,source_context,context_02,relative,6,0.15631451068523192,0.1504724169319934
+one_class_svm,source_context,context_02,normalized,6,0.19956481478934285,0.19341073490520147
+one_class_svm,source_context,context_02,absolute_um,6,26.60864197191239,25.788097987360207
+one_class_svm,source_context,context_03,relative,6,0.031012620617793422,0.025929874089537074
+one_class_svm,source_context,context_03,normalized,6,0.034128255249080114,0.028746355473748153
+one_class_svm,source_context,context_03,absolute_um,6,3.412825524908017,2.8746355473748175
+one_class_svm,source_context,context_04,relative,6,0.0395421732799002,0.04937013435333957
+one_class_svm,source_context,context_04,normalized,6,0.04842205798096127,0.06347236585617066
+one_class_svm,source_context,context_04,absolute_um,6,4.842205798096125,6.347236585617066
+one_class_svm,source_context,context_05,relative,6,0.16971394033727863,0.19410792320746026
+one_class_svm,source_context,context_05,normalized,6,0.2843540475342008,0.3413103524843852
+one_class_svm,source_context,context_05,absolute_um,6,7.108851188355021,8.532758812109629
+one_class_svm,source_context,context_06,relative,10,0.05789196848931336,0.06406133869021088
+one_class_svm,source_context,context_06,normalized,10,0.059233879206452164,0.0664128335919709
+one_class_svm,source_context,context_06,absolute_um,10,3.0462811482178203,3.4154805608090393
+one_class_svm,source_context,context_07,relative,6,0.07704538803359197,0.10835688468293703
+one_class_svm,source_context,context_07,normalized,6,0.09022589775986149,0.13204861116409314
+one_class_svm,source_context,context_07,absolute_um,6,6.015059850657433,8.803240744272875
+hydraulic_diameter_only,row_micro,ALL,relative,64,0.07335693382778094,0.11258371856167436
+hydraulic_diameter_only,row_micro,ALL,normalized,64,0.09189861718734602,0.1384838036052568
+hydraulic_diameter_only,row_micro,ALL,absolute_um,64,7.175538425436198,12.22702390780177
+hydraulic_diameter_only,source,Galogahi et al,relative,24,0.05087727543018955,0.08353232751445178
+hydraulic_diameter_only,source,Galogahi et al,normalized,24,0.06258663998556653,0.10441951684980337
+hydraulic_diameter_only,source,Galogahi et al,absolute_um,24,5.965472335743828,10.953302716156243
+hydraulic_diameter_only,source,Lashkaripour et al,relative,20,0.07191491144531233,0.08777176958413795
+hydraulic_diameter_only,source,Lashkaripour et al,normalized,20,0.08195404347680738,0.11333272527350813
+hydraulic_diameter_only,source,Lashkaripour et al,absolute_um,20,3.5322811819007347,3.7681089938955603
+hydraulic_diameter_only,source,Mazutis et al,relative,6,0.19410792320746026,0.19410792320746026
+hydraulic_diameter_only,source,Mazutis et al,normalized,6,0.3413103524843852,0.3413103524843852
+hydraulic_diameter_only,source,Mazutis et al,absolute_um,6,8.532758812109629,8.532758812109629
+hydraulic_diameter_only,source,Roumpea et al,relative,14,0.16289279976234258,0.1628927997623426
+hydraulic_diameter_only,source,Roumpea et al,normalized,14,0.14588417185462008,0.14588417185462013
+hydraulic_diameter_only,source,Roumpea et al,absolute_um,14,28.07796658292818,28.077966582928184
+hydraulic_diameter_only,source_context,context_00,relative,14,0.16289279976234258,0.1628927997623426
+hydraulic_diameter_only,source_context,context_00,normalized,14,0.14588417185462008,0.14588417185462013
+hydraulic_diameter_only,source_context,context_00,absolute_um,14,28.07796658292818,28.077966582928184
+hydraulic_diameter_only,source_context,context_01,relative,10,0.11148220047806501,0.11148220047806501
+hydraulic_diameter_only,source_context,context_01,normalized,10,0.1602526169550454,0.1602526169550454
+hydraulic_diameter_only,source_context,context_01,absolute_um,10,4.120737426982081,4.120737426982081
+hydraulic_diameter_only,source_context,context_02,relative,6,0.1504724169319934,0.1504724169319934
+hydraulic_diameter_only,source_context,context_02,normalized,6,0.19341073490520147,0.19341073490520147
+hydraulic_diameter_only,source_context,context_02,absolute_um,6,25.788097987360207,25.788097987360207
+hydraulic_diameter_only,source_context,context_03,relative,6,0.025929874089537074,0.025929874089537074
+hydraulic_diameter_only,source_context,context_03,normalized,6,0.028746355473748153,0.028746355473748153
+hydraulic_diameter_only,source_context,context_03,absolute_um,6,2.8746355473748175,2.8746355473748175
+hydraulic_diameter_only,source_context,context_04,relative,6,0.04937013435333957,0.04937013435333957
+hydraulic_diameter_only,source_context,context_04,normalized,6,0.06347236585617066,0.06347236585617066
+hydraulic_diameter_only,source_context,context_04,absolute_um,6,6.347236585617066,6.347236585617066
+hydraulic_diameter_only,source_context,context_05,relative,6,0.19410792320746026,0.19410792320746026
+hydraulic_diameter_only,source_context,context_05,normalized,6,0.3413103524843852,0.3413103524843852
+hydraulic_diameter_only,source_context,context_05,absolute_um,6,8.532758812109629,8.532758812109629
+hydraulic_diameter_only,source_context,context_06,relative,10,0.06406133869021088,0.06406133869021088
+hydraulic_diameter_only,source_context,context_06,normalized,10,0.0664128335919709,0.0664128335919709
+hydraulic_diameter_only,source_context,context_06,absolute_um,10,3.4154805608090393,3.4154805608090393
+hydraulic_diameter_only,source_context,context_07,relative,6,0.10835688468293703,0.10835688468293703
+hydraulic_diameter_only,source_context,context_07,normalized,6,0.13204861116409314,0.13204861116409314
+hydraulic_diameter_only,source_context,context_07,absolute_um,6,8.803240744272875,8.803240744272875
+predicted_size_only,row_micro,ALL,relative,64,0.10830528998508411,0.11258371856167436
+predicted_size_only,row_micro,ALL,normalized,64,0.15199767226335073,0.1384838036052568
+predicted_size_only,row_micro,ALL,absolute_um,64,6.618409331913979,12.22702390780177
+predicted_size_only,source,Galogahi et al,relative,24,0.07492802980062778,0.08353232751445178
+predicted_size_only,source,Galogahi et al,normalized,24,0.09025142130323133,0.10441951684980337
+predicted_size_only,source,Galogahi et al,absolute_um,24,7.153313651971518,10.953302716156243
+predicted_size_only,source,Lashkaripour et al,relative,20,0.08284024151630172,0.08777176958413795
+predicted_size_only,source,Lashkaripour et al,normalized,20,0.09770708376876439,0.11333272527350813
+predicted_size_only,source,Lashkaripour et al,absolute_um,20,4.028835212586132,3.7681089938955603
+predicted_size_only,source,Mazutis et al,relative,6,0.21171155720493604,0.19410792320746026
+predicted_size_only,source,Mazutis et al,normalized,6,0.3840267025046879,0.3413103524843852
+predicted_size_only,source,Mazutis et al,absolute_um,6,9.600667562617197,8.532758812109629
+predicted_size_only,source,Roumpea et al,relative,14,0.17605314350993306,0.1628927997623426
+predicted_size_only,source,Roumpea et al,normalized,14,0.14238629986257173,0.14588417185462013
+predicted_size_only,source,Roumpea et al,absolute_um,14,27.404739791731338,28.077966582928184
+predicted_size_only,source_context,context_00,relative,14,0.17605314350993306,0.1628927997623426
+predicted_size_only,source_context,context_00,normalized,14,0.14238629986257173,0.14588417185462013
+predicted_size_only,source_context,context_00,absolute_um,14,27.404739791731338,28.077966582928184
+predicted_size_only,source_context,context_01,relative,10,0.1129183907328685,0.11148220047806501
+predicted_size_only,source_context,context_01,normalized,10,0.16747089540631777,0.1602526169550454
+predicted_size_only,source_context,context_01,absolute_um,10,4.30634831270559,4.120737426982081
+predicted_size_only,source_context,context_02,relative,6,0.15615272790254156,0.1504724169319934
+predicted_size_only,source_context,context_02,normalized,6,0.19938491749243112,0.19341073490520147
+predicted_size_only,source_context,context_02,absolute_um,6,26.584655665657493,25.788097987360207
+predicted_size_only,source_context,context_03,relative,6,0.03212151448820027,0.025929874089537074
+predicted_size_only,source_context,context_03,normalized,6,0.03536695855270888,0.028746355473748153
+predicted_size_only,source_context,context_03,absolute_um,6,3.5366958552708927,2.8746355473748175
+predicted_size_only,source_context,context_04,relative,6,0.0395421732799002,0.04937013435333957
+predicted_size_only,source_context,context_04,normalized,6,0.04842205798096127,0.06347236585617066
+predicted_size_only,source_context,context_04,absolute_um,6,4.842205798096125,6.347236585617066
+predicted_size_only,source_context,context_05,relative,6,0.21171155720493604,0.19410792320746026
+predicted_size_only,source_context,context_05,normalized,6,0.3840267025046879,0.3413103524843852
+predicted_size_only,source_context,context_05,absolute_um,6,9.600667562617197,8.532758812109629
+predicted_size_only,source_context,context_06,relative,10,0.0766008575044973,0.06406133869021088
+predicted_size_only,source_context,context_06,normalized,10,0.0796316205447316,0.0664128335919709
+predicted_size_only,source_context,context_06,absolute_um,10,4.095296605882721,3.4154805608090393
+predicted_size_only,source_context,context_07,relative,6,0.07704538803359197,0.10835688468293703
+predicted_size_only,source_context,context_07,normalized,6,0.09022589775986149,0.13204861116409314
+predicted_size_only,source_context,context_07,absolute_um,6,6.015059850657433,8.803240744272875
+bootstrap_disagreement,row_micro,ALL,relative,64,0.12730937347889312,0.11258371856167436
+bootstrap_disagreement,row_micro,ALL,normalized,64,0.18359723882120738,0.1384838036052568
+bootstrap_disagreement,row_micro,ALL,absolute_um,64,8.129719357636173,12.22702390780177
+bootstrap_disagreement,source,Galogahi et al,relative,24,0.09542264615852107,0.08353232751445178
+bootstrap_disagreement,source,Galogahi et al,normalized,24,0.11895699730940666,0.10441951684980337
+bootstrap_disagreement,source,Galogahi et al,absolute_um,24,10.159973575853758,10.953302716156243
+bootstrap_disagreement,source,Lashkaripour et al,relative,20,0.10172351704344403,0.08777176958413795
+bootstrap_disagreement,source,Lashkaripour et al,normalized,20,0.12941141730067468,0.11333272527350813
+bootstrap_disagreement,source,Lashkaripour et al,absolute_um,20,4.703485893610551,3.7681089938955603
+bootstrap_disagreement,source,Mazutis et al,relative,6,0.2181934161683788,0.19410792320746026
+bootstrap_disagreement,source,Mazutis et al,normalized,6,0.39795816129578493,0.3413103524843852
+bootstrap_disagreement,source,Mazutis et al,absolute_um,6,9.948954032394623,8.532758812109629
+bootstrap_disagreement,source,Roumpea et al,relative,14,0.18612094395057496,0.1628927997623426
+bootstrap_disagreement,source,Roumpea et al,normalized,14,0.15254906066710938,0.14588417185462013
+bootstrap_disagreement,source,Roumpea et al,absolute_um,14,29.360741286838454,28.077966582928184
+bootstrap_disagreement,source_context,context_00,relative,14,0.18612094395057496,0.1628927997623426
+bootstrap_disagreement,source_context,context_00,normalized,14,0.15254906066710938,0.14588417185462013
+bootstrap_disagreement,source_context,context_00,absolute_um,14,29.360741286838454,28.077966582928184
+bootstrap_disagreement,source_context,context_01,relative,10,0.11480047456903217,0.11148220047806501
+bootstrap_disagreement,source_context,context_01,normalized,10,0.16883307121267493,0.1602526169550454
+bootstrap_disagreement,source_context,context_01,absolute_um,10,4.341375315284651,4.120737426982081
+bootstrap_disagreement,source_context,context_02,relative,6,0.14527536377326228,0.1504724169319934
+bootstrap_disagreement,source_context,context_02,normalized,6,0.18765835677490206,0.19341073490520147
+bootstrap_disagreement,source_context,context_02,absolute_um,6,25.021114236653613,25.788097987360207
+bootstrap_disagreement,source_context,context_03,relative,6,0.023662682990811024,0.025929874089537074
+bootstrap_disagreement,source_context,context_03,normalized,6,0.02633513160055247,0.028746355473748153
+bootstrap_disagreement,source_context,context_03,absolute_um,6,2.6335131600552457,2.8746355473748175
+bootstrap_disagreement,source_context,context_04,relative,6,0.05533178202833569,0.04937013435333957
+bootstrap_disagreement,source_context,context_04,normalized,6,0.07115262012216779,0.06347236585617066
+bootstrap_disagreement,source_context,context_04,absolute_um,6,7.115262012216779,6.347236585617066
+bootstrap_disagreement,source_context,context_05,relative,6,0.2181934161683788,0.19410792320746026
+bootstrap_disagreement,source_context,context_05,normalized,6,0.39795816129578493,0.3413103524843852
+bootstrap_disagreement,source_context,context_05,absolute_um,6,9.948954032394623,8.532758812109629
+bootstrap_disagreement,source_context,context_06,relative,10,0.08529172560539554,0.06406133869021088
+bootstrap_disagreement,source_context,context_06,normalized,10,0.09142019306169867,0.0664128335919709
+bootstrap_disagreement,source_context,context_06,absolute_um,10,4.701559553775621,3.4154805608090393
+bootstrap_disagreement,source_context,context_07,relative,6,0.11451095118381549,0.10835688468293703
+bootstrap_disagreement,source_context,context_07,normalized,6,0.14140688611136554,0.13204861116409314
+bootstrap_disagreement,source_context,context_07,absolute_um,6,9.4271257407577,8.803240744272875
+oof_residual_risk,row_micro,ALL,relative,64,0.14305183017695175,0.11258371856167436
+oof_residual_risk,row_micro,ALL,normalized,64,0.19464164984077473,0.1384838036052568
+oof_residual_risk,row_micro,ALL,absolute_um,64,13.753011069683053,12.22702390780177
+oof_residual_risk,source,Galogahi et al,relative,24,0.10844809469417903,0.08353232751445178
+oof_residual_risk,source,Galogahi et al,normalized,24,0.13457600693607066,0.10441951684980337
+oof_residual_risk,source,Galogahi et al,absolute_um,24,11.963065299914158,10.953302716156243
+oof_residual_risk,source,Lashkaripour et al,relative,20,0.09831009518881414,0.08777176958413795
+oof_residual_risk,source,Lashkaripour et al,normalized,20,0.13638460583762785,0.11333272527350813
+oof_residual_risk,source,Lashkaripour et al,absolute_um,20,4.172539018644636,3.7681089938955603
+oof_residual_risk,source,Mazutis et al,relative,6,0.20170703824270098,0.19410792320746026
+oof_residual_risk,source,Mazutis et al,normalized,6,0.35918593536482923,0.3413103524843852
+oof_residual_risk,source,Mazutis et al,absolute_um,6,8.979648384120729,8.532758812109629
+oof_residual_risk,source,Roumpea et al,relative,14,0.1751390256918459,0.1628927997623426
+oof_residual_risk,source,Roumpea et al,normalized,14,0.15185362214660283,0.14588417185462013
+oof_residual_risk,source,Roumpea et al,absolute_um,14,29.226891950813688,28.077966582928184
+oof_residual_risk,source_context,context_00,relative,14,0.1751390256918459,0.1628927997623426
+oof_residual_risk,source_context,context_00,normalized,14,0.15185362214660283,0.14588417185462013
+oof_residual_risk,source_context,context_00,absolute_um,14,29.226891950813688,28.077966582928184
+oof_residual_risk,source_context,context_01,relative,10,0.11023177511703512,0.11148220047806501
+oof_residual_risk,source_context,context_01,normalized,10,0.16581402384325236,0.1602526169550454
+oof_residual_risk,source_context,context_01,absolute_um,10,4.263743500432595,4.120737426982081
+oof_residual_risk,source_context,context_02,relative,6,0.1443857906218677,0.1504724169319934
+oof_residual_risk,source_context,context_02,normalized,6,0.18621745717523563,0.19341073490520147
+oof_residual_risk,source_context,context_02,absolute_um,6,24.82899429003142,25.788097987360207
+oof_residual_risk,source_context,context_03,relative,6,0.024452799318961032,0.025929874089537074
+oof_residual_risk,source_context,context_03,normalized,6,0.02717902920229513,0.028746355473748153
+oof_residual_risk,source_context,context_03,absolute_um,6,2.717902920229514,2.8746355473748175
+oof_residual_risk,source_context,context_04,relative,6,0.05811914143263916,0.04937013435333957
+oof_residual_risk,source_context,context_04,normalized,6,0.07709046896828547,0.06347236585617066
+oof_residual_risk,source_context,context_04,absolute_um,6,7.709046896828549,6.347236585617066
+oof_residual_risk,source_context,context_05,relative,6,0.20170703824270098,0.19410792320746026
+oof_residual_risk,source_context,context_05,normalized,6,0.35918593536482923,0.3413103524843852
+oof_residual_risk,source_context,context_05,absolute_um,6,8.979648384120729,8.532758812109629
+oof_residual_risk,source_context,context_06,relative,10,0.07778262277438323,0.06406133869021088
+oof_residual_risk,source_context,context_06,normalized,10,0.08076971967022807,0.0664128335919709
+oof_residual_risk,source_context,context_06,absolute_um,10,4.153826790926308,3.4154805608090393
+oof_residual_risk,source_context,context_07,relative,6,0.13503216009021282,0.10835688468293703
+oof_residual_risk,source_context,context_07,normalized,6,0.1670021170881061,0.13204861116409314
+oof_residual_risk,source_context,context_07,absolute_um,6,11.133474472540406,8.803240744272875
