@@ -49,7 +49,7 @@ scaler. Generation-rate MAPE on U1 (volume conservation): M0 16.697 (π) / 16.69
 - D3 (D2, B1 on the source paper's 392/76 split): MAPE 3.170%, RMSE 0.00772 mm, R² 0.927, identical
   for all five seeds; published random-split figure 3.9%; |Δ| = 0.730 pp > 0.5 pp → **not within
   tolerance** (our figure is lower). The published configuration was transcribed from the paper's
-  Methods (`BLIND_VALIDATION_PROTOCOL.md`); the paper is not open access to this session, so the
+  Methods (`BLIND_VALIDATION_PROTOCOL.md`); the paper is not open access, so the
   input set, hyper-parameters and the definition behind the 3.9% could not be re-read. Open item.
 - D4 (deployed model `20231001_DAFD3_XGB.json`): the model loads identically in both environments
   (max relative difference 2e-16). Under C-std (StandardScaler fitted on the 932-row table, as

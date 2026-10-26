@@ -1,4 +1,4 @@
-\begin{thebibliography}{57}
+\begin{thebibliography}{61}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -46,9 +46,9 @@ Lo{\"\i}c Chagot, C{\'e}sar Quilodr{\'a}n-Casas, Maria Kalli, Nina~M.
 Andrew Lee, Mahir Mobarrat, and Xiaolin Chen.
 \newblock Periodicity-enforced neural network for designing deterministic
   lateral displacement devices.
-\newblock In \emph{IEEE International Conference on Data Mining Workshops
-  (ICDMW)}, 2025.
-\newblock arXiv:2511.17754 (cs.LG, 21 November 2025).
+\newblock In \emph{2025 IEEE International Conference on Data Mining Workshops
+  (ICDMW)}, pages 2807--2815, 2025.
+\newblock \doi{10.1109/ICDMW69685.2025.00359}.
 
 \bibitem[Liang et~al.(2026)Liang, Xie, Zhang, Huang, Pan, Tai, Xuan, Lapkin,
   and Wang]{micromixer2026}
@@ -152,10 +152,11 @@ Meraj Hassanzadeh, Ehsan Ghaderi, and Mohamad~Ali Bijarchi.
 \newblock \emph{Scientific Reports}, 16:\penalty0 10151, 2026.
 \newblock \doi{10.1038/s41598-026-40254-7}.
 
-\bibitem[{Editorial}(2021)]{naturecs2021}
-{Editorial}.
+\bibitem[Pan(2021)]{naturecs2021}
+Jie Pan.
 \newblock Can machines learn with hard constraints?
-\newblock \emph{Nature Computational Science}, 1, 2021.
+\newblock \emph{Nature Computational Science}, 1\penalty0 (4):\penalty0 244,
+  2021.
 \newblock \doi{10.1038/s43588-021-00067-2}.
 
 \bibitem[Lu et~al.(2021)Lu, Pestourie, Yao, Wang, Verdugo, and Johnson]{lu2021}
@@ -371,6 +372,49 @@ Leonardo Lavagna, Giorgio Buttitta, Simone Bonacorsi, Chiara Barbarito, Mauro
 \newblock Dataset: Zenodo record 17867478, v1.0, 9 December 2025, CC BY 4.0,
   \url{https://doi.org/10.5281/zenodo.17867478}.
 
+\bibitem[MacLeod et~al.(2020)MacLeod, Parlane, Morrissey, H{\"a}se, Roch,
+  Dettelbach, Moreira, Yunker, Rooney, Deeth, Lai, Ng, Situ, Zhang, Elliott,
+  Haley, Dvorak, Aspuru-Guzik, Hein, and Berlinguette]{macleod2020}
+Benjamin~P. MacLeod, Fraser G.~L. Parlane, Thomas~D. Morrissey, Florian
+  H{\"a}se, Lo{\"\i}c~M. Roch, Kevan~E. Dettelbach, Raphaell Moreira, Lars
+  P.~E. Yunker, Michael~B. Rooney, Joseph~R. Deeth, Veronica Lai, Gordon~J. Ng,
+  Henry Situ, Ray~H. Zhang, Michael~S. Elliott, Ted~H. Haley, David~J. Dvorak,
+  Al{\'a}n Aspuru-Guzik, Jason~E. Hein, and Curtis~P. Berlinguette.
+\newblock Self-driving laboratory for accelerated discovery of thin-film
+  materials.
+\newblock \emph{Science Advances}, 6\penalty0 (20):\penalty0 eaaz8867, 2020.
+\newblock \doi{10.1126/sciadv.aaz8867}.
+
+\bibitem[Abolhasani and Kumacheva(2023)]{abolhasani2023}
+Milad Abolhasani and Eugenia Kumacheva.
+\newblock The rise of self-driving labs in chemical and materials sciences.
+\newblock \emph{Nature Synthesis}, 2\penalty0 (6):\penalty0 483--492, 2023.
+\newblock \doi{10.1038/s44160-022-00231-0}.
+
+\bibitem[Tom et~al.(2024)Tom, Schmid, Baird, Cao, Darvish, Hao, Lo,
+  Pablo-Garc{\'\i}a, Rajaonson, Skreta, Yoshikawa, Corapi, Akkoc,
+  Strieth-Kalthoff, Seifrid, and Aspuru-Guzik]{tom2024sdl}
+Gary Tom, Stefan~P. Schmid, Sterling~G. Baird, Yang Cao, Kourosh Darvish, Han
+  Hao, Stanley Lo, Sergio Pablo-Garc{\'\i}a, Ella~M. Rajaonson, Marta Skreta,
+  Naruki Yoshikawa, Samantha Corapi, Gun~Deniz Akkoc, Felix Strieth-Kalthoff,
+  Martin Seifrid, and Al{\'a}n Aspuru-Guzik.
+\newblock Self-driving laboratories for chemistry and materials science.
+\newblock \emph{Chemical Reviews}, 124\penalty0 (16):\penalty0 9633--9732,
+  2024.
+\newblock \doi{10.1021/acs.chemrev.4c00055}.
+
+\bibitem[Liang et~al.(2021)Liang, Gongora, Ren, Tiihonen, Liu, Sun, Deneault,
+  Bash, Mekki-Berrada, Khan, Hippalgaonkar, Maruyama, Brown, {Fisher III}, and
+  Buonassisi]{liang2021bo}
+Qiaohao Liang, Aldair~E. Gongora, Zekun Ren, Armi Tiihonen, Zhe Liu, Shijing
+  Sun, James~R. Deneault, Daniil Bash, Flore Mekki-Berrada, Saif~A. Khan, Kedar
+  Hippalgaonkar, Benji Maruyama, Keith~A. Brown, John {Fisher III}, and Tonio
+  Buonassisi.
+\newblock Benchmarking the performance of {Bayesian} optimization across
+  multiple experimental materials science domains.
+\newblock \emph{npj Computational Materials}, 7:\penalty0 188, 2021.
+\newblock \doi{10.1038/s41524-021-00656-9}.
+
 \bibitem[Vepa(2026)]{vepa2026}
 Krishna~Teja Vepa.
 \newblock Computational references are not experiments: pre-registered
@@ -400,8 +444,6 @@ Maria Kalli, Lo{\"\i}c Chagot, and Panagiota Angeli.
 \newblock \emph{Journal of Colloid and Interface Science}, 605:\penalty0
   204--213, 2022.
 \newblock \doi{10.1016/j.jcis.2021.06.178}.
-\newblock Source of the anchor coefficients $k=0.642$, $\alpha=0.188$,
-  $\beta=0.161$ adopted as the physics-based benchmark in \cite{chagot2022}.
 
 \bibitem[Utada et~al.(2007)Utada, Fernandez-Nieves, Stone, and
   Weitz]{utada2007}

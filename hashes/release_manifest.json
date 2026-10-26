@@ -37,8 +37,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "1bc78ed9812268559cd66ed95f6561d831048122a0cd2589e0552b68693fbcc5",
-      "size_bytes": 17254
+      "sha256": "dc3700ac72887cc77fd1ab4954bda83820ef9777018c400f19785c3db9417586",
+      "size_bytes": 17269
     },
     {
       "path": "THIRD_PARTY_DATA.md",
@@ -187,28 +187,28 @@
     },
     {
       "path": "manuscript/main.bbl",
-      "sha256": "1dd01cd90337234a8f5edd4ca57b6dcb8aa721af457bd15d828a8fdf3d28f649",
-      "size_bytes": 21814
+      "sha256": "38cc83ea54cff56c2b323d4233e6342cb1974525995c2c3441d927adf7b6cdc2",
+      "size_bytes": 24135
     },
     {
       "path": "manuscript/main.tex",
-      "sha256": "d995ba7728a7302f1b640a6bf68cbbd5a7793eab4b3969b3cf8f5d2a8a33ce7e",
-      "size_bytes": 277372
+      "sha256": "9b644f8ac3bd043f3bf790409c7bede00cf006df9084eb1600d18bbd186ccbd0",
+      "size_bytes": 277940
     },
     {
       "path": "manuscript/main_zh.bbl",
-      "sha256": "1dd01cd90337234a8f5edd4ca57b6dcb8aa721af457bd15d828a8fdf3d28f649",
-      "size_bytes": 21814
+      "sha256": "38cc83ea54cff56c2b323d4233e6342cb1974525995c2c3441d927adf7b6cdc2",
+      "size_bytes": 24135
     },
     {
       "path": "manuscript/main_zh.tex",
-      "sha256": "82b98847cec612dfdd23e2b731909c1186f6608d9b907fbd9c296a008efe72ae",
-      "size_bytes": 250346
+      "sha256": "c9dcb2c23d88cb65c7a0831b6fb4ffa5c6a20989d2a1ec16172499ad2afc663b",
+      "size_bytes": 250929
     },
     {
       "path": "manuscript/numbers_ledger.json",
-      "sha256": "31df10c0c588c6a3bcdffba0a6aebd9c7b0d57d00ee049ba5f2ba77f6c4b7929",
-      "size_bytes": 630381
+      "sha256": "18d8e0db36de90f6812977279b5179f89285dc406a7b2492fb45dc1009041caa",
+      "size_bytes": 630123
     },
     {
       "path": "manuscript/references.bib",
@@ -1032,8 +1032,8 @@
     },
     {
       "path": "scaleup/e_closed_loop/ledger_entries_e.json",
-      "sha256": "e194fa447bf873d1fd135179f1122823c84880ddde5942065defe51f19072d01",
-      "size_bytes": 322704
+      "sha256": "c579e054ac5b89720aff73bbd66a47d5e67cc883f2fe2c4b8643324fda872558",
+      "size_bytes": 322578
     },
     {
       "path": "scaleup/fidelity/FIDELITY_DEVIATION_REGISTER.md",
@@ -1057,8 +1057,8 @@
     },
     {
       "path": "scaleup/fidelity/FIDELITY_REPORT.md",
-      "sha256": "fde39a5159dbd9588616c639d54d4c9abeab8ae551662b0ba0210fa56f9bf010",
-      "size_bytes": 6990
+      "sha256": "84493a675ae1e1c79dae308cd53e62beca413baf461233560205174afa1c0407",
+      "size_bytes": 6974
     },
     {
       "path": "scaleup/fidelity/FIDELITY_WORKER_SCRIPT.sha256",
@@ -1812,8 +1812,8 @@
     },
     {
       "path": "scaleup/validation_plan/H_I_POOL_FEASIBILITY_GATE.md",
-      "sha256": "f8e60e7b7da80580e5f6c31706dba5ba31f3860824464f3a4c7ce2829d3843c1",
-      "size_bytes": 4873
+      "sha256": "cbcae702862f73bb17215daeb9bbbf946b45ac104f0fba5cc69d6dd545c0941e",
+      "size_bytes": 4857
     },
     {
       "path": "scaleup/validation_plan/H_J_ANALYZER_SCRIPT.sha256",

@@ -24,7 +24,7 @@ material or formulation.
 
 ## Release status
 
-- The release tag accompanies the manuscript version named in `CITATION.cff`.
+- Tag `v0.5.5-preprint` accompanies manuscript v0.5.5 (the version named in `CITATION.cff`).
   The code, protocols, registers, ledger and hash manifests promised in the
   manuscript's *Reproducibility* section are in this repository; the compiled
   PDFs (English and Chinese mirror) are attached to the GitHub release.

@@ -1,5 +1,5 @@
 % SPDX-License-Identifier: CC-BY-4.0
-% 中文镜像稿 v0.5.4(2026-10-26),与 main.tex 逐段对齐;数字由 tools/check_numbers.py --tex main_zh.tex 对账。
+% 中文镜像稿 v0.5.5(2026-10-26,随 tag v0.5.5-preprint 发布),与 main.tex 逐段对齐;数字由 tools/check_numbers.py --tex main_zh.tex 对账。
 \documentclass[11pt,a4paper]{ctexart}
 \setCJKmainfont[BoldFont={Songti SC Bold},ItalicFont=STKaiti]{STSong}
 \setCJKsansfont[BoldFont={Hiragino Sans GB W6}]{Hiragino Sans GB}
@@ -26,7 +26,7 @@
 \newcommand{\tox}{TX100}
 \title{全自动微流控实验室中学习型设计代理模型何时可信?\\基于六张公开表构建并检验的离线闭环框架}
 \author{Zhiyuan Zhang\thanks{独立研究。通讯方式见公开仓库 \url{https://github.com/LibertychaserUS/microfluidic-native-physics}。稿件正文与原创图件以 CC~BY~4.0 发布,代码以 Apache-2.0 发布。本文为英文稿 main.tex 的中文镜像,内容逐段对齐;如有歧义,以英文稿为准。}}
-\date{草稿 v0.5.4 —— 2026 年 10 月 26 日}
+\date{v0.5.5 —— 2026 年 10 月 26 日}
 
 \begin{document}
 \maketitle
@@ -1251,11 +1251,11 @@ F23 & 在容差 3\% 的尾部难目标上,回路比机会水平少五次以上�
 
 方法矩阵协议(\hashtrunc{8f058306}{6cb3f8})在任何运行之前即已哈希并提交;它在不同目录中的两次规范运行产生了逐字节一致的 13 条清单,且列出的每个文件重新哈希后均与其条目一致。不确定性感知比较协议同样在其两次运行之前提交(摘要 \hashtrunc{23dc7d0a}{951aa8});两份 11 条的清单逐字节一致,所记录的 24 条登记条目为高斯过程优化器的收敛澄清项(W4-C1),加上与矩阵中相同的 DE$\to$SE 校准回退(W4-D1)。协变量偏移加权协议在其两次运行之前提交(摘要 \hashtrunc{03af5544}{e60b40});7 条的清单逐字节一致,并且未加权分支在每个单元中重现了矩阵的分裂共形覆盖率。第二次密封验证由以下各项约束:下载前即做哈希的协议(\hashtrunc{1fa4b404}{c91419})、仅在检视表头和元数据之后做哈希的参数绑定(\hashtrunc{c943ce8b}{7d284f})、一份保管者清单、一份带编号的偏离登记表、带有已记录摘要的冻结预测程序与揭示程序、含输入、预测、区间端点、适用性评分与掩码而不含标签的预测包(\hashtrunc{79be728c}{296bd2})以及一个一次性的闸门文件;每一步都是单独的一次提交,因此不重写历史就无法改变顺序。揭示程序在读取任何标签之前重新验证了每一个摘要;揭示之后唯一的修正位于一个单独的文件中,未触及任何冻结产物。第~\ref{sec:posthoc}~节的五个事后分析块写入一个单独的目录,带有各自的哈希清单和环境记录,只读取已揭示或从未密封的标签,并且在其数字出现的每个位置都标明为事后分析。
 
-\paragraph{数据与代码可获得性(Data and code availability)} 第一阶段的三个数据集均按各自的许可证公开(OSF 938rs;Zenodo 7055018,CC BY 4.0;Zenodo 17867478,CC BY 4.0),本文不再重新分发。协议、绑定文件、偏离登记表、台账、对账脚本、矩阵运行器、保管者程序、预测与揭示程序,以及汇总产物的逐字节副本,均在我们的发布分支上受版本控制;规范运行的完整逐行产物(每次矩阵运行约 26 MB)以及保管者的密封标签文件保存在我们的工作区中。密封标签文件将不予发布,因为它们是公开数据集的行,任何读者都可以根据绑定文件重建。在撰写本稿时,公开仓库仅含文档;代码、登记表、台账和哈希清单计划随预印本配套的带标签发布版一并公布。在该标签出现之前,本文所断言的时间顺序(先协议后下载、先绑定后拟合、闸门只消耗一次)只能依据我们的提交历史来核验,我们如实说明这一点,而不暗示其他情形。发布之后,独立验证需要重新下载公开数据集,在固定的环境中重新运行规范运行,比较清单,并执行台账脚本,该脚本会根据产物文件重新推导出每一个印出的数字;闭环区间所依据的逐回路表(\texttt{loops.csv}、\texttt{budget.csv})保留在工作目录中,可由冻结的运行器逐字节重新生成。
+\paragraph{数据与代码可获得性(Data and code availability)} 第一阶段的三个数据集均按各自的许可证公开(OSF 938rs;Zenodo 7055018,CC BY 4.0;Zenodo 17867478,CC BY 4.0),本文不再重新分发。协议、绑定文件、偏离登记表、台账、对账脚本、矩阵运行器、保管者程序、预测与揭示程序,以及汇总产物的逐字节副本,均已在公开仓库 \url{https://github.com/LibertychaserUS/microfluidic-native-physics} 的 tag \texttt{v0.5.5-preprint} 下发布,每个摘要及其对应文件列于 \path{hashes/appendix_d_registry.json};规范运行的完整逐行产物(每次矩阵运行约 26 MB)以及保管者的密封标签文件保存在我们的工作区中。密封标签文件将不予发布,因为它们是公开数据集的行,任何读者都可以根据绑定文件重建。借助发布内容,读者可以复现保管者程序的划分与密封标签摘要、揭盲前做过哈希的预测包以及每一个印出的数字;本文所断言的事件顺序(先协议后下载、先绑定后拟合、闸门只消耗一次)还依赖我们工作仓库的提交历史,而发布内容不包含这一历史,我们如实说明这一点,而不暗示其他情形。独立验证需要重新下载公开数据集,在固定的环境中重新运行规范运行,比较清单,并执行台账脚本,该脚本会根据产物文件重新推导出每一个印出的数字;闭环区间所依据的逐回路表(\texttt{loops.csv}、\texttt{budget.csv})保留在工作目录中,可由冻结的运行器重新生成,其两次计数运行产生的表逐字节一致。
 
 \paragraph{R10 产物} 冻结协议(\texttt{H\_PROTOCOL\_v1} 与 \texttt{v2})、各数据集绑定、custodian、运行、揭盲与汇总程序及其 SHA-256 侧车、偏差登记册,以及每份清单、运行汇总与揭盲结果的字节拷贝位于 \path{scaleup/validation_plan}、\path{scaleup/w6}、\path{scaleup/h_A1}、\path{scaleup/h_R2A1}、\path{scaleup/h_R2A2} 与 \path{scaleup/h_combined};建设性实验位于 \path{scaleup/h_portfolio}、\path{scaleup/posthoc_round3} 与 \path{scaleup/posthoc_round4}。A1 的 ESI(CC~BY~3.0)、Wang 等的数据存放(CC~BY~4.0)与 LNP Atlas(CC~BY~4.0)均不再分发,仓库中不出现任何第三方逐行数值。 复现保真度的协议、脚本与两次结果位于 \path{scaleup/fidelity};少样本元分析的协议位于 \path{scaleup/validation_plan},结果位于 \path{scaleup/h_fewshot_rule};汇合预训练的可行性门为 \path{scaleup/validation_plan/H_I_POOL_FEASIBILITY_GATE.md}。
 
-\paragraph{闭环产物} 七份协议、其侧车摘要与偏离登记册位于 \path{scaleup/validation_plan};冻结的运行器与分析器以及 E1b、E3、E4、E5、E6、E7 包装脚本位于 \path{scaleup/w7};E0、E1/E2、E1b、E3、E4、E5、E6 与 E7 两次运行的每份运行清单、环境记录、哈希清单与分析结果、密档位敏感性、事后置换核查、报告与台账条目的逐字节副本位于 \path{scaleup/e_closed_loop}。逐回路表(\texttt{loops.csv}、\texttt{budget.csv})保存在我们的工作区;仓库中不进入任何第三方逐行数值。每一对运行在分析前后的哈希清单都逐字节一致;例外是 E4 的两次运行在记录的墙钟拟合时间列上不同,其余所有数值都相同,随附的一致性核查对此有记录。
+\paragraph{闭环产物} 七份协议、其侧车摘要与偏离登记册位于 \path{scaleup/validation_plan};冻结的运行器与分析器、E1b、E3、E4、E6、E7 包装脚本以及 E5 分析器位于 \path{scaleup/w7};E0、E1/E2、E1b、E3、E4、E5、E6 与 E7 两次运行的每份运行清单、环境记录、哈希清单与分析结果、密档位敏感性、事后置换、并列与噪声底核查、绘图数值、报告与台账条目的逐字节副本位于 \path{scaleup/e_closed_loop}。逐回路表(\texttt{loops.csv}、\texttt{budget.csv})保存在我们的工作区;仓库中不进入任何第三方逐行数值。每一对运行在分析前后的哈希清单都逐字节一致;例外是 E4 的两次运行在记录的墙钟拟合时间上不同(\texttt{families.csv} 与 \texttt{table\_cv.csv} 的拟合时间列,以及 \texttt{results.json} 的 \texttt{fit\_seconds\_mean} 块);随运行保存的一致性核查确认逐回路表、模型族表与交叉验证表的其余数值完全一致,两份结果文件也只在该块上不同。
 
 \paragraph{来源致谢} 这项独立工作重实现、压力测试或建立在 Lashkaripour 等人与 Chagot 等人的公开工作之上;并不意味着他们的认可。
 
@@ -1394,7 +1394,7 @@ F23 & 在容差 3\% 的尾部难目标上,回路比机会水平少五次以上�
 \section{哈希注册表}
 \label{app:hashes}
 
-正文中引用的截断值所对应的完整 SHA-256 摘要。
+正文中引用的截断值所对应的完整 SHA-256 摘要;发布内容在 \path{hashes/appendix_d_registry.json} 中列出每个摘要及其文件。
 
 \begin{center}\scriptsize
 \resizebox{\linewidth}{!}{%

@@ -39,7 +39,7 @@ diameter), R2-A1 (flow-rate and diameter units are not stated anywhere in the de
 tables are aligned, below the threshold of three. **The gate is not passed; H-I exits here.**
 
 What would re-open it: a statement of the flow-rate and diameter units of R2-A1 from the source
-paper (Chem. Eng. J. 485:149467, not open access to this session) would make R2-A1 fully aligned and
+paper (Chem. Eng. J. 485:149467, not open access) would make R2-A1 fully aligned and
 the gate would pass with D1, D2 and R2-A1. A1 cannot be aligned on (e) by any unit statement.
 
 ## 4. Register
