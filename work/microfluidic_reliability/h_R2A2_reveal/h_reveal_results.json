@@ -1,0 +1,1256 @@
+{
+  "schema_version": "h-reveal-v2",
+  "dataset_code": "R2A2",
+  "reveal_utc": "2026-10-21T23:40:55Z",
+  "checks": {
+    "protocol": true,
+    "binding": true,
+    "runner_script": true,
+    "bundle": true,
+    "bundle_sidecar": true,
+    "sealed_features": true,
+    "sealed_labels": true,
+    "development": true
+  },
+  "dev_ref_mape": 40.86607918675253,
+  "dev_ref_grouping": "s1_group",
+  "tau_abs": 9.700000000000001,
+  "log_target": true,
+  "tiers_present": [
+    "S2",
+    "S3",
+    "S4"
+  ],
+  "tiers": {
+    "S2": {
+      "n_rows": 32,
+      "sealed_level": "ion:DLin-MC3-DMA",
+      "models": {
+        "deep_ensemble|native": {
+          "n": 32,
+          "mape": 31.69395585371187,
+          "mape_ci95": [
+            23.73629022214814,
+            40.198500936071774
+          ],
+          "mdape": 26.941915266747774,
+          "ratio_to_dev_ref": 0.7755565614424306,
+          "ratio_ci95": [
+            0.5808311121230021,
+            0.983664245164553
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.09539942009526846,
+          "fraction_over_predicted": 0.5625,
+          "split_coverage": 1.0,
+          "split_mean_width": 285.7333426640625,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 0.40625,
+          "native_mean_width": 43.337131636562496,
+          "spearman_abs_error_vs_native_width": -0.010818741395328834,
+          "spearman_abs_error_vs_native_width_p": 0.9531378937403507,
+          "conformalised_native_coverage": 1.0
+        },
+        "gp|native": {
+          "n": 32,
+          "mape": 46.364876652255504,
+          "mape_ci95": [
+            32.54805592638625,
+            60.778417843650466
+          ],
+          "mdape": 27.466193860784315,
+          "ratio_to_dev_ref": 1.1345565215682718,
+          "ratio_ci95": [
+            0.7964565374046767,
+            1.4872583583539103
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.2989357021900166,
+          "fraction_over_predicted": 0.625,
+          "split_coverage": 1.0,
+          "split_mean_width": 330.8278632,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 1.0,
+          "native_mean_width": 231.34556958,
+          "spearman_abs_error_vs_native_width": null,
+          "spearman_abs_error_vs_native_width_p": null,
+          "conformalised_native_coverage": 1.0
+        },
+        "mlp_log|native": {
+          "n": 32,
+          "mape": 31.810781167258252,
+          "mape_ci95": [
+            22.27575693179047,
+            43.40624508793892
+          ],
+          "mdape": 28.900212098184845,
+          "ratio_to_dev_ref": 0.7784152969969844,
+          "ratio_ci95": [
+            0.545091610819654,
+            1.0621582973394186
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.06551863971988714,
+          "fraction_over_predicted": 0.5,
+          "split_coverage": 0.9375,
+          "split_mean_width": 198.61108642125,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0
+        },
+        "mlp_raw|native": {
+          "n": 32,
+          "mape": 36.70000834955815,
+          "mape_ci95": [
+            24.431155532850998,
+            51.579197969385994
+          ],
+          "mdape": 27.73223966626115,
+          "ratio_to_dev_ref": 0.8980555286902865,
+          "ratio_ci95": [
+            0.597834586019468,
+            1.2621518627631474
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.17068562560346573,
+          "fraction_over_predicted": 0.65625,
+          "split_coverage": 0.90625,
+          "split_mean_width": 143.5720890472553,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0
+        },
+        "qrf|native": {
+          "n": 32,
+          "mape": 32.09107433894911,
+          "mape_ci95": [
+            25.64793612248292,
+            38.77465617644
+          ],
+          "mdape": 29.18611485520114,
+          "ratio_to_dev_ref": 0.7852741192101446,
+          "ratio_ci95": [
+            0.6276094167310564,
+            0.9488225185304661
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.12085942411495042,
+          "fraction_over_predicted": 0.625,
+          "split_coverage": 0.9375,
+          "split_mean_width": 193.7902751025,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 0.875,
+          "native_mean_width": 96.0825,
+          "spearman_abs_error_vs_native_width": 0.1740604682705555,
+          "spearman_abs_error_vs_native_width_p": 0.34071169267758783,
+          "conformalised_native_coverage": 0.9375
+        },
+        "random_forest|native": {
+          "n": 32,
+          "mape": 33.355389615430816,
+          "mape_ci95": [
+            26.510487223201984,
+            40.56863247555746
+          ],
+          "mdape": 29.969168812267892,
+          "ratio_to_dev_ref": 0.8162121319004237,
+          "ratio_ci95": [
+            0.6487161908058905,
+            0.9927214277191658
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.15045156166970114,
+          "fraction_over_predicted": 0.65625,
+          "split_coverage": 0.9375,
+          "split_mean_width": 184.16427385437498,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0
+        },
+        "xgboost|native": {
+          "n": 32,
+          "mape": 32.632649072380325,
+          "mape_ci95": [
+            23.866375004335758,
+            41.961708208662365
+          ],
+          "mdape": 27.2688844095647,
+          "ratio_to_dev_ref": 0.7985265462647756,
+          "ratio_ci95": [
+            0.5840143091601622,
+            1.0268102309718277
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.11623670463246957,
+          "fraction_over_predicted": 0.5625,
+          "split_coverage": 0.9375,
+          "split_mean_width": 187.955480139375,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "cqr_coverage": 1.0,
+          "cqr_mean_width": 216.94350682218752
+        }
+      }
+    },
+    "S3": {
+      "n_rows": 16,
+      "sealed_level": "paper:10.1016/j.jconrel.2019.10.028",
+      "models": {
+        "deep_ensemble|native": {
+          "n": 16,
+          "mape": 29.480440866554243,
+          "mape_ci95": [
+            25.134201919862747,
+            33.85779548654831
+          ],
+          "mdape": 28.21196455391492,
+          "ratio_to_dev_ref": 0.7213914682598387,
+          "ratio_ci95": [
+            0.6150382522630272,
+            0.828506090144413
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.2948044086655424,
+          "fraction_over_predicted": 1.0,
+          "split_coverage": 1.0,
+          "split_mean_width": 322.514779154375,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 0.0,
+          "native_mean_width": 15.725788888125004,
+          "spearman_abs_error_vs_native_width": -0.13740643709727848,
+          "spearman_abs_error_vs_native_width_p": 0.6118324636560398,
+          "conformalised_native_coverage": 1.0,
+          "per_s2_level_mape": {
+            "ion:C12-200": 29.480440866554243
+          }
+        },
+        "gp|native": {
+          "n": 16,
+          "mape": 34.64332357862579,
+          "mape_ci95": [
+            20.882184342419215,
+            51.78961245389163
+          ],
+          "mdape": 24.795145057316294,
+          "ratio_to_dev_ref": 0.8477280979246975,
+          "ratio_ci95": [
+            0.5109906494085331,
+            1.2673007414589497
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.3464332357862579,
+          "fraction_over_predicted": 1.0,
+          "split_coverage": 1.0,
+          "split_mean_width": 338.82909715750003,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 0.8125,
+          "native_mean_width": 68.454807701875,
+          "spearman_abs_error_vs_native_width": 0.8168888183475567,
+          "spearman_abs_error_vs_native_width_p": 0.00011234483498145568,
+          "conformalised_native_coverage": 0.875,
+          "per_s2_level_mape": {
+            "ion:C12-200": 34.64332357862579
+          }
+        },
+        "mlp_log|native": {
+          "n": 16,
+          "mape": 29.561949814484244,
+          "mape_ci95": [
+            24.472871041902742,
+            34.96254938205729
+          ],
+          "mdape": 26.115639491117896,
+          "ratio_to_dev_ref": 0.7233860062618211,
+          "ratio_ci95": [
+            0.5988553717146435,
+            0.8555396083456674
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.29561949814484245,
+          "fraction_over_predicted": 1.0,
+          "split_coverage": 1.0,
+          "split_mean_width": 230.654576669375,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "per_s2_level_mape": {
+            "ion:C12-200": 29.561949814484244
+          }
+        },
+        "mlp_raw|native": {
+          "n": 16,
+          "mape": 36.011523618911305,
+          "mape_ci95": [
+            29.846931120465534,
+            42.77967820790049
+          ],
+          "mdape": 30.882903484250956,
+          "ratio_to_dev_ref": 0.8812081886873327,
+          "ratio_ci95": [
+            0.730359547928957,
+            1.046826097810927
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.36011523618911306,
+          "fraction_over_predicted": 1.0,
+          "split_coverage": 1.0,
+          "split_mean_width": 143.57208904624997,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "per_s2_level_mape": {
+            "ion:C12-200": 36.011523618911305
+          }
+        },
+        "qrf|native": {
+          "n": 16,
+          "mape": 24.876107552629545,
+          "mape_ci95": [
+            17.489631705206147,
+            32.81150594103073
+          ],
+          "mdape": 21.0322421479175,
+          "ratio_to_dev_ref": 0.6087226386203838,
+          "ratio_ci95": [
+            0.4279743017498905,
+            0.8029032046623932
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.24876107552629545,
+          "fraction_over_predicted": 1.0,
+          "split_coverage": 1.0,
+          "split_mean_width": 199.49039511625,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 0.75,
+          "native_mean_width": 70.15625,
+          "spearman_abs_error_vs_native_width": 0.5284862965279942,
+          "spearman_abs_error_vs_native_width_p": 0.035330783326760554,
+          "conformalised_native_coverage": 1.0,
+          "per_s2_level_mape": {
+            "ion:C12-200": 24.876107552629545
+          }
+        },
+        "random_forest|native": {
+          "n": 16,
+          "mape": 29.49561629117261,
+          "mape_ci95": [
+            19.16998023087192,
+            42.8184391082285
+          ],
+          "mdape": 20.31960051294937,
+          "ratio_to_dev_ref": 0.7217628135153749,
+          "ratio_ci95": [
+            0.46909271974117384,
+            1.047774583721476
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.2949561629117261,
+          "fraction_over_predicted": 1.0,
+          "split_coverage": 1.0,
+          "split_mean_width": 192.7484524875,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "per_s2_level_mape": {
+            "ion:C12-200": 29.49561629117261
+          }
+        },
+        "xgboost|native": {
+          "n": 16,
+          "mape": 35.260943699405594,
+          "mape_ci95": [
+            19.51438071928883,
+            58.267410885795734
+          ],
+          "mdape": 21.55060756982183,
+          "ratio_to_dev_ref": 0.8628413687123687,
+          "ratio_ci95": [
+            0.477520259041997,
+            1.4258135853826701
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.34236869821027216,
+          "fraction_over_predicted": 0.9375,
+          "split_coverage": 0.9375,
+          "split_mean_width": 217.25934427687503,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "cqr_coverage": 1.0,
+          "cqr_mean_width": 298.19023531437495,
+          "per_s2_level_mape": {
+            "ion:C12-200": 35.260943699405594
+          }
+        }
+      }
+    },
+    "S4": {
+      "n_rows": 348,
+      "sealed_level": "non_microfluidic",
+      "models": {
+        "deep_ensemble|native": {
+          "n": 348,
+          "mape": 29.477704690222122,
+          "mape_ci95": [
+            27.58133865422336,
+            31.442238340398976
+          ],
+          "mdape": 28.262541601355558,
+          "ratio_to_dev_ref": 0.7213245135534766,
+          "ratio_ci95": [
+            0.674920109858847,
+            0.7693969905141167
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": -0.20570206341338104,
+          "fraction_over_predicted": 0.21551724137931033,
+          "split_coverage": 0.9913793103448276,
+          "split_mean_width": 291.7188403048563,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 0.3132183908045977,
+          "native_mean_width": 44.38808880123563,
+          "spearman_abs_error_vs_native_width": 0.37285165880141047,
+          "spearman_abs_error_vs_native_width_p": 6.413295988077612e-13,
+          "conformalised_native_coverage": 0.9913793103448276,
+          "per_s2_level_mape": {
+            "ion:4A3-SC8": 18.417340699012815,
+            "ion:ALC-0315": 23.4350490709199,
+            "ion:BP-Lipid-135": 10.119731313131314,
+            "ion:C12-200": 31.985100226020798,
+            "ion:Custom lipid": 30.490494328609635,
+            "ion:DLenDMA": 32.40057928787879,
+            "ion:DLin-2-DMAP": 5.21935598734178,
+            "ion:DLin-C-DAP": 14.562779767123294,
+            "ion:DLin-KC2-DMA": 16.880177054078015,
+            "ion:DLin-KC3-DMA": 2.4094071999999933,
+            "ion:DLin-MC3-DMA": 23.533252595083948,
+            "ion:DLin-S-DMA": 19.034517347826085,
+            "ion:DLinDAP": 15.669550360961987,
+            "ion:DLinDMA": 30.846081464170428,
+            "ion:DODMA": 44.23351493418789,
+            "ion:DSDMA": 49.906959510989005,
+            "ion:Heptadecan-9-yl 8-((2-hydroxyethyl)(8-(nonyloxy)-8-oxooctyl)amino)octanoate": 32.1669213549832,
+            "ion:SM-102": 6.261789566844919
+          },
+          "per_s3_level_mape": {
+            "paper:10.1002/adfm.202106727": 19.105317148461946,
+            "paper:10.1002/smll.201805097": 40.679743863710165,
+            "paper:10.1016/j.jconrel.2005.06.014": 36.5013458281059,
+            "paper:10.1016/j.jconrel.2025.01.071": 40.94270812875069,
+            "paper:10.1016/j.nano.2012.05.019": 21.47354278858873,
+            "paper:10.1016/j.omtn.2020.01.018": 56.87406157867213,
+            "paper:10.1021/acsmedchemlett.8b00652": 28.56628236960303,
+            "paper:10.1038/nbt.1602": 24.002345773290706,
+            "paper:10.1038/s41467-024-50093-7": 19.047317163445776,
+            "paper:10.1038/s41467-024-50619-z": 12.420321704526344,
+            "paper:10.1039/d0bm01609h": 31.985100226020798,
+            "paper:10.1039/d1bm01454d": 18.417340699012815,
+            "paper:10.1039/d1na00712b": 24.535225474308252,
+            "paper:10.1073/pnas.0910603106": 47.893133965096865,
+            "paper:10.1073/pnas.1306529110": 31.268446197929705,
+            "paper:10.1073/pnas.1520244113": 35.32052927342025,
+            "paper:10.3390/pr11061718": 18.470632219573847
+          }
+        },
+        "gp|native": {
+          "n": 348,
+          "mape": 28.892899163181085,
+          "mape_ci95": [
+            27.000437053087218,
+            30.8353625889131
+          ],
+          "mdape": 26.7331871172469,
+          "ratio_to_dev_ref": 0.7070142215294105,
+          "ratio_ci95": [
+            0.6607053475744229,
+            0.7545466362946053
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": -0.12835021303891395,
+          "fraction_over_predicted": 0.2557471264367816,
+          "split_coverage": 0.9971264367816092,
+          "split_mean_width": 319.6797438431897,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 0.8850574712643678,
+          "native_mean_width": 202.0065642213793,
+          "spearman_abs_error_vs_native_width": -0.1809802289600016,
+          "spearman_abs_error_vs_native_width_p": 0.0006937232180876575,
+          "conformalised_native_coverage": 0.9597701149425287,
+          "per_s2_level_mape": {
+            "ion:4A3-SC8": 20.471184561231198,
+            "ion:ALC-0315": 21.5780511173115,
+            "ion:BP-Lipid-135": 20.933772502805844,
+            "ion:C12-200": 23.268020800276982,
+            "ion:Custom lipid": 33.00807396751347,
+            "ion:DLenDMA": 33.55337474242424,
+            "ion:DLin-2-DMAP": 36.394925696202534,
+            "ion:DLin-C-DAP": 42.534835890410946,
+            "ion:DLin-KC2-DMA": 46.47138297281324,
+            "ion:DLin-KC3-DMA": 34.689989125,
+            "ion:DLin-MC3-DMA": 20.05269907862287,
+            "ion:DLin-S-DMA": 47.75374521739131,
+            "ion:DLinDAP": 42.981894010808865,
+            "ion:DLinDMA": 26.129518758386013,
+            "ion:DODMA": 16.87283325025221,
+            "ion:DSDMA": 51.8082865989011,
+            "ion:Heptadecan-9-yl 8-((2-hydroxyethyl)(8-(nonyloxy)-8-oxooctyl)amino)octanoate": 20.662924188129903,
+            "ion:SM-102": 14.405346430481284
+          },
+          "per_s3_level_mape": {
+            "paper:10.1002/adfm.202106727": 35.30688507739444,
+            "paper:10.1002/smll.201805097": 47.87046678708206,
+            "paper:10.1016/j.jconrel.2005.06.014": 26.893443503866266,
+            "paper:10.1016/j.jconrel.2025.01.071": 41.21549847244954,
+            "paper:10.1016/j.nano.2012.05.019": 33.397689365525494,
+            "paper:10.1016/j.omtn.2020.01.018": 49.53624666664553,
+            "paper:10.1021/acsmedchemlett.8b00652": 20.88370991180405,
+            "paper:10.1038/nbt.1602": 48.56290679283527,
+            "paper:10.1038/s41467-024-50093-7": 11.985921611030149,
+            "paper:10.1038/s41467-024-50619-z": 16.25688167011911,
+            "paper:10.1039/d0bm01609h": 23.268020800276982,
+            "paper:10.1039/d1bm01454d": 20.471184561231198,
+            "paper:10.1039/d1na00712b": 21.11885483265722,
+            "paper:10.1073/pnas.0910603106": 47.903648266130894,
+            "paper:10.1073/pnas.1306529110": 30.931259063718365,
+            "paper:10.1073/pnas.1520244113": 35.364137287163985,
+            "paper:10.3390/pr11061718": 21.859241962381123
+          }
+        },
+        "mlp_log|native": {
+          "n": 348,
+          "mape": 36.45925735768504,
+          "mape_ci95": [
+            34.47834505242084,
+            38.54883574281513
+          ],
+          "mdape": 35.53804036428572,
+          "ratio_to_dev_ref": 0.8921643104314241,
+          "ratio_ci95": [
+            0.8436910449583236,
+            0.9432966536048661
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": -0.27302034628107125,
+          "fraction_over_predicted": 0.15517241379310345,
+          "split_coverage": 0.9080459770114943,
+          "split_mean_width": 188.70060834364944,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "per_s2_level_mape": {
+            "ion:4A3-SC8": 26.536760322390634,
+            "ion:ALC-0315": 56.09629143922328,
+            "ion:BP-Lipid-135": 6.290876105499425,
+            "ion:C12-200": 40.10178008599559,
+            "ion:Custom lipid": 35.42390795207023,
+            "ion:DLenDMA": 48.06692183333333,
+            "ion:DLin-2-DMAP": 15.26942002531646,
+            "ion:DLin-C-DAP": 16.97936097260274,
+            "ion:DLin-KC2-DMA": 10.80335096276596,
+            "ion:DLin-KC3-DMA": 22.542328875,
+            "ion:DLin-MC3-DMA": 42.45740791261611,
+            "ion:DLin-S-DMA": 10.10077369565217,
+            "ion:DLinDAP": 11.429718677139263,
+            "ion:DLinDMA": 22.32987806813557,
+            "ion:DODMA": 35.30139608776927,
+            "ion:DSDMA": 63.683400873626375,
+            "ion:Heptadecan-9-yl 8-((2-hydroxyethyl)(8-(nonyloxy)-8-oxooctyl)amino)octanoate": 15.625331231802909,
+            "ion:SM-102": 38.47076665882352
+          },
+          "per_s3_level_mape": {
+            "paper:10.1002/adfm.202106727": 20.24812395039774,
+            "paper:10.1002/smll.201805097": 43.418314756854755,
+            "paper:10.1016/j.jconrel.2005.06.014": 46.69115176261063,
+            "paper:10.1016/j.jconrel.2025.01.071": 28.671956628477908,
+            "paper:10.1016/j.nano.2012.05.019": 9.097675737348633,
+            "paper:10.1016/j.omtn.2020.01.018": 63.673919598554484,
+            "paper:10.1021/acsmedchemlett.8b00652": 38.67770654405913,
+            "paper:10.1038/nbt.1602": 17.068479284222363,
+            "paper:10.1038/s41467-024-50093-7": 30.729493269953025,
+            "paper:10.1038/s41467-024-50619-z": 26.505899823515733,
+            "paper:10.1039/d0bm01609h": 40.10178008599559,
+            "paper:10.1039/d1bm01454d": 26.536760322390634,
+            "paper:10.1039/d1na00712b": 43.95538001302584,
+            "paper:10.1073/pnas.0910603106": 47.61816721737702,
+            "paper:10.1073/pnas.1306529110": 30.42724743970229,
+            "paper:10.1073/pnas.1520244113": 35.398494295450526,
+            "paper:10.3390/pr11061718": 75.15054066895391
+          }
+        },
+        "mlp_raw|native": {
+          "n": 348,
+          "mape": 34.2415229797032,
+          "mape_ci95": [
+            32.16075329753654,
+            36.300695905003764
+          ],
+          "mdape": 31.581449184715915,
+          "ratio_to_dev_ref": 0.8378959680282517,
+          "ratio_ci95": [
+            0.7869791753342958,
+            0.888284284360005
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": -0.2358156163023986,
+          "fraction_over_predicted": 0.1839080459770115,
+          "split_coverage": 0.7729885057471264,
+          "split_mean_width": 143.57208905737758,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "per_s2_level_mape": {
+            "ion:4A3-SC8": 21.944654109741684,
+            "ion:ALC-0315": 55.01766384384369,
+            "ion:BP-Lipid-135": 1.111914904601563,
+            "ion:C12-200": 33.284592210813955,
+            "ion:Custom lipid": 34.50732002501337,
+            "ion:DLenDMA": 54.004411159090914,
+            "ion:DLin-2-DMAP": 21.12785765822785,
+            "ion:DLin-C-DAP": 30.79216797260274,
+            "ion:DLin-KC2-DMA": 20.21343298093972,
+            "ion:DLin-KC3-DMA": 33.0746921875,
+            "ion:DLin-MC3-DMA": 43.24469439405827,
+            "ion:DLin-S-DMA": 23.67108,
+            "ion:DLinDAP": 15.378858434228068,
+            "ion:DLinDMA": 27.39332886998824,
+            "ion:DODMA": 29.143486763337485,
+            "ion:DSDMA": 68.11546067582417,
+            "ion:Heptadecan-9-yl 8-((2-hydroxyethyl)(8-(nonyloxy)-8-oxooctyl)amino)octanoate": 20.65708871220604,
+            "ion:SM-102": 43.24550238235294
+          },
+          "per_s3_level_mape": {
+            "paper:10.1002/adfm.202106727": 23.013976872299793,
+            "paper:10.1002/smll.201805097": 44.70399930836733,
+            "paper:10.1016/j.jconrel.2005.06.014": 48.17993015549624,
+            "paper:10.1016/j.jconrel.2025.01.071": 27.593945390070925,
+            "paper:10.1016/j.nano.2012.05.019": 11.79305391765541,
+            "paper:10.1016/j.omtn.2020.01.018": 59.720030555772155,
+            "paper:10.1021/acsmedchemlett.8b00652": 40.63311916247609,
+            "paper:10.1038/nbt.1602": 21.706496084588686,
+            "paper:10.1038/s41467-024-50093-7": 32.34296328308531,
+            "paper:10.1038/s41467-024-50619-z": 20.654071391413353,
+            "paper:10.1039/d0bm01609h": 33.284592210813955,
+            "paper:10.1039/d1bm01454d": 21.944654109741684,
+            "paper:10.1039/d1na00712b": 44.23067513785115,
+            "paper:10.1073/pnas.0910603106": 47.514561016681114,
+            "paper:10.1073/pnas.1306529110": 29.777483048089653,
+            "paper:10.1073/pnas.1520244113": 40.63699583580525,
+            "paper:10.3390/pr11061718": 71.00615802202964
+          }
+        },
+        "qrf|native": {
+          "n": 348,
+          "mape": 32.351339053276064,
+          "mape_ci95": [
+            30.043646700247383,
+            34.71622541370138
+          ],
+          "mdape": 28.46145957356809,
+          "ratio_to_dev_ref": 0.79164284162018,
+          "ratio_ci95": [
+            0.7351732120654866,
+            0.8495120183919006
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": -0.013415308380652817,
+          "fraction_over_predicted": 0.5373563218390804,
+          "split_coverage": 0.9166666666666666,
+          "split_mean_width": 236.64272135261493,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 0.6695402298850575,
+          "native_mean_width": 105.8387931034483,
+          "spearman_abs_error_vs_native_width": -0.0708448743099675,
+          "spearman_abs_error_vs_native_width_p": 0.18733758584215116,
+          "conformalised_native_coverage": 0.7701149425287356,
+          "per_s2_level_mape": {
+            "ion:4A3-SC8": 37.2920284870167,
+            "ion:ALC-0315": 31.13904338278043,
+            "ion:BP-Lipid-135": 11.351942121212112,
+            "ion:C12-200": 24.686550418079175,
+            "ion:Custom lipid": 36.51670148926583,
+            "ion:DLenDMA": 50.75111431818181,
+            "ion:DLin-2-DMAP": 9.827011974683542,
+            "ion:DLin-C-DAP": 2.4155335068493113,
+            "ion:DLin-KC2-DMA": 2.0342479044030757,
+            "ion:DLin-KC3-DMA": 10.954174324999997,
+            "ion:DLin-MC3-DMA": 33.29278434965053,
+            "ion:DLin-S-DMA": 3.2415370144927578,
+            "ion:DLinDAP": 12.09382649491984,
+            "ion:DLinDMA": 27.40215314649085,
+            "ion:DODMA": 48.52876920458726,
+            "ion:DSDMA": 64.28102796703297,
+            "ion:Heptadecan-9-yl 8-((2-hydroxyethyl)(8-(nonyloxy)-8-oxooctyl)amino)octanoate": 11.550482004479274,
+            "ion:SM-102": 40.0960100935829
+          },
+          "per_s3_level_mape": {
+            "paper:10.1002/adfm.202106727": 18.766628426045614,
+            "paper:10.1002/smll.201805097": 45.26702326045798,
+            "paper:10.1016/j.jconrel.2005.06.014": 55.021390347581054,
+            "paper:10.1016/j.jconrel.2025.01.071": 10.106729296235683,
+            "paper:10.1016/j.nano.2012.05.019": 7.8169000328583484,
+            "paper:10.1016/j.omtn.2020.01.018": 57.769897031334374,
+            "paper:10.1021/acsmedchemlett.8b00652": 41.74716213994331,
+            "paper:10.1038/nbt.1602": 14.649145853626017,
+            "paper:10.1038/s41467-024-50093-7": 28.36901151712583,
+            "paper:10.1038/s41467-024-50619-z": 28.00767735173102,
+            "paper:10.1039/d0bm01609h": 24.686550418079175,
+            "paper:10.1039/d1bm01454d": 37.2920284870167,
+            "paper:10.1039/d1na00712b": 33.305418649585825,
+            "paper:10.1073/pnas.0910603106": 47.79900560501908,
+            "paper:10.1073/pnas.1306529110": 42.082164992141905,
+            "paper:10.1073/pnas.1520244113": 34.92028639841854,
+            "paper:10.3390/pr11061718": 35.393461396894196
+          }
+        },
+        "random_forest|native": {
+          "n": 348,
+          "mape": 32.086211858031476,
+          "mape_ci95": [
+            29.71899437026938,
+            34.52699920592407
+          ],
+          "mdape": 28.295623613229576,
+          "ratio_to_dev_ref": 0.7851551334641567,
+          "ratio_ci95": [
+            0.7272289136047905,
+            0.8448816204789378
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": -0.01861357023840097,
+          "fraction_over_predicted": 0.5316091954022989,
+          "split_coverage": 0.896551724137931,
+          "split_mean_width": 218.44155125617817,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "per_s2_level_mape": {
+            "ion:4A3-SC8": 37.53870796798754,
+            "ion:ALC-0315": 28.604612992113626,
+            "ion:BP-Lipid-135": 21.332121313131307,
+            "ion:C12-200": 24.96567537561209,
+            "ion:Custom lipid": 36.03538685202497,
+            "ion:DLenDMA": 48.588573946969696,
+            "ion:DLin-2-DMAP": 6.382905848101261,
+            "ion:DLin-C-DAP": 1.3116498356164428,
+            "ion:DLin-KC2-DMA": 7.621789125443266,
+            "ion:DLin-KC3-DMA": 7.553119524999996,
+            "ion:DLin-MC3-DMA": 32.8289194187448,
+            "ion:DLin-S-DMA": 7.184788956521744,
+            "ion:DLinDAP": 7.347843330048642,
+            "ion:DLinDMA": 26.511840083452864,
+            "ion:DODMA": 47.57057190481277,
+            "ion:DSDMA": 62.71259209340659,
+            "ion:Heptadecan-9-yl 8-((2-hydroxyethyl)(8-(nonyloxy)-8-oxooctyl)amino)octanoate": 21.508309171332584,
+            "ion:SM-102": 34.20835274331551
+          },
+          "per_s3_level_mape": {
+            "paper:10.1002/adfm.202106727": 18.682325515440255,
+            "paper:10.1002/smll.201805097": 45.75490958008251,
+            "paper:10.1016/j.jconrel.2005.06.014": 53.00650694609512,
+            "paper:10.1016/j.jconrel.2025.01.071": 10.02409869067104,
+            "paper:10.1016/j.nano.2012.05.019": 8.588935888008104,
+            "paper:10.1016/j.omtn.2020.01.018": 67.4451806542536,
+            "paper:10.1021/acsmedchemlett.8b00652": 33.194478723299724,
+            "paper:10.1038/nbt.1602": 17.938558088023964,
+            "paper:10.1038/s41467-024-50093-7": 23.81159392632115,
+            "paper:10.1038/s41467-024-50619-z": 28.177535665343502,
+            "paper:10.1039/d0bm01609h": 24.96567537561209,
+            "paper:10.1039/d1bm01454d": 37.53870796798754,
+            "paper:10.1039/d1na00712b": 33.42327790466986,
+            "paper:10.1073/pnas.0910603106": 48.24914182367622,
+            "paper:10.1073/pnas.1306529110": 33.690871552327,
+            "paper:10.1073/pnas.1520244113": 43.0882223700614,
+            "paper:10.3390/pr11061718": 36.675493588178654
+          }
+        },
+        "xgboost|native": {
+          "n": 348,
+          "mape": 25.36920522263712,
+          "mape_ci95": [
+            23.098040738433006,
+            27.817264881577653
+          ],
+          "mdape": 22.499247599637684,
+          "ratio_to_dev_ref": 0.6207888235791654,
+          "ratio_ci95": [
+            0.5652130372693216,
+            0.6806932652985002
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": -0.08638857087994435,
+          "fraction_over_predicted": 0.33620689655172414,
+          "split_coverage": 0.9741379310344828,
+          "split_mean_width": 226.36683577367816,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "cqr_coverage": 0.9885057471264368,
+          "cqr_mean_width": 304.74271694071837,
+          "per_s2_level_mape": {
+            "ion:4A3-SC8": 21.760408599106093,
+            "ion:ALC-0315": 44.11258612270221,
+            "ion:BP-Lipid-135": 25.323872244668905,
+            "ion:C12-200": 18.700903090810524,
+            "ion:Custom lipid": 28.03228776552641,
+            "ion:DLenDMA": 48.839852227272736,
+            "ion:DLin-2-DMAP": 16.283974607594928,
+            "ion:DLin-C-DAP": 9.403205397260265,
+            "ion:DLin-KC2-DMA": 4.131196323581554,
+            "ion:DLin-KC3-DMA": 17.330424924999992,
+            "ion:DLin-MC3-DMA": 24.674048265994124,
+            "ion:DLin-S-DMA": 4.151217304347816,
+            "ion:DLinDAP": 6.793759134606385,
+            "ion:DLinDMA": 29.654130706853802,
+            "ion:DODMA": 61.28165159251677,
+            "ion:DSDMA": 62.89483787912088,
+            "ion:Heptadecan-9-yl 8-((2-hydroxyethyl)(8-(nonyloxy)-8-oxooctyl)amino)octanoate": 25.491120011198205,
+            "ion:SM-102": 45.25618864705883
+          },
+          "per_s3_level_mape": {
+            "paper:10.1002/adfm.202106727": 20.146650745011605,
+            "paper:10.1002/smll.201805097": 41.548518207918924,
+            "paper:10.1016/j.jconrel.2005.06.014": 52.70989001125691,
+            "paper:10.1016/j.jconrel.2025.01.071": 12.656772885979272,
+            "paper:10.1016/j.nano.2012.05.019": 10.641895979572627,
+            "paper:10.1016/j.omtn.2020.01.018": 33.05301085826312,
+            "paper:10.1021/acsmedchemlett.8b00652": 43.66260251174113,
+            "paper:10.1038/nbt.1602": 19.059168282005682,
+            "paper:10.1038/s41467-024-50093-7": 46.57540053013571,
+            "paper:10.1038/s41467-024-50619-z": 8.29575258987154,
+            "paper:10.1039/d0bm01609h": 18.700903090810524,
+            "paper:10.1039/d1bm01454d": 21.760408599106093,
+            "paper:10.1039/d1na00712b": 23.076150183402717,
+            "paper:10.1073/pnas.0910603106": 48.54441653289804,
+            "paper:10.1073/pnas.1306529110": 28.733537008601523,
+            "paper:10.1073/pnas.1520244113": 35.05539104296723,
+            "paper:10.3390/pr11061718": 42.6045119091128
+          }
+        }
+      }
+    }
+  },
+  "H_A": {
+    "statement": "shift multiplier r = MAPE_sealed / dev-ref lies in [2.2, 3.0] for S2/S3 (xgboost, native features)",
+    "per_tier": {
+      "S2": {
+        "r": 0.7985265462647756,
+        "r_ci95": [
+          0.5840143091601622,
+          1.0268102309718277
+        ],
+        "in_band": false,
+        "ci_disjoint_from_band": true
+      },
+      "S3": {
+        "r": 0.8628413687123687,
+        "r_ci95": [
+          0.477520259041997,
+          1.4258135853826701
+        ],
+        "in_band": false,
+        "ci_disjoint_from_band": true
+      }
+    },
+    "S2_dev_LOCO_r_retrospective": 0.752639269822124,
+    "S1_dispersion_max_over_min": 3.119432003533734,
+    "S2_S3_dispersion_max_over_min": 1.0805418714611745,
+    "dispersion_within_S1": true,
+    "S4": {
+      "r": 0.6207888235791654,
+      "r_ci95": [
+        0.5652130372693216,
+        0.6806932652985002
+      ],
+      "S4_lower_above_S2S3_upper": false
+    },
+    "decision_single_dataset": "falsified_on_this_dataset",
+    "decision_protocol": "deferred to h_combine.py (multi-dataset rule of section 5)"
+  },
+  "H_B": {
+    "B1": {
+      "S2": {
+        "bounded_mape": 31.810781167258252,
+        "unbounded_mape": 36.70000834955815,
+        "bounded_nonpositive": 0,
+        "unbounded_nonpositive": 0,
+        "bounded_lower_error_and_no_invalid": true
+      },
+      "S3": {
+        "bounded_mape": 29.561949814484244,
+        "unbounded_mape": 36.011523618911305,
+        "bounded_nonpositive": 0,
+        "unbounded_nonpositive": 0,
+        "bounded_lower_error_and_no_invalid": true
+      }
+    },
+    "B1_decision_single_dataset": "consistent_on_this_dataset",
+    "B1_decision_protocol": "deferred to h_combine.py",
+    "B2": "not_evaluable: no anchor defined (binding)"
+  },
+  "H_C": {
+    "evaluable": false,
+    "reason": "no dimensionless inputs on this dataset"
+  },
+  "H_D": {
+    "per_tier": {
+      "S2": {
+        "A_abs": 0.0,
+        "W_abs": 0.0,
+        "A_minus_W_abs": 0.0,
+        "A_rel": 0.0,
+        "W_rel": 0.0,
+        "A_minus_W_rel": 0.0,
+        "mape": 32.632649072380325
+      },
+      "S3": {
+        "A_abs": 0.0,
+        "W_abs": 0.0,
+        "A_minus_W_abs": 0.0,
+        "A_rel": 0.0,
+        "W_rel": 0.0,
+        "A_minus_W_rel": 0.0,
+        "mape": 35.260943699405594
+      }
+    },
+    "dev_per_level": {
+      "per_level": [
+        {
+          "level": "ion:244-cis",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 13.750111276664882
+        },
+        {
+          "level": "ion:246C10",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 41.09303816164377
+        },
+        {
+          "level": "ion:7C1",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.017857142857142856,
+          "mape": 55.84596661722131
+        },
+        {
+          "level": "ion:9A1P9",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 26.8649415496993
+        },
+        {
+          "level": "ion:A12-Iso5-2DC18",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 15.348935514356238
+        },
+        {
+          "level": "ion:A18-Iso5-2DC18",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 3.439447840606243
+        },
+        {
+          "level": "ion:A2-Iso5-2DC18",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 16.370639931072922
+        },
+        {
+          "level": "ion:ALC-0315",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 18.639925129710605
+        },
+        {
+          "level": "ion:AX4",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 42.7768180163518
+        },
+        {
+          "level": "ion:C10-200",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 31.917010000911933
+        },
+        {
+          "level": "ion:C12-200",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 32.76085312073981
+        },
+        {
+          "level": "ion:C9-200",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 21.077536794595193
+        },
+        {
+          "level": "ion:Custom lipid",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 31.338883984321708
+        },
+        {
+          "level": "ion:DLin-KC2-DMA",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 71.69274865141679
+        },
+        {
+          "level": "ion:DLinDMA",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 22.59590935803031
+        },
+        {
+          "level": "ion:DMAP-BLP",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 102.085092354726
+        },
+        {
+          "level": "ion:DODAP",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 78.40759193749504
+        },
+        {
+          "level": "ion:DODMA",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 22.864736400017485
+        },
+        {
+          "level": "ion:DOTAP",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 13.236172423330835
+        },
+        {
+          "level": "ion:DOTMA",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 30.330246663727976
+        },
+        {
+          "level": "ion:Heptadecan-9-yl 8-((2-hydroxyethyl)(8-(nonyloxy)-8-oxooctyl)amino)octanoate",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 12.706359429460164
+        },
+        {
+          "level": "ion:L202",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 31.406307852732308
+        },
+        {
+          "level": "ion:OF-02",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 13.49543804683861
+        },
+        {
+          "level": "ion:OF-C4-Deg-Lin",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 18.05990358498441
+        },
+        {
+          "level": "ion:OF-Deg-Lin",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 16.738350390479273
+        },
+        {
+          "level": "ion:SM-102",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 30.174495331117846
+        },
+        {
+          "level": "ion:cKK-E12",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 15.432771627231299
+        }
+      ],
+      "max_abs_A_minus_W": 0.0
+    },
+    "decision_single_dataset": "consistent_on_this_dataset",
+    "decision_protocol": "deferred to h_combine.py"
+  },
+  "H_E": {
+    "S0_mape": {
+      "xgboost": 22.16,
+      "random_forest": 20.416,
+      "mlp_log": 25.042,
+      "qrf": 21.792,
+      "gp": 22.792,
+      "deep_ensemble": 22.876
+    },
+    "S2_mape": {
+      "xgboost": 32.632649072380325,
+      "random_forest": 33.355389615430816,
+      "mlp_log": 31.810781167258252,
+      "qrf": 32.09107433894911,
+      "gp": 46.364876652255504,
+      "deep_ensemble": 31.69395585371187
+    },
+    "spearman_S0_vs_S2": -0.5428571428571429,
+    "S2_native_widths": {
+      "qrf": 96.0825,
+      "gp": 231.34556958,
+      "deep_ensemble": 43.337131636562496
+    },
+    "S2_spearman_abs_error_vs_native_width": {
+      "qrf": 0.1740604682705555,
+      "gp": null,
+      "deep_ensemble": -0.010818741395328834
+    },
+    "S2_spearman_abs_error_vs_native_width_p": {
+      "qrf": 0.34071169267758783,
+      "gp": null,
+      "deep_ensemble": 0.9531378937403507
+    },
+    "S3_mape": {
+      "xgboost": 35.260943699405594,
+      "random_forest": 29.49561629117261,
+      "mlp_log": 29.561949814484244,
+      "qrf": 24.876107552629545,
+      "gp": 34.64332357862579,
+      "deep_ensemble": 29.480440866554243
+    },
+    "spearman_S0_vs_S3": 0.2,
+    "S3_native_widths": {
+      "qrf": 70.15625,
+      "gp": 68.454807701875,
+      "deep_ensemble": 15.725788888125004
+    },
+    "S3_spearman_abs_error_vs_native_width": {
+      "qrf": 0.5284862965279942,
+      "gp": 0.8168888183475567,
+      "deep_ensemble": -0.13740643709727848
+    },
+    "S3_spearman_abs_error_vs_native_width_p": {
+      "qrf": 0.035330783326760554,
+      "gp": 0.00011234483498145568,
+      "deep_ensemble": 0.6118324636560398
+    },
+    "S0_native_widths": {
+      "qrf": 112.31236190476193,
+      "gp": 99.87306205047905,
+      "deep_ensemble": 32.748859815256864
+    },
+    "E1_decision_single_dataset": "consistent_on_this_dataset",
+    "E1_decision_protocol": "deferred to h_combine.py",
+    "E2_decision_single_dataset": {
+      "S2": {
+        "qrf": false,
+        "gp": false,
+        "deep_ensemble": false
+      },
+      "S3": {
+        "qrf": false,
+        "gp": false,
+        "deep_ensemble": false
+      }
+    }
+  }
+}

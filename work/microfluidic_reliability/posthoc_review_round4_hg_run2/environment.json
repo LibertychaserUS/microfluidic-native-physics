@@ -1,0 +1,19 @@
+{
+  "python": "3.12.13",
+  "numpy": "2.5.1",
+  "pandas": "3.0.3",
+  "sklearn": "1.9.0",
+  "xgboost": "3.3.0",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "script_sha256": "8565105334aeee81fc9277a2e0ae7578a9e2b90c270fc1a22ad85ad5c49f8a50",
+  "round3_script_sha256": "954ce3f5fd1f4a92269b3fc94915fd2a606e77e0eb507825cd079375822a0771",
+  "input_sha256": {
+    "blind_artifacts/blind_features.csv": "6f76c9aa91b4f6e01c6b6e600b17f8a2b6600fde4085b0253c68f6b1df3aa29b",
+    "blind_artifacts/sealed_blind_labels.csv": "0e4c9a2577449446875d69ac51713aba510f7f492d7dffc4b6e3595746cc4fb9",
+    "blind_artifacts/prereveal/blind_predictions.csv": "64a72754a702a59cf2f4b7d3153e26ac43f0eae66c22739305cd4ee3e5a95c14",
+    "blind_artifacts/development_labeled.csv": "b2889726960774acb2b25319f7544c31a1be4f22f319b1a1f4df88f98c7d7ab0",
+    "d3_blind_artifacts/development_labeled.csv": "5e57bbee8e18b811d209c7924c0377e13ba44ab77351b35dfd8f88ca01c2ada2",
+    "d3_blind_artifacts/sealed_primary_features.csv": "e26c7313596974188f2d34a0aacd95ee701cef774f4ad67fd6381b227b0cf00d",
+    "d3_blind_artifacts/reveal/sealed_primary_scored_rows.csv": "fff8e81112ed7419b37dc2a305142cd14ab3a3e6f77fbe04ecb137f340bcb98a"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "budget": 20,
+  "cv_folds": 5,
+  "cv_seed": 0,
+  "drift_pre": [
+    -0.2,
+    0.2
+  ],
+  "drift_seeds": [
+    0,
+    1,
+    2
+  ],
+  "e0_sha256": {
+    "exclusions.json": "37b56f780bd71829bde81ea790f1fa65baa5bcbd6ee7d0c69778b4220cf8e8cb",
+    "tiers_e0.csv": "cb4ba684db971e331826653aefa92887ae397b450f352ec65519cddd3245ab8c"
+  },
+  "e1_protocol_sha256": "022aa19d3acc3bf9afcfac99ff53bf244ed54254adcb759cf7010dd120d6fb5f",
+  "families": [
+    "xgboost",
+    "random_forest",
+    "mlp",
+    "qrf",
+    "gp",
+    "deep_ensemble"
+  ],
+  "family_seed": 42,
+  "frozen_runner": "closed_loop.py",
+  "frozen_runner_sha256": "645b73b2a0afa82154ee54b4018e33973427ea1640358878395afebc5ee13776",
+  "lambda_warm": 0.1,
+  "main_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "n_cv_fits": 180,
+  "n_family_fits": 642,
+  "n_loops": 92448,
+  "n_tiers": 107,
+  "policies": {
+    "P0": [
+      0,
+      "random",
+      "none",
+      "greedy"
+    ],
+    "P1": [
+      2,
+      "random",
+      "warm",
+      "greedy"
+    ],
+    "P2": [
+      0,
+      "random",
+      "warm",
+      "greedy"
+    ]
+  },
+  "protocol": "E4_MODEL_FAMILY_PROTOCOL_v1.md",
+  "protocol_sha256": "0b0b68d4e1119bc785a631b20b3d2b1c3af9709c3a4d402138eb5839597c59ce",
+  "schema_version": "closed-loop-e4-run-v1",
+  "smoke": false,
+  "stage": "e4",
+  "tables": {
+    "A1": {
+      "log_target": true,
+      "n_features": 7,
+      "n_rows": 901,
+      "sources": {
+        "development_labeled.csv": "8b439565f7bac2e9e06f030a1f6167e4de8b56488eccb3a1ea47603cf11d949e",
+        "sealed_features.csv": "feb9c268f79795b7ec35949165a4459bcd39fc902c1bd217390a2cd949482068",
+        "sealed_labels.csv": "0dfdd77fec3acd28723a8b32d7c8847e6909221b23f68eb7b02a45583172597d"
+      }
+    },
+    "D1": {
+      "log_target": false,
+      "n_features": 8,
+      "n_rows": 868,
+      "sources": {
+        "Comprehensive_normalized.xlsx": "aebb0136ff812f7233c8fd57ebc0f27f1b935736e8a9c1d4fdc20585f06b9c06",
+        "Generalizability_data_normalized.xlsx": "e90996da3e866e64922dc3b8aaef4b092ee6845fe95aac356c73e90ed108b303"
+      }
+    },
+    "D2": {
+      "log_target": false,
+      "n_features": 4,
+      "n_rows": 468,
+      "sources": {
+        "matTestDataSet.mat": "55f202bd19433331c86ddc65507e834036d294f7f9b4db2275f21ad91f6729da",
+        "matTrainingDataSet.mat": "7fab0693a7065198468a5d654226f5e2164985e334ed105f91355bdd49fb1a17"
+      }
+    },
+    "D3": {
+      "log_target": true,
+      "n_features": 8,
+      "n_rows": 303,
+      "sources": {
+        "development_labeled.csv": "5e57bbee8e18b811d209c7924c0377e13ba44ab77351b35dfd8f88ca01c2ada2",
+        "sealed_primary_features.csv": "e26c7313596974188f2d34a0aacd95ee701cef774f4ad67fd6381b227b0cf00d",
+        "sealed_primary_scored_rows.csv": "fff8e81112ed7419b37dc2a305142cd14ab3a3e6f77fbe04ecb137f340bcb98a"
+      }
+    },
+    "R2A1": {
+      "log_target": false,
+      "n_features": 9,
+      "n_rows": 830,
+      "sources": {
+        "development_labeled.csv": "fca77a0de5f50581776eea91647e295f5e0bdc246dbb3824c4989bb368f909a9",
+        "sealed_features.csv": "4616cd38319573225d017a9dcccd19dcd975459c4164533200493eb96774ff55",
+        "sealed_labels.csv": "ecafd931d4dce256ac489a43a48bd2e442e4c95c44eecf0655ff53127aa3b497"
+      }
+    },
+    "R2A2": {
+      "log_target": true,
+      "n_features": 118,
+      "n_rows": 919,
+      "sources": {
+        "development_labeled.csv": "d98d372b836094b282504ac5e1d25a1dbe0ef81e7f299cc3b9758ea43a637b2c",
+        "sealed_features.csv": "ec232439f2aa4502c67fb1304d96bec3f4c88c96d8f864a6a9035e3db202bf63",
+        "sealed_labels.csv": "47d97e4a2aff243a1695b4c30e519927f9b350a682e26b1399370e91ad721ca7"
+      }
+    }
+  },
+  "target_quantiles": [
+    0.2,
+    0.5,
+    0.8
+  ],
+  "tau": 0.1,
+  "wrapper_sha256": "6bb3772a1290d4c7f8d3e1e3cad2a05df1fffe8b5f4367ccdddb3633e4b23ab4"
+}

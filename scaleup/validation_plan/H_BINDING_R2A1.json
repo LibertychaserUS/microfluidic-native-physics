@@ -1,0 +1,66 @@
+{
+  "schema_version": "h-binding-v2",
+  "dataset_code": "R2A1",
+  "dataset": "Wang J.-X., Qian J., Wang H., Sun M., Wu L., Zhong M., Chen Y., Mao Y., Chem. Eng. J. 485:149467 (2024), co-flowing microfluidic droplet generation; data deposit Zenodo 10.5281/zenodo.10526441 (CC BY 4.0), file 'Data for FrameworkA.xlsx'",
+  "protocol": "validation_plan/H_PROTOCOL_v2.md",
+  "protocol_sha256": "2adbd18623a848d3179c89d0ee49cd9106fb573144d7fabb47db12f906b873b3",
+  "download_manifest": "scaleup/h_intake/h_R2A1_download_manifest.json",
+  "source_file": "Data for FrameworkA.xlsx",
+  "source_md5_expected": "d58b4cbb8f4df47fb3eb2b44a2dc4fdb",
+  "intake_basis": "header row, row count (830), level counts of the input and grouping columns, numeric-cell count of the target column; no target value was read before this binding was written (DATASET_CANDIDATES_round2.md section 0)",
+  "loader": "flat_xlsx",
+  "loader_spec": {
+    "sheet": "Sheet1",
+    "header_row_index": 0,
+    "target_col": "diameter",
+    "key_cols": ["channel"],
+    "meta_cols": ["flowtype"],
+    "s2_key_cols": ["interfacial_tension", "disp_viscosity", "cont_viscosity", "disp_density", "cont_density"],
+    "s3_key_cols": ["inner", "outer", "channel"]
+  },
+  "columns": {
+    "native": ["disp_flow", "cont_flow", "interfacial_tension", "disp_viscosity", "cont_viscosity", "disp_density", "cont_density", "inner", "outer"],
+    "dimensionless": ["Ca_c", "Ca_d", "q_flow", "lambda_mu", "Re_c", "Re_d", "geo_inner_over_channel"],
+    "dimensionless_definitions": {
+      "U_d": "disp_flow / (pi/4 * inner^2)",
+      "U_c": "cont_flow / (pi/4 * (channel^2 - outer^2))",
+      "Ca_c": "cont_viscosity * U_c / interfacial_tension",
+      "Ca_d": "disp_viscosity * U_d / interfacial_tension",
+      "q_flow": "disp_flow / cont_flow",
+      "lambda_mu": "disp_viscosity / cont_viscosity",
+      "Re_c": "cont_density * U_c * (channel - outer) / cont_viscosity",
+      "Re_d": "disp_density * U_d * inner / disp_viscosity",
+      "geo_inner_over_channel": "inner / channel",
+      "unit_note": "the flow-rate unit is not stated in the deposit; velocities and hence Ca and Re carry one unknown constant factor each, which does not affect tree models and cancels in the C2 equality test (5% tolerance)"
+    },
+    "excluded_from_inputs": ["flowtype (observed regime, kept as a descriptive meta column)", "channel (device key; redundant with inner/outer for the two devices)"],
+    "target": "target (= diameter column)",
+    "target_unit": "as in file; the deposit does not state the unit of the diameter column (MAPE, tau and the shift multipliers are unit-free)"
+  },
+  "groups": {
+    "S0": "row-random 80/20 inside the development set, seeds 0-14",
+    "S1": "s1_group = fluid pair x device (GroupShuffleSplit 80/20, seeds 0-14; also the dev-ref grouping)",
+    "S2": "s2_group = fluid pair (combination of the five physical-property columns; 11 levels in the intake)",
+    "S3": "s3_group = device instance (inner, outer, channel; 2 levels in the intake)",
+    "S4": null,
+    "S4_note": "no device-type class exists (both devices are co-flow capillaries)"
+  },
+  "sealing_rules": {
+    "S2": "among s2_group levels with >= 10 target rows, excluding every level that attains the maximum count, choose the level whose count is closest to the median of the eligible counts; ties -> lexicographically smallest level name",
+    "S3": "same rule on s3_group levels; if the chosen level's rows intersect the S2 sealed rows, take the next candidate; if none remains, S3 is not sealed",
+    "development": "all rows not sealed"
+  },
+  "parsing_rules": {
+    "experiment_row": "a row with numeric values in all native input columns and channel",
+    "missing_target": "rows without a numeric diameter are dropped and counted",
+    "nonpositive_target": "rows with diameter <= 0 are dropped and counted before any grouping decision (A1 v2 rule)"
+  },
+  "c2_scale_column": "inner",
+  "hard_bound": "positivity_only",
+  "hard_bound_note": "no physical upper bound is defined for a co-flow droplet; the bounded model is the log-target MLP, the unbounded model the raw-scale MLP (H-B B1 only)",
+  "anchor": null,
+  "anchor_note": "the paper's model is a neural network, not a correlation; H-B B2 is not evaluable on this dataset",
+  "tolerance": {"relative": 0.10, "absolute_rule": "0.10 x development-set median target (computed by the custodian from development labels and written to the devdiag file)"},
+  "target_scale_rule": "development labels only: log target if max/min > 10 or skewness > 2, else raw scale",
+  "seeds": {"xgboost": 42, "random_reference": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "bootstrap": 0, "deep_ensemble_members": [0, 1, 2, 3, 4]}
+}

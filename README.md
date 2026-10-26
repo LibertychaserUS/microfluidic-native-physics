@@ -5,23 +5,29 @@
 Code, frozen protocols, deviation registers, number ledger, hash manifests and
 summary artifacts behind the preprint
 
-> Zhiyuan Zhang, *Reliability Audits for Machine-Learned Droplet-Microfluidic
-> Design Surrogates* (2026; arXiv identifier to be added to `CITATION.cff` once
-> assigned).
+> Zhiyuan Zhang, *When Can a Learned Design Surrogate Be Trusted in a
+> Self-Driving Microfluidics Laboratory? An Offline Closed-Loop Framework Built
+> and Tested on Six Public Tables* (2026; arXiv identifier to be added to
+> `CITATION.cff` once assigned).
 
-The study is retrospective and reports mostly negative results: a sealed
-chemistry holdout (V1), a sealed cross-laboratory validation (D3), a frozen
-physics-guided constrained regressor (V2), an expanded shift audit on the DAFD
-tables, and a method-matrix benchmark with uncertainty-aware and
-covariate-shift-weighted comparison models (W3–W5). Nothing here is evidence of
-wet-lab feasibility of any device, material or formulation.
+The work is retrospective and built on public tables only. Stage 1 is a
+reliability audit and mechanism diagnostics on three tables (a sealed
+chemistry holdout V1, a frozen physics-guided constrained regressor V2, an
+expanded shift audit on the DAFD tables, the method matrix W3–W5 and a sealed
+cross-laboratory validation D3); Stage 2 a pre-registered multi-table test of
+hypotheses H-A to H-E on three further public tables (R10); Stage 3
+constructive adaptation experiments under frozen protocols; Stage 4 an offline
+closed-loop benchmark (E0–E7) that replays the six tables as a laboratory
+would query them. Most pre-registered results are negative and are reported
+as such. Nothing here is evidence of wet-lab feasibility of any device,
+material or formulation.
 
 ## Release status
 
-- Tag `v0.3-preprint` accompanies manuscript draft v0.3.x. The code, registers,
-  ledger and hash manifests promised in the manuscript's *Data and code
-  availability* paragraph are in this repository; the compiled PDF is attached
-  to the GitHub release.
+- The release tag accompanies the manuscript version named in `CITATION.cff`.
+  The code, protocols, registers, ledger and hash manifests promised in the
+  manuscript's *Reproducibility* section are in this repository; the compiled
+  PDFs (English and Chinese mirror) are attached to the GitHub release.
 - Every SHA-256 digest cited in the manuscript (Appendix D) is listed in
   [`hashes/appendix_d_registry.json`](hashes/appendix_d_registry.json) with the
   path of the released file or the reason the bytes are not redistributed.
@@ -56,7 +62,23 @@ work/microfluidic_reliability/   the experiment workspace, path-for-path as cite
   *_artifacts_canonical_run{1,2}/ the five canonical run pairs: full hash manifests, configuration, environment,
                                  deviations and every summary artifact (per-row files > 1 MB stay in the workspace)
   posthoc_review_round2/         the four post-hoc analyses of Section "Post-hoc analyses"
-scaleup/                         W3/W4/W5 protocols and runners, D3 protocol, binding, deviation register and programs
+  e0_run1/ … e7_run1/, e1b_run1/, e1_reanalysis/, e1_dense_sensitivity/, e6_posthoc/, e_tie_check/, e_floor_check/,
+  e4_identity/, figures_closed_loop/   closed-loop benchmark E0–E7: run manifests, environments, results, summary
+                                 tables (per-loop tables stay in the workspace); second runs keep manifests only
+  h_A1_*/, h_R2A1_*/, h_R2A2_*/  R10 sealed validations: custodian manifests, development diagnostics, run summaries,
+                                 reveal results and consumed gates (no per-row file)
+  h_portfolio*_run1/, h_fewshot_rule_run1/, h_fewshot_rule_posthoc/, posthoc_review_round3_run1/, posthoc_review_round4*/
+                                 Stage 3 constructive experiments and post-hoc rounds 3–4 (summaries and manifests)
+  fidelity_run1/, fidelity_posthoc/   reproduction fidelity of the XGBoost baselines (results, pins, environments)
+scaleup/                         W3/W4/W5 protocols and runners, D3 protocol, binding, deviation register and programs;
+  validation_plan/               frozen protocols, bindings, digest sidecars and deviation registers of Stages 2–4
+                                 (H-A–H-E, H-F, H-G, H-J, closed loop E0–E7, post-hoc round 3)
+  w6/, w7/, fidelity/            R10 custodian/runner/reveal/combination programs; closed-loop runner, analyzer and
+                                 wrappers; fidelity driver, worker and post-hoc script
+  e_closed_loop/, h_A1/, h_R2A1/, h_R2A2/, h_combined/, h_portfolio/, h_fewshot_rule/, posthoc_round3/,
+  posthoc_round4/, fidelity/run{1,2}/, h_intake/, synthesis/
+                                 byte copies of the manifests, summaries, reveal results, reports and registers
+                                 exactly where the manuscript's Section 8 names them (the same bytes as under work/)
 manuscript/                      LaTeX source (English and Chinese mirror), bibliography, figures, numbers_ledger.json,
                                  tools/check_numbers.py (ledger script) and tools/render_figures.py
 hashes/                          appendix_d_registry.json and release_manifest.json (SHA-256 of every released file)
@@ -78,13 +100,19 @@ it and because the manuscript cites artifact paths relative to that root.
 | Sealed label files of V1 and D3 | rows of public datasets that the released custodian programs reconstruct deterministically; never released | custodian manifests, Appendix D registry |
 | Re-cut development / feature tables of V1 and D3 | same reason; the custodians regenerate them byte-for-byte (required before running V2, W3–W5 or the post-hoc analyses) | custodian manifests |
 | Per-row artifacts larger than 1 MB (predictions, split manifests, interval rows; about 26 MB per matrix run) | kept in the authors' workspace | each run's `artifact_hashes.json` |
+| Per-loop tables of the closed loop (`loops.csv`, `budget.csv`, shuffled-label loop tables), the per-row files of the R10 runs (sealed prediction bundles, scored rows, point predictions, interval rows), the fidelity per-row predictions, split manifest and worker task files, and the post-hoc warm-start curves | regenerated byte for byte by the frozen runners; third-party rows | each run's `artifact_hashes.json`; sidecars for the sealed bundles |
+| Stage 2 source tables (A1 ESI, Wang et al. deposit, LNP Atlas) and the custodian re-cuts of them; the upstream DAFD code and model used by the fidelity protocol | public under their own licences, or without a licence (upstream code); not redistributed | `data/source_registry.json`, custodian manifests, `fidelity_run1/upstream_pins.json` |
 | E0 XGBoost model binary | regenerated by re-running E0 | Appendix D registry |
 | Superseded fast/smoke runs, pre-fix outputs, the uncorrected V1 post-hoc directory | excluded from the release inventory by the protocols | — |
 
-One released file was edited: `blind_artifacts/posthoc_analysis_corrected/blind_posthoc_summary.json`
-carried fourteen absolute workspace paths as keys of its read-only audit block;
-the path prefix was replaced by `<WORK>/`. No value changed; both digests are in
-the registry.
+Edited before release: `blind_artifacts/posthoc_analysis_corrected/blind_posthoc_summary.json`
+carried fourteen absolute workspace paths as keys of its read-only audit block,
+and each of the six header-only intake manifests under `scaleup/h_intake/`
+carried one absolute path in its `directory` field; the prefixes were replaced
+by `<WORK>/`. No value changed; original and released digests are in the
+registry. Internal working documents (Chinese design notes and reports, review
+responses, candidate lists, drafts) are not part of the release; every frozen
+protocol, binding, register and sidecar that the manuscript cites is.
 
 ## Reproducing the runs
 
@@ -134,6 +162,28 @@ the hashed pre-reveal bundles, and the reveal programs refuse a second reveal
 because the gate files exist. See [`scaleup/README.md`](scaleup/README.md) and
 [`work/microfluidic_reliability/README.md`](work/microfluidic_reliability/README.md).
 
+#### Stage 2 (R10), Stage 3 and the closed loop
+
+All from `scaleup/`, with `<WORK>` = `../work/microfluidic_reliability` and
+`<DATA>` = `../work/data`; every program writes a hash manifest and an
+environment record, and the counted runs were executed twice into separate
+directories.
+
+| Programme | Command | Output compared with |
+|---|---|---|
+| R10 sealed run (A1 under protocol v1; R2-A1 and R2-A2 under v2 with `h_run2.py`) | `python -m w6.h_run --binding validation_plan/H_BINDING_A1_v2.json --protocol validation_plan/H_PROTOCOL_v1.md --artifacts <WORK>/h_A1_artifacts --output <WORK>/h_A1_run1` | `h_A1_run{1,2}/artifact_hashes.json`, `sealed_prediction_bundle.sha256` |
+| R10 reveal (one-time; consumed) | `python -m w6.h_reveal … --run <WORK>/h_A1_run1 --output <WORK>/h_A1_reveal` (`h_reveal2.py` for R2) | `h_A1_reveal/h_reveal_results.json` |
+| R10 combination | `python -m w6.h_combine --result A1=<WORK>/h_A1_reveal/h_reveal_results.json --result R2A1=… --result R2A2=… --output h_combined/H_COMBINED_DECISIONS.json` | `scaleup/h_combined/H_COMBINED_DECISIONS.json` |
+| Stage 3: portfolio (H-F), warm start (H-G), recalibration | `python -m w6.h_portfolio --work <WORK> --output-dir <WORK>/h_portfolio_run1` (and `h_portfolio2`); `python -m w3.posthoc_round4_warmstart --work <WORK> --output-dir …` (and `_warmstart2`); `python -m w3.posthoc_round3 --work <WORK> --output-dir …` | `h_portfolio*_run{1,2}/`, `posthoc_review_round4_hg*_run{1,2}/`, `posthoc_review_round3_run{1,2}/artifact_hashes.json` |
+| Few-shot rule meta-analysis (H-J) | `python -m w6.h_fewshot_rule --work <WORK> --data <DATA> --out <WORK>/h_fewshot_rule_run1`, then `h_fewshot_rule_analyze.py`, `h_fewshot_rule_posthoc.py` | `h_fewshot_rule_run{1,2}/artifact_hashes.json` |
+| Closed loop E0 and E1/E2 | `python -I w7/closed_loop.py --stage e0 --work <WORK> --data <DATA> --out <WORK>/e0_run1`; `python -I w7/closed_loop.py --stage e1e2 --work <WORK> --data <DATA> --out <WORK>/e1e2_run1 --e0 <WORK>/e0_run1`; then `closed_loop_analyze.py` | `e0_run{1,2}/`, `e1e2_run{1,2}/artifact_hashes.json` |
+| E1b, E3, E4, E6, E7 wrappers; E5 analyzer | `python -I w7/closed_loop_e1b.py …` (each wrapper documents its arguments in its docstring); `closed_loop_e5.py`, `closed_loop_tie_check.py`, `closed_loop_floor_check.py`, `figures_closed_loop.py` | the corresponding `e*_run{1,2}/` manifests, `e4_identity/e4_identity.json`, `e_tie_check/`, `e_floor_check/`, `figures_closed_loop/values.json` |
+| Reproduction fidelity (two environments) | `python fidelity/fidelity_driver.py --work <WORK> --data <DATA>/osf_938rs --upstream <DATA>/upstream/dafd-website --d2-raw <WORK>/blind_raw --envb-python <python3.9 of requirements/envB-xgboost133.txt> --envb-dyld <its library path> --protocol fidelity/FIDELITY_PROTOCOL_v1.md --worker fidelity/fidelity_worker133.py --out <WORK>/fidelity_run1` | `fidelity_run{1,2}/artifact_hashes.json` |
+
+`scripts/verify_run_manifests.py` checks all 27 run pairs (the E4 pair differs
+only in a wall-clock timing column, as `e4_identity/e4_identity.json` records)
+and the single-run directories.
+
 ### Manuscript
 
 ```bash
@@ -143,14 +193,16 @@ cd manuscript && tectonic -X compile main_zh.tex   # Chinese mirror (XeTeX, syst
 
 ## Claim boundaries
 
-The intended contribution is a reliability-under-shift evaluation of
-machine-learned surrogates on public droplet-microfluidics data. The sealed
-chemistry holdout (V1) and the sealed cross-laboratory validation (D3) are
-negative results and are retained as such; V2 is a physics-guided constrained
-regressor, not a classical physics-informed neural network; every V2 result on
-the TX100 group is retrospective because those labels had already been
-revealed. Nothing in this repository establishes chemical compatibility,
-manufacturability, stable dripping, device safety, or prospective discovery.
+The intended contribution is a decision framework for learned surrogates in a
+self-driving loop, instantiated offline on public tables, and the evidence
+for and against its assumptions. The sealed validations (V1, D3, the three R10
+tables) are negative or mixed results and are retained as such; V2 is a
+physics-guided constrained regressor, not a classical physics-informed neural
+network; every V2 result on the TX100 group is retrospective because those
+labels had already been revealed; the closed loop replays recorded
+measurements and performs no experiment. Nothing in this repository
+establishes chemical compatibility, manufacturability, stable dripping, device
+safety, or prospective discovery.
 
 ## Licences and citation
 
@@ -160,5 +212,5 @@ Manuscript text, original figures and repository-authored result summaries:
 for the file-level boundary. Third-party data, papers and upstream software
 keep their own terms ([`THIRD_PARTY_DATA.md`](THIRD_PARTY_DATA.md)). This
 independent work reproduces, stress-tests or builds on public work by
-Lashkaripour et al., Chagot et al. and Lavagna et al.; it does not imply their
-endorsement. Citation metadata: [`CITATION.cff`](CITATION.cff).
+Lashkaripour et al., Chagot et al., Lavagna et al., Hormozinezhad et al.,
+Wang et al. and Song et al.; it does not imply their endorsement. Citation metadata: [`CITATION.cff`](CITATION.cff).

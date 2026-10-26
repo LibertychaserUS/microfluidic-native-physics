@@ -1,0 +1,322 @@
+key,shift_type,method,eps,k_star,reached,dense
+A1|A1-device:100x105,device,affine,28.277851729625,21,False,0
+A1|A1-device:100x105,device,scratch,28.277851729625,21,False,0
+A1|A1-device:100x105,device,warm,28.277851729625,21,False,0
+A1|A1-device:190x195,device,affine,52.1763391075,1,True,0
+A1|A1-device:190x195,device,scratch,52.1763391075,1,True,0
+A1|A1-device:190x195,device,warm,52.1763391075,1,True,0
+A1|A1-fluid:cont190_A:No Surfactant,chemistry,affine,32.90729019675,1,True,0
+A1|A1-fluid:cont190_A:No Surfactant,chemistry,scratch,32.90729019675,1,True,0
+A1|A1-fluid:cont190_A:No Surfactant,chemistry,warm,32.90729019675,1,True,0
+A1|A1-fluid:cont190_A:Span0pt03,chemistry,affine,32.1984085745,1,True,0
+A1|A1-fluid:cont190_A:Span0pt03,chemistry,scratch,32.1984085745,1,True,0
+A1|A1-fluid:cont190_A:Span0pt03,chemistry,warm,32.1984085745,1,True,0
+A1|A1-fluid:cont190_A:Span0pt3,chemistry,affine,33.959235987625,1,True,0
+A1|A1-fluid:cont190_A:Span0pt3,chemistry,scratch,33.959235987625,1,True,0
+A1|A1-fluid:cont190_A:Span0pt3,chemistry,warm,33.959235987625,1,True,0
+A1|A1-fluid:cont190_A:Span1,chemistry,affine,31.458045448625,1,True,0
+A1|A1-fluid:cont190_A:Span1,chemistry,scratch,31.458045448625,1,True,0
+A1|A1-fluid:cont190_A:Span1,chemistry,warm,31.458045448625,1,True,0
+A1|A1-fluid:cont190_A:Tween 0pt03,chemistry,affine,32.182733070625,1,True,0
+A1|A1-fluid:cont190_A:Tween 0pt03,chemistry,scratch,32.182733070625,1,True,0
+A1|A1-fluid:cont190_A:Tween 0pt03,chemistry,warm,32.182733070625,1,True,0
+A1|A1-fluid:cont190_A:Tween 0pt3,chemistry,affine,31.667495877624997,1,True,0
+A1|A1-fluid:cont190_A:Tween 0pt3,chemistry,scratch,31.667495877624997,1,True,0
+A1|A1-fluid:cont190_A:Tween 0pt3,chemistry,warm,31.667495877624997,1,True,0
+A1|A1-fluid:cont190_A:Tween 1,chemistry,affine,34.1769784575,1,True,0
+A1|A1-fluid:cont190_A:Tween 1,chemistry,scratch,34.1769784575,1,True,0
+A1|A1-fluid:cont190_A:Tween 1,chemistry,warm,34.1769784575,1,True,0
+A1|A1-fluid:cont190_B:No Surfactant,chemistry,affine,35.732621121125,1,True,0
+A1|A1-fluid:cont190_B:No Surfactant,chemistry,scratch,35.732621121125,1,True,0
+A1|A1-fluid:cont190_B:No Surfactant,chemistry,warm,35.732621121125,1,True,0
+A1|A1-fluid:cont190_B:Span0pt03,chemistry,affine,31.34441671375,1,True,0
+A1|A1-fluid:cont190_B:Span0pt03,chemistry,scratch,31.34441671375,1,True,0
+A1|A1-fluid:cont190_B:Span0pt03,chemistry,warm,31.34441671375,1,True,0
+A1|A1-fluid:cont190_B:Span0pt3,chemistry,affine,36.364791001625,1,True,0
+A1|A1-fluid:cont190_B:Span0pt3,chemistry,scratch,36.364791001625,1,True,0
+A1|A1-fluid:cont190_B:Span0pt3,chemistry,warm,36.364791001625,1,True,0
+A1|A1-fluid:cont190_B:Span1,chemistry,affine,30.873667404375,1,True,0
+A1|A1-fluid:cont190_B:Span1,chemistry,scratch,30.873667404375,5,True,0
+A1|A1-fluid:cont190_B:Span1,chemistry,warm,30.873667404375,5,True,0
+A1|A1-fluid:cont190_B:Tween 0pt03,chemistry,affine,33.254398499125,1,True,0
+A1|A1-fluid:cont190_B:Tween 0pt03,chemistry,scratch,33.254398499125,1,True,0
+A1|A1-fluid:cont190_B:Tween 0pt03,chemistry,warm,33.254398499125,1,True,0
+A1|A1-fluid:cont190_B:Tween 0pt3,chemistry,affine,31.108501906,1,True,0
+A1|A1-fluid:cont190_B:Tween 0pt3,chemistry,scratch,31.108501906,1,True,0
+A1|A1-fluid:cont190_B:Tween 0pt3,chemistry,warm,31.108501906,1,True,0
+A1|A1-fluid:cont190_B:Tween 1,chemistry,affine,33.754315401625,1,True,0
+A1|A1-fluid:cont190_B:Tween 1,chemistry,scratch,33.754315401625,1,True,0
+A1|A1-fluid:cont190_B:Tween 1,chemistry,warm,33.754315401625,1,True,0
+A1|A1-fluid:disp100:HA0pt01,chemistry,affine,32.330470565875004,1,True,0
+A1|A1-fluid:disp100:HA0pt01,chemistry,scratch,32.330470565875004,10,True,0
+A1|A1-fluid:disp100:HA0pt01,chemistry,warm,32.330470565875004,3,True,0
+A1|A1-fluid:disp100:HA0pt0178,chemistry,affine,32.92229810225,21,False,0
+A1|A1-fluid:disp100:HA0pt0178,chemistry,scratch,32.92229810225,21,False,0
+A1|A1-fluid:disp100:HA0pt0178,chemistry,warm,32.92229810225,21,False,0
+A1|A1-fluid:disp100:HA0pt0316,chemistry,affine,34.6354849745,1,True,0
+A1|A1-fluid:disp100:HA0pt0316,chemistry,scratch,34.6354849745,1,True,0
+A1|A1-fluid:disp100:HA0pt0316,chemistry,warm,34.6354849745,1,True,0
+A1|A1-fluid:disp100:HA0pt1,chemistry,affine,35.493138676875,1,True,0
+A1|A1-fluid:disp100:HA0pt1,chemistry,scratch,35.493138676875,1,True,0
+A1|A1-fluid:disp100:HA0pt1,chemistry,warm,35.493138676875,1,True,0
+A1|A1-fluid:disp100:HA0pt178,chemistry,affine,35.841313578750004,1,True,0
+A1|A1-fluid:disp100:HA0pt178,chemistry,scratch,35.841313578750004,1,True,0
+A1|A1-fluid:disp100:HA0pt178,chemistry,warm,35.841313578750004,1,True,0
+A1|A1-fluid:disp100:HA0pt316,chemistry,affine,35.538451455625,1,True,0
+A1|A1-fluid:disp100:HA0pt316,chemistry,scratch,35.538451455625,5,True,0
+A1|A1-fluid:disp100:HA0pt316,chemistry,warm,35.538451455625,1,True,0
+A1|A1-fluid:disp100:HA0pt562,chemistry,affine,35.844260407,1,True,0
+A1|A1-fluid:disp100:HA0pt562,chemistry,scratch,35.844260407,1,True,0
+A1|A1-fluid:disp100:HA0pt562,chemistry,warm,35.844260407,1,True,0
+A1|A1-fluid:disp100:Water,chemistry,affine,29.95351828125,21,False,0
+A1|A1-fluid:disp100:Water,chemistry,scratch,29.95351828125,21,False,0
+A1|A1-fluid:disp100:Water,chemistry,warm,29.95351828125,21,False,0
+D1|D1-geo:10783030123386282056,device,affine,7.1529770237625,1,True,1
+D1|D1-geo:10783030123386282056,device,scratch,7.1529770237625,1,True,1
+D1|D1-geo:10783030123386282056,device,warm,7.1529770237625,1,True,1
+D1|D1-geo:10999609320884323513,device,affine,6.581121617512499,21,False,0
+D1|D1-geo:10999609320884323513,device,scratch,6.581121617512499,21,False,0
+D1|D1-geo:10999609320884323513,device,warm,6.581121617512499,21,False,0
+D1|D1-geo:11621135778379748487,device,affine,6.4655599210000005,21,False,0
+D1|D1-geo:11621135778379748487,device,scratch,6.4655599210000005,21,False,0
+D1|D1-geo:11621135778379748487,device,warm,6.4655599210000005,21,False,0
+D1|D1-geo:11775397259450033621,device,affine,6.4494213334624995,21,False,0
+D1|D1-geo:11775397259450033621,device,scratch,6.4494213334624995,21,False,0
+D1|D1-geo:11775397259450033621,device,warm,6.4494213334624995,21,False,0
+D1|D1-geo:12934774912865881185,device,affine,6.7844987785,8,True,0
+D1|D1-geo:12934774912865881185,device,scratch,6.7844987785,21,False,0
+D1|D1-geo:12934774912865881185,device,warm,6.7844987785,3,True,0
+D1|D1-geo:13145367824132214575,device,affine,6.633055818775,21,False,0
+D1|D1-geo:13145367824132214575,device,scratch,6.633055818775,21,False,0
+D1|D1-geo:13145367824132214575,device,warm,6.633055818775,21,False,0
+D1|D1-geo:13400784714973946190,device,affine,6.886730850925,21,False,0
+D1|D1-geo:13400784714973946190,device,scratch,6.886730850925,21,False,0
+D1|D1-geo:13400784714973946190,device,warm,6.886730850925,21,False,0
+D1|D1-geo:14481405573974357131,device,affine,7.1116275131875,1,True,0
+D1|D1-geo:14481405573974357131,device,scratch,7.1116275131875,1,True,0
+D1|D1-geo:14481405573974357131,device,warm,7.1116275131875,1,True,0
+D1|D1-geo:1451615698670947456,device,affine,6.6467648208625,21,False,0
+D1|D1-geo:1451615698670947456,device,scratch,6.6467648208625,21,False,0
+D1|D1-geo:1451615698670947456,device,warm,6.6467648208625,21,False,0
+D1|D1-geo:16102483739009727894,device,affine,6.747798054612501,21,False,0
+D1|D1-geo:16102483739009727894,device,scratch,6.747798054612501,21,False,0
+D1|D1-geo:16102483739009727894,device,warm,6.747798054612501,21,False,0
+D1|D1-geo:1619414655543470087,device,affine,6.894586517825,21,False,0
+D1|D1-geo:1619414655543470087,device,scratch,6.894586517825,21,False,0
+D1|D1-geo:1619414655543470087,device,warm,6.894586517825,21,False,0
+D1|D1-geo:17836328918875700307,device,affine,6.614775926849999,21,False,0
+D1|D1-geo:17836328918875700307,device,scratch,6.614775926849999,21,False,0
+D1|D1-geo:17836328918875700307,device,warm,6.614775926849999,3,True,0
+D1|D1-geo:18342445907851599541,device,affine,6.858694255425,21,False,0
+D1|D1-geo:18342445907851599541,device,scratch,6.858694255425,21,False,0
+D1|D1-geo:18342445907851599541,device,warm,6.858694255425,21,False,0
+D1|D1-geo:2038265878703316236,device,affine,6.9039566212625,21,False,0
+D1|D1-geo:2038265878703316236,device,scratch,6.9039566212625,21,False,0
+D1|D1-geo:2038265878703316236,device,warm,6.9039566212625,21,False,0
+D1|D1-geo:3319951360291564968,device,affine,6.5782080267125,21,False,0
+D1|D1-geo:3319951360291564968,device,scratch,6.5782080267125,21,False,0
+D1|D1-geo:3319951360291564968,device,warm,6.5782080267125,21,False,0
+D1|D1-geo:3725150154637305130,device,affine,6.6602118955625,21,False,0
+D1|D1-geo:3725150154637305130,device,scratch,6.6602118955625,21,False,0
+D1|D1-geo:3725150154637305130,device,warm,6.6602118955625,21,False,0
+D1|D1-geo:4360873944096314282,device,affine,6.59095506585,21,False,0
+D1|D1-geo:4360873944096314282,device,scratch,6.59095506585,21,False,0
+D1|D1-geo:4360873944096314282,device,warm,6.59095506585,21,False,0
+D1|D1-geo:4564376050240140421,device,affine,6.782974363375,21,False,0
+D1|D1-geo:4564376050240140421,device,scratch,6.782974363375,21,False,0
+D1|D1-geo:4564376050240140421,device,warm,6.782974363375,21,False,0
+D1|D1-geo:5338166298809494774,device,affine,6.9718748673875,21,False,0
+D1|D1-geo:5338166298809494774,device,scratch,6.9718748673875,21,False,0
+D1|D1-geo:5338166298809494774,device,warm,6.9718748673875,21,False,0
+D1|D1-geo:6079577689521717932,device,affine,7.8159755560375,1,True,1
+D1|D1-geo:6079577689521717932,device,scratch,7.8159755560375,1,True,1
+D1|D1-geo:6079577689521717932,device,warm,7.8159755560375,1,True,1
+D1|D1-geo:7144202608479733972,device,affine,7.7951570504,1,True,1
+D1|D1-geo:7144202608479733972,device,scratch,7.7951570504,1,True,1
+D1|D1-geo:7144202608479733972,device,warm,7.7951570504,1,True,1
+D1|D1-geo:7201574430605284551,device,affine,6.793175595049999,21,False,0
+D1|D1-geo:7201574430605284551,device,scratch,6.793175595049999,1,True,0
+D1|D1-geo:7201574430605284551,device,warm,6.793175595049999,1,True,0
+D1|D1-geo:8214373851025981481,device,affine,6.7933206993625,1,True,0
+D1|D1-geo:8214373851025981481,device,scratch,6.7933206993625,21,False,0
+D1|D1-geo:8214373851025981481,device,warm,6.7933206993625,2,True,0
+D1|D1-geo:8291285964994522641,device,affine,6.7879636204375,1,True,0
+D1|D1-geo:8291285964994522641,device,scratch,6.7879636204375,1,True,0
+D1|D1-geo:8291285964994522641,device,warm,6.7879636204375,1,True,0
+D1|D1-geo:8854650402589390511,device,affine,6.56914675365,21,False,0
+D1|D1-geo:8854650402589390511,device,scratch,6.56914675365,21,False,0
+D1|D1-geo:8854650402589390511,device,warm,6.56914675365,21,False,0
+D1|D1-geo:9978729073923328748,device,affine,6.7566157382375005,21,False,0
+D1|D1-geo:9978729073923328748,device,scratch,6.7566157382375005,21,False,0
+D1|D1-geo:9978729073923328748,device,warm,6.7566157382375005,21,False,0
+D1|D1-pool:Galogahi et al,laboratory,affine,7.09818154885,5,True,1
+D1|D1-pool:Galogahi et al,laboratory,scratch,7.09818154885,5,True,1
+D1|D1-pool:Galogahi et al,laboratory,warm,7.09818154885,2,True,1
+D1|D1-pool:Lashkaripour et al,laboratory,affine,7.09818154885,1,True,1
+D1|D1-pool:Lashkaripour et al,laboratory,scratch,7.09818154885,3,True,1
+D1|D1-pool:Lashkaripour et al,laboratory,warm,7.09818154885,2,True,1
+D1|D1-pool:Roumpea et al,laboratory,affine,7.09818154885,21,False,1
+D1|D1-pool:Roumpea et al,laboratory,scratch,7.09818154885,21,False,1
+D1|D1-pool:Roumpea et al,laboratory,warm,7.09818154885,21,False,1
+D1|D1-type:DE,emulsion type,affine,10.2668182158625,3,True,1
+D1|D1-type:DE,emulsion type,scratch,10.2668182158625,3,True,1
+D1|D1-type:DE,emulsion type,warm,10.2668182158625,15,True,1
+D1|D1-type:SE,emulsion type,affine,3.3105578769,21,False,0
+D1|D1-type:SE,emulsion type,scratch,3.3105578769,21,False,0
+D1|D1-type:SE,emulsion type,warm,3.3105578769,21,False,0
+D2|D2-chem:cmc0,chemistry,affine,11.982720918537499,1,True,1
+D2|D2-chem:cmc0,chemistry,scratch,11.982720918537499,1,True,1
+D2|D2-chem:cmc0,chemistry,warm,11.982720918537499,1,True,1
+D2|D2-chem:cmc11,chemistry,affine,16.62486179575,1,True,1
+D2|D2-chem:cmc11,chemistry,scratch,16.62486179575,1,True,1
+D2|D2-chem:cmc11,chemistry,warm,16.62486179575,1,True,1
+D2|D2-chem:cmc2,chemistry,affine,9.4744569858375,1,True,0
+D2|D2-chem:cmc2,chemistry,scratch,9.4744569858375,1,True,0
+D2|D2-chem:cmc2,chemistry,warm,9.4744569858375,1,True,0
+D2|D2-chem:cmc20,chemistry,affine,20.911018986625002,1,True,0
+D2|D2-chem:cmc20,chemistry,scratch,20.911018986625002,1,True,0
+D2|D2-chem:cmc20,chemistry,warm,20.911018986625002,1,True,0
+D2|D2-chem:cmc3.5,chemistry,affine,7.8321354692125,21,False,1
+D2|D2-chem:cmc3.5,chemistry,scratch,7.8321354692125,20,True,1
+D2|D2-chem:cmc3.5,chemistry,warm,7.8321354692125,5,True,1
+D2|D2-chem:cmc4.33,chemistry,affine,10.1935178070375,5,True,0
+D2|D2-chem:cmc4.33,chemistry,scratch,10.1935178070375,3,True,0
+D2|D2-chem:cmc4.33,chemistry,warm,10.1935178070375,3,True,0
+D3|D3-lab:B,laboratory,affine,29.8646647725,21,False,0
+D3|D3-lab:B,laboratory,scratch,29.8646647725,21,False,0
+D3|D3-lab:B,laboratory,warm,29.8646647725,21,False,0
+R2A1|R2A1-device:device:0.0001|0.0003|0.00444444,device,affine,23.487518153375003,21,False,0
+R2A1|R2A1-device:device:0.0001|0.0003|0.00444444,device,scratch,23.487518153375003,15,True,0
+R2A1|R2A1-device:device:0.0001|0.0003|0.00444444,device,warm,23.487518153375003,20,True,0
+R2A1|R2A1-device:device:9e-05|0.0002|0.002,device,affine,49.238359171125,1,True,1
+R2A1|R2A1-device:device:9e-05|0.0002|0.002,device,scratch,49.238359171125,3,True,1
+R2A1|R2A1-device:device:9e-05|0.0002|0.002,device,warm,49.238359171125,1,True,1
+R2A1|R2A1-fluid:fluid:0.00534|0.001|0.5|998|963,chemistry,affine,24.922908184375,1,True,1
+R2A1|R2A1-fluid:fluid:0.00534|0.001|0.5|998|963,chemistry,scratch,24.922908184375,1,True,1
+R2A1|R2A1-fluid:fluid:0.00534|0.001|0.5|998|963,chemistry,warm,24.922908184375,1,True,1
+R2A1|R2A1-fluid:fluid:0.00593|0.001|0.5|998|963,chemistry,affine,23.737007296625002,1,True,0
+R2A1|R2A1-fluid:fluid:0.00593|0.001|0.5|998|963,chemistry,scratch,23.737007296625002,15,True,0
+R2A1|R2A1-fluid:fluid:0.00593|0.001|0.5|998|963,chemistry,warm,23.737007296625002,1,True,0
+R2A1|R2A1-fluid:fluid:0.00836|0.001|0.5|998|963,chemistry,affine,32.030335470875,1,True,1
+R2A1|R2A1-fluid:fluid:0.00836|0.001|0.5|998|963,chemistry,scratch,32.030335470875,1,True,1
+R2A1|R2A1-fluid:fluid:0.00836|0.001|0.5|998|963,chemistry,warm,32.030335470875,1,True,1
+R2A1|R2A1-fluid:fluid:0.02833|0.037|0.049|1000|916,chemistry,affine,21.41386413275,21,False,0
+R2A1|R2A1-fluid:fluid:0.02833|0.037|0.049|1000|916,chemistry,scratch,21.41386413275,15,True,0
+R2A1|R2A1-fluid:fluid:0.02833|0.037|0.049|1000|916,chemistry,warm,21.41386413275,8,True,0
+R2A1|R2A1-fluid:fluid:0.02833|0.046|0.049|1000|916,chemistry,affine,22.222362746374998,1,True,0
+R2A1|R2A1-fluid:fluid:0.02833|0.046|0.049|1000|916,chemistry,scratch,22.222362746374998,1,True,0
+R2A1|R2A1-fluid:fluid:0.02833|0.046|0.049|1000|916,chemistry,warm,22.222362746374998,1,True,0
+R2A2|R2A2-lipid:ion:4A3-SC8,composition,affine,43.793972985125,1,True,0
+R2A2|R2A2-lipid:ion:4A3-SC8,composition,scratch,43.793972985125,1,True,0
+R2A2|R2A2-lipid:ion:4A3-SC8,composition,warm,43.793972985125,1,True,0
+R2A2|R2A2-lipid:ion:7C1,composition,affine,44.082922303625,21,False,0
+R2A2|R2A2-lipid:ion:7C1,composition,scratch,44.082922303625,21,False,0
+R2A2|R2A2-lipid:ion:7C1,composition,warm,44.082922303625,21,False,0
+R2A2|R2A2-lipid:ion:A2-Iso5-2DC18,composition,affine,48.370845475125,1,True,0
+R2A2|R2A2-lipid:ion:A2-Iso5-2DC18,composition,scratch,48.370845475125,1,True,0
+R2A2|R2A2-lipid:ion:A2-Iso5-2DC18,composition,warm,48.370845475125,1,True,0
+R2A2|R2A2-lipid:ion:ALC-0315,composition,affine,44.904546216125,1,True,0
+R2A2|R2A2-lipid:ion:ALC-0315,composition,scratch,44.904546216125,1,True,0
+R2A2|R2A2-lipid:ion:ALC-0315,composition,warm,44.904546216125,1,True,0
+R2A2|R2A2-lipid:ion:AX4,composition,affine,44.479617100000006,1,True,0
+R2A2|R2A2-lipid:ion:AX4,composition,scratch,44.479617100000006,1,True,0
+R2A2|R2A2-lipid:ion:AX4,composition,warm,44.479617100000006,1,True,0
+R2A2|R2A2-lipid:ion:C12-200,composition,affine,50.478792699500005,1,True,1
+R2A2|R2A2-lipid:ion:C12-200,composition,scratch,50.478792699500005,1,True,1
+R2A2|R2A2-lipid:ion:C12-200,composition,warm,50.478792699500005,1,True,1
+R2A2|R2A2-lipid:ion:Custom lipid,composition,affine,64.28401858574999,1,True,0
+R2A2|R2A2-lipid:ion:Custom lipid,composition,scratch,64.28401858574999,1,True,0
+R2A2|R2A2-lipid:ion:Custom lipid,composition,warm,64.28401858574999,1,True,0
+R2A2|R2A2-lipid:ion:DLin-KC2-DMA,composition,affine,40.54968855725,21,False,0
+R2A2|R2A2-lipid:ion:DLin-KC2-DMA,composition,scratch,40.54968855725,20,True,0
+R2A2|R2A2-lipid:ion:DLin-KC2-DMA,composition,warm,40.54968855725,5,True,0
+R2A2|R2A2-lipid:ion:DLin-MC3-DMA,composition,affine,47.503177416750006,1,True,0
+R2A2|R2A2-lipid:ion:DLin-MC3-DMA,composition,scratch,47.503177416750006,1,True,0
+R2A2|R2A2-lipid:ion:DLin-MC3-DMA,composition,warm,47.503177416750006,1,True,0
+R2A2|R2A2-lipid:ion:DMAP-BLP,composition,affine,42.645591018125,1,True,0
+R2A2|R2A2-lipid:ion:DMAP-BLP,composition,scratch,42.645591018125,21,False,0
+R2A2|R2A2-lipid:ion:DMAP-BLP,composition,warm,42.645591018125,1,True,0
+R2A2|R2A2-lipid:ion:OF-02,composition,affine,47.2129581875,1,True,0
+R2A2|R2A2-lipid:ion:OF-02,composition,scratch,47.2129581875,1,True,0
+R2A2|R2A2-lipid:ion:OF-02,composition,warm,47.2129581875,1,True,0
+R2A2|R2A2-paper:paper:10.1002/adfm.202106727,laboratory,affine,49.8993911255,1,True,0
+R2A2|R2A2-paper:paper:10.1002/adfm.202106727,laboratory,scratch,49.8993911255,1,True,0
+R2A2|R2A2-paper:paper:10.1002/adfm.202106727,laboratory,warm,49.8993911255,1,True,0
+R2A2|R2A2-paper:paper:10.1002/anie.201809056,laboratory,affine,44.771327804625,1,True,0
+R2A2|R2A2-paper:paper:10.1002/anie.201809056,laboratory,scratch,44.771327804625,1,True,0
+R2A2|R2A2-paper:paper:10.1002/anie.201809056,laboratory,warm,44.771327804625,1,True,0
+R2A2|R2A2-paper:paper:10.1016/j.ijpharm.2023.123050,laboratory,affine,44.479617100000006,1,True,0
+R2A2|R2A2-paper:paper:10.1016/j.ijpharm.2023.123050,laboratory,scratch,44.479617100000006,1,True,0
+R2A2|R2A2-paper:paper:10.1016/j.ijpharm.2023.123050,laboratory,warm,44.479617100000006,1,True,0
+R2A2|R2A2-paper:paper:10.1016/j.jconrel.2016.05.059,laboratory,affine,42.645591018125,1,True,0
+R2A2|R2A2-paper:paper:10.1016/j.jconrel.2016.05.059,laboratory,scratch,42.645591018125,21,False,0
+R2A2|R2A2-paper:paper:10.1016/j.jconrel.2016.05.059,laboratory,warm,42.645591018125,1,True,0
+R2A2|R2A2-paper:paper:10.1016/j.jconrel.2019.10.028,laboratory,affine,41.948499711625004,1,True,1
+R2A2|R2A2-paper:paper:10.1016/j.jconrel.2019.10.028,laboratory,scratch,41.948499711625004,1,True,1
+R2A2|R2A2-paper:paper:10.1016/j.jconrel.2019.10.028,laboratory,warm,41.948499711625004,1,True,1
+R2A2|R2A2-paper:paper:10.1016/j.jpha.2024.100996,laboratory,affine,41.63856753725,1,True,0
+R2A2|R2A2-paper:paper:10.1016/j.jpha.2024.100996,laboratory,scratch,41.63856753725,3,True,0
+R2A2|R2A2-paper:paper:10.1016/j.jpha.2024.100996,laboratory,warm,41.63856753725,5,True,0
+R2A2|R2A2-paper:paper:10.1016/j.omtn.2020.01.018,laboratory,affine,47.991055358125,1,True,0
+R2A2|R2A2-paper:paper:10.1016/j.omtn.2020.01.018,laboratory,scratch,47.991055358125,1,True,0
+R2A2|R2A2-paper:paper:10.1016/j.omtn.2020.01.018,laboratory,warm,47.991055358125,1,True,0
+R2A2|R2A2-paper:paper:10.1021/acs.jpcb.5b02891,laboratory,affine,42.244924716875005,21,False,0
+R2A2|R2A2-paper:paper:10.1021/acs.jpcb.5b02891,laboratory,scratch,42.244924716875005,8,True,0
+R2A2|R2A2-paper:paper:10.1021/acs.jpcb.5b02891,laboratory,warm,42.244924716875005,8,True,0
+R2A2|R2A2-paper:paper:10.1021/acs.nanolett.5b02497,laboratory,affine,48.082337953875005,1,True,0
+R2A2|R2A2-paper:paper:10.1021/acs.nanolett.5b02497,laboratory,scratch,48.082337953875005,1,True,0
+R2A2|R2A2-paper:paper:10.1021/acs.nanolett.5b02497,laboratory,warm,48.082337953875005,1,True,0
+R2A2|R2A2-paper:paper:10.1021/acsmedchemlett.8b00652,laboratory,affine,42.948962552000005,1,True,0
+R2A2|R2A2-paper:paper:10.1021/acsmedchemlett.8b00652,laboratory,scratch,42.948962552000005,1,True,0
+R2A2|R2A2-paper:paper:10.1021/acsmedchemlett.8b00652,laboratory,warm,42.948962552000005,1,True,0
+R2A2|R2A2-paper:paper:10.1021/jacs.2c12893,laboratory,affine,43.844365916,1,True,0
+R2A2|R2A2-paper:paper:10.1021/jacs.2c12893,laboratory,scratch,43.844365916,1,True,0
+R2A2|R2A2-paper:paper:10.1021/jacs.2c12893,laboratory,warm,43.844365916,1,True,0
+R2A2|R2A2-paper:paper:10.1038/nbt.1602,laboratory,affine,42.682304331375,1,True,0
+R2A2|R2A2-paper:paper:10.1038/nbt.1602,laboratory,scratch,42.682304331375,1,True,0
+R2A2|R2A2-paper:paper:10.1038/nbt.1602,laboratory,warm,42.682304331375,1,True,0
+R2A2|R2A2-paper:paper:10.1038/s41467-024-45422-9,laboratory,affine,54.898228046875,1,True,0
+R2A2|R2A2-paper:paper:10.1038/s41467-024-45422-9,laboratory,scratch,54.898228046875,1,True,0
+R2A2|R2A2-paper:paper:10.1038/s41467-024-45422-9,laboratory,warm,54.898228046875,1,True,0
+R2A2|R2A2-paper:paper:10.1038/s41467-024-50093-7,laboratory,affine,42.992949295624996,1,True,0
+R2A2|R2A2-paper:paper:10.1038/s41467-024-50093-7,laboratory,scratch,42.992949295624996,3,True,0
+R2A2|R2A2-paper:paper:10.1038/s41467-024-50093-7,laboratory,warm,42.992949295624996,2,True,0
+R2A2|R2A2-paper:paper:10.1038/s41467-024-50619-z,laboratory,affine,44.509703336499996,1,True,1
+R2A2|R2A2-paper:paper:10.1038/s41467-024-50619-z,laboratory,scratch,44.509703336499996,1,True,1
+R2A2|R2A2-paper:paper:10.1038/s41467-024-50619-z,laboratory,warm,44.509703336499996,1,True,1
+R2A2|R2A2-paper:paper:10.1038/s41551-021-00786-x,laboratory,affine,44.082922303625,21,False,0
+R2A2|R2A2-paper:paper:10.1038/s41551-021-00786-x,laboratory,scratch,44.082922303625,21,False,0
+R2A2|R2A2-paper:paper:10.1038/s41551-021-00786-x,laboratory,warm,44.082922303625,21,False,0
+R2A2|R2A2-paper:paper:10.1038/s41587-019-0247-3,laboratory,affine,47.20202005,1,True,0
+R2A2|R2A2-paper:paper:10.1038/s41587-019-0247-3,laboratory,scratch,47.20202005,1,True,0
+R2A2|R2A2-paper:paper:10.1038/s41587-019-0247-3,laboratory,warm,47.20202005,1,True,0
+R2A2|R2A2-paper:paper:10.1039/c9nr09347h,laboratory,affine,42.6231450625,21,False,0
+R2A2|R2A2-paper:paper:10.1039/c9nr09347h,laboratory,scratch,42.6231450625,1,True,0
+R2A2|R2A2-paper:paper:10.1039/c9nr09347h,laboratory,warm,42.6231450625,1,True,0
+R2A2|R2A2-paper:paper:10.1039/d0bm01609h,laboratory,affine,48.045450569500005,1,True,1
+R2A2|R2A2-paper:paper:10.1039/d0bm01609h,laboratory,scratch,48.045450569500005,1,True,1
+R2A2|R2A2-paper:paper:10.1039/d0bm01609h,laboratory,warm,48.045450569500005,1,True,1
+R2A2|R2A2-paper:paper:10.1039/d1bm01454d,laboratory,affine,43.793972985125,1,True,0
+R2A2|R2A2-paper:paper:10.1039/d1bm01454d,laboratory,scratch,43.793972985125,1,True,0
+R2A2|R2A2-paper:paper:10.1039/d1bm01454d,laboratory,warm,43.793972985125,1,True,0
+R2A2|R2A2-paper:paper:10.1039/d1na00712b,laboratory,affine,47.95061419975,1,True,0
+R2A2|R2A2-paper:paper:10.1039/d1na00712b,laboratory,scratch,47.95061419975,1,True,0
+R2A2|R2A2-paper:paper:10.1039/d1na00712b,laboratory,warm,47.95061419975,1,True,0
+R2A2|R2A2-paper:paper:10.1039/d5nr00433k,laboratory,affine,45.798544375999995,1,True,0
+R2A2|R2A2-paper:paper:10.1039/d5nr00433k,laboratory,scratch,45.798544375999995,1,True,0
+R2A2|R2A2-paper:paper:10.1039/d5nr00433k,laboratory,warm,45.798544375999995,1,True,0
+R2A2|R2A2-paper:paper:10.1073/pnas.1306529110,laboratory,affine,44.728778284625,1,True,0
+R2A2|R2A2-paper:paper:10.1073/pnas.1306529110,laboratory,scratch,44.728778284625,1,True,0
+R2A2|R2A2-paper:paper:10.1073/pnas.1306529110,laboratory,warm,44.728778284625,1,True,0
+R2A2|R2A2-paper:paper:10.1126/sciadv.aba1028,laboratory,affine,43.144768533375,1,True,0
+R2A2|R2A2-paper:paper:10.1126/sciadv.aba1028,laboratory,scratch,43.144768533375,1,True,0
+R2A2|R2A2-paper:paper:10.1126/sciadv.aba1028,laboratory,warm,43.144768533375,1,True,0
+R2A2|R2A2-paper:paper:10.1126/sciadv.abf4398,laboratory,affine,45.15771549625,1,True,1
+R2A2|R2A2-paper:paper:10.1126/sciadv.abf4398,laboratory,scratch,45.15771549625,1,True,1
+R2A2|R2A2-paper:paper:10.1126/sciadv.abf4398,laboratory,warm,45.15771549625,1,True,1
+R2A2|R2A2-prep:microfluidic,preparation,affine,30.942842415,21,False,0
+R2A2|R2A2-prep:microfluidic,preparation,scratch,30.942842415,21,False,0
+R2A2|R2A2-prep:microfluidic,preparation,warm,30.942842415,21,False,0
+R2A2|R2A2-prep:non_microfluidic,preparation,affine,59.09813356525,1,True,0
+R2A2|R2A2-prep:non_microfluidic,preparation,scratch,59.09813356525,1,True,0
+R2A2|R2A2-prep:non_microfluidic,preparation,warm,59.09813356525,1,True,0

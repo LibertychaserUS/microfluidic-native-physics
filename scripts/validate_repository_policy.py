@@ -18,7 +18,19 @@ FORBIDDEN_NAMES = {
     "sealed_primary_sealed_labels.csv",
     "sealed_secondary_features.csv",
     "sealed_secondary_sealed_labels.csv",
+    "sealed_features.csv",
+    "sealed_labels.csv",
+    "sealed_prediction_bundle.csv",
+    "sealed_scored_rows.csv",
+    "table_comprehensive.csv",
+    "table_external.csv",
+    "table_upstream932.csv",
 }
+FORBIDDEN_NAME_PATTERNS = (
+    re.compile(r"^loops.*\.csv$"),   # per-loop tables stay in the workspace (manuscript Section 8)
+    re.compile(r"^budget\.csv$"),
+    re.compile(r"^worker_tasks_phase[0-9]+\.json$"),
+)
 FORBIDDEN_SUFFIXES = {".ckpt", ".joblib", ".mat", ".pkl", ".pt", ".pth", ".ubj", ".xls", ".xlsx"}
 FORBIDDEN_DIRECTORY_PATTERNS = (
     re.compile(r"^expanded_artifacts_(?:fast|finalfast|run[0-9]+|auditfast)$"),
@@ -26,6 +38,7 @@ FORBIDDEN_DIRECTORY_PATTERNS = (
     re.compile(r"^w[345]_artifacts_fast_smoke$"),
     re.compile(r"^posthoc_analysis$"),
     re.compile(r"^blind_raw$"),
+    re.compile(r"^fidelity_run[0-9]+_attempt[0-9]+$"),
 )
 SECRET_PATTERNS = (
     re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
@@ -45,8 +58,8 @@ def validate_repository(root: Path) -> dict[str, object]:
     files = repository_files(root)
     for path in files:
         relative = path.relative_to(root)
-        if path.name in FORBIDDEN_NAMES:
-            problems.append({"path": relative.as_posix(), "problem": "forbidden_source_table"})
+        if path.name in FORBIDDEN_NAMES or any(p.match(path.name) for p in FORBIDDEN_NAME_PATTERNS):
+            problems.append({"path": relative.as_posix(), "problem": "forbidden_source_table_or_workspace_only_file"})
         if path.suffix.lower() in FORBIDDEN_SUFFIXES:
             problems.append({"path": relative.as_posix(), "problem": "forbidden_raw_or_model_format"})
         for part in relative.parts[:-1]:

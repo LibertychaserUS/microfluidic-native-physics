@@ -1,0 +1,205 @@
+{
+  "curve_medians_below_floor": {
+    "A1": {
+      "n_below": 452,
+      "n_cells": 531
+    },
+    "D1": {
+      "n_below": 7,
+      "n_cells": 423
+    },
+    "D2": {
+      "n_below": 93,
+      "n_cells": 132
+    },
+    "D3": {
+      "n_below": 0,
+      "n_cells": 24
+    },
+    "R2A1": {
+      "n_below": 0,
+      "n_cells": 165
+    },
+    "R2A2": {
+      "n_below": 261,
+      "n_cells": 672
+    }
+  },
+  "deviation": "E-D13",
+  "floors": {
+    "A1": {
+      "floor_pct": 37.35640710626698,
+      "n_replicate_groups": 3
+    },
+    "D1": {
+      "floor_pct": 3.4895793769689334,
+      "n_replicate_groups": 57
+    },
+    "D2": {
+      "floor_pct": 9.497149994526135,
+      "n_replicate_groups": 4
+    },
+    "D3": {
+      "floor_pct": 10.242441149708254,
+      "n_replicate_groups": 59
+    },
+    "R2A1": {
+      "floor_pct": 0.0,
+      "n_replicate_groups": 0
+    },
+    "R2A2": {
+      "floor_pct": 20.05752407596658,
+      "n_replicate_groups": 111
+    }
+  },
+  "inputs_sha256": {
+    "e0_run1/exclusions.json": "37b56f780bd71829bde81ea790f1fa65baa5bcbd6ee7d0c69778b4220cf8e8cb",
+    "e1e2_run1/budget.csv": "3874ccff0fd83bbab95bc976841fef80175a75ff8fc08a00c22c1d391decb5fd",
+    "e1e2_run1/budget_table.csv": "1e223934e13b6db6403a53eb16958a11b7829bf72deb6fea2080d800d9b07d56"
+  },
+  "post_hoc": true,
+  "reached_within_20": {
+    "affine": {
+      "all": {
+        "n_reached_eps_below_floor": 21,
+        "n_tiers": 107,
+        "reached_pct": 68.22429906542055,
+        "reached_strict_pct": 48.598130841121495
+      },
+      "chemistry": {
+        "n_reached_eps_below_floor": 21,
+        "n_tiers": 33,
+        "reached_pct": 87.87878787878788,
+        "reached_strict_pct": 24.242424242424242
+      },
+      "composition": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 11,
+        "reached_pct": 81.81818181818183,
+        "reached_strict_pct": 81.81818181818183
+      },
+      "device": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 30,
+        "reached_pct": 30.0,
+        "reached_strict_pct": 30.0
+      },
+      "emulsion_type": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 2,
+        "reached_pct": 50.0,
+        "reached_strict_pct": 50.0
+      },
+      "laboratory": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 29,
+        "reached_pct": 82.75862068965517,
+        "reached_strict_pct": 82.75862068965517
+      },
+      "preparation": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 2,
+        "reached_pct": 50.0,
+        "reached_strict_pct": 50.0
+      }
+    },
+    "scratch": {
+      "all": {
+        "n_reached_eps_below_floor": 22,
+        "n_tiers": 107,
+        "reached_pct": 71.02803738317756,
+        "reached_strict_pct": 50.467289719626166
+      },
+      "chemistry": {
+        "n_reached_eps_below_floor": 22,
+        "n_tiers": 33,
+        "reached_pct": 93.93939393939394,
+        "reached_strict_pct": 27.27272727272727
+      },
+      "composition": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 11,
+        "reached_pct": 81.81818181818183,
+        "reached_strict_pct": 81.81818181818183
+      },
+      "device": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 30,
+        "reached_pct": 30.0,
+        "reached_strict_pct": 30.0
+      },
+      "emulsion_type": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 2,
+        "reached_pct": 50.0,
+        "reached_strict_pct": 50.0
+      },
+      "laboratory": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 29,
+        "reached_pct": 86.20689655172413,
+        "reached_strict_pct": 86.20689655172413
+      },
+      "preparation": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 2,
+        "reached_pct": 50.0,
+        "reached_strict_pct": 50.0
+      }
+    },
+    "warm": {
+      "all": {
+        "n_reached_eps_below_floor": 22,
+        "n_tiers": 107,
+        "reached_pct": 75.70093457943925,
+        "reached_strict_pct": 55.140186915887845
+      },
+      "chemistry": {
+        "n_reached_eps_below_floor": 22,
+        "n_tiers": 33,
+        "reached_pct": 93.93939393939394,
+        "reached_strict_pct": 27.27272727272727
+      },
+      "composition": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 11,
+        "reached_pct": 90.9090909090909,
+        "reached_strict_pct": 90.9090909090909
+      },
+      "device": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 30,
+        "reached_pct": 40.0,
+        "reached_strict_pct": 40.0
+      },
+      "emulsion_type": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 2,
+        "reached_pct": 50.0,
+        "reached_strict_pct": 50.0
+      },
+      "laboratory": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 29,
+        "reached_pct": 89.65517241379311,
+        "reached_strict_pct": 89.65517241379311
+      },
+      "preparation": {
+        "n_reached_eps_below_floor": 0,
+        "n_tiers": 2,
+        "reached_pct": 50.0,
+        "reached_strict_pct": 50.0
+      }
+    }
+  },
+  "schema_version": "closed-loop-floor-check-v1",
+  "script_sha256": "6cdfe15f99a75886a722d48deb3ef4a492cd46f711ccdb474cb64cd7d4380d49",
+  "warm_reached_eps_below_floor_by_table": {
+    "A1": 20,
+    "D1": 0,
+    "D2": 2,
+    "D3": 0,
+    "R2A1": 0,
+    "R2A2": 0
+  }
+}

@@ -1,0 +1,16 @@
+lambda,held_out,rule,train_cost,n_train_units,n_test_units
+0,D1,always escalate,2.438222222222222,2250,930
+0,D2,always escalate,2.3756666666666666,3000,210
+0,A1,always escalate,2.2784552845528454,2460,720
+0,R2A1,always escalate,2.330976430976431,2970,210
+0,R2A2,always escalate,2.305392156862745,2040,1140
+5,D1,d1_bias_ratio > 9.544 -> switch else continue,3.6457777777777776,2250,930
+5,D2,always continue,3.388,3000,210
+5,A1,d1_bias_ratio > 9.409 -> switch else continue,3.118292682926829,2460,720
+5,R2A1,always continue,3.224242424242424,2970,210
+5,R2A2,always continue,3.1107843137254902,2040,1140
+10,D1,d1_bias_ratio > 9.544 -> switch else continue,3.6457777777777776,2250,930
+10,D2,always continue,3.388,3000,210
+10,A1,d1_bias_ratio > 9.409 -> switch else continue,3.118292682926829,2460,720
+10,R2A1,always continue,3.224242424242424,2970,210
+10,R2A2,always continue,3.1107843137254902,2040,1140

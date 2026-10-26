@@ -1,0 +1,144 @@
+{
+  "schema_version": "h-binding-v2",
+  "dataset_code": "A1",
+  "dataset": "Hormozinezhad, Barnes, Fabregat, Cito, Del Giudice, Lab Chip 25:1681-1693 (2025), DOI 10.1039/D4LC00946K; ESI obtained as the Europe PMC supplementary bundle of PMC11834948",
+  "protocol": "validation_plan/H_PROTOCOL_v1.md",
+  "protocol_sha256": "c0663a84c6d228f945f352feeb02034378f3d3993a0b9365b3d817bd581ef821",
+  "download_manifest": "scaleup/h_intake/h_A1_download_manifest.json",
+  "source_zip": "PMC11834948_supplementaryFiles.zip",
+  "intake_basis": "file list, sheet names, header rows, numeric-cell counts per column and per-sheet device constants only; no target value was read before this binding was written",
+  "workbooks": [
+    {
+      "member": "LC-025-D4LC00946K-s003.xlsx",
+      "family": "cont190_A",
+      "description": "non-Newtonian continuous phase (HA), 190 um etching depth x 195 um width device; one sheet per continuous-phase surfactant condition",
+      "header_marker": "Qd [ul/min]",
+      "target_col": "L [um]",
+      "secondary_target_col": "H [um]",
+      "wi_col": "Wi_c",
+      "alpha_col": "Alpha=eta_d/eta_c"
+    },
+    {
+      "member": "LC-025-D4LC00946K-s004.xlsx",
+      "family": "cont190_B",
+      "description": "second continuous-phase HA level (identity of the two levels, 0.5 and 0.05 wt%, is not needed by the protocol and is not inferred here); same device and sheet names as s003",
+      "header_marker": "Qd [ul/min]",
+      "target_col": "L [um]",
+      "secondary_target_col": "H [um]",
+      "wi_col": "Wi_c",
+      "alpha_col": "Alpha=eta_d/eta_c"
+    },
+    {
+      "member": "LC-025-D4LC00946K-s005.xlsx",
+      "family": "disp100",
+      "description": "non-Newtonian dispersed phase (HA concentration per sheet, plus Water), 100 um etching depth x 105 um width device",
+      "header_marker": "Qd [ul/min]",
+      "target_col": "L[um]",
+      "secondary_target_col": "H [um]",
+      "wi_col": "Wi_d",
+      "alpha_col": "Alpha=eta_d\\eta_c"
+    }
+  ],
+  "excluded_members": {
+    "LC-025-D4LC00946K-s001.xlsx": "inverse-design prediction tables of the paper (actual vs predicted flow rates), not raw experiments",
+    "LC-025-D4LC00946K-s002.xlsx": "same",
+    "LC-025-D4LC00946K-s006.pdf, s007.pdf, s008.pdf": "code listings and figure supplement; documentation only"
+  },
+  "columns": {
+    "native": [
+      "Qd [ul/min]",
+      "Qc [ul/min]",
+      "Eta_d [Pa*s]",
+      "Eta_c [Pa*s]",
+      "Interfacial Tension [mN*m]",
+      "Etching Depth [um]",
+      "Width [um]"
+    ],
+    "dimensionless": [
+      "Ca_d",
+      "Ca_c",
+      "q=Qd/Qc",
+      "Re_d",
+      "Re_c",
+      "Alpha",
+      "Wi",
+      "El_d"
+    ],
+    "dimensionless_note": "Alpha and Wi are taken from the workbook's own column (alpha_col, wi_col); Wi is the Weissenberg number of the non-Newtonian phase of that workbook (continuous for s003/s004, dispersed for s005) and is labelled Wi in the unified table",
+    "target": "L_um (droplet length; 'L [um]' or 'L[um]')",
+    "secondary_target": "H_um",
+    "excluded_from_inputs": [
+      "L/Width",
+      "H/width",
+      "U_d",
+      "U_c",
+      "Shear Rate_c",
+      "ShearRate_d",
+      "Lambda_s",
+      "Frequency",
+      "pixel columns",
+      "the authors' fitted correlation columns"
+    ]
+  },
+  "parsing_rules": {
+    "header_row": "first row whose cells contain header_marker",
+    "experiment_row": "a row below the header with numeric Qd and Qc",
+    "constant_broadcast": "an input column with exactly one numeric cell in a sheet is a per-sheet constant (device depth/width, the Newtonian phase viscosity, interfacial tension) and is broadcast to every experiment row of that sheet",
+    "missing_target": "rows without a numeric L are dropped from the analysis table and counted in the manifest",
+    "missing_input": "rows with any missing native or dimensionless input after broadcast are dropped and counted",
+    "non_positive_target": "rows whose L is numeric but <= 0 denote no measurable droplet (not a size measurement) and are dropped before any grouping or sealing decision, and counted in the manifest; this matches the positivity requirement of the W3 DatasetSpec",
+    "non_positive_secondary_target": "H_um <= 0 is kept as missing (NaN) in the secondary target only"
+  },
+  "groups": {
+    "S0": "row-random 80/20 inside the development set, seeds 0-14",
+    "S1": null,
+    "S1_note": "only two device geometries exist; a geometry hold-out is the S3 tier",
+    "S2": "fluid_family = family + ':' + sheet name (23 levels)",
+    "S3": "device = (Etching Depth, Width); two levels: 190x195 and 100x105",
+    "S4": null
+  },
+  "sealing_rules": {
+    "S2": "among fluid_family levels with >= 10 target rows, excluding every level that attains the maximum count, choose the level whose count is closest to the median of the eligible counts; ties -> lexicographically smallest level name",
+    "S3": "same rule on device levels; if the chosen S3 level's rows intersect the S2 sealed rows, take the next candidate; if none remains, S3 is not sealed and is evaluated only as development leave-one-device-out (retrospective, labels open)",
+    "development": "all rows not sealed"
+  },
+  "hard_bound": "positivity_only",
+  "hard_bound_note": "droplet length L may exceed the channel width (plug regime), so no physical upper bound is defined; the bounded model is the log-target MLP, the unbounded model the raw-scale MLP (H-B B1 only)",
+  "anchor": null,
+  "anchor_note": "the paper's dimensionless correlations are fitted scalings without a prefactor valid across all sheets; H-B B2 is not evaluable on this dataset",
+  "tolerance": {
+    "relative": 0.1,
+    "absolute_rule": "0.10 x development-set median L_um (computed by the custodian from development labels and written to the devdiag file)"
+  },
+  "target_scale_rule": "development labels only: log target if max/min > 10 or skewness > 2, else raw scale",
+  "seeds": {
+    "xgboost": 42,
+    "random_reference": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "bootstrap": 0,
+    "deep_ensemble_members": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "supersedes": "H_BINDING_A1.json (v1); amendment registered as H-D6",
+  "sealing_outcome_v1_run": "v1 custodian run (before this amendment): S2 sealed = disp100:Water (39 rows); S3 could not be sealed because the only non-maximal device level (100x105) contains the S2 sealed rows -> S3 is evaluated as development leave-one-device-out (retrospective). No sealed label was read; the v1 outputs are discarded and regenerated under v2."
+}

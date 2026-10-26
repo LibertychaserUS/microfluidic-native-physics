@@ -1,0 +1,948 @@
+{
+  "schema_version": "h-reveal-v1",
+  "dataset_code": "A1",
+  "reveal_utc": "2026-10-21T19:40:07Z",
+  "checks": {
+    "protocol": true,
+    "binding": true,
+    "runner_script": true,
+    "bundle": true,
+    "bundle_sidecar": true,
+    "sealed_features": true,
+    "sealed_labels": true,
+    "development": true
+  },
+  "dev_ref_mape": 21.81828164427344,
+  "tau_abs_um": 33.08928,
+  "tiers": {
+    "S2": {
+      "n_rows": 40,
+      "sealed_level": "cont190_B:Tween 1",
+      "models": {
+        "deep_ensemble|native": {
+          "n": 40,
+          "mape": 18.21258490637176,
+          "mape_ci95": [
+            14.649904839774829,
+            21.77960654297989
+          ],
+          "mdape": 19.65893697973808,
+          "ratio_to_dev_ref": 0.8347396556388273,
+          "ratio_ci95": [
+            0.671450899691724,
+            0.9982273993010031
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.11181918916999063,
+          "fraction_over_predicted": 0.75,
+          "split_coverage": 0.975,
+          "split_mean_width_um": 177.190835262,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 0.625,
+          "native_mean_width_um": 106.920236638,
+          "spearman_abs_error_vs_native_width": 0.3028142589118199,
+          "conformalised_native_coverage": 0.9
+        },
+        "gp|native": {
+          "n": 40,
+          "mape": 63.92493082568657,
+          "mape_ci95": [
+            51.350119371898074,
+            76.19961391714462
+          ],
+          "mdape": 80.19404408597809,
+          "ratio_to_dev_ref": 2.9298792575841874,
+          "ratio_ci95": [
+            2.353536369596537,
+            3.4924663252362236
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.5408386538224278,
+          "fraction_over_predicted": 0.8,
+          "split_coverage": 0.9,
+          "split_mean_width_um": 511.97308139549995,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 0.375,
+          "native_mean_width_um": 301.91706474,
+          "spearman_abs_error_vs_native_width": 0.5345215759849906,
+          "conformalised_native_coverage": 0.375
+        },
+        "mlp_log|native": {
+          "n": 40,
+          "mape": 15.635748303347563,
+          "mape_ci95": [
+            12.31699610663121,
+            19.061234246532926
+          ],
+          "mdape": 15.526088172664753,
+          "ratio_to_dev_ref": 0.7166351850376548,
+          "ratio_ci95": [
+            0.5645264053076335,
+            0.873635905765102
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.06949287315999304,
+          "fraction_over_predicted": 0.7,
+          "split_coverage": 0.975,
+          "split_mean_width_um": 184.75426732774997,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0
+        },
+        "mlp_raw|native": {
+          "n": 40,
+          "mape": 18.037325025968954,
+          "mape_ci95": [
+            14.639202887674282,
+            21.7874402941447
+          ],
+          "mdape": 13.654927266458328,
+          "ratio_to_dev_ref": 0.8267069478729155,
+          "ratio_ci95": [
+            0.6709603957980154,
+            0.9985864445866279
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.09755119199371425,
+          "fraction_over_predicted": 0.8,
+          "split_coverage": 0.975,
+          "split_mean_width_um": 430.13179042164995,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0
+        },
+        "qrf|native": {
+          "n": 40,
+          "mape": 26.06545087253861,
+          "mape_ci95": [
+            20.41997871663353,
+            32.011544473572215
+          ],
+          "mdape": 22.466734121459588,
+          "ratio_to_dev_ref": 1.1946610323173597,
+          "ratio_ci95": [
+            0.9359114090450419,
+            1.4671890754501355
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.1779867123216652,
+          "fraction_over_predicted": 0.75,
+          "split_coverage": 0.625,
+          "split_mean_width_um": 167.20008665999998,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 0.75,
+          "native_mean_width_um": 216.51634000000004,
+          "spearman_abs_error_vs_native_width": 0.49629287491600743,
+          "conformalised_native_coverage": 0.85
+        },
+        "random_forest|native": {
+          "n": 40,
+          "mape": 29.71527999533748,
+          "mape_ci95": [
+            24.308828971953645,
+            34.99734943461003
+          ],
+          "mdape": 29.832504979353757,
+          "ratio_to_dev_ref": 1.3619441017316198,
+          "ratio_ci95": [
+            1.114149563576373,
+            1.604037843364977
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.21463413395499664,
+          "fraction_over_predicted": 0.75,
+          "split_coverage": 0.675,
+          "split_mean_width_um": 190.1287914775,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0
+        },
+        "xgboost|dimensionless": {
+          "n": 40,
+          "mape": 28.961471362836637,
+          "mape_ci95": [
+            23.947611406419444,
+            33.92245961705274
+          ],
+          "mdape": 27.49827962463779,
+          "ratio_to_dev_ref": 1.3273946974847142,
+          "ratio_ci95": [
+            1.0975938342378526,
+            1.5547722854680552
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.21984672579106784,
+          "fraction_over_predicted": 0.875,
+          "split_coverage": 0.9,
+          "split_mean_width_um": 209.21737165924998,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "cqr_coverage": 0.55,
+          "cqr_mean_width_um": 153.5063242875
+        },
+        "xgboost|native": {
+          "n": 40,
+          "mape": 28.781508711722736,
+          "mape_ci95": [
+            24.991529123430347,
+            32.68321181711676
+          ],
+          "mdape": 27.455666726896492,
+          "ratio_to_dev_ref": 1.3191464470473964,
+          "ratio_ci95": [
+            1.1454398440213451,
+            1.497973687845165
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.24498996478790272,
+          "fraction_over_predicted": 0.875,
+          "split_coverage": 0.9,
+          "split_mean_width_um": 209.21737165924998,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "cqr_coverage": 0.55,
+          "cqr_mean_width_um": 153.5063242875
+        }
+      }
+    },
+    "S3": {
+      "n_rows": 200,
+      "sealed_level": "100x105",
+      "models": {
+        "deep_ensemble|native": {
+          "n": 200,
+          "mape": 46.062573130847156,
+          "mape_ci95": [
+            43.448388964631434,
+            48.87062451260034
+          ],
+          "mdape": 46.71880213642049,
+          "ratio_to_dev_ref": 2.111191609030174,
+          "ratio_ci95": [
+            1.9913753829479584,
+            2.239893375169956
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": -0.3581332832550153,
+          "fraction_over_predicted": 0.14,
+          "split_coverage": 0.235,
+          "split_mean_width_um": 67.19984046350001,
+          "A_abs": 0.03,
+          "W_abs": 0.55,
+          "A_rel": 0.0,
+          "W_rel": 0.055,
+          "native_coverage": 1.0,
+          "native_mean_width_um": 3992874.3600937473,
+          "spearman_abs_error_vs_native_width": 0.5348277223745855,
+          "conformalised_native_coverage": 1.0,
+          "per_family_mape": {
+            "disp100:HA0pt01": 35.61473395170874,
+            "disp100:HA0pt0178": 49.31862942796082,
+            "disp100:HA0pt0316": 46.66145124665256,
+            "disp100:HA0pt1": 54.42308712398386,
+            "disp100:HA0pt178": 54.79803398935983,
+            "disp100:HA0pt316": 43.87695867021184,
+            "disp100:HA0pt562": 46.67711926769576,
+            "disp100:HA1": 43.94582516527621,
+            "disp100:Water": 41.19431496525502
+          }
+        },
+        "gp|native": {
+          "n": 200,
+          "mape": 155.33698925586944,
+          "mape_ci95": [
+            135.8528932520374,
+            176.81306974067246
+          ],
+          "mdape": 122.2641723602312,
+          "ratio_to_dev_ref": 7.119579432903697,
+          "ratio_ci95": [
+            6.226562451937831,
+            8.1038952848553
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 1.4911572713588601,
+          "fraction_over_predicted": 0.885,
+          "split_coverage": 0.425,
+          "split_mean_width_um": 530.6237775,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 0.665,
+          "native_mean_width_um": 832.8277549,
+          "spearman_abs_error_vs_native_width": null,
+          "conformalised_native_coverage": 0.66,
+          "per_family_mape": {
+            "disp100:HA0pt01": 214.32729805027694,
+            "disp100:HA0pt0178": 157.24294417344586,
+            "disp100:HA0pt0316": 128.65412262014752,
+            "disp100:HA0pt1": 107.16416502094978,
+            "disp100:HA0pt178": 94.1485873109091,
+            "disp100:HA0pt316": 144.70490988760017,
+            "disp100:HA0pt562": 109.69537055319081,
+            "disp100:HA1": 127.16511561457801,
+            "disp100:Water": 291.20592840458545
+          }
+        },
+        "mlp_log|native": {
+          "n": 200,
+          "mape": 1657105.9382595432,
+          "mape_ci95": [
+            1534073.6362309488,
+            1784391.1696702698
+          ],
+          "mdape": 1370617.323156469,
+          "ratio_to_dev_ref": 75950.34133654964,
+          "ratio_ci95": [
+            70311.38662716783,
+            81784.22108409312
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 16571.05938259543,
+          "fraction_over_predicted": 1.0,
+          "split_coverage": 0.0,
+          "split_mean_width_um": 1836963.351522,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "per_family_mape": {
+            "disp100:HA0pt01": 2036397.7624004618,
+            "disp100:HA0pt0178": 1590325.1715364414,
+            "disp100:HA0pt0316": 1502066.3002135782,
+            "disp100:HA0pt1": 1236315.8822311854,
+            "disp100:HA0pt178": 1222895.2232330155,
+            "disp100:HA0pt316": 1461603.8782202443,
+            "disp100:HA0pt562": 1209403.4751310842,
+            "disp100:HA1": 1247194.4765405997,
+            "disp100:Water": 3206637.8776375744
+          }
+        },
+        "mlp_raw|native": {
+          "n": 200,
+          "mape": 1134.044881653856,
+          "mape_ci95": [
+            1039.9052062365724,
+            1236.0904921185595
+          ],
+          "mdape": 996.7684223430681,
+          "ratio_to_dev_ref": 51.976819263010306,
+          "ratio_ci95": [
+            47.662103881105246,
+            56.653888343355916
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 11.34044881653856,
+          "fraction_over_predicted": 1.0,
+          "split_coverage": 0.0,
+          "split_mean_width_um": 430.131790525,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "per_family_mape": {
+            "disp100:HA0pt01": 1421.6062053807789,
+            "disp100:HA0pt0178": 1114.1627401551966,
+            "disp100:HA0pt0316": 1001.9790154344757,
+            "disp100:HA0pt1": 858.9513674717252,
+            "disp100:HA0pt178": 809.4104996065557,
+            "disp100:HA0pt316": 1086.4250049280147,
+            "disp100:HA0pt562": 913.225176593689,
+            "disp100:HA1": 992.8116467965054,
+            "disp100:Water": 1925.0480988245233
+          }
+        },
+        "qrf|native": {
+          "n": 200,
+          "mape": 71.58001158811047,
+          "mape_ci95": [
+            60.123191908223845,
+            84.08152098061463
+          ],
+          "mdape": 41.519418047185724,
+          "ratio_to_dev_ref": 3.280735520567349,
+          "ratio_ci95": [
+            2.755633687770464,
+            3.8537187461178077
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.6625930979378313,
+          "fraction_over_predicted": 0.87,
+          "split_coverage": 0.42,
+          "split_mean_width_um": 167.49863531604998,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "native_coverage": 0.61,
+          "native_mean_width_um": 274.94763120000005,
+          "spearman_abs_error_vs_native_width": 0.35775787694369954,
+          "conformalised_native_coverage": 0.63,
+          "per_family_mape": {
+            "disp100:HA0pt01": 102.46172220036969,
+            "disp100:HA0pt0178": 50.71618468791597,
+            "disp100:HA0pt0316": 49.64791193265863,
+            "disp100:HA0pt1": 22.996547493081284,
+            "disp100:HA0pt178": 27.89575002396918,
+            "disp100:HA0pt316": 66.48054875000771,
+            "disp100:HA0pt562": 42.63237324316076,
+            "disp100:HA1": 48.88028986991394,
+            "disp100:Water": 243.33789306228903
+          }
+        },
+        "random_forest|native": {
+          "n": 200,
+          "mape": 67.26821730359535,
+          "mape_ci95": [
+            56.90421218527403,
+            78.84330517482401
+          ],
+          "mdape": 42.8990634482363,
+          "ratio_to_dev_ref": 3.0831125200572784,
+          "ratio_ci95": [
+            2.608097792165473,
+            3.613634953489461
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 0.6164940046869869,
+          "fraction_over_predicted": 0.855,
+          "split_coverage": 0.45,
+          "split_mean_width_um": 182.6665091882,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "per_family_mape": {
+            "disp100:HA0pt01": 92.85611151746738,
+            "disp100:HA0pt0178": 40.4904443846454,
+            "disp100:HA0pt0316": 42.99267146750335,
+            "disp100:HA0pt1": 16.815873455398417,
+            "disp100:HA0pt178": 22.54062241789984,
+            "disp100:HA0pt316": 82.03825578342226,
+            "disp100:HA0pt562": 56.177138614475076,
+            "disp100:HA1": 55.89034617461527,
+            "disp100:Water": 223.42254571763735
+          }
+        },
+        "xgboost|dimensionless": {
+          "n": 200,
+          "mape": 108.45403802059694,
+          "mape_ci95": [
+            96.32747598477124,
+            120.93848930037035
+          ],
+          "mdape": 84.22960001504791,
+          "ratio_to_dev_ref": 4.970787332789906,
+          "ratio_ci95": [
+            4.414989115792899,
+            5.542988731750679
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 1.0622539869585106,
+          "fraction_over_predicted": 0.945,
+          "split_coverage": 0.225,
+          "split_mean_width_um": 233.51893934300003,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "cqr_coverage": 0.425,
+          "cqr_mean_width_um": 190.06331488560002,
+          "per_family_mape": {
+            "disp100:HA0pt01": 152.38975300982068,
+            "disp100:HA0pt0178": 85.5209970713134,
+            "disp100:HA0pt0316": 97.50196776113998,
+            "disp100:HA0pt1": 69.32141807963677,
+            "disp100:HA0pt178": 72.46150731128763,
+            "disp100:HA0pt316": 123.17811450596272,
+            "disp100:HA0pt562": 54.198028852168825,
+            "disp100:HA1": 45.30555647942756,
+            "disp100:Water": 241.76877524321253
+          }
+        },
+        "xgboost|native": {
+          "n": 200,
+          "mape": 109.83797340380413,
+          "mape_ci95": [
+            95.12256865819766,
+            125.61648028892127
+          ],
+          "mdape": 73.33112672357157,
+          "ratio_to_dev_ref": 5.034217414304617,
+          "ratio_ci95": [
+            4.359764449331147,
+            5.757395671069785
+          ],
+          "n_nonpositive_pred": 0,
+          "signed_bias": 1.0875539453905545,
+          "fraction_over_predicted": 0.955,
+          "split_coverage": 0.225,
+          "split_mean_width_um": 233.51893934300003,
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "cqr_coverage": 0.425,
+          "cqr_mean_width_um": 190.06331488560002,
+          "per_family_mape": {
+            "disp100:HA0pt01": 164.2258002796097,
+            "disp100:HA0pt0178": 97.08523680446378,
+            "disp100:HA0pt0316": 94.13792249831168,
+            "disp100:HA0pt1": 57.954197762397186,
+            "disp100:HA0pt178": 51.759963963369174,
+            "disp100:HA0pt316": 76.76570720673396,
+            "disp100:HA0pt562": 44.40935536041286,
+            "disp100:HA1": 40.37971270378161,
+            "disp100:Water": 320.3327305043342
+          }
+        }
+      }
+    }
+  },
+  "H_A": {
+    "statement": "shift multiplier r = MAPE_sealed / dev-ref lies in [2.2, 3.0] for S2/S3 (xgboost, native features)",
+    "S2_r": 1.3191464470473964,
+    "S2_r_ci95": [
+      1.1454398440213451,
+      1.497973687845165
+    ],
+    "S3_r": 5.034217414304617,
+    "S3_r_ci95": [
+      4.359764449331147,
+      5.757395671069785
+    ],
+    "S2_in_band": false,
+    "S3_in_band": false,
+    "S2_ci_disjoint_from_band": true,
+    "S3_ci_disjoint_from_band": true,
+    "S2_dev_LOCO_r_retrospective": 0.768137909069475,
+    "S1_dispersion": null,
+    "datasets_contributing": 1,
+    "decision_single_dataset": "falsified_on_this_dataset",
+    "decision_protocol": "not_determinable: the protocol's success condition requires >= 2 admitted datasets; only A1 was admitted (H-D5)"
+  },
+  "H_B": {
+    "B1": {
+      "S2": {
+        "bounded_mape": 15.635748303347563,
+        "unbounded_mape": 18.037325025968954,
+        "bounded_nonpositive": 0,
+        "unbounded_nonpositive": 0,
+        "bounded_lower_error_and_no_invalid": true
+      },
+      "S3": {
+        "bounded_mape": 1657105.9382595432,
+        "unbounded_mape": 1134.044881653856,
+        "bounded_nonpositive": 0,
+        "unbounded_nonpositive": 0,
+        "bounded_lower_error_and_no_invalid": false
+      }
+    },
+    "B1_decision_single_dataset": "falsified_on_this_dataset",
+    "B1_decision_protocol": "not_determinable: requires >= 2 datasets (H-D5)",
+    "B2": "not_evaluable: no anchor defined for A1 (binding)"
+  },
+  "H_C": {
+    "C1_sealed": {
+      "S2": {
+        "native_mape": 28.781508711722736,
+        "dimensionless_mape": 28.961471362836637,
+        "diff_native_minus_dimensionless_pp": -0.1799626511139003
+      },
+      "S3": {
+        "native_mape": 109.83797340380413,
+        "dimensionless_mape": 108.45403802059694,
+        "diff_native_minus_dimensionless_pp": 1.383935383207188
+      }
+    },
+    "C1_dev_paired": {
+      "per_family": {
+        "cont190_A:No Surfactant": {
+          "native": 15.6782,
+          "dimensionless": 16.9306
+        },
+        "cont190_A:Span0pt03": {
+          "native": 21.5658,
+          "dimensionless": 21.0851
+        },
+        "cont190_A:Span0pt3": {
+          "native": 12.6653,
+          "dimensionless": 11.9755
+        },
+        "cont190_A:Span1": {
+          "native": 12.2271,
+          "dimensionless": 9.3696
+        },
+        "cont190_A:Tween 0pt03": {
+          "native": 13.4751,
+          "dimensionless": 22.7512
+        },
+        "cont190_A:Tween 0pt3": {
+          "native": 14.1404,
+          "dimensionless": 9.4694
+        },
+        "cont190_A:Tween 1": {
+          "native": 10.3354,
+          "dimensionless": 8.2858
+        },
+        "cont190_B:No Surfactant": {
+          "native": 11.9228,
+          "dimensionless": 16.0881
+        },
+        "cont190_B:Span0pt03": {
+          "native": 18.9906,
+          "dimensionless": 16.9848
+        },
+        "cont190_B:Span0pt3": {
+          "native": 12.3575,
+          "dimensionless": 24.7744
+        },
+        "cont190_B:Span1": {
+          "native": 45.1886,
+          "dimensionless": 68.7692
+        },
+        "cont190_B:Tween 0pt03": {
+          "native": 14.4213,
+          "dimensionless": 14.1447
+        },
+        "cont190_B:Tween 0pt3": {
+          "native": 14.9047,
+          "dimensionless": 18.0062
+        }
+      },
+      "median_diff_native_minus_dimensionless_pp": 0.27662346366854074,
+      "wilcoxon_p": 0.454833984375,
+      "n_pairs": 13
+    },
+    "C2": {
+      "n_pairs_equal_dimensionless_groups": 3,
+      "n_pairs_with_different_absolute_scale": 0,
+      "evaluable_rule": "requires >= 20 pairs with different absolute scale",
+      "evaluable": false
+    },
+    "C1_decision_single_dataset": "not_supported_on_this_dataset",
+    "C1_decision_protocol": "not_determinable: requires >= 2 datasets (H-D5)",
+    "C2_decision": "not_determinable: fewer than 20 equal-dimensionless-group pairs with different absolute scale"
+  },
+  "H_D": {
+    "per_tier": {
+      "S2": {
+        "A_abs": 0.0,
+        "W_abs": 0.0,
+        "A_minus_W_abs": 0.0,
+        "A_rel": 0.0,
+        "W_rel": 0.0,
+        "A_minus_W_rel": 0.0,
+        "mape": 28.781508711722736
+      },
+      "S3": {
+        "A_abs": 0.0,
+        "W_abs": 0.0,
+        "A_minus_W_abs": 0.0,
+        "A_rel": 0.0,
+        "W_rel": 0.0,
+        "A_minus_W_rel": 0.0,
+        "mape": 109.83797340380413
+      }
+    },
+    "dev_per_family": {
+      "per_family": [
+        {
+          "family": "cont190_A:No Surfactant",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 15.678184474120485
+        },
+        {
+          "family": "cont190_A:No Surfactant",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 16.930565142172007
+        },
+        {
+          "family": "cont190_A:Span0pt03",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 21.565798500802515
+        },
+        {
+          "family": "cont190_A:Span0pt03",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 21.08506347142615
+        },
+        {
+          "family": "cont190_A:Span0pt3",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 12.665318644517159
+        },
+        {
+          "family": "cont190_A:Span0pt3",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 11.975517043631505
+        },
+        {
+          "family": "cont190_A:Span1",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 12.227122939830313
+        },
+        {
+          "family": "cont190_A:Span1",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 9.369566751498704
+        },
+        {
+          "family": "cont190_A:Tween 0pt03",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 13.47512216294208
+        },
+        {
+          "family": "cont190_A:Tween 0pt03",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 22.75117497754162
+        },
+        {
+          "family": "cont190_A:Tween 0pt3",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 14.14037532688023
+        },
+        {
+          "family": "cont190_A:Tween 0pt3",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 9.469385987901628
+        },
+        {
+          "family": "cont190_A:Tween 1",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 10.33537554674278
+        },
+        {
+          "family": "cont190_A:Tween 1",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 8.285754970453754
+        },
+        {
+          "family": "cont190_B:No Surfactant",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 11.9228068083451
+        },
+        {
+          "family": "cont190_B:No Surfactant",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 16.088110133444605
+        },
+        {
+          "family": "cont190_B:Span0pt03",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 18.990564097760718
+        },
+        {
+          "family": "cont190_B:Span0pt03",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 16.984838294815198
+        },
+        {
+          "family": "cont190_B:Span0pt3",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 12.357493123910622
+        },
+        {
+          "family": "cont190_B:Span0pt3",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 24.774419910090216
+        },
+        {
+          "family": "cont190_B:Span1",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 45.18861012585049
+        },
+        {
+          "family": "cont190_B:Span1",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 68.76922471103418
+        },
+        {
+          "family": "cont190_B:Tween 0pt03",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 14.421339971921393
+        },
+        {
+          "family": "cont190_B:Tween 0pt03",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 14.144716508252852
+        },
+        {
+          "family": "cont190_B:Tween 0pt3",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 14.90472841875054
+        },
+        {
+          "family": "cont190_B:Tween 0pt3",
+          "A_abs": 0.0,
+          "W_abs": 0.0,
+          "A_rel": 0.0,
+          "W_rel": 0.0,
+          "mape": 18.006211253891234
+        }
+      ],
+      "max_abs_A_minus_W": 0.0
+    },
+    "decision_single_dataset": "consistent_on_this_dataset",
+    "decision_protocol": "single dataset; width-tolerance relation reported per tier"
+  },
+  "H_E": {
+    "S0_mape": {
+      "xgboost": 10.663,
+      "random_forest": 10.831,
+      "mlp_log": 12.093,
+      "qrf": 12.792,
+      "gp": 8.423,
+      "deep_ensemble": 11.829
+    },
+    "S2_mape": {
+      "xgboost": 28.781508711722736,
+      "random_forest": 29.71527999533748,
+      "mlp_log": 15.635748303347563,
+      "qrf": 26.06545087253861,
+      "gp": 63.92493082568657,
+      "deep_ensemble": 18.21258490637176
+    },
+    "spearman_S0_vs_S2": -0.7714285714285715,
+    "S2_native_widths": {
+      "qrf": 216.51634000000004,
+      "gp": 301.91706474,
+      "deep_ensemble": 106.920236638
+    },
+    "S2_spearman_abs_error_vs_native_width": {
+      "qrf": 0.49629287491600743,
+      "gp": 0.5345215759849906,
+      "deep_ensemble": 0.3028142589118199
+    },
+    "S3_mape": {
+      "xgboost": 109.83797340380413,
+      "random_forest": 67.26821730359535,
+      "mlp_log": 1657105.9382595432,
+      "qrf": 71.58001158811047,
+      "gp": 155.33698925586944,
+      "deep_ensemble": 46.062573130847156
+    },
+    "spearman_S0_vs_S3": -0.14285714285714288,
+    "S3_native_widths": {
+      "qrf": 274.94763120000005,
+      "gp": 832.8277549,
+      "deep_ensemble": 3992874.3600937473
+    },
+    "S3_spearman_abs_error_vs_native_width": {
+      "qrf": 0.35775787694369954,
+      "gp": null,
+      "deep_ensemble": 0.5348277223745855
+    },
+    "S0_native_widths": {
+      "qrf": 240.3089163709273,
+      "gp": 137.06480212550068,
+      "deep_ensemble": 36.342888648537475
+    },
+    "E1_decision_single_dataset": "consistent_on_this_dataset",
+    "E1_decision_protocol": "not_determinable: requires >= 2 datasets (H-D5)",
+    "E2_decision_single_dataset": {
+      "S2": {
+        "qrf": false,
+        "gp": true,
+        "deep_ensemble": true
+      },
+      "S3": {
+        "qrf": true,
+        "gp": false,
+        "deep_ensemble": true
+      }
+    }
+  }
+}

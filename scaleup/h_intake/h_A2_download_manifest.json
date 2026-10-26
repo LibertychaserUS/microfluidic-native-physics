@@ -1,0 +1,157 @@
+{
+  "dataset_code": "A2",
+  "directory": "<WORK>/../data/h_A2",
+  "sources": {
+    "nn5c15613_si_001.zip": "https://ndownloader.figshare.com/files/60644736"
+  },
+  "files": [
+    {
+      "file": "nn5c15613_si_001.zip",
+      "bytes": 16542387,
+      "sha256": "0722bd2c58cd86a1f4b9f621d7fda4d306f4c4bb17f050043300f75980d4d34a",
+      "zip_members": [
+        {
+          "member": "jabbrv-ltwa-all.ldf",
+          "bytes": 49107
+        },
+        {
+          "member": "jabbrv-ltwa-en.ldf",
+          "bytes": 268657
+        },
+        {
+          "member": "jabbrv.sty",
+          "bytes": 15480
+        },
+        {
+          "member": "latexmkrc",
+          "bytes": 33
+        },
+        {
+          "member": "SI.tex",
+          "bytes": 30203
+        },
+        {
+          "member": "libgen_final.bib",
+          "bytes": 1082282
+        },
+        {
+          "member": "S5.pdf",
+          "bytes": 646787
+        },
+        {
+          "member": "S3.pdf",
+          "bytes": 847343
+        },
+        {
+          "member": "S2.pdf",
+          "bytes": 698255
+        },
+        {
+          "member": "S1.pdf",
+          "bytes": 708295
+        },
+        {
+          "member": "S4.pdf",
+          "bytes": 671575
+        },
+        {
+          "member": "S6.pdf",
+          "bytes": 1088134
+        },
+        {
+          "member": "S7.pdf",
+          "bytes": 1344207
+        },
+        {
+          "member": "S8.pdf",
+          "bytes": 1331390
+        },
+        {
+          "member": "S9.pdf",
+          "bytes": 1509131
+        },
+        {
+          "member": "S10.pdf",
+          "bytes": 1206025
+        },
+        {
+          "member": "S11.pdf",
+          "bytes": 869847
+        },
+        {
+          "member": "S12.pdf",
+          "bytes": 687483
+        },
+        {
+          "member": "S13.pdf",
+          "bytes": 926358
+        },
+        {
+          "member": "S14.pdf",
+          "bytes": 761317
+        },
+        {
+          "member": "S15.pdf",
+          "bytes": 797707
+        },
+        {
+          "member": "S16.pdf",
+          "bytes": 706356
+        },
+        {
+          "member": "S17.pdf",
+          "bytes": 996211
+        },
+        {
+          "member": "S18.pdf",
+          "bytes": 700642
+        },
+        {
+          "member": "S19.pdf",
+          "bytes": 1046281
+        },
+        {
+          "member": "S20.pdf",
+          "bytes": 836511
+        },
+        {
+          "member": "S21.pdf",
+          "bytes": 642449
+        },
+        {
+          "member": "Resub_1.pdf",
+          "bytes": 657912
+        },
+        {
+          "member": "Resub_2.pdf",
+          "bytes": 1103564
+        },
+        {
+          "member": "randomsweep.png",
+          "bytes": 911331
+        },
+        {
+          "member": "HPLCreg.png",
+          "bytes": 464744
+        },
+        {
+          "member": "pairwise_highlighted_scatter.png",
+          "bytes": 404825
+        },
+        {
+          "member": "pairwise_highlighted.png",
+          "bytes": 410382
+        },
+        {
+          "member": "pairwise.png",
+          "bytes": 250573
+        },
+        {
+          "member": "croppedchromatogram.png",
+          "bytes": 120239
+        }
+      ]
+    }
+  ],
+  "policy": "header-only intake; no cell values below header rows were read or printed"
+}

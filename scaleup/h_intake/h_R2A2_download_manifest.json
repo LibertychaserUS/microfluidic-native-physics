@@ -1,0 +1,18 @@
+{
+  "dataset_code": "R2A2",
+  "directory": "<WORK>/../data/h_R2A2",
+  "sources": {
+    "LNP_Atlas_DB_202509_v1.csv": "https://zenodo.org/api/records/17243733/files/LNP_Atlas_DB_202509_v1.csv/content"
+  },
+  "files": [
+    {
+      "file": "LNP_Atlas_DB_202509_v1.csv",
+      "bytes": 1785032,
+      "sha256": "624ba8424cc89855251ff20d8a3edf81f36e87a89b0f8c789c375860bbe83cb0",
+      "kind": "text",
+      "header": "lnp_id,ionizable_lipid,peg_lipid,sterol_lipid,helper_lipid,lipid_molar_ratio,particle_size_nm_std,pdi_std,zeta_potential_mv_std,encapsulation_efficiency_percent_std,loading_capacity_std,target_type,nucleic_acid_sequence,peg_lipid_original,ionizable_lipid_original,helper_lipid_original,sterol_lipid_original,synthesis_info,bioactivity_profile,paper_title,paper_authors,paper_doi,paper_journal,paper_year,ionizable_lipid_smiles,peg_lipid_smiles,sterol_lipid_smiles,helper_lipid_smiles",
+      "n_data_rows": 1092
+    }
+  ],
+  "policy": "header-only intake; no cell values below header rows were read or printed"
+}

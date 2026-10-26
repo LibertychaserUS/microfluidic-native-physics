@@ -40,6 +40,13 @@ IGNORED_RELATIVE_PREFIXES = {
     "work/data/osf_938rs",
     "work/data/zenodo_7055018",
     "work/data/zenodo_17867478",
+    "work/data/h_A1",
+    "work/data/h_A2",
+    "work/data/h_B1",
+    "work/data/h_B2",
+    "work/data/h_R2A1",
+    "work/data/h_R2A2",
+    "work/data/upstream",
 }
 
 

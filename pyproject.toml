@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "microfluidic-native-physics"
-version = "0.3.0"
-description = "Code and artifacts of the preprint 'Reliability Audits for Machine-Learned Droplet-Microfluidic Design Surrogates'"
+version = "0.5.0"
+description = "Code and artifacts of the preprint 'When Can a Learned Design Surrogate Be Trusted in a Self-Driving Microfluidics Laboratory?'"
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "Apache-2.0" }

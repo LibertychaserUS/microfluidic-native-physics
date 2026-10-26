@@ -1,0 +1,166 @@
+{
+  "arm_k0": 4,
+  "arms": {
+    "A_cont": "continue",
+    "A_esc": "escalate",
+    "A_none": "none",
+    "A_switch": "switch"
+  },
+  "budget": 20,
+  "drift_pre": [
+    -0.2,
+    0.2
+  ],
+  "drift_seeds": [
+    0,
+    1,
+    2
+  ],
+  "e0_sha256": {
+    "exclusions.json": "37b56f780bd71829bde81ea790f1fa65baa5bcbd6ee7d0c69778b4220cf8e8cb",
+    "tiers_e0.csv": "cb4ba684db971e331826653aefa92887ae397b450f352ec65519cddd3245ab8c"
+  },
+  "e1_protocol_sha256": "022aa19d3acc3bf9afcfac99ff53bf244ed54254adcb759cf7010dd120d6fb5f",
+  "frozen_runner": "closed_loop.py",
+  "frozen_runner_sha256": "645b73b2a0afa82154ee54b4018e33973427ea1640358878395afebc5ee13776",
+  "main_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "n_loops": 124976,
+  "n_tiers": 107,
+  "n_units": 428,
+  "policies": {
+    "A_cont": [
+      4,
+      "random",
+      "warm",
+      "greedy"
+    ],
+    "A_esc": [
+      4,
+      "random",
+      "ceiling",
+      "greedy"
+    ],
+    "A_none": [
+      4,
+      "random",
+      "none",
+      "greedy"
+    ],
+    "A_switch": [
+      4,
+      "random",
+      "scratch",
+      "greedy"
+    ],
+    "CEIL": [
+      0,
+      "random",
+      "ceiling",
+      "greedy"
+    ],
+    "P0": [
+      0,
+      "random",
+      "none",
+      "greedy"
+    ],
+    "P1": [
+      2,
+      "random",
+      "warm",
+      "greedy"
+    ],
+    "P13": [
+      0,
+      "random",
+      "warm",
+      "interval"
+    ],
+    "P2": [
+      0,
+      "random",
+      "warm",
+      "greedy"
+    ],
+    "P3": [
+      5,
+      "random",
+      "warm",
+      "greedy"
+    ],
+    "P4": [
+      2,
+      "farthest",
+      "warm",
+      "greedy"
+    ],
+    "P5": [
+      2,
+      "kmeans",
+      "warm",
+      "greedy"
+    ],
+    "P6": [
+      2,
+      "uncertainty",
+      "warm",
+      "greedy"
+    ],
+    "P7": [
+      2,
+      "random",
+      "affine",
+      "greedy"
+    ],
+    "P8": [
+      5,
+      "random",
+      "scratch",
+      "greedy"
+    ],
+    "P9": [
+      2,
+      "random",
+      "warm",
+      "portfolio"
+    ]
+  },
+  "protocol": "E7_HARD_TASK_PROTOCOL_v1.md",
+  "protocol_sha256": "130a150965ef742753e63692da5474d6fe9fa925987a16d9914fa13b44f71425",
+  "schema_version": "closed-loop-e7-run-v1",
+  "shuffle_policies": [
+    "P0",
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7",
+    "P8",
+    "P9",
+    "CEIL",
+    "P13"
+  ],
+  "smoke": false,
+  "stage": "e7",
+  "target_quantiles": [
+    0.05,
+    0.1,
+    0.9,
+    0.95
+  ],
+  "tau": 0.03,
+  "wrapper_sha256": "09ae934d9878a8230c3ce7ebfdbe00f09a2986215d4fe758ecf5758e7c654eb7"
+}

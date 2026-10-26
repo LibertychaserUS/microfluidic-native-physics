@@ -1,0 +1,13 @@
+{
+  "cell_tau0.05_B10/environment.json": "93e060dcc17b9ebecc0ff3e65a5668665635f28deb06de109375698695b36bd7",
+  "cell_tau0.05_B10/loops.csv": "14fa0e09ff45b9bb250715d3882fa0a625b6aac1b31fe42a111e67a672d42d5f",
+  "cell_tau0.05_B10/run_manifest.json": "6cde80e82cefa0c7610985ad4ad57a82d20c8be793191407002946faa8d87805",
+  "cell_tau0.05_B20/environment.json": "93e060dcc17b9ebecc0ff3e65a5668665635f28deb06de109375698695b36bd7",
+  "cell_tau0.05_B20/loops.csv": "8ada580ea9ed431b040560ac44fa0205b31bc3e70c41f7118d2d7c215b4ac22e",
+  "cell_tau0.05_B20/run_manifest.json": "7bf7df1842facaf5fa276782396b6114d5cd615f324994b0d09adb7736b85e43",
+  "cell_tau0.10_B10/environment.json": "93e060dcc17b9ebecc0ff3e65a5668665635f28deb06de109375698695b36bd7",
+  "cell_tau0.10_B10/loops.csv": "64e2a341a2b8defefc5428e4db4b4c56d9dc3aa8a18a5427cdca80f438dc45b0",
+  "cell_tau0.10_B10/run_manifest.json": "f4ad96a48b0ec4874bd71999aca9c60b09eb9fb41f452444df61977c8830610d",
+  "cells.json": "4795d1677c574ea3e3ac549ad833565eb2db5be8bae6e922b3a49b077c7b86bd",
+  "e1b_summary.json": "8e7607890716cf9200c6fbcd500abffc1e12e38017b6e92e5c16692d3ece731b"
+}

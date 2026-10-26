@@ -86,9 +86,76 @@
       "related_publication_doi": "10.1016/j.ijpharm.2025.126362",
       "retrieval_date": "2026-10-17",
       "status": "download_enabled"
+    },
+    "hormozinezhad_2025_esi_A1": {
+      "article_doi": "10.1039/D4LC00946K",
+      "dataset_url": "https://europepmc.org/article/PMC/PMC11834948#supplementary-material",
+      "files": [
+        {
+          "bytes": 3403636,
+          "name": "PMC11834948_supplementaryFiles.zip",
+          "relative_path": "h_A1/PMC11834948_supplementaryFiles.zip",
+          "sha256": "ea9d5003bdcc665f666a60679656ddb3e29af3ec0adecd3259c8363c8dd52063",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11834948/supplementaryFiles"
+        }
+      ],
+      "license": "CC BY 3.0 (electronic supplementary information of Hormozinezhad, Barnes, Fabregat, Cito, Del Giudice, Lab Chip 25:1681 (2025))",
+      "note": "Stage 2 table A1. The custodian scaleup/w6/h_custodian.py reads the workbooks inside the zip (LC-025-D4LC00946K-s001.xlsx to s005.xlsx) as bound in scaleup/validation_plan/H_BINDING_A1_v2.json.",
+      "retrieval_date": "2026-10-21",
+      "status": "download_enabled"
+    },
+    "wang_2024_zenodo_10526441_R2A1": {
+      "article_doi": "10.1016/j.cej.2024.149467",
+      "dataset_doi": "10.5281/zenodo.10526441",
+      "dataset_url": "https://zenodo.org/records/10526441",
+      "files": [
+        {
+          "bytes": 61712,
+          "md5": "d58b4cbb8f4df47fb3eb2b44a2dc4fdb",
+          "name": "Data for FrameworkA.xlsx",
+          "relative_path": "h_R2A1/Data for FrameworkA.xlsx",
+          "sha256": "991b450207c2d1398bf8d9c77784a9b8504341fe3e0b4d2b8f5dccf2482d9be6",
+          "url": "https://zenodo.org/api/records/10526441/files/Data%20for%20FrameworkA.xlsx/content"
+        }
+      ],
+      "license": "CC BY 4.0",
+      "note": "Stage 2 table R2-A1 (co-flowing droplet generation; Wang J.-X. et al., Chem. Eng. J. 485:149467 (2024)); binding scaleup/validation_plan/H_BINDING_R2A1.json.",
+      "retrieval_date": "2026-10-21",
+      "status": "download_enabled"
+    },
+    "lnp_atlas_zenodo_17243733_R2A2": {
+      "dataset_doi": "10.5281/zenodo.17243733",
+      "dataset_url": "https://zenodo.org/records/17243733",
+      "files": [
+        {
+          "bytes": 1785032,
+          "md5": "f77ec01fe88e16f558c09c41bcc10610",
+          "name": "LNP_Atlas_DB_202509_v1.csv",
+          "relative_path": "h_R2A2/LNP_Atlas_DB_202509_v1.csv",
+          "sha256": "624ba8424cc89855251ff20d8a3edf81f36e87a89b0f8c789c375860bbe83cb0",
+          "url": "https://zenodo.org/api/records/17243733/files/LNP_Atlas_DB_202509_v1.csv/content"
+        }
+      ],
+      "license": "CC BY 4.0",
+      "note": "Stage 2 table R2-A2 (LNP Atlas, Song S., Baek J., Seo S., Scientific Data 12 (2025); a literature-compiled dataset); binding scaleup/validation_plan/H_BINDING_R2A2.json.",
+      "retrieval_date": "2026-10-21",
+      "status": "download_enabled"
     }
   },
   "default_destination": "work/data",
   "policy": "Third-party files are downloaded locally, verified, and ignored by git. They are never committed.",
-  "schema_version": "public-source-registry-v2"
+  "schema_version": "public-source-registry-v3",
+  "upstream_code": {
+    "cidarlab_dafd_website": {
+      "repository": "https://github.com/CIDARLAB/dafd-website",
+      "commit": "4902f8ce79f73251282b75a3b12b9efd90420f81",
+      "citable_snapshot": "Zenodo 10156784 (tag v3.0.0 = commit d1e6296)",
+      "license": "no licence file; nothing from the repository is redistributed",
+      "local_path": "work/data/upstream/dafd-website",
+      "use": "reproduction-fidelity protocol (scaleup/fidelity/fidelity_driver.py --upstream); file digests pinned in work/microfluidic_reliability/fidelity_run1/upstream_pins.json"
+    }
+  },
+  "candidates_examined_not_admitted": {
+    "note": "Header-only intake manifests of further candidate tables (A2, B1, B2) are released under scaleup/h_intake/; those tables were not admitted (register H_DEVIATION_REGISTER.md) and no file of theirs is used or redistributed."
+  }
 }

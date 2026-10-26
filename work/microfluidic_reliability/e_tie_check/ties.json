@@ -1,0 +1,111 @@
+{
+  "E3_lambda5": {
+    "all": {
+      "n_units": 3210,
+      "share_escalate_at_min": 0.021806853582554516,
+      "share_none_and_switch_tied": 0.07258566978193147,
+      "share_none_at_min": 0.11744548286604362,
+      "share_none_only": 0.04236760124610592,
+      "share_other_action_strictly_better": 0.1735202492211838,
+      "share_switch_at_min": 0.11152647975077881,
+      "share_switch_only": 0.037383177570093455
+    },
+    "by_shift_type": {
+      "chemistry": {
+        "n_units": 990,
+        "share_escalate_at_min": 0.022222222222222223,
+        "share_none_and_switch_tied": 0.07575757575757576,
+        "share_none_at_min": 0.13737373737373737,
+        "share_none_only": 0.05757575757575758,
+        "share_other_action_strictly_better": 0.18585858585858586,
+        "share_switch_at_min": 0.1101010101010101,
+        "share_switch_only": 0.031313131313131314
+      },
+      "composition": {
+        "n_units": 330,
+        "share_escalate_at_min": 0.021212121212121213,
+        "share_none_and_switch_tied": 0.09090909090909091,
+        "share_none_at_min": 0.14545454545454545,
+        "share_none_only": 0.05454545454545454,
+        "share_other_action_strictly_better": 0.24848484848484848,
+        "share_switch_at_min": 0.17575757575757575,
+        "share_switch_only": 0.08181818181818182
+      },
+      "device": {
+        "n_units": 900,
+        "share_escalate_at_min": 0.013333333333333334,
+        "share_none_and_switch_tied": 0.06777777777777778,
+        "share_none_at_min": 0.09444444444444444,
+        "share_none_only": 0.02666666666666667,
+        "share_other_action_strictly_better": 0.12444444444444444,
+        "share_switch_at_min": 0.08444444444444445,
+        "share_switch_only": 0.016666666666666666
+      },
+      "emulsion type": {
+        "n_units": 60,
+        "share_escalate_at_min": 0.05,
+        "share_none_and_switch_tied": 0.18333333333333332,
+        "share_none_at_min": 0.23333333333333334,
+        "share_none_only": 0.05,
+        "share_other_action_strictly_better": 0.31666666666666665,
+        "share_switch_at_min": 0.21666666666666667,
+        "share_switch_only": 0.03333333333333333
+      },
+      "laboratory": {
+        "n_units": 870,
+        "share_escalate_at_min": 0.026436781609195402,
+        "share_none_and_switch_tied": 0.054022988505747126,
+        "share_none_at_min": 0.08735632183908046,
+        "share_none_only": 0.03218390804597701,
+        "share_other_action_strictly_better": 0.1528735632183908,
+        "share_switch_at_min": 0.09655172413793103,
+        "share_switch_only": 0.041379310344827586
+      },
+      "preparation": {
+        "n_units": 60,
+        "share_escalate_at_min": 0.05,
+        "share_none_and_switch_tied": 0.15,
+        "share_none_at_min": 0.3,
+        "share_none_only": 0.1,
+        "share_other_action_strictly_better": 0.45,
+        "share_switch_at_min": 0.3,
+        "share_switch_only": 0.15
+      }
+    },
+    "input_sha256": "52356e32a026933dd55335ce760928e95e02b3583170cc166adc2879b441a76b"
+  },
+  "E4": {
+    "input_sha256": "66f663642a0f2bb6fd3d26a1f626cf27e13220d563b73303e7a7ad48d582d627",
+    "lowest_or_tied": {
+      "deep_ensemble": 0.24299065420560748,
+      "gp": 0.22429906542056074,
+      "mlp": 0.308411214953271,
+      "qrf": 0.3644859813084112,
+      "random_forest": 0.308411214953271,
+      "xgboost": 0.4205607476635514
+    },
+    "n_tiers": 107,
+    "n_tiers_all_six_tied": 4,
+    "n_tiers_unique_best": 60,
+    "strictly_lowest": {
+      "deep_ensemble": 0.06542056074766354,
+      "gp": 0.08411214953271028,
+      "mlp": 0.1308411214953271,
+      "qrf": 0.08411214953271028,
+      "random_forest": 0.037383177570093455,
+      "xgboost": 0.1588785046728972
+    },
+    "ties_split": {
+      "deep_ensemble": 0.12133956386292834,
+      "gp": 0.1263239875389408,
+      "mlp": 0.1808411214953271,
+      "qrf": 0.18473520249221184,
+      "random_forest": 0.13224299065420558,
+      "xgboost": 0.2545171339563863
+    }
+  },
+  "deviation": "E-D12",
+  "post_hoc": true,
+  "schema_version": "closed-loop-tie-check-v1",
+  "script_sha256": "a318a17015d18cdd21203e63953e50b81b53cda006c0a57f933247790ca7ceac"
+}

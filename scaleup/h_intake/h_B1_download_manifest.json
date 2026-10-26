@@ -1,0 +1,114 @@
+{
+  "dataset_code": "B1",
+  "directory": "<WORK>/../data/h_B1",
+  "sources": {
+    "1-s2.0-S0927775722001935-mmc1.docx": "https://ndownloader.figshare.com/files/41388816"
+  },
+  "files": [
+    {
+      "file": "1-s2.0-S0927775722001935-mmc1.docx",
+      "bytes": 48114,
+      "sha256": "7ab8cb7ad11df4cb26dfbd0b4dc1adf11b0ad8acce0b92f522c560d885e42a10",
+      "kind": "docx",
+      "n_tables": 8,
+      "tables": [
+        {
+          "n_rows_including_header": 4,
+          "header": [
+            "Trial",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "n_rows_including_header": 4,
+          "header": [
+            "Source of Variation",
+            "",
+            "",
+            "",
+            "",
+            "P-value",
+            ""
+          ]
+        },
+        {
+          "n_rows_including_header": 4,
+          "header": [
+            "Trial",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "n_rows_including_header": 4,
+          "header": [
+            "Source of Variation",
+            "",
+            "",
+            "",
+            "",
+            "P-value",
+            ""
+          ]
+        },
+        {
+          "n_rows_including_header": 32,
+          "header": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "n_rows_including_header": 3,
+          "header": [
+            "Total average droplet diameter,  (m)",
+            "61.9"
+          ]
+        },
+        {
+          "n_rows_including_header": 4,
+          "header": [
+            "Source of Variation",
+            "",
+            "",
+            "",
+            "",
+            "P-value",
+            ""
+          ]
+        },
+        {
+          "n_rows_including_header": 7,
+          "header": [
+            "",
+            "0.5",
+            "",
+            "1.9",
+            "",
+            "0.5"
+          ]
+        }
+      ]
+    }
+  ],
+  "policy": "header-only intake; no cell values below header rows were read or printed"
+}

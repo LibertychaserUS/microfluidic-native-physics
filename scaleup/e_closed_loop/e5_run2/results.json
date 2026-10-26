@@ -1,0 +1,757 @@
+{
+  "analyzer_sha256": "a724a9b6d872e14f4d3f4fca3fc99f11a0a7a1eb2ad2f69f52b976929af2e494",
+  "frozen_analyzer_sha256": "4715eb029191c3266517ca3ef78c03cbd29444234b12504a61e7c30fe3b28c7a",
+  "inputs": {
+    "budget.csv": "3874ccff0fd83bbab95bc976841fef80175a75ff8fc08a00c22c1d391decb5fd",
+    "e3_loops.csv": "52356e32a026933dd55335ce760928e95e02b3583170cc166adc2879b441a76b",
+    "tiers_e0.csv": "cb4ba684db971e331826653aefa92887ae397b450f352ec65519cddd3245ab8c"
+  },
+  "k_star_by_shift_type": {
+    "chemistry": {
+      "fraction_not_reached": 0.06060606060606061,
+      "median": 1.0,
+      "n": 33,
+      "p80": 2.200000000000003
+    },
+    "composition": {
+      "fraction_not_reached": 0.09090909090909091,
+      "median": 1.0,
+      "n": 11,
+      "p80": 1.0
+    },
+    "device": {
+      "fraction_not_reached": 0.6,
+      "median": 21.0,
+      "n": 30,
+      "p80": 21.0
+    },
+    "emulsion type": {
+      "fraction_not_reached": 0.5,
+      "median": 18.0,
+      "n": 2,
+      "p80": 19.8
+    },
+    "laboratory": {
+      "fraction_not_reached": 0.10344827586206896,
+      "median": 1.0,
+      "n": 29,
+      "p80": 2.0
+    },
+    "preparation": {
+      "fraction_not_reached": 0.5,
+      "median": 11.0,
+      "n": 2,
+      "p80": 17.0
+    }
+  },
+  "mean_cost_oracle": 0.0,
+  "n_not_reached": 26,
+  "n_reached": 81,
+  "n_tiers": 107,
+  "protocol": "E5_BUDGET_TRANSFER_PROTOCOL_v1.md",
+  "protocol_sha256": "52fd522ed0d9dbac962db91dfe732df75ea5c630f22e52d4d88f13ce9a34e1bc",
+  "q": 0.8,
+  "rules": {
+    "R0": {
+      "fraction_underplanned_transferred": 0.0,
+      "mean_cost_R0": 18.074074074074073,
+      "mean_cost_table_specific": 18.074074074074073,
+      "mean_cost_transferred": 18.074074074074073,
+      "not_reachable_classification": {
+        "fpr": 0.0,
+        "n_not_reached": 26,
+        "tpr": 0.0
+      },
+      "transfer_regret": {
+        "ci_table_block": [
+          0.0,
+          0.0
+        ],
+        "ci_tier_stratified": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "n": 81,
+        "p_block": 2.0
+      },
+      "transferred_minus_R0": {
+        "ci_table_block": [
+          0.0,
+          0.0
+        ],
+        "ci_tier_stratified": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "n": 81,
+        "p_block": 2.0
+      },
+      "verdict": "no advantage over the full budget"
+    },
+    "R1": {
+      "fraction_underplanned_transferred": 0.13580246913580246,
+      "mean_cost_R0": 18.074074074074073,
+      "mean_cost_table_specific": 2.7777777777777777,
+      "mean_cost_transferred": 4.864197530864198,
+      "not_reachable_classification": {
+        "fpr": 0.2839506172839506,
+        "n_not_reached": 26,
+        "tpr": 0.7692307692307693
+      },
+      "transfer_regret": {
+        "ci_table_block": [
+          -0.4835164835164835,
+          7.619047619047619
+        ],
+        "ci_tier_stratified": [
+          1.0617283950617284,
+          3.0123456790123457
+        ],
+        "mean": 2.0864197530864197,
+        "n": 81,
+        "p_block": 0.2
+      },
+      "transferred_minus_R0": {
+        "ci_table_block": [
+          -15.711864406779661,
+          -6.5
+        ],
+        "ci_tier_stratified": [
+          -14.765432098765432,
+          -11.45679012345679
+        ],
+        "mean": -13.209876543209877,
+        "n": 81,
+        "p_block": 0.0
+      },
+      "verdict": "transfers"
+    },
+    "R2": {
+      "fraction_underplanned_transferred": 0.13580246913580246,
+      "mean_cost_R0": 18.074074074074073,
+      "mean_cost_table_specific": 2.308641975308642,
+      "mean_cost_transferred": 4.765432098765432,
+      "not_reachable_classification": {
+        "fpr": 0.48148148148148145,
+        "n_not_reached": 26,
+        "tpr": 0.8076923076923077
+      },
+      "transfer_regret": {
+        "ci_table_block": [
+          0.5,
+          7.534883720930233
+        ],
+        "ci_tier_stratified": [
+          1.2839506172839505,
+          3.568209876543208
+        ],
+        "mean": 2.45679012345679,
+        "n": 81,
+        "p_block": 0.0
+      },
+      "transferred_minus_R0": {
+        "ci_table_block": [
+          -15.711864406779661,
+          -7.186046511627907
+        ],
+        "ci_tier_stratified": [
+          -14.963271604938273,
+          -11.505864197530865
+        ],
+        "mean": -13.308641975308642,
+        "n": 81,
+        "p_block": 0.0
+      },
+      "verdict": "does not transfer"
+    },
+    "R3": {
+      "fraction_underplanned_transferred": 0.1728395061728395,
+      "mean_cost_R0": 18.074074074074073,
+      "mean_cost_table_specific": 2.4814814814814814,
+      "mean_cost_transferred": 4.320987654320987,
+      "not_reachable_classification": {
+        "fpr": 0.38271604938271603,
+        "n_not_reached": 26,
+        "tpr": 0.11538461538461539
+      },
+      "transfer_regret": {
+        "ci_table_block": [
+          0.07865168539325842,
+          6.0476190476190474
+        ],
+        "ci_tier_stratified": [
+          0.5679012345679012,
+          3.074074074074074
+        ],
+        "mean": 1.8395061728395061,
+        "n": 81,
+        "p_block": 0.034
+      },
+      "transferred_minus_R0": {
+        "ci_table_block": [
+          -15.743589743589743,
+          -8.176145833333395
+        ],
+        "ci_tier_stratified": [
+          -15.654320987654321,
+          -11.629320987654323
+        ],
+        "mean": -13.753086419753087,
+        "n": 81,
+        "p_block": 0.0
+      },
+      "verdict": "does not transfer"
+    },
+    "R4": {
+      "fraction_underplanned_transferred": 0.18518518518518517,
+      "mean_cost_R0": 18.074074074074073,
+      "mean_cost_table_specific": 2.3580246913580245,
+      "mean_cost_transferred": 5.283950617283951,
+      "not_reachable_classification": {
+        "fpr": 0.1728395061728395,
+        "n_not_reached": 26,
+        "tpr": 0.11538461538461539
+      },
+      "transfer_regret": {
+        "ci_table_block": [
+          0.43609022556390975,
+          9.174603174603174
+        ],
+        "ci_tier_stratified": [
+          1.7654320987654322,
+          3.9753086419753085
+        ],
+        "mean": 2.925925925925926,
+        "n": 81,
+        "p_block": 0.0
+      },
+      "transferred_minus_R0": {
+        "ci_table_block": [
+          -15.496240601503759,
+          -5.545454545454546
+        ],
+        "ci_tier_stratified": [
+          -14.518518518518519,
+          -10.962654320987657
+        ],
+        "mean": -12.790123456790123,
+        "n": 81,
+        "p_block": 0.0
+      },
+      "verdict": "does not transfer"
+    }
+  },
+  "schema_version": "closed-loop-e5-analysis-v1",
+  "sensitivity_q": {
+    "0.5": {
+      "R0": {
+        "fraction_underplanned_transferred": 0.0,
+        "mean_cost_R0": 18.074074074074073,
+        "mean_cost_table_specific": 18.074074074074073,
+        "mean_cost_transferred": 18.074074074074073,
+        "not_reachable_classification": {
+          "fpr": 0.0,
+          "n_not_reached": 26,
+          "tpr": 0.0
+        },
+        "transfer_regret": {
+          "ci_table_block": [
+            0.0,
+            0.0
+          ],
+          "ci_tier_stratified": [
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "n": 81,
+          "p_block": 2.0
+        },
+        "transferred_minus_R0": {
+          "ci_table_block": [
+            0.0,
+            0.0
+          ],
+          "ci_tier_stratified": [
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "n": 81,
+          "p_block": 2.0
+        },
+        "verdict": "no advantage over the full budget"
+      },
+      "R1": {
+        "fraction_underplanned_transferred": 0.18518518518518517,
+        "mean_cost_R0": 18.074074074074073,
+        "mean_cost_table_specific": 3.3333333333333335,
+        "mean_cost_transferred": 3.962962962962963,
+        "not_reachable_classification": {
+          "fpr": 0.037037037037037035,
+          "n_not_reached": 26,
+          "tpr": 0.038461538461538464
+        },
+        "transfer_regret": {
+          "ci_table_block": [
+            -0.425531914893617,
+            2.857142857142857
+          ],
+          "ci_tier_stratified": [
+            -0.25925925925925924,
+            1.5432098765432098
+          ],
+          "mean": 0.6296296296296297,
+          "n": 81,
+          "p_block": 0.503
+        },
+        "transferred_minus_R0": {
+          "ci_table_block": [
+            -16.1864406779661,
+            -8.545454545454545
+          ],
+          "ci_tier_stratified": [
+            -16.08672839506173,
+            -12.086111111111112
+          ],
+          "mean": -14.11111111111111,
+          "n": 81,
+          "p_block": 0.0
+        },
+        "verdict": "transfers"
+      },
+      "R2": {
+        "fraction_underplanned_transferred": 0.16049382716049382,
+        "mean_cost_R0": 18.074074074074073,
+        "mean_cost_table_specific": 2.753086419753086,
+        "mean_cost_transferred": 3.950617283950617,
+        "not_reachable_classification": {
+          "fpr": 0.024691358024691357,
+          "n_not_reached": 26,
+          "tpr": 0.038461538461538464
+        },
+        "transfer_regret": {
+          "ci_table_block": [
+            0.06756377163680535,
+            4.181818181818182
+          ],
+          "ci_tier_stratified": [
+            0.2345679012345679,
+            2.197530864197531
+          ],
+          "mean": 1.1975308641975309,
+          "n": 81,
+          "p_block": 0.0
+        },
+        "transferred_minus_R0": {
+          "ci_table_block": [
+            -16.11864406779661,
+            -9.0
+          ],
+          "ci_tier_stratified": [
+            -15.91388888888889,
+            -11.962962962962964
+          ],
+          "mean": -14.123456790123457,
+          "n": 81,
+          "p_block": 0.0
+        },
+        "verdict": "does not transfer"
+      },
+      "R3": {
+        "fraction_underplanned_transferred": 0.19753086419753085,
+        "mean_cost_R0": 18.074074074074073,
+        "mean_cost_table_specific": 3.0987654320987654,
+        "mean_cost_transferred": 4.061728395061729,
+        "not_reachable_classification": {
+          "fpr": 0.0,
+          "n_not_reached": 26,
+          "tpr": 0.0
+        },
+        "transfer_regret": {
+          "ci_table_block": [
+            0.1234182393367514,
+            3.159090909090909
+          ],
+          "ci_tier_stratified": [
+            0.1728395061728395,
+            1.876543209876543
+          ],
+          "mean": 0.9629629629629629,
+          "n": 81,
+          "p_block": 0.004
+        },
+        "transferred_minus_R0": {
+          "ci_table_block": [
+            -15.980952380952381,
+            -8.545454545454545
+          ],
+          "ci_tier_stratified": [
+            -16.037037037037038,
+            -11.86388888888889
+          ],
+          "mean": -14.012345679012345,
+          "n": 81,
+          "p_block": 0.0
+        },
+        "verdict": "does not transfer"
+      },
+      "R4": {
+        "fraction_underplanned_transferred": 0.18518518518518517,
+        "mean_cost_R0": 18.074074074074073,
+        "mean_cost_table_specific": 2.740740740740741,
+        "mean_cost_transferred": 4.469135802469136,
+        "not_reachable_classification": {
+          "fpr": 0.037037037037037035,
+          "n_not_reached": 26,
+          "tpr": 0.038461538461538464
+        },
+        "transfer_regret": {
+          "ci_table_block": [
+            0.013513513513513514,
+            6.318181818181818
+          ],
+          "ci_tier_stratified": [
+            0.7160493827160493,
+            2.691666666666665
+          ],
+          "mean": 1.728395061728395,
+          "n": 81,
+          "p_block": 0.022
+        },
+        "transferred_minus_R0": {
+          "ci_table_block": [
+            -16.123809523809523,
+            -6.488888888888889
+          ],
+          "ci_tier_stratified": [
+            -15.383024691358026,
+            -11.604938271604938
+          ],
+          "mean": -13.604938271604938,
+          "n": 81,
+          "p_block": 0.0
+        },
+        "verdict": "does not transfer"
+      }
+    },
+    "0.9": {
+      "R0": {
+        "fraction_underplanned_transferred": 0.0,
+        "mean_cost_R0": 18.074074074074073,
+        "mean_cost_table_specific": 18.074074074074073,
+        "mean_cost_transferred": 18.074074074074073,
+        "not_reachable_classification": {
+          "fpr": 0.0,
+          "n_not_reached": 26,
+          "tpr": 0.0
+        },
+        "transfer_regret": {
+          "ci_table_block": [
+            0.0,
+            0.0
+          ],
+          "ci_tier_stratified": [
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "n": 81,
+          "p_block": 2.0
+        },
+        "transferred_minus_R0": {
+          "ci_table_block": [
+            0.0,
+            0.0
+          ],
+          "ci_tier_stratified": [
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "n": 81,
+          "p_block": 2.0
+        },
+        "verdict": "no advantage over the full budget"
+      },
+      "R1": {
+        "fraction_underplanned_transferred": 0.08641975308641975,
+        "mean_cost_R0": 18.074074074074073,
+        "mean_cost_table_specific": 3.3580246913580245,
+        "mean_cost_transferred": 5.234567901234568,
+        "not_reachable_classification": {
+          "fpr": 0.2839506172839506,
+          "n_not_reached": 26,
+          "tpr": 0.7692307692307693
+        },
+        "transfer_regret": {
+          "ci_table_block": [
+            -1.096774193548387,
+            7.158730158730159
+          ],
+          "ci_tier_stratified": [
+            0.8762345679012346,
+            2.7160493827160495
+          ],
+          "mean": 1.876543209876543,
+          "n": 81,
+          "p_block": 0.243
+        },
+        "transferred_minus_R0": {
+          "ci_table_block": [
+            -15.169491525423728,
+            -6.590909090909091
+          ],
+          "ci_tier_stratified": [
+            -14.308950617283951,
+            -11.233950617283954
+          ],
+          "mean": -12.839506172839506,
+          "n": 81,
+          "p_block": 0.0
+        },
+        "verdict": "transfers"
+      },
+      "R2": {
+        "fraction_underplanned_transferred": 0.1111111111111111,
+        "mean_cost_R0": 18.074074074074073,
+        "mean_cost_table_specific": 2.617283950617284,
+        "mean_cost_transferred": 6.037037037037037,
+        "not_reachable_classification": {
+          "fpr": 0.48148148148148145,
+          "n_not_reached": 26,
+          "tpr": 0.8076923076923077
+        },
+        "transfer_regret": {
+          "ci_table_block": [
+            1.4803073861123397,
+            8.333333333333334
+          ],
+          "ci_tier_stratified": [
+            2.2098765432098766,
+            4.592592592592593
+          ],
+          "mean": 3.419753086419753,
+          "n": 81,
+          "p_block": 0.0
+        },
+        "transferred_minus_R0": {
+          "ci_table_block": [
+            -14.194174757281553,
+            -6.6
+          ],
+          "ci_tier_stratified": [
+            -13.555864197530864,
+            -10.283950617283951
+          ],
+          "mean": -12.037037037037036,
+          "n": 81,
+          "p_block": 0.0
+        },
+        "verdict": "does not transfer"
+      },
+      "R3": {
+        "fraction_underplanned_transferred": 0.12345679012345678,
+        "mean_cost_R0": 18.074074074074073,
+        "mean_cost_table_specific": 2.8518518518518516,
+        "mean_cost_transferred": 4.888888888888889,
+        "not_reachable_classification": {
+          "fpr": 0.38271604938271603,
+          "n_not_reached": 26,
+          "tpr": 0.11538461538461539
+        },
+        "transfer_regret": {
+          "ci_table_block": [
+            0.819672131147541,
+            4.6875
+          ],
+          "ci_tier_stratified": [
+            0.8021604938271605,
+            3.3209876543209877
+          ],
+          "mean": 2.037037037037037,
+          "n": 81,
+          "p_block": 0.003
+        },
+        "transferred_minus_R0": {
+          "ci_table_block": [
+            -14.525423728813559,
+            -9.590909090909092
+          ],
+          "ci_tier_stratified": [
+            -14.876543209876543,
+            -11.444135802469138
+          ],
+          "mean": -13.185185185185185,
+          "n": 81,
+          "p_block": 0.0
+        },
+        "verdict": "does not transfer"
+      },
+      "R4": {
+        "fraction_underplanned_transferred": 0.12345679012345678,
+        "mean_cost_R0": 18.074074074074073,
+        "mean_cost_table_specific": 2.308641975308642,
+        "mean_cost_transferred": 5.296296296296297,
+        "not_reachable_classification": {
+          "fpr": 0.1728395061728395,
+          "n_not_reached": 26,
+          "tpr": 0.11538461538461539
+        },
+        "transfer_regret": {
+          "ci_table_block": [
+            1.053030303030303,
+            8.093023255813954
+          ],
+          "ci_tier_stratified": [
+            1.7157407407407408,
+            4.283950617283951
+          ],
+          "mean": 2.9876543209876543,
+          "n": 81,
+          "p_block": 0.0
+        },
+        "transferred_minus_R0": {
+          "ci_table_block": [
+            -14.941747572815533,
+            -6.863636363636363
+          ],
+          "ci_tier_stratified": [
+            -14.407407407407407,
+            -10.987037037037041
+          ],
+          "mean": -12.777777777777779,
+          "n": 81,
+          "p_block": 0.0
+        },
+        "verdict": "does not transfer"
+      }
+    }
+  },
+  "shape_transfer": {
+    "chemistry": {
+      "between_table_range": {
+        "k1": 0.21661799311006902,
+        "k10": 0.2713459161542805,
+        "k15": 0.2143200280675963,
+        "k2": 0.37059221384049357,
+        "k20": 0.22607747977724724,
+        "k3": 0.3490388686645912,
+        "k5": 0.3309099836120021,
+        "k8": 0.2860192960141136
+      },
+      "tables": {
+        "A1": {
+          "k1": 0.9774401397686702,
+          "k10": 0.7235029332830589,
+          "k15": 0.6398120384721689,
+          "k2": 0.9180768509636146,
+          "k20": 0.5097272178645003,
+          "k3": 0.8625068826383822,
+          "k5": 0.7924732152782152,
+          "k8": 0.7248083070467405
+        },
+        "D2": {
+          "k1": 0.9587114904814612,
+          "k10": 0.7830947929348399,
+          "k15": 0.7076330265456588,
+          "k2": 0.9536631015557666,
+          "k20": 0.6778527978432672,
+          "k3": 0.9290466815944239,
+          "k5": 0.8752950027427491,
+          "k8": 0.8084521603925465
+        },
+        "R2A1": {
+          "k1": 0.7608221466586012,
+          "k10": 0.5117488767805594,
+          "k15": 0.49331299847806254,
+          "k2": 0.583070887715273,
+          "k20": 0.45177531806602,
+          "k3": 0.5800078129298327,
+          "k5": 0.544385019130747,
+          "k8": 0.522432864378433
+        }
+      }
+    },
+    "device": {
+      "between_table_range": {
+        "k1": 0.19678169457062722,
+        "k10": 0.44644585897440786,
+        "k15": 0.50120747633755,
+        "k2": 0.27805999509673307,
+        "k20": 0.5183529423806306,
+        "k3": 0.38545798933707465,
+        "k5": 0.37519117341595887,
+        "k8": 0.45331319254738417
+      },
+      "tables": {
+        "A1": {
+          "k1": 0.8176549102465079,
+          "k10": 0.5827490648615453,
+          "k15": 0.5414757533869672,
+          "k2": 0.7170080987254317,
+          "k20": 0.5123950724052204,
+          "k3": 0.665533904881773,
+          "k5": 0.6345953811156613,
+          "k8": 0.5962487127417138
+        },
+        "D1": {
+          "k1": 1.0144366048171352,
+          "k10": 0.8277924643275849,
+          "k15": 0.7720067180831984,
+          "k2": 0.9444625213439044,
+          "k20": 0.7143703480244404,
+          "k3": 0.961722696116975,
+          "k5": 0.8903964009849976,
+          "k8": 0.8623324349392238
+        },
+        "R2A1": {
+          "k1": 0.9330011957527412,
+          "k10": 0.38134660535317705,
+          "k15": 0.2707992417456484,
+          "k2": 0.6664025262471713,
+          "k20": 0.1960174056438099,
+          "k3": 0.5762647067799004,
+          "k5": 0.5152052275690387,
+          "k8": 0.4090192423918397
+        }
+      }
+    },
+    "laboratory": {
+      "between_table_range": {
+        "k1": 0.025915788586768573,
+        "k10": 0.08593939252749727,
+        "k15": null,
+        "k2": 0.11416837716044792,
+        "k20": null,
+        "k3": 0.08878885159512762,
+        "k5": 0.1692926175457513,
+        "k8": 0.13148803906452555
+      },
+      "tables": {
+        "D1": {
+          "k1": 0.9274476894031521,
+          "k10": 0.4791717639158233,
+          "k15": null,
+          "k2": 0.782677481046726,
+          "k20": null,
+          "k3": 0.7328789975101068,
+          "k5": 0.5912329340702432,
+          "k8": 0.5131393133335389
+        },
+        "R2A2": {
+          "k1": 0.9533634779899207,
+          "k10": 0.5651111564433206,
+          "k15": 0.8116861959260391,
+          "k2": 0.8968458582071739,
+          "k20": 0.7897615369113345,
+          "k3": 0.8216678491052344,
+          "k5": 0.7605255516159946,
+          "k8": 0.6446273523980645
+        }
+      }
+    }
+  }
+}

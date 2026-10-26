@@ -67,3 +67,41 @@ No derived artifact reproduces an upstream dataset in full.
 
 No source author or institution is affiliated with or endorses this independent
 project.
+
+## Stage 2 tables (R10): not redistributed
+
+- **A1** — Hormozinezhad, Barnes, Fabregat, Cito, Del Giudice, *Lab on a Chip*
+  25:1681 (2025), DOI 10.1039/D4LC00946K; the electronic supplementary
+  information (workbooks `LC-025-D4LC00946K-s001.xlsx` to `s005.xlsx`) obtained
+  as the Europe PMC supplementary bundle of PMC11834948 (CC BY 3.0 article).
+  Digest in `data/source_registry.json`; binding
+  `scaleup/validation_plan/H_BINDING_A1_v2.json`.
+- **R2-A1** — Wang J.-X. et al., *Chemical Engineering Journal* 485:149467
+  (2024); deposit [Zenodo 10526441](https://zenodo.org/records/10526441)
+  (CC BY 4.0), file `Data for FrameworkA.xlsx`.
+- **R2-A2** — Song S., Baek J., Seo S., *Scientific Data* 12 (2025), LNP Atlas;
+  deposit [Zenodo 17243733](https://zenodo.org/records/17243733) (CC BY 4.0),
+  file `LNP_Atlas_DB_202509_v1.csv` (a literature-compiled dataset of 63 source
+  papers, not a single-laboratory measurement set).
+
+The custodian programs (`scaleup/w6/h_custodian.py`, `h_custodian2.py`) re-cut
+these tables into development, sealed-feature and sealed-label files; none of
+them, and none of the per-row prediction or scored-row files of the R10 runs,
+is released (digests in the custodian manifests and run manifests under
+`scaleup/h_A1/`, `h_R2A1/`, `h_R2A2/`). Header-only intake manifests of these
+tables and of the candidates that were examined but not admitted (A2, B1, B2)
+are under `scaleup/h_intake/`; they list file names, sizes, digests, sheet
+names and header rows only.
+
+## Upstream DAFD implementation (reproduction fidelity)
+
+The reproduction-fidelity protocol (`scaleup/fidelity/`) compared our
+re-implementation with the training line of
+[CIDARLAB/dafd-website](https://github.com/CIDARLAB/dafd-website) at commit
+`4902f8ce` (the citable snapshot Zenodo 10156784 is tag v3.0.0). That
+repository carries no licence file, so no upstream file, table or model is
+redistributed; the digests of the files that were read, including the deployed
+model `20231001_DAFD3_XGB.json`, are pinned in
+`work/microfluidic_reliability/fidelity_run1/upstream_pins.json`, and
+reproducing the comparison requires a local clone at that commit
+(`work/data/README.md`).

@@ -90,6 +90,23 @@ REGISTRY_SOURCES = [
     "d3_blind_artifacts/custodian_manifest.json",
     "w4_artifacts_canonical_run2/configuration.json",
     "w5_artifacts_canonical_run2/configuration.json",
+    "fidelity_run1/upstream_pins.json",
+    "h_fewshot_rule_run1/run_manifest.json",
+    "e0_run1/run_manifest.json",
+    "e1e2_run1/run_manifest.json",
+    "e1e2_run1/results.json",
+    "e1b_run1/cell_tau0.05_B20/run_manifest.json",
+    "e1b_run1/cell_tau0.05_B20/results.json",
+    "e3_run1/run_manifest.json",
+    "e3_run1/results.json",
+    "e4_mac_run1/run_manifest.json",
+    "e4_mac_run1/results.json",
+    "e5_run1/run_manifest.json",
+    "e5_run1/results.json",
+    "e6_run1/run_manifest.json",
+    "e6_run1/results.json",
+    "e7_run1/run_manifest.json",
+    "e7_run1/results.json",
 ]
 
 LITERAL_FIELD = "literal"

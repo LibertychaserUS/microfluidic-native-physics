@@ -1,0 +1,16 @@
+{
+  "environment.json": "9eef98e660cd217391fe5372f81226319dc72c03107d248738bfaf9dfe0d8ae0",
+  "fidelity_results.json": "a848546a37dc6d40d21a8980f69bd766bf78f5c5d33221aa88bf1a381d7b83a9",
+  "predictions_envA.csv": "16172e12878176cd2ebb4bb073e8c7704141d08179e868295152bfe3829c599a",
+  "predictions_envB_phase1.csv": "67bdcdeed3ec1fe29ac5863f6b8f996d97f7cdd592ca5c7b1c6294d734f006fd",
+  "predictions_envB_phase1_environment.json": "dd31cd88e88f37a7fdebc6cdb22624b3d41602e26ef4387b6d5029bea4952b0d",
+  "predictions_envB_phase2.csv": "e60d3c596a1b5a2d49bffffda972dc3eeee7f26030d8640d8bbd2286c532a58a",
+  "predictions_envB_phase2_environment.json": "dd31cd88e88f37a7fdebc6cdb22624b3d41602e26ef4387b6d5029bea4952b0d",
+  "splits_manifest.csv": "b140b01a7458c93fe2cdb1f32959f314b04dd1deb4d21d9b164996a76d3ff583",
+  "table_comprehensive.csv": "aafeb301d7922c30dbf9c948efa3b919db8917b267747c73ad285cf1cc16f6c0",
+  "table_external.csv": "b67ecdf5a177233e94581a04b0353c152ec93d4a208ce99df671f9ceaf5dc0e8",
+  "table_upstream932.csv": "77d68d87c109a8ac4b466c9ba9e3fd25672d9f63de450ec7bedf5a784add7753",
+  "upstream_pins.json": "2d4138dddc3963d14ec796a0dcd7906188752a7023a7e61750e9cfa71c8e0f97",
+  "worker_tasks_phase1.json": "6e73cb8632fed9865c5c60dd75b09d07775c2b950cf77174ca1a0aa178ce04fd",
+  "worker_tasks_phase2.json": "36b1b89d6f880c935720331c85f319d499389203be585254cf35929a524ed99c"
+}

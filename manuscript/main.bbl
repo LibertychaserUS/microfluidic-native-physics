@@ -1,4 +1,4 @@
-\begin{thebibliography}{34}
+\begin{thebibliography}{57}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -59,6 +59,22 @@ Xiao Liang, Yue Xie, Jiyizhe Zhang, Wensheng Huang, Boyu Pan, Xin~Yee Tai, Jin
 \newblock \emph{Chemical Engineering Journal}, 529:\penalty0 172957, 2026.
 \newblock \doi{10.1016/j.cej.2026.172957}.
 
+\bibitem[Anna et~al.(2003)Anna, Bontoux, and Stone]{anna2003}
+Shelley~L. Anna, Nathalie Bontoux, and Howard~A. Stone.
+\newblock Formation of dispersions using ``flow focusing'' in microchannels.
+\newblock \emph{Applied Physics Letters}, 82\penalty0 (3):\penalty0 364--366,
+  2003.
+\newblock \doi{10.1063/1.1537519}.
+
+\bibitem[Garstecki et~al.(2006)Garstecki, Fuerstman, Stone, and
+  Whitesides]{garstecki2006}
+Piotr Garstecki, Michael~J. Fuerstman, Howard~A. Stone, and George~M.
+  Whitesides.
+\newblock Formation of droplets and bubbles in a microfluidic
+  {T}-junction---scaling and mechanism of break-up.
+\newblock \emph{Lab on a Chip}, 6\penalty0 (3):\penalty0 437--446, 2006.
+\newblock \doi{10.1039/b510841a}.
+
 \bibitem[McIntyre et~al.(2023)McIntyre, Lashkaripour, Arguijo, Fordyce, and
   Densmore]{mcintyre2023}
 David McIntyre, Ali Lashkaripour, Diana Arguijo, Polly Fordyce, and Douglas
@@ -102,6 +118,23 @@ Zhenyu Yang, Zhongning Jiang, Haisong Lin, Xiaoxue Fan, Changjin Wu, Edmund~Y.
 \newblock \emph{Science Advances}, 11\penalty0 (31):\penalty0 eadx2826, 2025.
 \newblock \doi{10.1126/sciadv.adx2826}.
 
+\bibitem[Raissi et~al.(2019)Raissi, Perdikaris, and Karniadakis]{raissi2019}
+Maziar Raissi, Paris Perdikaris, and George~Em Karniadakis.
+\newblock Physics-informed neural networks: A deep learning framework for
+  solving forward and inverse problems involving nonlinear partial differential
+  equations.
+\newblock \emph{Journal of Computational Physics}, 378:\penalty0 686--707,
+  2019.
+\newblock \doi{10.1016/j.jcp.2018.10.045}.
+
+\bibitem[Karniadakis et~al.(2021)Karniadakis, Kevrekidis, Lu, Perdikaris, Wang,
+  and Yang]{karniadakis2021}
+George~Em Karniadakis, Ioannis~G. Kevrekidis, Lu~Lu, Paris Perdikaris, Sifan
+  Wang, and Liu Yang.
+\newblock Physics-informed machine learning.
+\newblock \emph{Nature Reviews Physics}, 3:\penalty0 422--440, 2021.
+\newblock \doi{10.1038/s42254-021-00314-5}.
+
 \bibitem[Tang et~al.(2026)Tang, Chen, Zhou, Liu, and Chen]{bpgnn2026}
 Tao Tang, Xinkun Chen, Mingyong Zhou, Yuchen Liu, and Xueye Chen.
 \newblock Deconstructing the black box: Performance prediction and optimization
@@ -119,20 +152,30 @@ Meraj Hassanzadeh, Ehsan Ghaderi, and Mohamad~Ali Bijarchi.
 \newblock \emph{Scientific Reports}, 16:\penalty0 10151, 2026.
 \newblock \doi{10.1038/s41598-026-40254-7}.
 
-\bibitem[Raissi et~al.(2019)Raissi, Perdikaris, and Karniadakis]{raissi2019}
-Maziar Raissi, Paris Perdikaris, and George~Em Karniadakis.
-\newblock Physics-informed neural networks: A deep learning framework for
-  solving forward and inverse problems involving nonlinear partial differential
-  equations.
-\newblock \emph{Journal of Computational Physics}, 378:\penalty0 686--707,
-  2019.
-\newblock \doi{10.1016/j.jcp.2018.10.045}.
-
 \bibitem[{Editorial}(2021)]{naturecs2021}
 {Editorial}.
 \newblock Can machines learn with hard constraints?
 \newblock \emph{Nature Computational Science}, 1, 2021.
 \newblock \doi{10.1038/s43588-021-00067-2}.
+
+\bibitem[Lu et~al.(2021)Lu, Pestourie, Yao, Wang, Verdugo, and Johnson]{lu2021}
+Lu~Lu, Rapha{\"e}l Pestourie, Wenjie Yao, Zhicheng Wang, Francesc Verdugo, and
+  Steven~G. Johnson.
+\newblock Physics-informed neural networks with hard constraints for inverse
+  design.
+\newblock \emph{SIAM Journal on Scientific Computing}, 43\penalty0
+  (6):\penalty0 B1105--B1132, 2021.
+\newblock \doi{10.1137/21M1397908}.
+
+\bibitem[Beucler et~al.(2021)Beucler, Pritchard, Rasp, Ott, Baldi, and
+  Gentine]{beucler2021}
+Tom Beucler, Michael Pritchard, Stephan Rasp, Jordan Ott, Pierre Baldi, and
+  Pierre Gentine.
+\newblock Enforcing analytic constraints in neural networks emulating physical
+  systems.
+\newblock \emph{Physical Review Letters}, 126\penalty0 (9):\penalty0 098302,
+  2021.
+\newblock \doi{10.1103/PhysRevLett.126.098302}.
 
 \bibitem[Baty(2023)]{baty2023}
 Hubert Baty.
@@ -148,6 +191,15 @@ Yong-Woon Kim, Jihyeok Lee, Chulung Kang, and Yung-Cheol Byun.
 \newblock \emph{Applied Energy}, 421:\penalty0 128220, 2026.
 \newblock \doi{10.1016/j.apenergy.2026.128220}.
 \newblock Preprint: arXiv:2511.05879.
+
+\bibitem[Krishnapriyan et~al.(2021)Krishnapriyan, Gholami, Zhe, Kirby, and
+  Mahoney]{krishnapriyan2021}
+Aditi~S. Krishnapriyan, Amir Gholami, Shandian Zhe, Robert~M. Kirby, and
+  Michael~W. Mahoney.
+\newblock Characterizing possible failure modes in physics-informed neural
+  networks.
+\newblock In \emph{Advances in Neural Information Processing Systems 34}, 2021.
+\newblock arXiv:2109.01050.
 
 \bibitem[Lee and Kim(2026)]{filmpinn2026}
 Jaeseon Lee and Yujin Kim.
@@ -213,6 +265,51 @@ Sayash Kapoor and Arvind Narayanan.
 \newblock \emph{Patterns}, 4\penalty0 (9):\penalty0 100804, 2023.
 \newblock \doi{10.1016/j.patter.2023.100804}.
 
+\bibitem[Tropsha et~al.(2003)Tropsha, Gramatica, and Gombar]{tropsha2003}
+Alexander Tropsha, Paola Gramatica, and Vijay~K. Gombar.
+\newblock The importance of being earnest: validation is the absolute essential
+  for successful application and interpretation of {QSPR} models.
+\newblock \emph{QSAR \& Combinatorial Science}, 22\penalty0 (1):\penalty0
+  69--77, 2003.
+\newblock \doi{10.1002/qsar.200390007}.
+
+\bibitem[Netzeva et~al.(2005)Netzeva, Worth, Aldenberg, Benigni, Cronin,
+  Gramatica, Jaworska, Kahn, Klopman, Marchant, Myatt, Nikolova-Jeliazkova,
+  Patlewicz, Perkins, Roberts, Schultz, Stanton, van~de Sandt, Tong, Veith, and
+  Yang]{netzeva2005}
+Tatiana~I. Netzeva, Andrew~P. Worth, Tom Aldenberg, Romualdo Benigni, Mark
+  T.~D. Cronin, Paola Gramatica, Joanna~S. Jaworska, Scott Kahn, Gilles
+  Klopman, Carol~A. Marchant, Glenn Myatt, Nina Nikolova-Jeliazkova, Grace~Y.
+  Patlewicz, Roger Perkins, David~W. Roberts, Terry~W. Schultz, David~T.
+  Stanton, Johannes J.~M. van~de Sandt, Weida Tong, Gilman Veith, and Chihae
+  Yang.
+\newblock Current status of methods for defining the applicability domain of
+  (quantitative) structure--activity relationships.
+\newblock \emph{Alternatives to Laboratory Animals}, 33\penalty0 (2):\penalty0
+  155--173, 2005.
+\newblock \doi{10.1177/026119290503300209}.
+
+\bibitem[Sahigara et~al.(2012)Sahigara, Mansouri, Ballabio, Mauri, Consonni,
+  and Todeschini]{sahigara2012}
+Faizan Sahigara, Kamel Mansouri, Davide Ballabio, Andrea Mauri, Viviana
+  Consonni, and Roberto Todeschini.
+\newblock Comparison of different approaches to define the applicability domain
+  of {QSAR} models.
+\newblock \emph{Molecules}, 17\penalty0 (5):\penalty0 4791--4810, 2012.
+\newblock \doi{10.3390/molecules17054791}.
+
+\bibitem[El-Yaniv and Wiener(2010)]{elyaniv2010}
+Ran El-Yaniv and Yair Wiener.
+\newblock On the foundations of noise-free selective classification.
+\newblock \emph{Journal of Machine Learning Research}, 11:\penalty0 1605--1641,
+  2010.
+
+\bibitem[Vovk et~al.(2005)Vovk, Gammerman, and Shafer]{vovk2005}
+Vladimir Vovk, Alexander Gammerman, and Glenn Shafer.
+\newblock \emph{Algorithmic Learning in a Random World}.
+\newblock Springer, New York, 2005.
+\newblock \doi{10.1007/b106715}.
+
 \bibitem[Romano et~al.(2019)Romano, Patterson, and Cand{\`e}s]{romano2019}
 Yaniv Romano, Evan Patterson, and Emmanuel~J. Cand{\`e}s.
 \newblock Conformalized quantile regression.
@@ -224,6 +321,15 @@ Ryan~J. Tibshirani, Rina Foygel~Barber, Emmanuel~J. Cand{\`e}s, and Aaditya
   Ramdas.
 \newblock Conformal prediction under covariate shift.
 \newblock In \emph{Advances in Neural Information Processing Systems 32}, 2019.
+
+\bibitem[Barber et~al.(2023)Barber, Cand{\`e}s, Ramdas, and
+  Tibshirani]{barber2023}
+Rina~Foygel Barber, Emmanuel~J. Cand{\`e}s, Aaditya Ramdas, and Ryan~J.
+  Tibshirani.
+\newblock Conformal prediction beyond exchangeability.
+\newblock \emph{The Annals of Statistics}, 51\penalty0 (2):\penalty0 816--845,
+  2023.
+\newblock \doi{10.1214/23-AOS2276}.
 
 \bibitem[Cieslak and Czyzewski(2026)]{cieslak2026}
 Daniel Cieslak and Andrzej Czyzewski.
@@ -271,6 +377,22 @@ Krishna~Teja Vepa.
   validation of machine-learned sodium-cathode voltages.
 \newblock arXiv:2606.23725, 2026.
 
+\bibitem[Wang et~al.(2024)Wang, Qian, Wang, Sun, Wu, Zhong, Chen, and
+  Mao]{wang2024coflow}
+Ji-Xiang Wang, Jian Qian, Hongmei Wang, Mengyuan Sun, Liangyu Wu, Mingliang
+  Zhong, Yongping Chen, and Yufeng Mao.
+\newblock Dual-directional small-sampling deep-learning modelling on co-flowing
+  microfluidic droplet generation.
+\newblock \emph{Chemical Engineering Journal}, 485:\penalty0 149467, 2024.
+\newblock \doi{10.1016/j.cej.2024.149467}.
+
+\bibitem[Song et~al.(2025)Song, Baek, and Seo]{lnpatlas2025}
+Seunghun Song, Jueun Baek, and Sangjae Seo.
+\newblock A comprehensive dataset of lipid nanoparticle compositions and
+  properties for nucleic acid delivery.
+\newblock \emph{Scientific Data}, 13:\penalty0 139, 2025.
+\newblock \doi{10.1038/s41597-025-06456-w}.
+
 \bibitem[Kalli et~al.(2022)Kalli, Chagot, and Angeli]{kalli2022jcis}
 Maria Kalli, Lo{\"\i}c Chagot, and Panagiota Angeli.
 \newblock Comparison of surfactant mass transfer with drop formation times from
@@ -280,5 +402,75 @@ Maria Kalli, Lo{\"\i}c Chagot, and Panagiota Angeli.
 \newblock \doi{10.1016/j.jcis.2021.06.178}.
 \newblock Source of the anchor coefficients $k=0.642$, $\alpha=0.188$,
   $\beta=0.161$ adopted as the physics-based benchmark in \cite{chagot2022}.
+
+\bibitem[Utada et~al.(2007)Utada, Fernandez-Nieves, Stone, and
+  Weitz]{utada2007}
+Andrew~S. Utada, Alberto Fernandez-Nieves, Howard~A. Stone, and David~A. Weitz.
+\newblock Dripping to jetting transitions in coflowing liquid streams.
+\newblock \emph{Physical Review Letters}, 99\penalty0 (9):\penalty0 094502,
+  2007.
+\newblock \doi{10.1103/PhysRevLett.99.094502}.
+
+\bibitem[Meinshausen(2006)]{meinshausen2006}
+Nicolai Meinshausen.
+\newblock Quantile regression forests.
+\newblock \emph{Journal of Machine Learning Research}, 7:\penalty0 983--999,
+  2006.
+
+\bibitem[Lakshminarayanan et~al.(2017)Lakshminarayanan, Pritzel, and
+  Blundell]{lakshminarayanan2017}
+Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell.
+\newblock Simple and scalable predictive uncertainty estimation using deep
+  ensembles.
+\newblock In \emph{Advances in Neural Information Processing Systems 30}, 2017.
+\newblock arXiv:1612.01474.
+
+\bibitem[Grinsztajn et~al.(2022)Grinsztajn, Oyallon, and
+  Varoquaux]{grinsztajn2022}
+L{\'e}o Grinsztajn, Edouard Oyallon, and Ga{\"e}l Varoquaux.
+\newblock Why do tree-based models still outperform deep learning on typical
+  tabular data?
+\newblock In \emph{Advances in Neural Information Processing Systems 35
+  (Datasets and Benchmarks Track)}, 2022.
+\newblock arXiv:2207.08815.
+
+\bibitem[Sheridan(2013)]{sheridan2013}
+Robert~P. Sheridan.
+\newblock Time-split cross-validation as a method for estimating the goodness
+  of prospective prediction.
+\newblock \emph{Journal of Chemical Information and Modeling}, 53\penalty0
+  (4):\penalty0 783--790, 2013.
+\newblock \doi{10.1021/ci400084k}.
+
+\bibitem[Wu et~al.(2018)Wu, Ramsundar, Feinberg, Gomes, Geniesse, Pappu,
+  Leswing, and Pande]{wu2018}
+Zhenqin Wu, Bharath Ramsundar, Evan~N. Feinberg, Joseph Gomes, Caleb Geniesse,
+  Aneesh~S. Pappu, Karl Leswing, and Vijay Pande.
+\newblock {MoleculeNet}: a benchmark for molecular machine learning.
+\newblock \emph{Chemical Science}, 9\penalty0 (2):\penalty0 513--530, 2018.
+\newblock \doi{10.1039/C7SC02664A}.
+
+\bibitem[Willard et~al.(2022)Willard, Jia, Xu, Steinbach, and
+  Kumar]{willard2022}
+Jared Willard, Xiaowei Jia, Shaoming Xu, Michael Steinbach, and Vipin Kumar.
+\newblock Integrating scientific knowledge with machine learning for
+  engineering and environmental systems.
+\newblock \emph{ACM Computing Surveys}, 55\penalty0 (4):\penalty0 66, 2022.
+\newblock \doi{10.1145/3514228}.
+
+\bibitem[Ovadia et~al.(2019)Ovadia, Fertig, Ren, Nado, Sculley, Nowozin,
+  Dillon, Lakshminarayanan, and Snoek]{ovadia2019}
+Yaniv Ovadia, Emily Fertig, Jie Ren, Zachary Nado, D.~Sculley, Sebastian
+  Nowozin, Joshua~V. Dillon, Balaji Lakshminarayanan, and Jasper Snoek.
+\newblock Can you trust your model's uncertainty? {Evaluating} predictive
+  uncertainty under dataset shift.
+\newblock In \emph{Advances in Neural Information Processing Systems 32}, 2019.
+\newblock arXiv:1906.02530.
+
+\bibitem[Anna(2016)]{anna2016}
+Shelley~Lynn Anna.
+\newblock Droplets and bubbles in microfluidic devices.
+\newblock \emph{Annual Review of Fluid Mechanics}, 48:\penalty0 285--309, 2016.
+\newblock \doi{10.1146/annurev-fluid-122414-034425}.
 
 \end{thebibliography}

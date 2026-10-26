@@ -1,0 +1,128 @@
+{
+  "DAFD3_data_868_vs_OSF_comprehensive": {
+    "columns": {
+      "generation_rate": {
+        "comprehensive": {
+          "max_rel_diff": 4.2835384964239717e-10,
+          "n_both_finite": 868,
+          "n_reference_missing": 0,
+          "n_rows": 868,
+          "n_rows_rel_diff_above_1e-3": 0,
+          "n_rows_rel_diff_above_1e-6": 0,
+          "n_upstream_missing": 0
+        }
+      },
+      "hyd_d": {
+        "comprehensive": {
+          "max_rel_diff": 3.999999573049233e-10,
+          "n_both_finite": 868,
+          "n_reference_missing": 0,
+          "n_rows": 868,
+          "n_rows_rel_diff_above_1e-3": 0,
+          "n_rows_rel_diff_above_1e-6": 0,
+          "n_upstream_missing": 0
+        }
+      },
+      "normalized_hyd_size": {
+        "comprehensive": {
+          "max_rel_diff": 1.2736824809301458e-09,
+          "n_both_finite": 868,
+          "n_reference_missing": 0,
+          "n_rows": 868,
+          "n_rows_rel_diff_above_1e-3": 0,
+          "n_rows_rel_diff_above_1e-6": 0,
+          "n_upstream_missing": 0
+        }
+      }
+    },
+    "matched": 868,
+    "n_reference": 868,
+    "n_upstream": 868,
+    "unmatched": 0
+  },
+  "all_data_932_vs_OSF_comprehensive_union_external": {
+    "columns": {
+      "generation_rate": {
+        "comprehensive": {
+          "max_rel_diff": 4.2835384964239717e-10,
+          "n_both_finite": 868,
+          "n_reference_missing": 0,
+          "n_rows": 868,
+          "n_rows_rel_diff_above_1e-3": 0,
+          "n_rows_rel_diff_above_1e-6": 0,
+          "n_upstream_missing": 0
+        },
+        "external": {
+          "max_rel_diff": null,
+          "n_both_finite": 0,
+          "n_reference_missing": 64,
+          "n_rows": 64,
+          "n_rows_rel_diff_above_1e-3": 0,
+          "n_rows_rel_diff_above_1e-6": 0,
+          "n_upstream_missing": 0
+        }
+      },
+      "hyd_d": {
+        "comprehensive": {
+          "max_rel_diff": 3.999999573049233e-10,
+          "n_both_finite": 868,
+          "n_reference_missing": 0,
+          "n_rows": 868,
+          "n_rows_rel_diff_above_1e-3": 0,
+          "n_rows_rel_diff_above_1e-6": 0,
+          "n_upstream_missing": 0
+        },
+        "external": {
+          "max_rel_diff": 0.1525423728,
+          "n_both_finite": 64,
+          "n_reference_missing": 0,
+          "n_rows": 64,
+          "n_rows_rel_diff_above_1e-3": 6,
+          "n_rows_rel_diff_above_1e-6": 26,
+          "n_upstream_missing": 0
+        }
+      },
+      "normalized_hyd_size": {
+        "comprehensive": {
+          "max_rel_diff": 1.2736824809301458e-09,
+          "n_both_finite": 868,
+          "n_reference_missing": 0,
+          "n_rows": 868,
+          "n_rows_rel_diff_above_1e-3": 0,
+          "n_rows_rel_diff_above_1e-6": 0,
+          "n_upstream_missing": 0
+        },
+        "external": {
+          "max_rel_diff": 0.13235294142512075,
+          "n_both_finite": 64,
+          "n_reference_missing": 0,
+          "n_rows": 64,
+          "n_rows_rel_diff_above_1e-3": 6,
+          "n_rows_rel_diff_above_1e-6": 26,
+          "n_upstream_missing": 0
+        }
+      }
+    },
+    "matched": 932,
+    "n_reference": 932,
+    "n_upstream": 932,
+    "unmatched": 0
+  },
+  "inputs_sha256": {
+    "app/mod_dafd/helper_scripts/experimental_data/20231001_all_data_dafd3.csv": "7735baefec0bc35dbd05c26eaf580110051880e540383eabf81d536c72037782",
+    "app/mod_dafd/helper_scripts/experimental_data/DAFD3_data.csv": "f6596ebc8c3152f5344043ccdfd2067999071b3944adc1922acc627d5d57f0fe"
+  },
+  "matching_key": [
+    "orifice_width",
+    "aspect_ratio",
+    "flow_rate_ratio",
+    "capillary_number",
+    "normalized_oil_inlet",
+    "normalized_water_inlet",
+    "expansion_ratio",
+    "viscosity_ratio",
+    "droplet_size",
+    "q_in"
+  ],
+  "schema_version": "fidelity-g0-posthoc-v1"
+}

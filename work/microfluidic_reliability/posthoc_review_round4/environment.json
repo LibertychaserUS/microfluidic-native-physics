@@ -1,0 +1,15 @@
+{
+  "python": "3.12.13",
+  "numpy": "2.5.1",
+  "pandas": "3.0.3",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "input_sha256": {
+    "v2_artifacts_canonical_run2/locked_physics_sensitivities.csv": "1a54985ef42248b3a00b4c61d413dfa1e8bd327c55ed0641ab777bfc92f3a833",
+    "w3_artifacts_canonical_run2/point_predictions.csv": "7148f5067ba394f4c4fcb3e5997dbec6488a316d5aece9fd75684a145d1bbce0",
+    "expanded_artifacts_canonical_run2/applicability_scored.csv": "0d7f68474e5f3986edf226223ec17705fcef163058215115e689ae12a6b9020f",
+    "expanded_artifacts_canonical_run2/applicability_random_controls.csv": "a3d394f3f2dc46582525c0ede3ed6cfb65b5f6e3dabdbf28847c6cd53bfe0281",
+    "v2_artifacts_canonical_run2/per_row_predictions_all_seeds.csv": "ec7cdc5d6f38cc2956cd80e7df6b874c357079a6ffc7fd2f4d4eb0911a5f9dbe",
+    "w4_artifacts_canonical_run2/point_predictions.csv": "8f81619ff6d1ae89a29aaa658f74c7686bce74467055b224e4f581afcd4606bd",
+    "src/native_physics_v2.py": "21ab9ea25eb1bfb8421c49d6a21b216242283286d33999eea88550c5f63b08c7"
+  }
+}

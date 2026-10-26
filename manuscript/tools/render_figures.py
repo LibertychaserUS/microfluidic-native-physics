@@ -1,12 +1,24 @@
 #!/usr/bin/env python3
-"""Re-render five manuscript figures from the frozen artifact data (v0.3).
+"""Re-render seven manuscript figures from the frozen artifact data.
 
 The frozen PNGs in the workspace are left untouched; this script reads the same
 artifact files they were drawn from and writes corrected renderings into
-manuscript/figures/: Figure 1 (CQR coverage shift) with labels taken from the
-JSON and placed above the error bars, Figure 2 (distance versus error) and
-Figure 9 (source retention) with "et al." spelled with its full stop, and
-Figures 8/9 with readable method names instead of code identifiers, and Figure 4 (V1 blind diagnostics) with more space between its two panels (v0.3.2).
+manuscript/figures/:
+
+* Figure 1 (CQR coverage): v0.3 labels read from the JSON; v0.3.3 adds the
+  expanded suite's external coverage under row-random and geometry-grouped
+  calibration (interval_summary.csv) as a second pair of bars.
+* Figure 2 (distance versus error): "et al." with its full stop; v0.3.3 legend
+  says "applicability threshold" instead of "trust-region".
+* Figure 3 (pilot pruning precision): re-rendered in v0.3.3 from the tolerance
+  table in reliability_metrics.json with the legend "Applicability-retained".
+* Figure 4 (V1 blind diagnostics): wider panel spacing (v0.3.2).
+* Figure 7 (split generalisation): re-rendered in v0.3.3 from split_metrics.csv
+  with larger fonts.
+* Figure 8 (relative risk--coverage): readable method names (v0.3); larger
+  fonts and thick dashed / dash-dotted control lines (v0.3.3).
+* Figure 9 (source retention): readable method names (v0.3); larger fonts
+  (v0.3.3).
 
 Usage: python render_figures.py --work <work/microfluidic_reliability> --out <manuscript/figures>
 """
@@ -20,6 +32,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
+import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 import seaborn as sns  # noqa: E402
 
@@ -37,7 +50,16 @@ METHOD_LABELS = {
 }
 RISK_METHODS = ["axis_aligned", "knn_5", "mahalanobis_oas", "isolation_forest",
                 "bootstrap_disagreement", "oof_residual_risk", "hydraulic_diameter_only", "predicted_size_only"]
+CONTROL_STYLE = {"hydraulic_diameter_only": "--", "predicted_size_only": "-."}
 RETENTION_METHODS = ["strict_minmax", "axis_aligned", "knn_5", "mahalanobis_oas", "isolation_forest"]
+SPLIT_PROTOCOLS = [
+    ("row_random_reproduction", "Row random\n(reproduction)"),
+    ("exact_input_dependency_group", "Exact-input +\nDE pair"),
+    ("geometry_dependency_group", "Geometry +\nDE pair"),
+    ("device_fluid_dependency_group", "Geometry/fluid +\nDE pair"),
+]
+BIG = {"font.size": 13, "axes.labelsize": 14, "axes.titlesize": 14,
+       "xtick.labelsize": 12, "ytick.labelsize": 12, "legend.fontsize": 11}
 
 
 def source_label(name: str) -> str:
@@ -46,24 +68,43 @@ def source_label(name: str) -> str:
 
 
 def figure_cqr(work: Path, out: Path) -> None:
+    """Figure 1: pilot pair (reliability_metrics.json) + expanded pair (interval_summary.csv)."""
     metrics = json.loads((work / "artifacts" / "reliability_metrics.json").read_text())
     cqr = metrics["cqr_distribution_shift"]
     internal, external = cqr["internal_random_split"], cqr["external_literature_shift"]
+    summary = pd.read_csv(work / "expanded_artifacts_canonical_run2" / "interval_summary.csv")
+    sel = summary[(summary["method"] == "cqr") & (summary["dataset"] == "external")
+                  & (summary["source"] == "__overall__") & (np.isclose(summary["nominal"], 0.9))]
+    rr = sel[sel["protocol"] == "row_random"]["empirical_coverage"]
+    gg = sel[sel["protocol"] == "geometry_group"]["empirical_coverage"]
+    assert len(rr) == 15 and len(gg) == 15, (len(rr), len(gg))
     plt.style.use("seaborn-v0_8-whitegrid")
-    fig, ax = plt.subplots(figsize=(6.2, 4.2))
-    labels = ["Random split", "External literature"]
-    means = [internal["coverage"]["mean"], external["coverage"]["mean"]]
-    errors = [internal["coverage"]["std"], external["coverage"]["std"]]
-    bars = ax.bar(labels, means, yerr=errors, capsize=5, color=["#3977B9", "#D45A45"])
+    plt.rcParams.update(BIG)
+    fig, ax = plt.subplots(figsize=(9.2, 4.8))
+    labels = ["Random split\n(internal, pilot)", "External literature\n(pilot)",
+              "External,\nrow-random calibration\n(expanded suite)", "External,\ngeometry-grouped calibration\n(expanded suite)"]
+    means = [internal["coverage"]["mean"], external["coverage"]["mean"], float(rr.mean()), float(gg.mean())]
+    errors = [internal["coverage"]["std"], external["coverage"]["std"], float(rr.std(ddof=1)), float(gg.std(ddof=1))]
+    colors = ["#3977B9", "#D45A45", "#D45A45", "#3977B9"]
+    hatches = ["", "", "//", "//"]
+    x = np.array([0.0, 1.0, 2.5, 3.7])
+    bars = ax.bar(x, means, yerr=errors, capsize=5, color=colors, width=0.8)
+    for bar, h in zip(bars, hatches):
+        bar.set_hatch(h)
+        bar.set_edgecolor("white")
     ax.axhline(cqr["nominal_coverage"], color="#222222", linestyle="--", linewidth=1.2, label="Nominal 90%")
-    ax.set_ylim(0, 1.06)
+    ax.axvline(1.75, color="#999999", linewidth=0.8)
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, fontsize=10.5)
+    ax.set_ylim(0, 1.08)
     ax.set_ylabel("Empirical interval coverage")
-    ax.legend(frameon=False, loc="upper right")
+    ax.legend(frameon=False, loc="lower center", bbox_to_anchor=(0.5, 1.0))
     for bar, value, err in zip(bars, means, errors):
         ax.text(bar.get_x() + bar.get_width() / 2, value + err + 0.02, f"{value:.1%}", ha="center", va="bottom")
     fig.tight_layout()
     fig.savefig(out / "figure_cqr_coverage_shift.png", dpi=220)
     plt.close(fig)
+    plt.rcdefaults()
 
 
 def figure_distance(work: Path, out: Path) -> None:
@@ -75,7 +116,7 @@ def figure_distance(work: Path, out: Path) -> None:
     for reference, group in frame.groupby("Ref"):
         ax.scatter(group["Applicability distance"], group["Absolute error (um)"],
                    label=source_label(reference), s=42, alpha=0.85)
-    ax.axvline(threshold, color="#222222", linestyle="--", linewidth=1.2, label="Training trust-region threshold")
+    ax.axvline(threshold, color="#222222", linestyle="--", linewidth=1.2, label="Training applicability threshold")
     ax.set_xlabel("5-nearest-neighbour applicability distance")
     ax.set_ylabel("Absolute diameter error (µm)")
     ax.legend(frameon=False, fontsize=8)
@@ -84,20 +125,68 @@ def figure_distance(work: Path, out: Path) -> None:
     plt.close(fig)
 
 
+def figure_pruning(work: Path, out: Path) -> None:
+    """Figure 3: pilot tolerance curve from the frozen JSON (v0.3.3 re-render)."""
+    metrics = json.loads((work / "artifacts" / "reliability_metrics.json").read_text())
+    rows = metrics["label_free_applicability_pruning"]["tolerance_analysis"]
+    tol = [r["tolerance_um"] for r in rows]
+    unfiltered = [r["unfiltered_success_rate"] for r in rows]
+    retained = [r["retained_success_rate_precision"] for r in rows]
+    plt.style.use("seaborn-v0_8-whitegrid")
+    plt.rcParams.update(BIG)
+    fig, ax = plt.subplots(figsize=(6.5, 4.4))
+    ax.plot(tol, unfiltered, marker="o", linewidth=2.2, markersize=8, color="#1f77b4", label="No pruning")
+    ax.plot(tol, retained, marker="o", linewidth=2.2, markersize=8, color="#ff7f0e", label="Applicability-retained")
+    ax.set_xlabel("Accepted absolute-error tolerance (µm)")
+    ax.set_ylabel("Fraction meeting tolerance")
+    ax.set_ylim(0, 1.05)
+    ax.legend(frameon=False, loc="lower right")
+    fig.tight_layout()
+    fig.savefig(out / "figure_pruning_precision.png", dpi=220)
+    plt.close(fig)
+    plt.rcdefaults()
+
+
+def figure_splits(work: Path, out: Path) -> None:
+    """Figure 7: focal XGBoost MAPE under the four split protocols (v0.3.3 re-render)."""
+    metrics = pd.read_csv(work / "expanded_artifacts_canonical_run2" / "split_metrics.csv")
+    xgb = metrics[metrics["model"] == "xgboost"].copy()
+    order = [p for p, _ in SPLIT_PROTOCOLS]
+    xgb["protocol"] = pd.Categorical(xgb["protocol"], order)
+    sns.set_theme(style="whitegrid", context="paper", rc=BIG)
+    fig, ax = plt.subplots(figsize=(9.0, 5.2))
+    sns.boxplot(data=xgb, x="protocol", y="mape_percent", hue="protocol", order=order, width=0.6, dodge=False,
+                palette=["#4C72B0", "#55A868", "#DD8452", "#C44E52"], legend=False, fliersize=5, ax=ax)
+    sns.stripplot(data=xgb, x="protocol", y="mape_percent", order=order, color="#222222", alpha=0.55, size=4.5, jitter=0.18, ax=ax)
+    ax.set_xticks(range(len(order)))
+    ax.set_xticklabels([lab for _, lab in SPLIT_PROTOCOLS])
+    ax.set_xlabel("")
+    ax.set_ylabel("Diameter MAPE (%)")
+    fig.tight_layout()
+    fig.savefig(out / "expanded_figure_1_split_generalization.png", dpi=240)
+    plt.close(fig)
+    plt.rcdefaults()
+
+
 def figure_risk_coverage(work: Path, out: Path) -> None:
     curves = pd.read_csv(work / "expanded_artifacts_canonical_run2" / "applicability_risk_curves.csv")
     plot = curves[(curves["scope"] == "row_micro") & (curves["outcome"] == "relative") & curves["method"].isin(RISK_METHODS)].copy()
-    plot["Method"] = pd.Categorical(plot["method"].map(METHOD_LABELS), [METHOD_LABELS[m] for m in RISK_METHODS])
-    sns.set_theme(style="whitegrid", context="paper")
-    fig, ax = plt.subplots(figsize=(8.0, 5.0))
-    sns.lineplot(data=plot.sort_values(["Method", "coverage"]), x="coverage", y="risk", hue="Method", estimator=None, linewidth=1.8, ax=ax)
+    sns.set_theme(style="whitegrid", context="paper", rc=BIG)
+    palette = sns.color_palette("tab10", len(RISK_METHODS))
+    fig, ax = plt.subplots(figsize=(9.0, 5.6))
+    for color, method in zip(palette, RISK_METHODS):
+        part = plot[plot["method"] == method].sort_values("coverage")
+        style = CONTROL_STYLE.get(method, "-")
+        width = 3.0 if method in CONTROL_STYLE else 1.8
+        ax.plot(part["coverage"], part["risk"], linestyle=style, linewidth=width, color=color, label=METHOD_LABELS[method])
     ax.set_xlabel("Retained candidate coverage")
     ax.set_ylabel("Mean absolute relative error")
     ax.set_xlim(0.05, 1.0)
-    ax.legend(frameon=False, fontsize=8, ncol=2, title=None)
+    ax.legend(frameon=False, fontsize=10.5, ncol=2, title=None)
     fig.tight_layout()
     fig.savefig(out / "expanded_figure_3_relative_risk_coverage.png", dpi=240)
     plt.close(fig)
+    plt.rcdefaults()
 
 
 def figure_source_retention(work: Path, out: Path) -> None:
@@ -107,14 +196,18 @@ def figure_source_retention(work: Path, out: Path) -> None:
     heat = heat.loc[[m for m in RETENTION_METHODS if m in heat.index]]
     heat.index = [METHOD_LABELS[m] + ("" if m == "strict_minmax" else " (q95)") for m in heat.index]
     heat.columns = [source_label(c) for c in heat.columns]
-    sns.set_theme(style="whitegrid", context="paper")
-    fig, ax = plt.subplots(figsize=(7.8, 3.8))
-    sns.heatmap(heat, annot=True, fmt=".0%", cmap="Blues", vmin=0, vmax=1, cbar_kws={"label": "Retention rate"}, ax=ax)
+    sns.set_theme(style="whitegrid", context="paper", rc=BIG)
+    fig, ax = plt.subplots(figsize=(9.6, 4.4))
+    sns.heatmap(heat, annot=True, fmt=".0%", cmap="Blues", vmin=0, vmax=1, annot_kws={"size": 13},
+                cbar_kws={"label": "Retention rate"}, ax=ax)
     ax.set_xlabel("External source")
     ax.set_ylabel("")
+    ax.tick_params(axis="y", labelsize=12)
+    ax.tick_params(axis="x", labelsize=11)
     fig.tight_layout()
     fig.savefig(out / "expanded_figure_4_source_retention.png", dpi=240)
     plt.close(fig)
+    plt.rcdefaults()
 
 
 def figure_v1_diagnostics(work: Path, out: Path) -> None:
@@ -137,7 +230,7 @@ def figure_v1_diagnostics(work: Path, out: Path) -> None:
     axes[1].axhline(0.0, color="#111827", lw=1.1)
     axes[1].axhline(float(signed.mean()), color="#b91c1c", ls="--", lw=1.3)
     axes[1].set_xlabel("Frozen prediction (mm)")
-    axes[1].set_ylabel("Prediction \u2212 observation (mm)")
+    axes[1].set_ylabel("Prediction − observation (mm)")
     axes[1].set_title("Signed residuals")
     fig.set_constrained_layout_pads(wspace=0.08)
     fig.savefig(out / "v1_figure_1_blind_prediction_diagnostics.png", dpi=220)
@@ -152,10 +245,12 @@ def main() -> int:
     args.out.mkdir(parents=True, exist_ok=True)
     figure_cqr(args.work, args.out)
     figure_distance(args.work, args.out)
+    figure_pruning(args.work, args.out)
+    figure_splits(args.work, args.out)
     figure_risk_coverage(args.work, args.out)
     figure_source_retention(args.work, args.out)
     figure_v1_diagnostics(args.work, args.out)
-    print("rendered 5 figures into", args.out)
+    print("rendered 7 figures into", args.out)
     return 0
 
 

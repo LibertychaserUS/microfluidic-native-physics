@@ -69,3 +69,38 @@ regenerated tables and the sealed label files (mode 0600). Compare the written
 `custodian_manifest.json` with the committed one (`git diff` must be empty) and
 run `python3 scripts/verify_hash_registry.py`, which then reports the
 regenerated tables as verified.
+
+## Stage 2 tables and the upstream clone (v0.5)
+
+```text
+work/data/
+  h_A1/PMC11834948_supplementaryFiles.zip      Hormozinezhad et al. 2025 ESI (Europe PMC bundle; CC BY 3.0)
+  h_R2A1/Data for FrameworkA.xlsx              Wang et al. 2024, Zenodo 10526441 (CC BY 4.0)
+  h_R2A2/LNP_Atlas_DB_202509_v1.csv            LNP Atlas, Zenodo 17243733 (CC BY 4.0)
+  upstream/dafd-website/                       git clone of CIDARLAB/dafd-website at commit 4902f8ce (fidelity protocol only)
+```
+
+```bash
+python3 scripts/fetch_public_data.py --dataset hormozinezhad_2025_esi_A1
+python3 scripts/fetch_public_data.py --dataset wang_2024_zenodo_10526441_R2A1
+python3 scripts/fetch_public_data.py --dataset lnp_atlas_zenodo_17243733_R2A2
+git clone https://github.com/CIDARLAB/dafd-website work/data/upstream/dafd-website && git -C work/data/upstream/dafd-website checkout 4902f8ce
+```
+
+`scaleup/w6/h_download.py` is the program that produced the header-only intake
+manifests under `scaleup/h_intake/`; it downloads the same files and prints no
+cell value. The R10 custodians then write `work/microfluidic_reliability/h_<code>_artifacts/`
+(development table, sealed features, sealed labels with mode 0600) whose
+digests are in the released custodian manifests:
+
+```bash
+cd scaleup && python -m w6.h_custodian  --binding validation_plan/H_BINDING_A1_v2.json --protocol validation_plan/H_PROTOCOL_v1.md \
+    --zip ../work/data/h_A1/PMC11834948_supplementaryFiles.zip --output ../work/microfluidic_reliability/h_A1_artifacts
+cd scaleup && python -m w6.h_custodian2 --binding validation_plan/H_BINDING_R2A1.json --protocol validation_plan/H_PROTOCOL_v2.md \
+    --source "../work/data/h_R2A1/Data for FrameworkA.xlsx" --output ../work/microfluidic_reliability/h_R2A1_artifacts
+cd scaleup && python -m w6.h_custodian2 --binding validation_plan/H_BINDING_R2A2.json --protocol validation_plan/H_PROTOCOL_v2.md \
+    --source ../work/data/h_R2A2/LNP_Atlas_DB_202509_v1.csv --output ../work/microfluidic_reliability/h_R2A2_artifacts
+```
+
+The closed-loop runners (`scaleup/w7/`) read the Stage 1 and Stage 2 tables
+through these custodian outputs and the `--data` directory (`work/data`).

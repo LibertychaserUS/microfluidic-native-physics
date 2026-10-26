@@ -1,0 +1,23 @@
+{
+  "cells": [
+    {
+      "budget": 20,
+      "cell": "cell_tau0.05_B20",
+      "n_loops": 75114,
+      "tau": 0.05
+    },
+    {
+      "budget": 10,
+      "cell": "cell_tau0.10_B10",
+      "n_loops": 75114,
+      "tau": 0.1
+    },
+    {
+      "budget": 10,
+      "cell": "cell_tau0.05_B10",
+      "n_loops": 75114,
+      "tau": 0.05
+    }
+  ],
+  "smoke": false
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "h-binding-v2",
+  "dataset_code": "R2A2",
+  "dataset": "Song S., Baek J., Seo S., Scientific Data 12 (2025), 'A Comprehensive Dataset of Lipid Nanoparticle Compositions and Properties for Nucleic Acid Delivery' (LNP Atlas); data deposit Zenodo 10.5281/zenodo.17243733 (CC BY 4.0), file LNP_Atlas_DB_202509_v1.csv; a peer-reviewed literature-compiled dataset (63 source papers), not a single-laboratory measurement set",
+  "protocol": "validation_plan/H_PROTOCOL_v2.md",
+  "protocol_sha256": "2adbd18623a848d3179c89d0ee49cd9106fb573144d7fabb47db12f906b873b3",
+  "download_manifest": "scaleup/h_intake/h_R2A2_download_manifest.json",
+  "source_file": "LNP_Atlas_DB_202509_v1.csv",
+  "source_md5_expected": "f77ec01fe88e16f558c09c41bcc10610",
+  "intake_basis": "header, row count (1092), non-empty counts per column, cell-format counts of the size column (plain / with uncertainty / range / empty), level counts of the lipid, target_type, year and paper columns, keyword counts of synthesis_info; the paper_doi list was read for the independence check; no size value was read before this binding was written",
+  "loader": "lnp_atlas_csv",
+  "loader_spec": {},
+  "columns": {
+    "native": "constructed by the custodian from protocol rule (2): frac_ionizable, frac_helper, frac_sterol, frac_peg (lipid_molar_ratio parsed as the first four colon-separated numbers, normalised to sum 1), one-hot of ionizable_lipid / helper_lipid / peg_lipid / sterol_lipid (levels defined on the union of development and sealed inputs; empty string is a level), one-hot of target_type, and five method keyword flags (herringbone; t-junction; nanoassemblr or ignite; pipette or hand; ethanol injection); the concrete column list is written to custodian_manifest.json",
+    "dimensionless": [],
+    "dimensionless_note": "no flow or dimensionless inputs exist; H-C is not evaluable on this dataset",
+    "target": "target (= particle_size_nm_std parsed by protocol rule (1): plain number or 'a +/- b' -> a; ranges and other text dropped and counted; empty dropped and counted)",
+    "target_unit": "nm"
+  },
+  "groups": {
+    "S0": "row-random 80/20 inside the development set, seeds 0-14",
+    "S1": "s1_group = source paper (paper_doi, normalised); dev-ref grouping and GroupShuffleSplit 80/20 cells",
+    "S2": "s2_group = ionizable_lipid (blank -> '(blank)')",
+    "S3": "s3_group = source paper (paper_doi, normalised; 'Custom lipid' and other catch-all names stay as ordinary levels)",
+    "S4": "s4_group = preparation class from synthesis_info keywords: 'microfluidic' if any of microfluidic / nanoassemblr / herringbone / t-junction / ignite occurs, else 'non_microfluidic'; the minority class is sealed entirely as the S4 tier, the main table (S2/S3 sealing and development) is the majority class"
+  },
+  "sealing_rules": {
+    "S2": "among s2_group levels of the main table with >= 10 target rows, excluding every level that attains the maximum count, choose the level whose count is closest to the median of the eligible counts; ties -> lexicographically smallest level name",
+    "S3": "same rule on s3_group levels of the main table; if the chosen level's rows intersect the S2 sealed rows, take the next candidate; if none remains, S3 is not sealed",
+    "S4": "minority preparation class sealed entirely (protocol section 3)",
+    "development": "main-table rows not sealed"
+  },
+  "parsing_rules": {
+    "size": "protocol rule (1); counts per cell kind written to the manifest",
+    "ratio": "protocol rule (2); rows with fewer than four numbers or a non-positive sum are dropped and counted",
+    "doi": "lower-cased, 'https://doi.org/' and 'http://dx.doi.org/' prefixes removed; empty -> '(no doi)'"
+  },
+  "c2_scale_column": null,
+  "hard_bound": "positivity_only",
+  "hard_bound_note": "no physical upper bound for a reported hydrodynamic diameter; bounded model = log-target MLP, unbounded = raw-scale MLP (H-B B1 only)",
+  "anchor": null,
+  "anchor_note": "no literature correlation applies to literature-reported LNP sizes; H-B B2 not evaluable",
+  "tolerance": {"relative": 0.10, "absolute_rule": "0.10 x development-set median target (computed by the custodian from development labels and written to the devdiag file)"},
+  "target_scale_rule": "development labels only: log target if max/min > 10 or skewness > 2, else raw scale",
+  "seeds": {"xgboost": 42, "random_reference": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "bootstrap": 0, "deep_ensemble_members": [0, 1, 2, 3, 4]}
+}

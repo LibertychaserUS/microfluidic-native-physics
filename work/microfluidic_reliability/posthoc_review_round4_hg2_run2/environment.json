@@ -1,0 +1,21 @@
+{
+  "python": "3.12.13",
+  "numpy": "2.5.1",
+  "pandas": "3.0.3",
+  "sklearn": "1.9.0",
+  "xgboost": "3.3.0",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "script_sha256": "a9fe1308be11ec8127f9e64f2625f0042efff9f7cf7802ba449e931f376d37a0",
+  "v1_program_sha256": "8565105334aeee81fc9277a2e0ae7578a9e2b90c270fc1a22ad85ad5c49f8a50",
+  "round3_script_sha256": "954ce3f5fd1f4a92269b3fc94915fd2a606e77e0eb507825cd079375822a0771",
+  "input_sha256": {
+    "h_R2A1_artifacts/development_labeled.csv": "fca77a0de5f50581776eea91647e295f5e0bdc246dbb3824c4989bb368f909a9",
+    "h_R2A1_artifacts/sealed_features.csv": "4616cd38319573225d017a9dcccd19dcd975459c4164533200493eb96774ff55",
+    "h_R2A1_reveal/sealed_scored_rows.csv": "1c398cc3b2ccdd853ec7ddc4bde44a3e5effdda820f04b1b8aef17e353626196",
+    "h_R2A1_run1/h_run_summary.json": "74a58f011b11b28f7b47899f341dd73d08cdab11cb03b429ab87e8947573e546",
+    "h_R2A2_artifacts/development_labeled.csv": "d98d372b836094b282504ac5e1d25a1dbe0ef81e7f299cc3b9758ea43a637b2c",
+    "h_R2A2_artifacts/sealed_features.csv": "ec232439f2aa4502c67fb1304d96bec3f4c88c96d8f864a6a9035e3db202bf63",
+    "h_R2A2_reveal/sealed_scored_rows.csv": "873a5c1f49ef936b470096b71117f5b291eab91a852d514314222f3dcfe42a1b",
+    "h_R2A2_run1/h_run_summary.json": "2a0770c62237564404d2fd6321c6f3384c49d7fe6901da3cb02482481911ca39"
+  }
+}

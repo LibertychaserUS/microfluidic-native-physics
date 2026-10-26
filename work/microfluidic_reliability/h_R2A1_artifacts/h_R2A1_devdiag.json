@@ -1,0 +1,22 @@
+{
+  "schema_version": "h-devdiag-v2",
+  "dataset_code": "R2A1",
+  "n_development_rows": 557,
+  "target": "target",
+  "target_unit": "as in file; the deposit does not state the unit of the diameter column (MAPE, tau and the shift multipliers are unit-free)",
+  "max_over_min": 8.912799981338347,
+  "skewness": 1.2160155944885593,
+  "rule": "development labels only: log target if max/min > 10 or skewness > 2, else raw scale",
+  "target_scale": "raw",
+  "development_median_target": 0.511576595799107,
+  "tau_relative": 0.1,
+  "tau_absolute": 0.0511576595799107,
+  "development_s2_counts": {
+    "fluid:0.00534|0.001|0.5|998|963": 301,
+    "fluid:0.00836|0.001|0.5|998|963": 256
+  },
+  "development_s3_counts": {
+    "device:9e-05|0.0002|0.002": 557
+  },
+  "development_s1_levels": 2
+}

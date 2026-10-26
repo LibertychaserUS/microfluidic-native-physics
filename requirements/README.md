@@ -6,6 +6,9 @@
   environment. The runs pin single-threaded numerics through environment
   variables set by the programs themselves.
 - `ci.txt`: the subset used by the CI unit-test job (no PyTorch).
+- `envB-xgboost133.txt`: the second environment of the reproduction-fidelity
+  protocol (Python 3.9, xgboost 1.3.3, x86_64), which `fidelity_driver.py`
+  drives through `--envb-python`; everything else runs in the main environment.
 - `environment-macos-arm64-py3.12.json`: consolidated environment record; each
   canonical run directory also carries its own `environment.json`.
 

@@ -1,0 +1,554 @@
+{
+  "schema_version": "h-combine-v1",
+  "datasets": [
+    "A1",
+    "R2A1",
+    "R2A2"
+  ],
+  "per_dataset": {
+    "A1": {
+      "reveal_utc": "2026-10-21T19:40:07Z",
+      "dev_ref": 21.81828164427344,
+      "tiers": [
+        "S2",
+        "S3"
+      ]
+    },
+    "R2A1": {
+      "reveal_utc": "2026-10-21T23:02:24Z",
+      "dev_ref": 13.623088114068114,
+      "tiers": [
+        "S2",
+        "S3"
+      ]
+    },
+    "R2A2": {
+      "reveal_utc": "2026-10-21T23:40:55Z",
+      "dev_ref": 40.86607918675253,
+      "tiers": [
+        "S2",
+        "S3",
+        "S4"
+      ]
+    }
+  },
+  "decisions": {
+    "H_A": {
+      "rule": "section 5 H-A",
+      "decision": "falsified (datasets: A1, R2A1, R2A2)",
+      "per_dataset": {
+        "A1": {
+          "per_tier": {
+            "S2": {
+              "r": 1.3191464470473964,
+              "ci": [
+                1.1454398440213451,
+                1.497973687845165
+              ],
+              "in_band": false,
+              "ci_disjoint": true
+            },
+            "S3": {
+              "r": 5.034217414304617,
+              "ci": [
+                4.359764449331147,
+                5.757395671069785
+              ],
+              "in_band": false,
+              "ci_disjoint": true
+            }
+          },
+          "S2_S3_dispersion": 3.816268789240608,
+          "S1_dispersion": null,
+          "dispersion_within_S1": null,
+          "S4_r": null,
+          "S4_lower_above_S2S3_upper": null
+        },
+        "R2A1": {
+          "per_tier": {
+            "S2": {
+              "r": 1.8555613615414315,
+              "ci": [
+                1.6472113082021338,
+                2.0955665690194003
+              ],
+              "in_band": false,
+              "ci_disjoint": true
+            },
+            "S3": {
+              "r": 4.953419766579374,
+              "ci": [
+                4.5735528526744496,
+                5.342836121789624
+              ],
+              "in_band": false,
+              "ci_disjoint": true
+            }
+          },
+          "S2_S3_dispersion": 2.669499305840538,
+          "S1_dispersion": 1.0390164633543166,
+          "dispersion_within_S1": false,
+          "S4_r": null,
+          "S4_lower_above_S2S3_upper": null
+        },
+        "R2A2": {
+          "per_tier": {
+            "S2": {
+              "r": 0.7985265462647756,
+              "ci": [
+                0.5840143091601622,
+                1.0268102309718277
+              ],
+              "in_band": false,
+              "ci_disjoint": true
+            },
+            "S3": {
+              "r": 0.8628413687123687,
+              "ci": [
+                0.477520259041997,
+                1.4258135853826701
+              ],
+              "in_band": false,
+              "ci_disjoint": true
+            }
+          },
+          "S2_S3_dispersion": 1.0805418714611745,
+          "S1_dispersion": 3.119432003533734,
+          "dispersion_within_S1": true,
+          "S4_r": 0.6207888235791654,
+          "S4_lower_above_S2S3_upper": false
+        }
+      }
+    },
+    "H_B": {
+      "B1_decision": "falsified (datasets failing: A1)",
+      "B1_per_dataset": {
+        "A1": {
+          "tiers": {
+            "S2": {
+              "bounded_mape": 15.635748303347563,
+              "unbounded_mape": 18.037325025968954,
+              "bounded_nonpositive": 0,
+              "unbounded_nonpositive": 0,
+              "bounded_lower_error_and_no_invalid": true
+            },
+            "S3": {
+              "bounded_mape": 1657105.9382595432,
+              "unbounded_mape": 1134.044881653856,
+              "bounded_nonpositive": 0,
+              "unbounded_nonpositive": 0,
+              "bounded_lower_error_and_no_invalid": false
+            }
+          },
+          "all_tiers_pass": false
+        },
+        "R2A1": {
+          "tiers": {
+            "S2": {
+              "bounded_mape": 26.03800981487545,
+              "unbounded_mape": 27.69108210528221,
+              "bounded_nonpositive": 0,
+              "unbounded_nonpositive": 0,
+              "bounded_lower_error_and_no_invalid": true
+            },
+            "S3": {
+              "bounded_mape": 97.46525659908376,
+              "unbounded_mape": 2286.4825188287637,
+              "bounded_nonpositive": 0,
+              "unbounded_nonpositive": 103,
+              "bounded_lower_error_and_no_invalid": true
+            }
+          },
+          "all_tiers_pass": true
+        },
+        "R2A2": {
+          "tiers": {
+            "S2": {
+              "bounded_mape": 31.810781167258252,
+              "unbounded_mape": 36.70000834955815,
+              "bounded_nonpositive": 0,
+              "unbounded_nonpositive": 0,
+              "bounded_lower_error_and_no_invalid": true
+            },
+            "S3": {
+              "bounded_mape": 29.561949814484244,
+              "unbounded_mape": 36.011523618911305,
+              "bounded_nonpositive": 0,
+              "unbounded_nonpositive": 0,
+              "bounded_lower_error_and_no_invalid": true
+            }
+          },
+          "all_tiers_pass": true
+        }
+      },
+      "B2_decision": "not evaluable: no anchor on any admitted dataset"
+    },
+    "H_C": {
+      "C1_decision": "not determinable (fewer than 2 datasets pass and no majority with median >= 0)",
+      "C1_per_dataset": {
+        "A1": {
+          "median_diff_pp": 0.27662346366854074,
+          "wilcoxon_p": 0.454833984375,
+          "n_pairs": 13,
+          "C1_sealed": {
+            "S2": {
+              "native_mape": 28.781508711722736,
+              "dimensionless_mape": 28.961471362836637,
+              "diff_native_minus_dimensionless_pp": -0.1799626511139003
+            },
+            "S3": {
+              "native_mape": 109.83797340380413,
+              "dimensionless_mape": 108.45403802059694,
+              "diff_native_minus_dimensionless_pp": 1.383935383207188
+            }
+          },
+          "C2": {
+            "n_pairs_equal_dimensionless_groups": 3,
+            "n_pairs_with_different_absolute_scale": 0,
+            "evaluable_rule": "requires >= 20 pairs with different absolute scale",
+            "evaluable": false
+          },
+          "wilcoxon_p_bh": 0.90966796875,
+          "C1_pass": false
+        },
+        "R2A1": {
+          "median_diff_pp": -1.5429217382419083,
+          "wilcoxon_p": null,
+          "n_pairs": 2,
+          "C1_sealed": {
+            "S2": {
+              "native_mape": 25.278475929339123,
+              "dimensionless_mape": 24.193557272693813,
+              "diff_native_minus_dimensionless_pp": 1.0849186566453106
+            },
+            "S3": {
+              "native_mape": 67.48087394607752,
+              "dimensionless_mape": 47.211682676843076,
+              "diff_native_minus_dimensionless_pp": 20.269191269234447
+            }
+          },
+          "C2": {
+            "scale_column": "inner",
+            "n_pairs_equal_dimensionless_groups": 306,
+            "n_pairs_with_different_absolute_scale": 0,
+            "evaluable_rule": "requires >= 20 pairs with different absolute scale",
+            "evaluable": false
+          },
+          "wilcoxon_p_bh": 1.0,
+          "C1_pass": false
+        }
+      },
+      "n_evaluable": 2,
+      "C2_decision": "not determinable on every dataset (fewer than 20 scale-different equal-group pairs)"
+    },
+    "H_D": {
+      "decision": "supported",
+      "tiers": [
+        {
+          "dataset": "A1",
+          "tier": "S2",
+          "A": 0.0,
+          "W": 0.0,
+          "A_minus_W": 0.0,
+          "mape": 28.781508711722736
+        },
+        {
+          "dataset": "A1",
+          "tier": "S3",
+          "A": 0.0,
+          "W": 0.0,
+          "A_minus_W": 0.0,
+          "mape": 109.83797340380413
+        },
+        {
+          "dataset": "R2A1",
+          "tier": "S2",
+          "A": 0.0,
+          "W": 0.0,
+          "A_minus_W": 0.0,
+          "mape": 25.278475929339123
+        },
+        {
+          "dataset": "R2A1",
+          "tier": "S3",
+          "A": 0.0,
+          "W": 0.0,
+          "A_minus_W": 0.0,
+          "mape": 67.48087394607752
+        },
+        {
+          "dataset": "R2A2",
+          "tier": "S2",
+          "A": 0.0,
+          "W": 0.0,
+          "A_minus_W": 0.0,
+          "mape": 32.632649072380325
+        },
+        {
+          "dataset": "R2A2",
+          "tier": "S3",
+          "A": 0.0,
+          "W": 0.0,
+          "A_minus_W": 0.0,
+          "mape": 35.260943699405594
+        }
+      ],
+      "spearman_A_vs_mape": {
+        "rho": null,
+        "p": null,
+        "note": "undefined when A is constant across tiers"
+      }
+    },
+    "H_E": {
+      "E1_decision": "supported",
+      "E1_per_dataset": {
+        "A1": {
+          "rho": {
+            "S2": -0.7714285714285715,
+            "S3": -0.14285714285714288
+          },
+          "E1_pass": true,
+          "E1_high": false
+        },
+        "R2A1": {
+          "rho": {
+            "S2": 0.3714285714285715,
+            "S3": -0.7142857142857143
+          },
+          "E1_pass": true,
+          "E1_high": false
+        },
+        "R2A2": {
+          "rho": {
+            "S2": -0.5428571428571429,
+            "S3": 0.2
+          },
+          "E1_pass": true,
+          "E1_high": false
+        }
+      },
+      "E2_per_model": {
+        "qrf": {
+          "datasets_passing": [
+            "A1",
+            "R2A1"
+          ],
+          "decision": "supported"
+        },
+        "gp": {
+          "datasets_passing": [
+            "A1"
+          ],
+          "decision": "falsified"
+        },
+        "deep_ensemble": {
+          "datasets_passing": [
+            "A1",
+            "R2A1"
+          ],
+          "decision": "supported"
+        }
+      },
+      "E2_rows": [
+        {
+          "dataset": "A1",
+          "tier": "S2",
+          "model": "qrf",
+          "width_ratio": 0.9009917038026072,
+          "rho": 0.49629287491600743,
+          "p": 0.0011259144516951472,
+          "n": 40,
+          "p_bh": 0.0018765240861585786,
+          "pass": false
+        },
+        {
+          "dataset": "A1",
+          "tier": "S2",
+          "model": "gp",
+          "width_ratio": 2.202732284715631,
+          "rho": 0.5345215759849906,
+          "p": 0.00038092989781043544,
+          "n": 40,
+          "p_bh": 0.0007142435583945664,
+          "pass": true
+        },
+        {
+          "dataset": "A1",
+          "tier": "S2",
+          "model": "deep_ensemble",
+          "width_ratio": 2.9419850929296656,
+          "rho": 0.3028142589118199,
+          "p": 0.05752536787072482,
+          "n": 40,
+          "p_bh": 0.0784436834600793,
+          "pass": false
+        },
+        {
+          "dataset": "A1",
+          "tier": "S3",
+          "model": "qrf",
+          "width_ratio": 1.144142445283247,
+          "rho": 0.35775787694369954,
+          "p": 1.9830969525915427e-07,
+          "n": 200,
+          "p_bh": 5.949290857774628e-07,
+          "pass": true
+        },
+        {
+          "dataset": "A1",
+          "tier": "S3",
+          "model": "gp",
+          "width_ratio": 6.076160633401985,
+          "rho": null,
+          "p": null,
+          "n": 200,
+          "p_bh": null,
+          "pass": false
+        },
+        {
+          "dataset": "A1",
+          "tier": "S3",
+          "model": "deep_ensemble",
+          "width_ratio": 109866.73070233315,
+          "rho": 0.5348277223745855,
+          "p": 3.413937063164772e-16,
+          "n": 200,
+          "p_bh": 2.560452797373579e-15,
+          "pass": true
+        },
+        {
+          "dataset": "R2A1",
+          "tier": "S2",
+          "model": "qrf",
+          "width_ratio": 1.342490022004327,
+          "rho": 0.5686859584494144,
+          "p": 1.9631887215947846e-15,
+          "n": 164,
+          "p_bh": 9.815943607973922e-15,
+          "pass": true
+        },
+        {
+          "dataset": "R2A1",
+          "tier": "S2",
+          "model": "gp",
+          "width_ratio": 0.9220437339944187,
+          "rho": -0.28922503502781816,
+          "p": 0.00017254195865574562,
+          "n": 164,
+          "p_bh": 0.00036973276854802633,
+          "pass": false
+        },
+        {
+          "dataset": "R2A1",
+          "tier": "S2",
+          "model": "deep_ensemble",
+          "width_ratio": 1.1676621185557041,
+          "rho": 0.46284874784051794,
+          "p": 4.3734350469182064e-10,
+          "n": 164,
+          "p_bh": 1.6400381425943273e-09,
+          "pass": true
+        },
+        {
+          "dataset": "R2A1",
+          "tier": "S3",
+          "model": "qrf",
+          "width_ratio": 0.2411929948723392,
+          "rho": 0.01322121528279767,
+          "p": 0.8914670319939696,
+          "n": 109,
+          "p_bh": 0.9531378937403507,
+          "pass": false
+        },
+        {
+          "dataset": "R2A1",
+          "tier": "S3",
+          "model": "gp",
+          "width_ratio": 11.74086125014456,
+          "rho": null,
+          "p": null,
+          "n": 109,
+          "p_bh": null,
+          "pass": false
+        },
+        {
+          "dataset": "R2A1",
+          "tier": "S3",
+          "model": "deep_ensemble",
+          "width_ratio": 168.72552426648207,
+          "rho": 0.9742007228245761,
+          "p": 5.269988543177443e-71,
+          "n": 109,
+          "p_bh": 7.904982814766164e-70,
+          "pass": true
+        },
+        {
+          "dataset": "R2A2",
+          "tier": "S2",
+          "model": "qrf",
+          "width_ratio": 0.8554935393619052,
+          "rho": 0.1740604682705555,
+          "p": 0.34071169267758783,
+          "n": 32,
+          "p_bh": 0.42588961584698476,
+          "pass": false
+        },
+        {
+          "dataset": "R2A2",
+          "tier": "S2",
+          "model": "gp",
+          "width_ratio": 2.3163960814886253,
+          "rho": null,
+          "p": null,
+          "n": 32,
+          "p_bh": null,
+          "pass": false
+        },
+        {
+          "dataset": "R2A2",
+          "tier": "S2",
+          "model": "deep_ensemble",
+          "width_ratio": 1.3233172660372385,
+          "rho": -0.010818741395328834,
+          "p": 0.9531378937403507,
+          "n": 32,
+          "p_bh": 0.9531378937403507,
+          "pass": false
+        },
+        {
+          "dataset": "R2A2",
+          "tier": "S3",
+          "model": "qrf",
+          "width_ratio": 0.6246529661578193,
+          "rho": 0.5284862965279942,
+          "p": 0.035330783326760554,
+          "n": 16,
+          "p_bh": 0.05299617499014083,
+          "pass": false
+        },
+        {
+          "dataset": "R2A2",
+          "tier": "S3",
+          "model": "gp",
+          "width_ratio": 0.6854181327420976,
+          "rho": 0.8168888183475567,
+          "p": 0.00011234483498145568,
+          "n": 16,
+          "p_bh": 0.0002808620874536392,
+          "pass": false
+        },
+        {
+          "dataset": "R2A2",
+          "tier": "S3",
+          "model": "deep_ensemble",
+          "width_ratio": 0.48019347778327104,
+          "rho": -0.13740643709727848,
+          "p": 0.6118324636560398,
+          "n": 16,
+          "p_bh": 0.7059605349877383,
+          "pass": false
+        }
+      ]
+    }
+  }
+}

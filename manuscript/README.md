@@ -1,7 +1,8 @@
 # Manuscript source
 
-`main.tex` / `references.bib` / `main.bbl` — *Reliability Audits for
-Machine-Learned Droplet-Microfluidic Design Surrogates* (English);
+`main.tex` / `references.bib` / `main.bbl` — *When Can a Learned Design Surrogate
+Be Trusted in a Self-Driving Microfluidics Laboratory? An Offline Closed-Loop
+Framework Built and Tested on Six Public Tables* (English);
 `main_zh.tex` / `main_zh.bbl` — paragraph-by-paragraph Chinese mirror (the
 English file is authoritative where they differ). Text and original figures are
 released under CC BY 4.0 (`../LICENSES/CC-BY-4.0.txt`).
@@ -34,8 +35,10 @@ the released part of each run pair.
 ## Figures
 
 `figures/` holds byte copies of frozen workspace figures
-(`data/copied_artifacts.sha256`) and the figures re-rendered from the same
-artifact data by `tools/render_figures.py` (`data/rerendered_figures.sha256`);
+(`data/copied_artifacts.sha256`), the figures re-rendered from the same
+artifact data by `tools/render_figures.py` (`data/rerendered_figures.sha256`)
+and the four closed-loop figures drawn by `../scaleup/w7/figures_closed_loop.py`
+(plotted values in `../scaleup/e_closed_loop/figures_closed_loop/values.json`);
 the figure of V2 paired differences is drawn by pgfplots from
 `data/paired_group_differences_v2p_vs_b1.csv`. Appendix C of the manuscript
 names the artifact file behind every table and figure.

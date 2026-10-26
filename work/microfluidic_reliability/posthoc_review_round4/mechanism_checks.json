@@ -1,0 +1,786 @@
+{
+  "schema_version": "posthoc-round4-mechanism-checks-v1",
+  "status": "retrospective; NOT part of any frozen protocol; recomputed from canonical artifacts and the frozen V2 code; no model refitted, no frozen file modified",
+  "anchor_map": {
+    "code_path": "src/native_physics_v2.py: semi_empirical_anchor -> _torch_anchor -> normalized_to_logit; validity mask re-applied in _network_output",
+    "order_of_operations": "clip(y, eps, 1-eps) -> (y - eps)/(1 - 2 eps) -> clip(., machine_eps, 1 - machine_eps) -> log(u/(1-u))",
+    "epsilon": 0.0001,
+    "inner_clip_machine_epsilon": 2.220446049250313e-16,
+    "saturated_logit_magnitude": 36.04365338911715,
+    "probe_logits": {
+      "y=1-2eps": 9.2100403269674,
+      "y=1-eps": 36.04365338911715,
+      "y=1-eps/2": 36.04365338911715,
+      "y=eps/2": -36.04365338911715,
+      "y=eps": -36.04365338911715,
+      "y=2eps": -9.210040326967182
+    },
+    "fallback_logit_for_invalid_anchor": 0.0,
+    "fallback_diameter_mm": 0.0975,
+    "n_rows": 466,
+    "n_anchor_invalid": 6,
+    "fraction_anchor_invalid": 0.012875536480686695,
+    "invalid_y_values_sorted": [
+      1.0296243494461539,
+      1.0296243494461539,
+      1.0296243494461539,
+      1.0404309819025641,
+      1.0409014003333332,
+      1.3844105073282051
+    ],
+    "invalid_y_min": 1.0296243494461539,
+    "invalid_y_max": 1.3844105073282051,
+    "valid_y_min": 0.3755530104333333,
+    "valid_y_max": 0.9942874124307692,
+    "n_valid_within_eps_of_lower_bound": 0,
+    "n_valid_within_eps_of_upper_bound": 0,
+    "anchor_logit_min": -0.5085729621274914,
+    "anchor_logit_max": 5.176913877095177,
+    "note": "saturation (|logit| = 36.04) is reachable only for anchor-valid rows within eps of a bound; no such row exists in the 466-row table, so the two-stage clip is a recorded limitation of the frozen code, not an exercised path. The validity fallback to logit 0 (d = D/2) is a discontinuous guard: as y_phys crosses 1 the anchor term jumps from the saturated value to 0."
+  },
+  "device_type_quartiles": {
+    "D1_de_to_se": {
+      "xgboost": [
+        {
+          "bin": 1,
+          "observed_range_um": [
+            28.11,
+            63.275000000000006
+          ],
+          "n": 119,
+          "mape_percent": 104.20161019069421,
+          "mean_signed_relative_error": 1.042016101906942,
+          "fraction_over_predicted": 1.0,
+          "median_predicted_over_observed": 2.03489086754039
+        },
+        {
+          "bin": 2,
+          "observed_range_um": [
+            63.275000000000006,
+            85.71000000000001
+          ],
+          "n": 118,
+          "mape_percent": 77.90116686992684,
+          "mean_signed_relative_error": 0.7783412295083434,
+          "fraction_over_predicted": 0.9915254237288136,
+          "median_predicted_over_observed": 1.719955937417904
+        },
+        {
+          "bin": 3,
+          "observed_range_um": [
+            85.71000000000001,
+            118.27
+          ],
+          "n": 118,
+          "mape_percent": 61.4602402359922,
+          "mean_signed_relative_error": 0.6050079711151384,
+          "fraction_over_predicted": 0.923728813559322,
+          "median_predicted_over_observed": 1.6476319269463682
+        },
+        {
+          "bin": 4,
+          "observed_range_um": [
+            118.27,
+            245.1
+          ],
+          "n": 119,
+          "mape_percent": 33.15398994318205,
+          "mean_signed_relative_error": 0.30122136584462555,
+          "fraction_over_predicted": 0.7983193277310925,
+          "median_predicted_over_observed": 1.3125515685405535
+        }
+      ],
+      "random_forest": [
+        {
+          "bin": 1,
+          "observed_range_um": [
+            28.11,
+            63.275000000000006
+          ],
+          "n": 119,
+          "mape_percent": 110.44271850644864,
+          "mean_signed_relative_error": 1.1044271850644864,
+          "fraction_over_predicted": 1.0,
+          "median_predicted_over_observed": 2.085918957941828
+        },
+        {
+          "bin": 2,
+          "observed_range_um": [
+            63.275000000000006,
+            85.71000000000001
+          ],
+          "n": 118,
+          "mape_percent": 83.09288403894934,
+          "mean_signed_relative_error": 0.8301986469717924,
+          "fraction_over_predicted": 0.9915254237288136,
+          "median_predicted_over_observed": 1.7869995333149893
+        },
+        {
+          "bin": 3,
+          "observed_range_um": [
+            85.71000000000001,
+            118.27
+          ],
+          "n": 118,
+          "mape_percent": 65.66319513511326,
+          "mean_signed_relative_error": 0.649139290508291,
+          "fraction_over_predicted": 0.940677966101695,
+          "median_predicted_over_observed": 1.6793116487275435
+        },
+        {
+          "bin": 4,
+          "observed_range_um": [
+            118.27,
+            245.1
+          ],
+          "n": 119,
+          "mape_percent": 35.50238281047594,
+          "mean_signed_relative_error": 0.3300118457170601,
+          "fraction_over_predicted": 0.8319327731092437,
+          "median_predicted_over_observed": 1.3252990475867663
+        }
+      ],
+      "mlp": [
+        {
+          "bin": 1,
+          "observed_range_um": [
+            28.11,
+            63.275000000000006
+          ],
+          "n": 119,
+          "mape_percent": 4451.944266692042,
+          "mean_signed_relative_error": 44.51944266692042,
+          "fraction_over_predicted": 1.0,
+          "median_predicted_over_observed": 45.30333944651811
+        },
+        {
+          "bin": 2,
+          "observed_range_um": [
+            63.275000000000006,
+            85.71000000000001
+          ],
+          "n": 118,
+          "mape_percent": 3853.27489117235,
+          "mean_signed_relative_error": 38.5327489117235,
+          "fraction_over_predicted": 1.0,
+          "median_predicted_over_observed": 39.04952674319534
+        },
+        {
+          "bin": 3,
+          "observed_range_um": [
+            85.71000000000001,
+            118.27
+          ],
+          "n": 118,
+          "mape_percent": 3437.0600002738634,
+          "mean_signed_relative_error": 34.370600002738634,
+          "fraction_over_predicted": 1.0,
+          "median_predicted_over_observed": 36.54587726275014
+        },
+        {
+          "bin": 4,
+          "observed_range_um": [
+            118.27,
+            245.1
+          ],
+          "n": 119,
+          "mape_percent": 2628.5742238802713,
+          "mean_signed_relative_error": 26.285742238802715,
+          "fraction_over_predicted": 1.0,
+          "median_predicted_over_observed": 28.141667921255916
+        }
+      ]
+    },
+    "D1_se_to_de": {
+      "xgboost": [
+        {
+          "bin": 1,
+          "observed_range_um": [
+            15.5726,
+            27.19825
+          ],
+          "n": 99,
+          "mape_percent": 6.433754333753843,
+          "mean_signed_relative_error": 0.030321350502672238,
+          "fraction_over_predicted": 0.6464646464646465,
+          "median_predicted_over_observed": 1.0175481969340352
+        },
+        {
+          "bin": 2,
+          "observed_range_um": [
+            27.19825,
+            35.1185
+          ],
+          "n": 98,
+          "mape_percent": 12.777099745453702,
+          "mean_signed_relative_error": 0.007890369423965074,
+          "fraction_over_predicted": 0.5510204081632653,
+          "median_predicted_over_observed": 1.0351866170937964
+        },
+        {
+          "bin": 3,
+          "observed_range_um": [
+            35.1185,
+            40.551249999999996
+          ],
+          "n": 98,
+          "mape_percent": 33.024809376735,
+          "mean_signed_relative_error": -0.33024809376735,
+          "fraction_over_predicted": 0.0,
+          "median_predicted_over_observed": 0.6490493703198972
+        },
+        {
+          "bin": 4,
+          "observed_range_um": [
+            40.551249999999996,
+            54.2091
+          ],
+          "n": 99,
+          "mape_percent": 36.24585269962196,
+          "mean_signed_relative_error": -0.32817446021681934,
+          "fraction_over_predicted": 0.09090909090909091,
+          "median_predicted_over_observed": 0.6335128671651311
+        }
+      ],
+      "random_forest": [
+        {
+          "bin": 1,
+          "observed_range_um": [
+            15.5726,
+            27.19825
+          ],
+          "n": 99,
+          "mape_percent": 11.61430362431441,
+          "mean_signed_relative_error": 0.07694656607042767,
+          "fraction_over_predicted": 0.8686868686868687,
+          "median_predicted_over_observed": 1.1030765783214078
+        },
+        {
+          "bin": 2,
+          "observed_range_um": [
+            27.19825,
+            35.1185
+          ],
+          "n": 98,
+          "mape_percent": 7.474288939976603,
+          "mean_signed_relative_error": -0.00390161433192664,
+          "fraction_over_predicted": 0.6428571428571429,
+          "median_predicted_over_observed": 1.0134748975654455
+        },
+        {
+          "bin": 3,
+          "observed_range_um": [
+            35.1185,
+            40.551249999999996
+          ],
+          "n": 98,
+          "mape_percent": 30.82693750516496,
+          "mean_signed_relative_error": -0.3082693750516496,
+          "fraction_over_predicted": 0.0,
+          "median_predicted_over_observed": 0.6819366243109362
+        },
+        {
+          "bin": 4,
+          "observed_range_um": [
+            40.551249999999996,
+            54.2091
+          ],
+          "n": 99,
+          "mape_percent": 34.789413988191086,
+          "mean_signed_relative_error": -0.34789413988191087,
+          "fraction_over_predicted": 0.0,
+          "median_predicted_over_observed": 0.6332294224164933
+        }
+      ],
+      "mlp": [
+        {
+          "bin": 1,
+          "observed_range_um": [
+            15.5726,
+            27.19825
+          ],
+          "n": 99,
+          "mape_percent": 50.06510139899943,
+          "mean_signed_relative_error": 0.5006510139899943,
+          "fraction_over_predicted": 1.0,
+          "median_predicted_over_observed": 1.2809097651897183
+        },
+        {
+          "bin": 2,
+          "observed_range_um": [
+            27.19825,
+            35.1185
+          ],
+          "n": 98,
+          "mape_percent": 57.900502257654,
+          "mean_signed_relative_error": 0.5735843388918287,
+          "fraction_over_predicted": 0.9693877551020408,
+          "median_predicted_over_observed": 1.4912563664077287
+        },
+        {
+          "bin": 3,
+          "observed_range_um": [
+            35.1185,
+            40.551249999999996
+          ],
+          "n": 98,
+          "mape_percent": 644.5050698666382,
+          "mean_signed_relative_error": 6.442836367466789,
+          "fraction_over_predicted": 0.9897959183673469,
+          "median_predicted_over_observed": 5.1809132224416015
+        },
+        {
+          "bin": 4,
+          "observed_range_um": [
+            40.551249999999996,
+            54.2091
+          ],
+          "n": 99,
+          "mape_percent": 314.61784266778125,
+          "mean_signed_relative_error": 3.1447942102201907,
+          "fraction_over_predicted": 0.98989898989899,
+          "median_predicted_over_observed": 3.761050983105013
+        }
+      ]
+    }
+  },
+  "prediction_ranges": {
+    "D1_de_to_se": {
+      "test_device_type": "SE",
+      "training_device_type": "DE",
+      "training_response_range_all_rows": [
+        0.8394666666666667,
+        1.6020444444444444
+      ],
+      "test_response_range_all_rows": [
+        0.34894444444444445,
+        1.5025333333333333
+      ],
+      "fraction_test_rows_with_response_below_training_floor": 0.8227848101265823,
+      "fraction_test_rows_with_response_above_training_ceiling": 0.0,
+      "note": "training rows of one direction are the test rows of the other; the fit partition is a subset of these rows, so this range is an outer bound on the fit-partition response range",
+      "models": {
+        "xgboost": {
+          "n_test_rows": 474,
+          "pred_um_min": 70.9727704525,
+          "pred_um_max": 260.493665934,
+          "actual_um_min": 28.11,
+          "actual_um_max": 245.1,
+          "response_pred_min": 0.9417890906333333,
+          "response_pred_max": 1.2915620803833332,
+          "fraction_response_pred_within_training_response_range": 1.0,
+          "fraction_over_predicted": 0.9282700421940928
+        },
+        "random_forest": {
+          "n_test_rows": 474,
+          "pred_um_min": 73.5162524712,
+          "pred_um_max": 265.759612065,
+          "actual_um_min": 28.11,
+          "actual_um_max": 245.1,
+          "response_pred_min": 0.9802166996133334,
+          "response_pred_max": 1.28577962376,
+          "fraction_response_pred_within_training_response_range": 1.0,
+          "fraction_over_predicted": 0.9409282700421941
+        },
+        "mlp": {
+          "n_test_rows": 474,
+          "pred_um_min": 1615.18434216,
+          "pred_um_max": 5646.6256684,
+          "actual_um_min": 28.11,
+          "actual_um_max": 245.1,
+          "response_pred_min": 21.08907224836,
+          "response_pred_max": 22.430496583022222,
+          "fraction_response_pred_within_training_response_range": 0.0,
+          "fraction_over_predicted": 1.0
+        }
+      }
+    },
+    "D1_se_to_de": {
+      "test_device_type": "DE",
+      "training_device_type": "SE",
+      "training_response_range_all_rows": [
+        0.34894444444444445,
+        1.5025333333333333
+      ],
+      "test_response_range_all_rows": [
+        0.8394666666666667,
+        1.6020444444444444
+      ],
+      "fraction_test_rows_with_response_below_training_floor": 0.0,
+      "fraction_test_rows_with_response_above_training_ceiling": 0.012690355329949238,
+      "note": "training rows of one direction are the test rows of the other; the fit partition is a subset of these rows, so this range is an outer bound on the fit-partition response range",
+      "models": {
+        "xgboost": {
+          "n_test_rows": 394,
+          "pred_um_min": 12.8593826294,
+          "pred_um_max": 52.4130249023,
+          "actual_um_min": 15.5726,
+          "actual_um_max": 54.2091,
+          "response_pred_min": 0.4887784719466666,
+          "response_pred_max": 1.5006184577955557,
+          "fraction_response_pred_within_training_response_range": 1.0,
+          "fraction_over_predicted": 0.3223350253807107
+        },
+        "random_forest": {
+          "n_test_rows": 394,
+          "pred_um_min": 13.1428141138,
+          "pred_um_max": 39.4284423415,
+          "actual_um_min": 15.5726,
+          "actual_um_max": 54.2091,
+          "response_pred_min": 0.47545075344,
+          "response_pred_max": 1.3795500562533332,
+          "fraction_response_pred_within_training_response_range": 1.0,
+          "fraction_over_predicted": 0.37817258883248733
+        },
+        "mlp": {
+          "n_test_rows": 394,
+          "pred_um_min": 26.952419988,
+          "pred_um_max": 673.61068355,
+          "actual_um_min": 15.5726,
+          "actual_um_max": 54.2091,
+          "response_pred_min": 1.1978853327999999,
+          "response_pred_max": 14.96912630111111,
+          "fraction_response_pred_within_training_response_range": 0.18527918781725888,
+          "fraction_over_predicted": 0.9873096446700508
+        }
+      }
+    }
+  },
+  "within_context_retention": {
+    "rules": {
+      "knn_5_q95": {
+        "n_contexts": 8,
+        "n_contexts_all_or_none": 8,
+        "n_rows_retained": 32,
+        "n_rows": 64,
+        "per_context": [
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_02",
+            "n": 6,
+            "retention_rate": 0.0
+          },
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_03",
+            "n": 6,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_04",
+            "n": 6,
+            "retention_rate": 0.0
+          },
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_07",
+            "n": 6,
+            "retention_rate": 0.0
+          },
+          {
+            "source": "Lashkaripour et al",
+            "source_context": "context_01",
+            "n": 10,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Lashkaripour et al",
+            "source_context": "context_06",
+            "n": 10,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Mazutis et al",
+            "source_context": "context_05",
+            "n": 6,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Roumpea et al",
+            "source_context": "context_00",
+            "n": 14,
+            "retention_rate": 0.0
+          }
+        ]
+      },
+      "mahalanobis_oas_q95": {
+        "n_contexts": 8,
+        "n_contexts_all_or_none": 8,
+        "n_rows_retained": 44,
+        "n_rows": 64,
+        "per_context": [
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_02",
+            "n": 6,
+            "retention_rate": 0.0
+          },
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_03",
+            "n": 6,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_04",
+            "n": 6,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_07",
+            "n": 6,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Lashkaripour et al",
+            "source_context": "context_01",
+            "n": 10,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Lashkaripour et al",
+            "source_context": "context_06",
+            "n": 10,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Mazutis et al",
+            "source_context": "context_05",
+            "n": 6,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Roumpea et al",
+            "source_context": "context_00",
+            "n": 14,
+            "retention_rate": 0.0
+          }
+        ]
+      },
+      "isolation_forest_q95": {
+        "n_contexts": 8,
+        "n_contexts_all_or_none": 8,
+        "n_rows_retained": 58,
+        "n_rows": 64,
+        "per_context": [
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_02",
+            "n": 6,
+            "retention_rate": 0.0
+          },
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_03",
+            "n": 6,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_04",
+            "n": 6,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_07",
+            "n": 6,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Lashkaripour et al",
+            "source_context": "context_01",
+            "n": 10,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Lashkaripour et al",
+            "source_context": "context_06",
+            "n": 10,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Mazutis et al",
+            "source_context": "context_05",
+            "n": 6,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Roumpea et al",
+            "source_context": "context_00",
+            "n": 14,
+            "retention_rate": 1.0
+          }
+        ]
+      },
+      "strict_minmax": {
+        "n_contexts": 8,
+        "n_contexts_all_or_none": 8,
+        "n_rows_retained": 32,
+        "n_rows": 64,
+        "per_context": [
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_02",
+            "n": 6,
+            "retention_rate": 0.0
+          },
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_03",
+            "n": 6,
+            "retention_rate": 0.0
+          },
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_04",
+            "n": 6,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Galogahi et al",
+            "source_context": "context_07",
+            "n": 6,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Lashkaripour et al",
+            "source_context": "context_01",
+            "n": 10,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Lashkaripour et al",
+            "source_context": "context_06",
+            "n": 10,
+            "retention_rate": 1.0
+          },
+          {
+            "source": "Mazutis et al",
+            "source_context": "context_05",
+            "n": 6,
+            "retention_rate": 0.0
+          },
+          {
+            "source": "Roumpea et al",
+            "source_context": "context_00",
+            "n": 14,
+            "retention_rate": 0.0
+          }
+        ]
+      }
+    },
+    "knn_5_q95_permutation_controls": {
+      "row_budget_global": {
+        "statistic": "retained_relative_risk",
+        "observed_value": 0.0961144429832732,
+        "random_mean_risk": 0.1126118726804802,
+        "one_sided_fraction_as_good_or_better": 0.0196601132955681,
+        "permutations": 3000,
+        "bh_adjusted_p_within_family": 0.036498944796179
+      },
+      "row_budget_source_stratified": {
+        "statistic": "retained_relative_risk",
+        "observed_value": 0.0961144429832732,
+        "random_mean_risk": 0.1069653320797315,
+        "one_sided_fraction_as_good_or_better": 0.0013328890369876,
+        "permutations": 3000,
+        "bh_adjusted_p_within_family": 0.0039246177200192
+      },
+      "within_source_physical_cluster_mask_permutation": {
+        "statistic": "retained_relative_risk",
+        "observed_value": 0.0961144429832732,
+        "random_mean_risk": 0.1070263241540596,
+        "one_sided_fraction_as_good_or_better": 0.0029990003332222,
+        "permutations": 3000,
+        "bh_adjusted_p_within_family": 0.0075689056028942
+      },
+      "within_source_context_physical_cluster_mask_permutation": {
+        "statistic": "retained_relative_risk",
+        "observed_value": 0.0961144429832732,
+        "random_mean_risk": 0.0961144429832732,
+        "one_sided_fraction_as_good_or_better": 1.0,
+        "permutations": 3000,
+        "bh_adjusted_p_within_family": 1.0
+      }
+    },
+    "within_source_context_statistic_invariant": true,
+    "note": "when every source--geometry context is retained all-or-none, permuting scores within contexts leaves the retained row set unchanged, so the permutation statistic equals its observed value in every draw and the one-sided fraction is 1.0 by construction"
+  },
+  "v2_interval_widths": {
+    "note": "LOCO out-of-fold heuristic intervals of the frozen V2 suite on held-out rows, all seeds pooled; models without an interval are omitted. Context: the locked retrieval rule answers a query only if the point prediction lies within the tolerance and the interval lies entirely inside the tolerance band.",
+    "tolerance_band_full_width_um_absolute_rule": 20.0,
+    "models": {
+      "B3": {
+        "n_rows_all_seeds": 2330,
+        "mean_width_um": 83.97309255061472,
+        "median_width_um": 95.6508190109
+      },
+      "V2-H": {
+        "n_rows_all_seeds": 2330,
+        "mean_width_um": 72.7169108050055,
+        "median_width_um": 80.35912918300002
+      },
+      "V2-M": {
+        "n_rows_all_seeds": 2330,
+        "mean_width_um": 67.54423760800648,
+        "median_width_um": 75.56947883835001
+      },
+      "V2-P": {
+        "n_rows_all_seeds": 2330,
+        "mean_width_um": 67.51565051069815,
+        "median_width_um": 75.57377109175
+      }
+    }
+  },
+  "w4_native_widths": {
+    "note": "native (uncalibrated) interval widths of the W4 families on the D1 random reference test rows (15 repeats pooled) and on the 64 external rows",
+    "models": {
+      "deep_ensemble": {
+        "D1_external": {
+          "n_rows_all_repeats": 64,
+          "mean_native_width_um": 41.213788255325,
+          "median_native_width_um": 23.7009268184,
+          "mean_uq_abs": 0.11070774581229217
+        },
+        "D1_random": {
+          "n_rows_all_repeats": 2610,
+          "mean_native_width_um": 15.971876974341702,
+          "median_native_width_um": 8.230217047849997,
+          "mean_uq_abs": 0.07032075254981121
+        }
+      },
+      "gp": {
+        "D1_external": {
+          "n_rows_all_repeats": 64,
+          "mean_native_width_um": 116.91846847552968,
+          "median_native_width_um": 99.0297499232,
+          "mean_uq_abs": 0.2904588228654156
+        },
+        "D1_random": {
+          "n_rows_all_repeats": 2610,
+          "mean_native_width_um": 24.82657628797312,
+          "median_native_width_um": 21.928726499499994,
+          "mean_uq_abs": 0.09479969310636312
+        }
+      },
+      "qrf": {
+        "D1_external": {
+          "n_rows_all_repeats": 64,
+          "mean_native_width_um": 39.23300251221093,
+          "median_native_width_um": 27.485571936749995,
+          "mean_uq_abs": 0.3896019756944219
+        },
+        "D1_random": {
+          "n_rows_all_repeats": 2610,
+          "mean_native_width_um": 27.52485455664241,
+          "median_native_width_um": 19.8567,
+          "mean_uq_abs": 0.26729575418535223
+        }
+      }
+    }
+  }
+}

@@ -76,6 +76,22 @@ manuscript/*.synctex.gz
 manuscript/*.toc
 manuscript/*.pdf
 
+# Workspace-only artifacts of the closed-loop, R10 and fidelity runs: per-loop tables,
+# per-row sealed inputs/predictions, third-party table copies, intermediate task files,
+# superseded attempts. Their digests are in each run's artifact_hashes.json.
+work/microfluidic_reliability/**/loops*.csv
+work/microfluidic_reliability/**/budget.csv
+work/microfluidic_reliability/**/sealed_features.csv
+work/microfluidic_reliability/**/sealed_labels.csv
+work/microfluidic_reliability/**/sealed_prediction_bundle.csv
+work/microfluidic_reliability/**/sealed_scored_rows.csv
+work/microfluidic_reliability/**/development_labeled.csv
+work/microfluidic_reliability/fidelity_run*/table_*.csv
+work/microfluidic_reliability/fidelity_run*/predictions_env*.csv
+work/microfluidic_reliability/fidelity_run*/splits_manifest.csv
+work/microfluidic_reliability/fidelity_run*/worker_tasks_phase*.json
+work/microfluidic_reliability/*_attempt*/
+
 # Tables that the custodian programs regenerate from the public datasets
 # (re-cut third-party rows and sealed labels): never committed.
 work/microfluidic_reliability/blind_artifacts/development_labeled.csv

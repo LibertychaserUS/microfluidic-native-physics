@@ -1,0 +1,31 @@
+{
+  "schema_version": "h-devdiag-v1",
+  "dataset_code": "A1",
+  "n_development_rows": 661,
+  "target": "L_um",
+  "max_over_min": 13.488254676870746,
+  "skewness": 0.8742699738102531,
+  "rule": "development labels only: log target if max/min > 10 or skewness > 2, else raw scale",
+  "target_scale": "log",
+  "development_median_L_um": 330.8928,
+  "tau_relative": 0.1,
+  "tau_absolute_um": 33.08928,
+  "development_fluid_family_counts": {
+    "cont190_A:No Surfactant": 61,
+    "cont190_A:Span0pt03": 48,
+    "cont190_A:Span0pt3": 61,
+    "cont190_A:Span1": 57,
+    "cont190_A:Tween 0pt03": 57,
+    "cont190_A:Tween 0pt3": 56,
+    "cont190_A:Tween 1": 57,
+    "cont190_B:No Surfactant": 54,
+    "cont190_B:Span0pt03": 56,
+    "cont190_B:Span0pt3": 28,
+    "cont190_B:Span1": 33,
+    "cont190_B:Tween 0pt03": 52,
+    "cont190_B:Tween 0pt3": 41
+  },
+  "development_device_counts": {
+    "190x195": 661
+  }
+}

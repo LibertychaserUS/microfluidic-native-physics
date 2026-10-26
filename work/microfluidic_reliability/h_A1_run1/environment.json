@@ -1,0 +1,14 @@
+{
+  "python": "3.12.13",
+  "numpy": "2.5.1",
+  "pandas": "3.0.3",
+  "sklearn": "1.9.0",
+  "xgboost": "3.3.0",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "script_sha256": "270c0da20065c1d39339d8fd028779a84c21a308c367895da4cb0e4d5b29ce7d",
+  "inputs": {
+    "development_labeled": "8b439565f7bac2e9e06f030a1f6167e4de8b56488eccb3a1ea47603cf11d949e",
+    "sealed_features": "feb9c268f79795b7ec35949165a4459bcd39fc902c1bd217390a2cd949482068",
+    "devdiag": "81d478375964200db676a455329cd3036fe8e312a4c6af4101ad1a218edcfedb"
+  }
+}

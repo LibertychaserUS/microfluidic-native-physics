@@ -1,0 +1,102 @@
+{
+  "k_values": [
+    2,
+    5,
+    10
+  ],
+  "lambda": 0.1,
+  "min_eval_rows": 10,
+  "min_tier_rows": 12,
+  "n_draws": 100,
+  "n_tiers": 106,
+  "protocol": "H_J_FEWSHOT_RULE_PROTOCOL_v1.md",
+  "protocol_sha256": "8641c20538cdec2585e1b352b0350f0555b3d8b3a88d56faaa38fc67029f47c5",
+  "runner_sha256": "519938f6238a2b1c5884d8c6e818c86bca4747d2d54fa04a0a3d1bcb63ff79fe",
+  "schema_version": "h-fewshot-rule-run-v1",
+  "smoke": false,
+  "tables": {
+    "A1": {
+      "constructor": "h_run2.make_point('xgboost', 42): 100 trees, depth 3, lr 0.3",
+      "log_target": true,
+      "n_dropped_nonpositive": 0,
+      "n_features": 7,
+      "n_rows": 901,
+      "sources": {
+        "development_labeled.csv": "8b439565f7bac2e9e06f030a1f6167e4de8b56488eccb3a1ea47603cf11d949e",
+        "sealed_features.csv": "feb9c268f79795b7ec35949165a4459bcd39fc902c1bd217390a2cd949482068",
+        "sealed_labels.csv": "0dfdd77fec3acd28723a8b32d7c8847e6909221b23f68eb7b02a45583172597d"
+      }
+    },
+    "D1": {
+      "constructor": "dafd_reproduction.build_model(42): 100 trees, depth 6, lr 0.3",
+      "log_target": false,
+      "n_dropped_nonpositive": 0,
+      "n_features": 8,
+      "n_rows": 868,
+      "sources": {
+        "Comprehensive_normalized.xlsx": "aebb0136ff812f7233c8fd57ebc0f27f1b935736e8a9c1d4fdc20585f06b9c06",
+        "Generalizability_data_normalized.xlsx": "e90996da3e866e64922dc3b8aaef4b092ee6845fe95aac356c73e90ed108b303"
+      }
+    },
+    "D2": {
+      "constructor": "native_physics_v2.make_xgb(42): 100 trees, depth 3, lr 0.3 (B1, four inputs, raw mm)",
+      "log_target": false,
+      "n_dropped_nonpositive": 0,
+      "n_features": 4,
+      "n_rows": 468,
+      "sources": {
+        "matTestDataSet.mat": "55f202bd19433331c86ddc65507e834036d294f7f9b4db2275f21ad91f6729da",
+        "matTrainingDataSet.mat": "7fab0693a7065198468a5d654226f5e2164985e334ed105f91355bdd49fb1a17"
+      }
+    },
+    "R2A1": {
+      "constructor": "h_run2.make_point('xgboost', 42): 100 trees, depth 3, lr 0.3",
+      "log_target": false,
+      "n_dropped_nonpositive": 0,
+      "n_features": 9,
+      "n_rows": 830,
+      "sources": {
+        "development_labeled.csv": "fca77a0de5f50581776eea91647e295f5e0bdc246dbb3824c4989bb368f909a9",
+        "sealed_features.csv": "4616cd38319573225d017a9dcccd19dcd975459c4164533200493eb96774ff55",
+        "sealed_labels.csv": "ecafd931d4dce256ac489a43a48bd2e442e4c95c44eecf0655ff53127aa3b497"
+      }
+    },
+    "R2A2": {
+      "constructor": "h_run2.make_point('xgboost', 42): 100 trees, depth 3, lr 0.3",
+      "log_target": true,
+      "n_dropped_nonpositive": 0,
+      "n_features": 118,
+      "n_rows": 919,
+      "sources": {
+        "development_labeled.csv": "d98d372b836094b282504ac5e1d25a1dbe0ef81e7f299cc3b9758ea43a637b2c",
+        "sealed_features.csv": "ec232439f2aa4502c67fb1304d96bec3f4c88c96d8f864a6a9035e3db202bf63",
+        "sealed_labels.csv": "47d97e4a2aff243a1695b4c30e519927f9b350a682e26b1399370e91ad721ca7"
+      }
+    }
+  },
+  "tiers_per_code": {
+    "A1-device": 2,
+    "A1-fluid": 22,
+    "D1-geo": 26,
+    "D1-pool": 3,
+    "D1-type": 2,
+    "D2-chem": 6,
+    "R2A1-device": 2,
+    "R2A1-fluid": 5,
+    "R2A2-lipid": 11,
+    "R2A2-paper": 25,
+    "R2A2-prep": 2
+  },
+  "warm_params": {
+    "colsample_bytree": 1.0,
+    "learning_rate": 0.1,
+    "max_depth": 2,
+    "min_child_weight": 1,
+    "n_estimators": 100,
+    "n_jobs": 1,
+    "objective": "reg:squarederror",
+    "random_state": 42,
+    "reg_lambda": 1.0,
+    "subsample": 1.0
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "budget": 20,
+  "e0_sha256": {
+    "exclusions.json": "37b56f780bd71829bde81ea790f1fa65baa5bcbd6ee7d0c69778b4220cf8e8cb",
+    "tiers_e0.csv": "cb4ba684db971e331826653aefa92887ae397b450f352ec65519cddd3245ab8c"
+  },
+  "e1_protocol_sha256": "022aa19d3acc3bf9afcfac99ff53bf244ed54254adcb759cf7010dd120d6fb5f",
+  "frozen_runner": "closed_loop.py",
+  "frozen_runner_sha256": "645b73b2a0afa82154ee54b4018e33973427ea1640358878395afebc5ee13776",
+  "n_loops": 22470,
+  "n_tiers": 107,
+  "policies": {
+    "CEIL": [
+      0,
+      "random",
+      "ceiling",
+      "greedy"
+    ],
+    "P0": [
+      0,
+      "random",
+      "none",
+      "greedy"
+    ],
+    "P1": [
+      2,
+      "random",
+      "warm",
+      "greedy"
+    ],
+    "P10": [
+      5,
+      "farthest",
+      "warm",
+      "portfolio"
+    ],
+    "P11": [
+      2,
+      "uncertainty",
+      "warm",
+      "portfolio"
+    ],
+    "P12": [
+      2,
+      "random",
+      "preview",
+      "greedy"
+    ],
+    "P2": [
+      0,
+      "random",
+      "warm",
+      "greedy"
+    ],
+    "P3": [
+      5,
+      "random",
+      "warm",
+      "greedy"
+    ],
+    "P4": [
+      2,
+      "farthest",
+      "warm",
+      "greedy"
+    ],
+    "P5": [
+      2,
+      "kmeans",
+      "warm",
+      "greedy"
+    ],
+    "P6": [
+      2,
+      "uncertainty",
+      "warm",
+      "greedy"
+    ],
+    "P7": [
+      2,
+      "random",
+      "affine",
+      "greedy"
+    ],
+    "P8": [
+      5,
+      "random",
+      "scratch",
+      "greedy"
+    ],
+    "P9": [
+      2,
+      "random",
+      "warm",
+      "portfolio"
+    ]
+  },
+  "protocol": "E6_NEGATIVE_CONTROLS_PROTOCOL_v1.md",
+  "protocol_sha256": "d28896aea17d28d427857c8db862209cffb50616a0446d4a9e9ae910092b8a06",
+  "schema_version": "closed-loop-e6-run-v1",
+  "shuffle_seed": 0,
+  "shuffle_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "smoke": false,
+  "stage": "e6",
+  "tau": 0.1,
+  "wrapper_sha256": "8d76252092eab9b903c836dac05149f8d450871d365eca9ae4f8470b7932c6fc"
+}

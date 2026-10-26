@@ -1,6 +1,6 @@
 {
   "schema_version": "appendix-d-hash-registry-v1",
-  "description": "SHA-256 registry for the preprint 'Reliability Audits for Machine-Learned Droplet-Microfluidic Design Surrogates'. Section 'appendix_d' lists the 24 digests of the manuscript's Appendix D in order; 'supplementary' lists further frozen digests recorded in the artifact manifests. status: released = the file in release_path hashes to sha256; released_superset / released_redacted = the released file differs from the frozen bytes for the stated reason (released_sha256 gives the digest of the released file); not_redistributed_* = the bytes are not in this repository (third-party raw data, sealed labels, re-cut rows or a model binary); release_path is then where a local copy is expected after following work/data/README.md. Verify with scripts/verify_hash_registry.py.",
+  "description": "SHA-256 registry for the preprint 'Reliability Audits for Machine-Learned Droplet-Microfluidic Design Surrogates'. Section 'appendix_d' lists the 46 digests of the manuscript's Appendix D (v0.5.4) in order; 'supplementary' lists further frozen digests recorded in the artifact manifests. status: released = the file in release_path hashes to sha256; released_superset / released_redacted = the released file differs from the frozen bytes for the stated reason (released_sha256 gives the digest of the released file); not_redistributed_* = the bytes are not in this repository (third-party raw data, sealed labels, re-cut rows or a model binary); release_path is then where a local copy is expected after following work/data/README.md. Verify with scripts/verify_hash_registry.py.",
   "entries": [
     {
       "object": "Comprehensive_normalized.xlsx",
@@ -183,6 +183,162 @@
       "sha256": "79be728c7673803e329ce85574def2c34a869f52d3e2526a1a3161343d296bd2",
       "section": "appendix_d",
       "release_path": "work/microfluidic_reliability/d3_blind_artifacts/prereveal/blind_prediction_bundle.json",
+      "status": "released"
+    },
+    {
+      "object": "Fidelity protocol (FIDELITY_PROTOCOL_v1.md)",
+      "sha256": "a273102cbde3e69137a0a24c2192c34b50637e2c21694668698b940b20eb701c",
+      "section": "appendix_d",
+      "release_path": "scaleup/fidelity/FIDELITY_PROTOCOL_v1.md",
+      "status": "released"
+    },
+    {
+      "object": "Deployed upstream model (20231001_DAFD3_XGB.json)",
+      "sha256": "91140b28dcf309892cbef105d34132ab5e0285473faaa9a75094b67ef8d93c62",
+      "section": "appendix_d",
+      "release_path": "work/data/upstream/dafd-website/app/mod_dafd/models/forward_models/saved/20231001_DAFD3_XGB.json",
+      "status": "not_redistributed_third_party_code",
+      "source": "https://github.com/CIDARLAB/dafd-website commit 4902f8ce (Zenodo 10156784 is tag v3.0.0); no licence file, nothing redistributed",
+      "note": "digest recorded in fidelity_run1/upstream_pins.json"
+    },
+    {
+      "object": "Closed-loop protocol E0--E2 (E0_E1_E2_CLOSED_LOOP_PROTOCOL_v1.md, revision 1.1)",
+      "sha256": "022aa19d3acc3bf9afcfac99ff53bf244ed54254adcb759cf7010dd120d6fb5f",
+      "section": "appendix_d",
+      "release_path": "scaleup/validation_plan/E0_E1_E2_CLOSED_LOOP_PROTOCOL_v1.md",
+      "status": "released"
+    },
+    {
+      "object": "Closed-loop runner (closed_loop.py)",
+      "sha256": "645b73b2a0afa82154ee54b4018e33973427ea1640358878395afebc5ee13776",
+      "section": "appendix_d",
+      "release_path": "scaleup/w7/closed_loop.py",
+      "status": "released"
+    },
+    {
+      "object": "Closed-loop analyzer (closed_loop_analyze.py)",
+      "sha256": "4715eb029191c3266517ca3ef78c03cbd29444234b12504a61e7c30fe3b28c7a",
+      "section": "appendix_d",
+      "release_path": "scaleup/w7/closed_loop_analyze.py",
+      "status": "released"
+    },
+    {
+      "object": "E1b protocol (E1B_DIFFICULTY_PROTOCOL_v1.md)",
+      "sha256": "7fa2a69c8c59901fc00669ac544d63d09e014afe94e49cffc65b335eb8826c8e",
+      "section": "appendix_d",
+      "release_path": "scaleup/validation_plan/E1B_DIFFICULTY_PROTOCOL_v1.md",
+      "status": "released"
+    },
+    {
+      "object": "E1b runner wrapper",
+      "sha256": "6f65d59941fac6e39312dd281914bf8f6174fc9e08b37c95ad23ba7606f36661",
+      "section": "appendix_d",
+      "release_path": "scaleup/w7/closed_loop_e1b.py",
+      "status": "released"
+    },
+    {
+      "object": "E1b analyzer",
+      "sha256": "c8e7dba8213d24e3379ec3da47296bce7a153c62a555a260aaebcb26b97626c6",
+      "section": "appendix_d",
+      "release_path": "scaleup/w7/closed_loop_e1b_analyze.py",
+      "status": "released"
+    },
+    {
+      "object": "E3 protocol (E3_DECISION_POLICY_PROTOCOL_v1.md, revision 1.1)",
+      "sha256": "71166fca292884e45e7585c03e2323fd8b2936455b53934a89b8236d06c1e310",
+      "section": "appendix_d",
+      "release_path": "scaleup/validation_plan/E3_DECISION_POLICY_PROTOCOL_v1.md",
+      "status": "released"
+    },
+    {
+      "object": "E3 runner wrapper",
+      "sha256": "ddf25617321bff59fbd2fec4f8307a842a9e08f93f39cbe69635b677bd2c40b0",
+      "section": "appendix_d",
+      "release_path": "scaleup/w7/closed_loop_e3.py",
+      "status": "released"
+    },
+    {
+      "object": "E3 analyzer",
+      "sha256": "5a091d1641873917df2ea094b6f39cd9c206f7e60e0807389a162e8d26fff76c",
+      "section": "appendix_d",
+      "release_path": "scaleup/w7/closed_loop_e3_analyze.py",
+      "status": "released"
+    },
+    {
+      "object": "E4 protocol (E4_MODEL_FAMILY_PROTOCOL_v1.md)",
+      "sha256": "0b0b68d4e1119bc785a631b20b3d2b1c3af9709c3a4d402138eb5839597c59ce",
+      "section": "appendix_d",
+      "release_path": "scaleup/validation_plan/E4_MODEL_FAMILY_PROTOCOL_v1.md",
+      "status": "released"
+    },
+    {
+      "object": "E4 runner wrapper",
+      "sha256": "6bb3772a1290d4c7f8d3e1e3cad2a05df1fffe8b5f4367ccdddb3633e4b23ab4",
+      "section": "appendix_d",
+      "release_path": "scaleup/w7/closed_loop_e4.py",
+      "status": "released"
+    },
+    {
+      "object": "E4 analyzer",
+      "sha256": "27cdb8c7bee460bd4f39d4680b478beb01f9284d539da36d8a1356c97e9eaa34",
+      "section": "appendix_d",
+      "release_path": "scaleup/w7/closed_loop_e4_analyze.py",
+      "status": "released"
+    },
+    {
+      "object": "E5 protocol (E5_BUDGET_TRANSFER_PROTOCOL_v1.md)",
+      "sha256": "52fd522ed0d9dbac962db91dfe732df75ea5c630f22e52d4d88f13ce9a34e1bc",
+      "section": "appendix_d",
+      "release_path": "scaleup/validation_plan/E5_BUDGET_TRANSFER_PROTOCOL_v1.md",
+      "status": "released"
+    },
+    {
+      "object": "E5 analyzer",
+      "sha256": "a724a9b6d872e14f4d3f4fca3fc99f11a0a7a1eb2ad2f69f52b976929af2e494",
+      "section": "appendix_d",
+      "release_path": "scaleup/w7/closed_loop_e5.py",
+      "status": "released"
+    },
+    {
+      "object": "E6 protocol (E6_NEGATIVE_CONTROLS_PROTOCOL_v1.md, revision 1.1)",
+      "sha256": "d28896aea17d28d427857c8db862209cffb50616a0446d4a9e9ae910092b8a06",
+      "section": "appendix_d",
+      "release_path": "scaleup/validation_plan/E6_NEGATIVE_CONTROLS_PROTOCOL_v1.md",
+      "status": "released"
+    },
+    {
+      "object": "E6 runner wrapper",
+      "sha256": "8d76252092eab9b903c836dac05149f8d450871d365eca9ae4f8470b7932c6fc",
+      "section": "appendix_d",
+      "release_path": "scaleup/w7/closed_loop_e6.py",
+      "status": "released"
+    },
+    {
+      "object": "E6 analyzer",
+      "sha256": "edc6f1c50c2bff397538eb214e32b62e8ab09221155397358c76fb2e912aa056",
+      "section": "appendix_d",
+      "release_path": "scaleup/w7/closed_loop_e6_analyze.py",
+      "status": "released"
+    },
+    {
+      "object": "E7 protocol (E7_HARD_TASK_PROTOCOL_v1.md, revision 1.1)",
+      "sha256": "130a150965ef742753e63692da5474d6fe9fa925987a16d9914fa13b44f71425",
+      "section": "appendix_d",
+      "release_path": "scaleup/validation_plan/E7_HARD_TASK_PROTOCOL_v1.md",
+      "status": "released"
+    },
+    {
+      "object": "E7 runner wrapper",
+      "sha256": "09ae934d9878a8230c3ce7ebfdbe00f09a2986215d4fe758ecf5758e7c654eb7",
+      "section": "appendix_d",
+      "release_path": "scaleup/w7/closed_loop_e7.py",
+      "status": "released"
+    },
+    {
+      "object": "E7 analyzer",
+      "sha256": "f64edbeeae25fec8e29c82f65cddf26e0beb44f543f38d672b5302e43f39a48a",
+      "section": "appendix_d",
+      "release_path": "scaleup/w7/closed_loop_e7_analyze.py",
       "status": "released"
     },
     {
@@ -374,6 +530,449 @@
       "release_path": "work/data/zenodo_17867478/microfluidics_dataset/raw_data/wet_lab_validation_raw.xlsx",
       "status": "not_redistributed_third_party_raw",
       "note": "inside microfluidics_dataset.zip"
+    },
+    {
+      "object": "FIDELITY_DRIVER_SCRIPT.sha256 -> fidelity_driver.py",
+      "sha256": "522b9d1ae048192c10e45f94275cedf02c20da80183b4eeb982021a7eb9a3852",
+      "section": "supplementary",
+      "release_path": "scaleup/fidelity/fidelity_driver.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/fidelity/FIDELITY_DRIVER_SCRIPT.sha256"
+    },
+    {
+      "object": "FIDELITY_WORKER_SCRIPT.sha256 -> fidelity_worker133.py",
+      "sha256": "dd4e1550c2ee19379eb69bcb9b7cd6c529b89090e81552765e7e1646c3a8c9ec",
+      "section": "supplementary",
+      "release_path": "scaleup/fidelity/fidelity_worker133.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/fidelity/FIDELITY_WORKER_SCRIPT.sha256"
+    },
+    {
+      "object": "G0_POSTHOC.sha256 -> fidelity_g0_posthoc.py",
+      "sha256": "41cb9cfe698d6a1310871c36be74cf88da2b1668ce8b70aaa750a387860c6aeb",
+      "section": "supplementary",
+      "release_path": "scaleup/fidelity/fidelity_g0_posthoc.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/fidelity/posthoc/G0_POSTHOC.sha256"
+    },
+    {
+      "object": "G0_POSTHOC.sha256 -> g0_rowwise_diagnostic.json",
+      "sha256": "3ae6fffccdb0063570ebc9f89b43ba58f29d3be6b7defbade37e3939f2013f3d",
+      "section": "supplementary",
+      "release_path": "scaleup/fidelity/posthoc/g0_rowwise_diagnostic.json",
+      "status": "released",
+      "note": "digest sidecar scaleup/fidelity/posthoc/G0_POSTHOC.sha256"
+    },
+    {
+      "object": "H_J_POSTHOC.sha256 -> h_fewshot_rule_posthoc.py",
+      "sha256": "641fc4fc1cf0b0098f5e50267ed4aff27d47efe907f535d98881d79d043e1516",
+      "section": "supplementary",
+      "release_path": "scaleup/w6/h_fewshot_rule_posthoc.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/h_fewshot_rule/posthoc/H_J_POSTHOC.sha256"
+    },
+    {
+      "object": "H_J_POSTHOC.sha256 -> descriptive.json",
+      "sha256": "b07893f1c1ebf7d06870ec4daf9871e2151f0c0e830096a3217254302c3a9d4f",
+      "section": "supplementary",
+      "release_path": "scaleup/h_fewshot_rule/posthoc/descriptive.json",
+      "status": "released",
+      "note": "digest sidecar scaleup/h_fewshot_rule/posthoc/H_J_POSTHOC.sha256"
+    },
+    {
+      "object": "H_BINDING_A1.json.sha256 -> H_BINDING_A1.json",
+      "sha256": "fd8418fa0e173782ca3daabba96531f61ad9362b7d92f490fd99211fe8046358",
+      "section": "supplementary",
+      "release_path": "scaleup/validation_plan/H_BINDING_A1.json",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_BINDING_A1.json.sha256"
+    },
+    {
+      "object": "H_BINDING_A1_v2.json.sha256 -> H_BINDING_A1_v2.json",
+      "sha256": "985ce9de0b50ef683aebaab86e4107e7c028934a6cd484a6b0294df92c21cf29",
+      "section": "supplementary",
+      "release_path": "scaleup/validation_plan/H_BINDING_A1_v2.json",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_BINDING_A1_v2.json.sha256"
+    },
+    {
+      "object": "H_BINDING_R2A1.json.sha256 -> H_BINDING_R2A1.json",
+      "sha256": "88bfb1ca94fa366aa6b01095bb9b5fd3d886f57f6410c4873a170c35d28e9294",
+      "section": "supplementary",
+      "release_path": "scaleup/validation_plan/H_BINDING_R2A1.json",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_BINDING_R2A1.json.sha256"
+    },
+    {
+      "object": "H_BINDING_R2A2.json.sha256 -> H_BINDING_R2A2.json",
+      "sha256": "8c6be2b33ebde4a643ddae7e5b51fac410b3d393b56d25ccef1e404b40945eae",
+      "section": "supplementary",
+      "release_path": "scaleup/validation_plan/H_BINDING_R2A2.json",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_BINDING_R2A2.json.sha256"
+    },
+    {
+      "object": "H_COMBINE_SCRIPT.sha256 -> h_combine.py",
+      "sha256": "88826ebb99e4ce5c34060c2f5ae637344722516a58fe2ac8d105afaaf1b7f583",
+      "section": "supplementary",
+      "release_path": "scaleup/w6/h_combine.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_COMBINE_SCRIPT.sha256"
+    },
+    {
+      "object": "H_CUSTODIAN2_SCRIPT.sha256 -> h_custodian2.py",
+      "sha256": "e6b24dd36b9bb116160ab2d37fdd13276d6fe0eefeeffc812aca3faac1f0bf21",
+      "section": "supplementary",
+      "release_path": "scaleup/w6/h_custodian2.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_CUSTODIAN2_SCRIPT.sha256"
+    },
+    {
+      "object": "H_CUSTODIAN_SCRIPT.sha256 -> h_custodian.py",
+      "sha256": "8b16a3c70928a2b5b0edf7692d7b38f7f49b45a52ec8420ee92e99d8d247f557",
+      "section": "supplementary",
+      "release_path": "scaleup/w6/h_custodian.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_CUSTODIAN_SCRIPT.sha256"
+    },
+    {
+      "object": "H_DOWNLOAD_SCRIPT.sha256 -> h_download.py",
+      "sha256": "274f5de48ea059452e1f524a4e4336ac4969a26737f87849faa4c8ce187c05fb",
+      "section": "supplementary",
+      "release_path": "scaleup/w6/h_download.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_DOWNLOAD_SCRIPT.sha256"
+    },
+    {
+      "object": "H_F_PORTFOLIO_PROTOCOL_v1.md.sha256 -> H_F_PORTFOLIO_PROTOCOL_v1.md",
+      "sha256": "2d3c78e0480114dc9503f5175e04bea5b8f611040f7e524a076e416942ea3cd5",
+      "section": "supplementary",
+      "release_path": "scaleup/validation_plan/H_F_PORTFOLIO_PROTOCOL_v1.md",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_F_PORTFOLIO_PROTOCOL_v1.md.sha256"
+    },
+    {
+      "object": "H_F_PORTFOLIO_PROTOCOL_v2.md.sha256 -> H_F_PORTFOLIO_PROTOCOL_v2.md",
+      "sha256": "b55669c08131aa88f3b3376f1f9a8e57b4035191ff6c63dc715f92038437319e",
+      "section": "supplementary",
+      "release_path": "scaleup/validation_plan/H_F_PORTFOLIO_PROTOCOL_v2.md",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_F_PORTFOLIO_PROTOCOL_v2.md.sha256"
+    },
+    {
+      "object": "H_G_WARMSTART_PROTOCOL_v1.md.sha256 -> H_G_WARMSTART_PROTOCOL_v1.md",
+      "sha256": "a6836d9e5427af8129872ae0f293f66a9a07ffaec9893416252c24cbef152058",
+      "section": "supplementary",
+      "release_path": "scaleup/validation_plan/H_G_WARMSTART_PROTOCOL_v1.md",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_G_WARMSTART_PROTOCOL_v1.md.sha256"
+    },
+    {
+      "object": "H_G_WARMSTART_PROTOCOL_v2.md.sha256 -> H_G_WARMSTART_PROTOCOL_v2.md",
+      "sha256": "ad9e442d2a98047ad8da362bd2b89212deace07d857e62be7ce89ca8023ab562",
+      "section": "supplementary",
+      "release_path": "scaleup/validation_plan/H_G_WARMSTART_PROTOCOL_v2.md",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_G_WARMSTART_PROTOCOL_v2.md.sha256"
+    },
+    {
+      "object": "H_J_ANALYZER_SCRIPT.sha256 -> h_fewshot_rule_analyze.py",
+      "sha256": "7183a825983d635d0b09f45f9b9a4dc3a7409fa44e37a8e213fea029332ddfaf",
+      "section": "supplementary",
+      "release_path": "scaleup/w6/h_fewshot_rule_analyze.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_J_ANALYZER_SCRIPT.sha256"
+    },
+    {
+      "object": "H_J_FEWSHOT_RULE_PROTOCOL_v1.sha256 -> H_J_FEWSHOT_RULE_PROTOCOL_v1.md",
+      "sha256": "8641c20538cdec2585e1b352b0350f0555b3d8b3a88d56faaa38fc67029f47c5",
+      "section": "supplementary",
+      "release_path": "scaleup/validation_plan/H_J_FEWSHOT_RULE_PROTOCOL_v1.md",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_J_FEWSHOT_RULE_PROTOCOL_v1.sha256"
+    },
+    {
+      "object": "H_J_RUNNER_SCRIPT.sha256 -> h_fewshot_rule.py",
+      "sha256": "519938f6238a2b1c5884d8c6e818c86bca4747d2d54fa04a0a3d1bcb63ff79fe",
+      "section": "supplementary",
+      "release_path": "scaleup/w6/h_fewshot_rule.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_J_RUNNER_SCRIPT.sha256"
+    },
+    {
+      "object": "H_PORTFOLIO2_SCRIPT.sha256 -> h_portfolio2.py",
+      "sha256": "97291c9085e7a80f13305920b746f5bb1fc0b81cffe2fde8a77fb90aba234e61",
+      "section": "supplementary",
+      "release_path": "scaleup/w6/h_portfolio2.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_PORTFOLIO2_SCRIPT.sha256"
+    },
+    {
+      "object": "H_PORTFOLIO_SCRIPT.sha256 -> h_portfolio.py",
+      "sha256": "66dea2602e498c0ffff8b1d582254fa72857512a422b431efecb29f25de35ec3",
+      "section": "supplementary",
+      "release_path": "scaleup/w6/h_portfolio.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_PORTFOLIO_SCRIPT.sha256"
+    },
+    {
+      "object": "H_PROTOCOL_v1.md.sha256 -> H_PROTOCOL_v1.md",
+      "sha256": "c0663a84c6d228f945f352feeb02034378f3d3993a0b9365b3d817bd581ef821",
+      "section": "supplementary",
+      "release_path": "scaleup/validation_plan/H_PROTOCOL_v1.md",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_PROTOCOL_v1.md.sha256"
+    },
+    {
+      "object": "H_PROTOCOL_v2.md.sha256 -> H_PROTOCOL_v2.md",
+      "sha256": "2adbd18623a848d3179c89d0ee49cd9106fb573144d7fabb47db12f906b873b3",
+      "section": "supplementary",
+      "release_path": "scaleup/validation_plan/H_PROTOCOL_v2.md",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_PROTOCOL_v2.md.sha256"
+    },
+    {
+      "object": "H_REVEAL2_SCRIPT.sha256 -> h_reveal2.py",
+      "sha256": "ed4d78a2842fb16251ec4300d48587d618c8b0509007dea595bf4e0524005e9a",
+      "section": "supplementary",
+      "release_path": "scaleup/w6/h_reveal2.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_REVEAL2_SCRIPT.sha256"
+    },
+    {
+      "object": "H_REVEAL_SCRIPT.sha256 -> h_reveal.py",
+      "sha256": "5ac1f2774f625a7d7b30f0568e50ad4c47e37f2b44d2258932ca79609e1a7956",
+      "section": "supplementary",
+      "release_path": "scaleup/w6/h_reveal.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_REVEAL_SCRIPT.sha256"
+    },
+    {
+      "object": "H_RUN2_SCRIPT.sha256 -> h_run2.py",
+      "sha256": "15b1215993c97704d0337924ca45fbc54d7fe2a4b4bb005d1c81630ddb06abce",
+      "section": "supplementary",
+      "release_path": "scaleup/w6/h_run2.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_RUN2_SCRIPT.sha256"
+    },
+    {
+      "object": "H_RUN_SCRIPT.sha256 -> h_run.py",
+      "sha256": "270c0da20065c1d39339d8fd028779a84c21a308c367895da4cb0e4d5b29ce7d",
+      "section": "supplementary",
+      "release_path": "scaleup/w6/h_run.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/H_RUN_SCRIPT.sha256"
+    },
+    {
+      "object": "POSTHOC_ROUND3_RECALIBRATION_PROTOCOL_v1.md.sha256 -> POSTHOC_ROUND3_RECALIBRATION_PROTOCOL_v1.md",
+      "sha256": "4eedba5b756630f00e72e16977bf21e39ed53c244ff9c77fe4b9de65fac60f77",
+      "section": "supplementary",
+      "release_path": "scaleup/validation_plan/POSTHOC_ROUND3_RECALIBRATION_PROTOCOL_v1.md",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/POSTHOC_ROUND3_RECALIBRATION_PROTOCOL_v1.md.sha256"
+    },
+    {
+      "object": "POSTHOC_ROUND3_SCRIPT.sha256 -> posthoc_round3.py",
+      "sha256": "954ce3f5fd1f4a92269b3fc94915fd2a606e77e0eb507825cd079375822a0771",
+      "section": "supplementary",
+      "release_path": "scaleup/w3/posthoc_round3.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/POSTHOC_ROUND3_SCRIPT.sha256"
+    },
+    {
+      "object": "POSTHOC_ROUND4_WARMSTART2_SCRIPT.sha256 -> posthoc_round4_warmstart2.py",
+      "sha256": "a9fe1308be11ec8127f9e64f2625f0042efff9f7cf7802ba449e931f376d37a0",
+      "section": "supplementary",
+      "release_path": "scaleup/w3/posthoc_round4_warmstart2.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/POSTHOC_ROUND4_WARMSTART2_SCRIPT.sha256"
+    },
+    {
+      "object": "POSTHOC_ROUND4_WARMSTART_SCRIPT.sha256 -> posthoc_round4_warmstart.py",
+      "sha256": "8565105334aeee81fc9277a2e0ae7578a9e2b90c270fc1a22ad85ad5c49f8a50",
+      "section": "supplementary",
+      "release_path": "scaleup/w3/posthoc_round4_warmstart.py",
+      "status": "released",
+      "note": "digest sidecar scaleup/validation_plan/POSTHOC_ROUND4_WARMSTART_SCRIPT.sha256"
+    },
+    {
+      "object": "R10 A1 sealed prediction bundle (per-row, inputs + predictions)",
+      "sha256": "45d641d27caa225cf15f5ff1527baae918698ec27e5f4fe3422001cf968a1fbd",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/h_A1_run1/sealed_prediction_bundle.csv",
+      "status": "not_redistributed_derived_rows",
+      "note": "third-party input rows; digest sidecar released beside the run manifest"
+    },
+    {
+      "object": "R10 R2A1 sealed prediction bundle (per-row, inputs + predictions)",
+      "sha256": "1f357ad566b780361c407a0069b65d0089d659a9dbf59f8f95fd660e80cebfcb",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/h_R2A1_run1/sealed_prediction_bundle.csv",
+      "status": "not_redistributed_derived_rows",
+      "note": "third-party input rows; digest sidecar released beside the run manifest"
+    },
+    {
+      "object": "R10 R2A2 sealed prediction bundle (per-row, inputs + predictions)",
+      "sha256": "bed2b12a3c9ec0bf447a122c13e56aa01ac80623b75e3d92787c8beb5cf753c1",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/h_R2A2_run1/sealed_prediction_bundle.csv",
+      "status": "not_redistributed_derived_rows",
+      "note": "third-party input rows; digest sidecar released beside the run manifest"
+    },
+    {
+      "object": "R10 A1 source file (PMC11834948_supplementaryFiles.zip)",
+      "sha256": "ea9d5003bdcc665f666a60679656ddb3e29af3ec0adecd3259c8363c8dd52063",
+      "section": "supplementary",
+      "release_path": "work/data/h_A1/PMC11834948_supplementaryFiles.zip",
+      "status": "not_redistributed_third_party_raw",
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11834948/supplementaryFiles",
+      "licence": "CC BY 3.0 (ESI of Hormozinezhad et al., Lab Chip 2025)"
+    },
+    {
+      "object": "R10 A1 development table (development_labeled.csv, 661 rows)",
+      "sha256": "8b439565f7bac2e9e06f030a1f6167e4de8b56488eccb3a1ea47603cf11d949e",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/h_A1_artifacts/development_labeled.csv",
+      "status": "not_redistributed_derived_rows",
+      "note": "regenerated by scaleup/w6/h_custodian.py (A1) or h_custodian2.py (R2-A1, R2-A2) from the public source file"
+    },
+    {
+      "object": "R10 A1 sealed features (inputs only) (sealed_features.csv, 240 rows)",
+      "sha256": "feb9c268f79795b7ec35949165a4459bcd39fc902c1bd217390a2cd949482068",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/h_A1_artifacts/sealed_features.csv",
+      "status": "not_redistributed_derived_rows",
+      "note": "regenerated by scaleup/w6/h_custodian.py (A1) or h_custodian2.py (R2-A1, R2-A2) from the public source file"
+    },
+    {
+      "object": "R10 A1 sealed labels (sealed_labels.csv, 240 rows)",
+      "sha256": "0dfdd77fec3acd28723a8b32d7c8847e6909221b23f68eb7b02a45583172597d",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/h_A1_artifacts/sealed_labels.csv",
+      "status": "not_redistributed_sealed_labels",
+      "note": "regenerated by scaleup/w6/h_custodian.py (A1) or h_custodian2.py (R2-A1, R2-A2) from the public source file"
+    },
+    {
+      "object": "R10 R2A1 source file (Data for FrameworkA.xlsx)",
+      "sha256": "991b450207c2d1398bf8d9c77784a9b8504341fe3e0b4d2b8f5dccf2482d9be6",
+      "section": "supplementary",
+      "release_path": "work/data/h_R2A1/Data for FrameworkA.xlsx",
+      "status": "not_redistributed_third_party_raw",
+      "source": "https://zenodo.org/records/10526441",
+      "licence": "CC BY 4.0",
+      "md5": "d58b4cbb8f4df47fb3eb2b44a2dc4fdb"
+    },
+    {
+      "object": "R10 R2A1 development table (development_labeled.csv, 557 rows)",
+      "sha256": "fca77a0de5f50581776eea91647e295f5e0bdc246dbb3824c4989bb368f909a9",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/h_R2A1_artifacts/development_labeled.csv",
+      "status": "not_redistributed_derived_rows",
+      "note": "regenerated by scaleup/w6/h_custodian.py (A1) or h_custodian2.py (R2-A1, R2-A2) from the public source file"
+    },
+    {
+      "object": "R10 R2A1 sealed features (inputs only) (sealed_features.csv, 273 rows)",
+      "sha256": "4616cd38319573225d017a9dcccd19dcd975459c4164533200493eb96774ff55",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/h_R2A1_artifacts/sealed_features.csv",
+      "status": "not_redistributed_derived_rows",
+      "note": "regenerated by scaleup/w6/h_custodian.py (A1) or h_custodian2.py (R2-A1, R2-A2) from the public source file"
+    },
+    {
+      "object": "R10 R2A1 sealed labels (sealed_labels.csv, 273 rows)",
+      "sha256": "ecafd931d4dce256ac489a43a48bd2e442e4c95c44eecf0655ff53127aa3b497",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/h_R2A1_artifacts/sealed_labels.csv",
+      "status": "not_redistributed_sealed_labels",
+      "note": "regenerated by scaleup/w6/h_custodian.py (A1) or h_custodian2.py (R2-A1, R2-A2) from the public source file"
+    },
+    {
+      "object": "R10 R2A2 source file (LNP_Atlas_DB_202509_v1.csv)",
+      "sha256": "624ba8424cc89855251ff20d8a3edf81f36e87a89b0f8c789c375860bbe83cb0",
+      "section": "supplementary",
+      "release_path": "work/data/h_R2A2/LNP_Atlas_DB_202509_v1.csv",
+      "status": "not_redistributed_third_party_raw",
+      "source": "https://zenodo.org/records/17243733",
+      "licence": "CC BY 4.0",
+      "md5": "f77ec01fe88e16f558c09c41bcc10610"
+    },
+    {
+      "object": "R10 R2A2 development table (development_labeled.csv, 523 rows)",
+      "sha256": "d98d372b836094b282504ac5e1d25a1dbe0ef81e7f299cc3b9758ea43a637b2c",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/h_R2A2_artifacts/development_labeled.csv",
+      "status": "not_redistributed_derived_rows",
+      "note": "regenerated by scaleup/w6/h_custodian.py (A1) or h_custodian2.py (R2-A1, R2-A2) from the public source file"
+    },
+    {
+      "object": "R10 R2A2 sealed features (inputs only) (sealed_features.csv, 396 rows)",
+      "sha256": "ec232439f2aa4502c67fb1304d96bec3f4c88c96d8f864a6a9035e3db202bf63",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/h_R2A2_artifacts/sealed_features.csv",
+      "status": "not_redistributed_derived_rows",
+      "note": "regenerated by scaleup/w6/h_custodian.py (A1) or h_custodian2.py (R2-A1, R2-A2) from the public source file"
+    },
+    {
+      "object": "R10 R2A2 sealed labels (sealed_labels.csv, 396 rows)",
+      "sha256": "47d97e4a2aff243a1695b4c30e519927f9b350a682e26b1399370e91ad721ca7",
+      "section": "supplementary",
+      "release_path": "work/microfluidic_reliability/h_R2A2_artifacts/sealed_labels.csv",
+      "status": "not_redistributed_sealed_labels",
+      "note": "regenerated by scaleup/w6/h_custodian.py (A1) or h_custodian2.py (R2-A1, R2-A2) from the public source file"
+    },
+    {
+      "object": "Header-only intake manifest h_A1_download_manifest.json as written by h_download.py",
+      "sha256": "2080e9fbdaec9bdaab089f721e10a337c24124f38b7138f29841b490ec489c5f",
+      "section": "supplementary",
+      "release_path": "scaleup/h_intake/h_A1_download_manifest.json",
+      "status": "released_redacted",
+      "released_sha256": "544c1c60f69483abe38949f6bade3e77b42fd3e946a73835aac88e9e9b09aa51",
+      "note": "one absolute workspace path in the 'directory' field replaced by <WORK>/../data/; no other byte changed"
+    },
+    {
+      "object": "Header-only intake manifest h_A2_download_manifest.json as written by h_download.py",
+      "sha256": "070367bb17bd5ccdeccf74c59b587e393f546fc2c8b2740dee79c71f70bd368f",
+      "section": "supplementary",
+      "release_path": "scaleup/h_intake/h_A2_download_manifest.json",
+      "status": "released_redacted",
+      "released_sha256": "8fa1e6fff56a4de7da7945f8c1c045d3b10b90ee90c5706e4a4631aec3fd6a98",
+      "note": "one absolute workspace path in the 'directory' field replaced by <WORK>/../data/; no other byte changed"
+    },
+    {
+      "object": "Header-only intake manifest h_B1_download_manifest.json as written by h_download.py",
+      "sha256": "81ba90db18a7d9127196ea5e265ca5ae7fa7481e5cacee85d50c764376a8b959",
+      "section": "supplementary",
+      "release_path": "scaleup/h_intake/h_B1_download_manifest.json",
+      "status": "released_redacted",
+      "released_sha256": "545b5415107bce57c9012cc93140f42f6881e24d23695d305d5cf65c50ee8d25",
+      "note": "one absolute workspace path in the 'directory' field replaced by <WORK>/../data/; no other byte changed"
+    },
+    {
+      "object": "Header-only intake manifest h_B2_download_manifest.json as written by h_download.py",
+      "sha256": "be98cc31d6a8f48ff58711a4ac45d779fa2726d458f1818f40b158ea28847cb3",
+      "section": "supplementary",
+      "release_path": "scaleup/h_intake/h_B2_download_manifest.json",
+      "status": "released_redacted",
+      "released_sha256": "3811a84af117ed3658e28577a6389607ca7ab0c441b7daaf362353dbbaf7284e",
+      "note": "one absolute workspace path in the 'directory' field replaced by <WORK>/../data/; no other byte changed"
+    },
+    {
+      "object": "Header-only intake manifest h_R2A1_download_manifest.json as written by h_download.py",
+      "sha256": "54d89ffe2f49a4895f6a8e7fa2a998eb0c12e1725dbfa159487e35fd160982ea",
+      "section": "supplementary",
+      "release_path": "scaleup/h_intake/h_R2A1_download_manifest.json",
+      "status": "released_redacted",
+      "released_sha256": "ae1e08c6231a7fe5e909cbcec8b337d0dd59c7c40597dfca8bb5de99abf8160f",
+      "note": "one absolute workspace path in the 'directory' field replaced by <WORK>/../data/; no other byte changed"
+    },
+    {
+      "object": "Header-only intake manifest h_R2A2_download_manifest.json as written by h_download.py",
+      "sha256": "c20f8a840fa4b2975b385a50abf2a033df0261ec220f2582662ad2e946018a34",
+      "section": "supplementary",
+      "release_path": "scaleup/h_intake/h_R2A2_download_manifest.json",
+      "status": "released_redacted",
+      "released_sha256": "9f8354d9407cd086f1f95e65a00251c7bf09dcd1d9e1c9a73bcb43233ed347df",
+      "note": "one absolute workspace path in the 'directory' field replaced by <WORK>/../data/; no other byte changed"
     }
   ]
 }

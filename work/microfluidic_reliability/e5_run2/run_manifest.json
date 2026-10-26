@@ -1,0 +1,31 @@
+{
+  "analyzer_sha256": "a724a9b6d872e14f4d3f4fca3fc99f11a0a7a1eb2ad2f69f52b976929af2e494",
+  "budget": 20,
+  "eps_mult": 1.25,
+  "inputs": {
+    "budget.csv": "3874ccff0fd83bbab95bc976841fef80175a75ff8fc08a00c22c1d391decb5fd",
+    "e3_loops.csv": "52356e32a026933dd55335ce760928e95e02b3583170cc166adc2879b441a76b",
+    "tiers_e0.csv": "cb4ba684db971e331826653aefa92887ae397b450f352ec65519cddd3245ab8c"
+  },
+  "n_tiers": 107,
+  "numpy": "2.5.1",
+  "pandas": "3.0.3",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "protocol": "E5_BUDGET_TRANSFER_PROTOCOL_v1.md",
+  "protocol_sha256": "52fd522ed0d9dbac962db91dfe732df75ea5c630f22e52d4d88f13ce9a34e1bc",
+  "python": "3.12.13",
+  "q": 0.8,
+  "q_sensitivity": [
+    0.5,
+    0.9
+  ],
+  "rules": [
+    "R0",
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ],
+  "schema_version": "closed-loop-e5-run-v1",
+  "stage": "e5"
+}

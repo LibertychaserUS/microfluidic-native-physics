@@ -1,0 +1,14 @@
+{
+  "reveal_utc": "2026-10-21T23:40:55Z",
+  "bundle_sha256": "bed2b12a3c9ec0bf447a122c13e56aa01ac80623b75e3d92787c8beb5cf753c1",
+  "checks": {
+    "protocol": true,
+    "binding": true,
+    "runner_script": true,
+    "bundle": true,
+    "bundle_sidecar": true,
+    "sealed_features": true,
+    "sealed_labels": true,
+    "development": true
+  }
+}

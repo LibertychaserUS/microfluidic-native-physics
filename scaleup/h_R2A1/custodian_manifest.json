@@ -1,0 +1,129 @@
+{
+  "schema_version": "h-custodian-v2",
+  "dataset_code": "R2A1",
+  "protocol": {
+    "file": "H_PROTOCOL_v2.md",
+    "sha256": "2adbd18623a848d3179c89d0ee49cd9106fb573144d7fabb47db12f906b873b3"
+  },
+  "binding": {
+    "file": "H_BINDING_R2A1.json",
+    "sha256": "88bfb1ca94fa366aa6b01095bb9b5fd3d886f57f6410c4873a170c35d28e9294"
+  },
+  "source": {
+    "file": "Data for FrameworkA.xlsx",
+    "sha256": "991b450207c2d1398bf8d9c77784a9b8504341fe3e0b4d2b8f5dccf2482d9be6",
+    "md5": "d58b4cbb8f4df47fb3eb2b44a2dc4fdb"
+  },
+  "parsing": {
+    "n_source_rows": 830,
+    "n_blank": 0,
+    "dropped_missing_input": 0,
+    "dropped_missing_target": 0,
+    "dropped_nonpositive_target": 0,
+    "kept": 830
+  },
+  "native_columns": [
+    "disp_flow",
+    "cont_flow",
+    "interfacial_tension",
+    "disp_viscosity",
+    "cont_viscosity",
+    "disp_density",
+    "cont_density",
+    "inner",
+    "outer"
+  ],
+  "dimensionless_columns": [
+    "Ca_c",
+    "Ca_d",
+    "q_flow",
+    "lambda_mu",
+    "Re_c",
+    "Re_d",
+    "geo_inner_over_channel"
+  ],
+  "n_rows_total": 830,
+  "n_main_table_rows": 830,
+  "s2_counts_main": {
+    "fluid:0.00534|0.001|0.5|998|963": 301,
+    "fluid:0.00593|0.001|0.5|998|963": 164,
+    "fluid:0.00836|0.001|0.5|998|963": 256,
+    "fluid:0.02045|0.038|0.049|1019|916": 5,
+    "fluid:0.02833|0.015|0.049|998|916": 4,
+    "fluid:0.02833|0.027|0.049|999|916": 4,
+    "fluid:0.02833|0.037|0.049|1000|916": 59,
+    "fluid:0.02833|0.046|0.049|1000|916": 25,
+    "fluid:0.02833|0.092|0.049|1002|916": 4,
+    "fluid:0.02833|0.163|0.049|1003|916": 4,
+    "fluid:0.02833|0.244|0.049|1005|916": 4
+  },
+  "s3_counts_main": {
+    "device:0.0001|0.0003|0.00444444": 109,
+    "device:9e-05|0.0002|0.002": 721
+  },
+  "s4_classes": null,
+  "sealing": {
+    "S2": {
+      "level": "fluid:0.00593|0.001|0.5|998|963",
+      "eligible_counts": {
+        "fluid:0.00534|0.001|0.5|998|963": 301,
+        "fluid:0.00593|0.001|0.5|998|963": 164,
+        "fluid:0.00836|0.001|0.5|998|963": 256,
+        "fluid:0.02833|0.037|0.049|1000|916": 59,
+        "fluid:0.02833|0.046|0.049|1000|916": 25
+      },
+      "maximum_count_excluded": 301,
+      "median_of_candidates": 111.5,
+      "candidate_order": [
+        "fluid:0.00593|0.001|0.5|998|963",
+        "fluid:0.02833|0.037|0.049|1000|916",
+        "fluid:0.02833|0.046|0.049|1000|916",
+        "fluid:0.00836|0.001|0.5|998|963"
+      ],
+      "chosen": "fluid:0.00593|0.001|0.5|998|963"
+    },
+    "S3": {
+      "level": "device:0.0001|0.0003|0.00444444",
+      "eligible_counts": {
+        "device:0.0001|0.0003|0.00444444": 109,
+        "device:9e-05|0.0002|0.002": 721
+      },
+      "maximum_count_excluded": 721,
+      "median_of_candidates": 109.0,
+      "candidate_order": [
+        "device:0.0001|0.0003|0.00444444"
+      ],
+      "chosen": "device:0.0001|0.0003|0.00444444"
+    },
+    "S4": null
+  },
+  "n_sealed_rows": 273,
+  "n_sealed_by_tier": {
+    "S2": 164,
+    "S3": 109
+  },
+  "n_development_rows": 557,
+  "artifacts": {
+    "development_labeled": {
+      "file": "development_labeled.csv",
+      "rows": 557,
+      "sha256": "fca77a0de5f50581776eea91647e295f5e0bdc246dbb3824c4989bb368f909a9"
+    },
+    "sealed_features": {
+      "file": "sealed_features.csv",
+      "rows": 273,
+      "sha256": "4616cd38319573225d017a9dcccd19dcd975459c4164533200493eb96774ff55"
+    },
+    "sealed_labels": {
+      "file": "sealed_labels.csv",
+      "rows": 273,
+      "sha256": "ecafd931d4dce256ac489a43a48bd2e442e4c95c44eecf0655ff53127aa3b497",
+      "permissions": "0600",
+      "kept_outside_repository": true
+    },
+    "devdiag": {
+      "file": "h_R2A1_devdiag.json",
+      "sha256": "ddfb2302c6f89f7148ca2aa3b5edfb5daf8b6d69cf1c98b4d8ad97dccb4f16c2"
+    }
+  }
+}

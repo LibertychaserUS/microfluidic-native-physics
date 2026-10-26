@@ -1,0 +1,60 @@
+{
+  "protocol_sha256": "a273102cbde3e69137a0a24c2192c34b50637e2c21694668698b940b20eb701c",
+  "worker_sha256": "dd4e1550c2ee19379eb69bcb9b7cd6c529b89090e81552765e7e1646c3a8c9ec",
+  "driver_sha256": "522b9d1ae048192c10e45f94275cedf02c20da80183b4eeb982021a7eb9a3852",
+  "upstream": {
+    "Ali_work/Code/XGBoost_gloval_stability.py": {
+      "sha256": "d9f6aa72f755f4703f30b8f4f971ed8eec410a71e3712018bc02c12cf342b36d",
+      "expected": "d9f6aa72f755f4703f30b8f4f971ed8eec410a71e3712018bc02c12cf342b36d",
+      "ok": true
+    },
+    "app/mod_dafd/models/forward_models/DAFD3_models.py": {
+      "sha256": "2a4a0f083e14b3cf46fc1549ce5e38e0f15e95a0dea13cb569833d0e550dd76a",
+      "expected": "2a4a0f083e14b3cf46fc1549ce5e38e0f15e95a0dea13cb569833d0e550dd76a",
+      "ok": true
+    },
+    "app/mod_dafd/core_logic/ForwardModel3.py": {
+      "sha256": "3e787c928c26fe5c4a761da01759771379e6d35ead37f06da78826c1c2c8e087",
+      "expected": "3e787c928c26fe5c4a761da01759771379e6d35ead37f06da78826c1c2c8e087",
+      "ok": true
+    },
+    "app/mod_dafd/helper_scripts/ModelHelper3.py": {
+      "sha256": "8537fb006655c1d558e7392777c21abb3e07fbc5c99b14286ee6c03e833d07f2",
+      "expected": "8537fb006655c1d558e7392777c21abb3e07fbc5c99b14286ee6c03e833d07f2",
+      "ok": true
+    },
+    "app/mod_dafd/models/forward_models/saved/20231001_DAFD3_XGB.json": {
+      "sha256": "91140b28dcf309892cbef105d34132ab5e0285473faaa9a75094b67ef8d93c62",
+      "expected": "91140b28dcf309892cbef105d34132ab5e0285473faaa9a75094b67ef8d93c62",
+      "ok": true
+    },
+    "app/mod_dafd/helper_scripts/experimental_data/20231001_all_data_dafd3.csv": {
+      "sha256": "7735baefec0bc35dbd05c26eaf580110051880e540383eabf81d536c72037782",
+      "expected": "7735baefec0bc35dbd05c26eaf580110051880e540383eabf81d536c72037782",
+      "ok": true
+    },
+    "app/mod_dafd/helper_scripts/experimental_data/DAFD3_data.csv": {
+      "sha256": "f6596ebc8c3152f5344043ccdfd2067999071b3944adc1922acc627d5d57f0fe",
+      "expected": "f6596ebc8c3152f5344043ccdfd2067999071b3944adc1922acc627d5d57f0fe",
+      "ok": true
+    },
+    "environment.yml": {
+      "sha256": "3b69d2e87da52e4d0caa65735ea66c054f8d78b04e1d971f9a299fdd6b4a0383",
+      "expected": "3b69d2e87da52e4d0caa65735ea66c054f8d78b04e1d971f9a299fdd6b4a0383",
+      "ok": true
+    }
+  },
+  "d2": {
+    "matTrainingDataSet.mat": {
+      "sha256": "7fab0693a7065198468a5d654226f5e2164985e334ed105f91355bdd49fb1a17",
+      "expected": "7fab0693a7065198468a5d654226f5e2164985e334ed105f91355bdd49fb1a17",
+      "ok": true
+    },
+    "matTestDataSet.mat": {
+      "sha256": "55f202bd19433331c86ddc65507e834036d294f7f9b4db2275f21ad91f6729da",
+      "expected": "55f202bd19433331c86ddc65507e834036d294f7f9b4db2275f21ad91f6729da",
+      "ok": true
+    }
+  },
+  "upstream_git_head": "4902f8ce79f73251282b75a3b12b9efd90420f81"
+}

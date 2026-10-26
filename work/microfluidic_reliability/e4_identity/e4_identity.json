@@ -1,0 +1,61 @@
+{
+  "deviation": "E-D10",
+  "files": {
+    "environment.json": {
+      "byte_identical": true,
+      "sha256_run1": "93e060dcc17b9ebecc0ff3e65a5668665635f28deb06de109375698695b36bd7",
+      "sha256_run2": "93e060dcc17b9ebecc0ff3e65a5668665635f28deb06de109375698695b36bd7"
+    },
+    "families.csv": {
+      "byte_identical": false,
+      "differing_columns_raw": [
+        "fit_seconds"
+      ],
+      "identical_without_fit_seconds": true,
+      "rows": [
+        642,
+        642
+      ],
+      "sha256_run1": "48830f51b61ee250fb028d0289ea75a57b548e03e0b75919cd717188ecf7e7e5",
+      "sha256_run2": "5452447d6bb2f2ef109adf07813597e5d4c3e15307223fce02af0ba48a4facc8",
+      "sha256_without_fit_seconds_run1": "224b6f443eb3f0762c3251a1e194ff3b136f82b3d6c8d089dff5a0ff8e27a13f",
+      "sha256_without_fit_seconds_run2": "224b6f443eb3f0762c3251a1e194ff3b136f82b3d6c8d089dff5a0ff8e27a13f"
+    },
+    "loops.csv": {
+      "byte_identical": true,
+      "differing_columns_raw": [],
+      "identical_without_fit_seconds": true,
+      "rows": [
+        92448,
+        92448
+      ],
+      "sha256_run1": "66f663642a0f2bb6fd3d26a1f626cf27e13220d563b73303e7a7ad48d582d627",
+      "sha256_run2": "66f663642a0f2bb6fd3d26a1f626cf27e13220d563b73303e7a7ad48d582d627",
+      "sha256_without_fit_seconds_run1": "66f663642a0f2bb6fd3d26a1f626cf27e13220d563b73303e7a7ad48d582d627",
+      "sha256_without_fit_seconds_run2": "66f663642a0f2bb6fd3d26a1f626cf27e13220d563b73303e7a7ad48d582d627"
+    },
+    "run_manifest.json": {
+      "byte_identical": true,
+      "sha256_run1": "c0264408010f2ec4823a415965bd11c12ab63931218e7eb6e1dd79a83de9ab1b",
+      "sha256_run2": "c0264408010f2ec4823a415965bd11c12ab63931218e7eb6e1dd79a83de9ab1b"
+    },
+    "table_cv.csv": {
+      "byte_identical": false,
+      "differing_columns_raw": [
+        "fit_seconds"
+      ],
+      "identical_without_fit_seconds": true,
+      "rows": [
+        180,
+        180
+      ],
+      "sha256_run1": "dbda7360aff46037b0c43210fefe8fd7a12dd34aca609579eaf8afa5cb5e446c",
+      "sha256_run2": "e45efc4fe76305a5eb81603b455ca5ace2bc6e967f18acb6c45c1956eba664be",
+      "sha256_without_fit_seconds_run1": "cb41e9bd8373f11b53a0178f874889fdf51e08c617d42b8fe299285de400b98e",
+      "sha256_without_fit_seconds_run2": "cb41e9bd8373f11b53a0178f874889fdf51e08c617d42b8fe299285de400b98e"
+    }
+  },
+  "identical_except_timing": true,
+  "schema_version": "closed-loop-e4-identity-v1",
+  "timing_column": "fit_seconds"
+}

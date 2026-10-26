@@ -1,0 +1,26 @@
+rule,held_out,n_test,lookup_transferred,fallback
+R0,D1,31,{},20.0
+R0,D2,7,{},20.0
+R0,A1,24,{},20.0
+R0,R2A1,7,{},20.0
+R0,R2A2,38,{},20.0
+R1,D1,31,"{""chemistry"": 1.0, ""composition"": 1.0, ""device"": 12.400000000000002, ""laboratory"": 1.0, ""preparation"": 1.0}",1.0
+R1,D2,7,"{""chemistry"": 1.0, ""composition"": 1.0, ""device"": 2.8000000000000007, ""emulsion type"": 15.0, ""laboratory"": 1.0, ""preparation"": 1.0}",1.0
+R1,A1,24,"{""chemistry"": 3.0, ""composition"": 1.0, ""device"": 3.0, ""emulsion type"": 15.0, ""laboratory"": 1.0, ""preparation"": 1.0}",2.0
+R1,R2A1,7,"{""chemistry"": 1.0, ""composition"": 1.0, ""device"": 2.2, ""emulsion type"": 15.0, ""laboratory"": 1.0, ""preparation"": 1.0}",1.0
+R1,R2A2,38,"{""chemistry"": 1.0, ""device"": 2.8000000000000007, ""emulsion type"": 15.0, ""laboratory"": 2.0}",2.0
+R2,D1,31,"{""chemistry|dense"": 1.8000000000000007, ""chemistry|sparse"": 1.0, ""composition|dense"": 1.0, ""composition|sparse"": 1.0, ""device|dense"": 1.0, ""device|sparse"": 16.200000000000003, ""laboratory|dense"": 1.0, ""laboratory|sparse"": 1.0, ""preparation|sparse"": 1.0}",1.0
+R2,D2,7,"{""chemistry|dense"": 1.0, ""chemistry|sparse"": 1.0, ""composition|dense"": 1.0, ""composition|sparse"": 1.0, ""device|dense"": 1.0, ""device|sparse"": 3.0, ""emulsion type|dense"": 15.0, ""laboratory|dense"": 2.0, ""laboratory|sparse"": 1.0, ""preparation|sparse"": 1.0}",1.0
+R2,A1,24,"{""chemistry|dense"": 1.8000000000000007, ""chemistry|sparse"": 3.0, ""composition|dense"": 1.0, ""composition|sparse"": 1.0, ""device|dense"": 1.0, ""device|sparse"": 3.0, ""emulsion type|dense"": 15.0, ""laboratory|dense"": 2.0, ""laboratory|sparse"": 1.0, ""preparation|sparse"": 1.0}",2.0
+R2,R2A1,7,"{""chemistry|dense"": 3.4000000000000004, ""chemistry|sparse"": 1.0, ""composition|dense"": 1.0, ""composition|sparse"": 1.0, ""device|dense"": 1.0, ""device|sparse"": 2.8000000000000007, ""emulsion type|dense"": 15.0, ""laboratory|dense"": 2.0, ""laboratory|sparse"": 1.0, ""preparation|sparse"": 1.0}",1.0
+R2,R2A2,38,"{""chemistry|dense"": 1.8000000000000007, ""chemistry|sparse"": 1.0, ""device|dense"": 1.0, ""device|sparse"": 3.0, ""emulsion type|dense"": 15.0, ""laboratory|dense"": 2.0}",2.0
+R3,D1,31,"{""chemistry|d4hi"": 3.0, ""chemistry|d4lo"": 1.0, ""composition|d4hi"": 1.0, ""composition|d4lo"": 1.0, ""device|d4hi"": 12.400000000000002, ""laboratory|d4hi"": 1.0, ""laboratory|d4lo"": 1.0, ""preparation|d4hi"": 1.0}",1.0
+R3,D2,7,"{""chemistry|d4hi"": 3.8000000000000025, ""chemistry|d4lo"": 1.0, ""composition|d4hi"": 1.0, ""composition|d4lo"": 1.0, ""device|d4hi"": 8.600000000000007, ""device|d4lo"": 2.6000000000000005, ""emulsion type|d4hi"": 15.0, ""laboratory|d4hi"": 1.0, ""laboratory|d4lo"": 1.8000000000000007, ""preparation|d4hi"": 1.0}",1.0
+R3,A1,24,"{""chemistry|d4hi"": 6.0, ""chemistry|d4lo"": 1.0, ""composition|d4hi"": 1.0, ""composition|d4lo"": 1.0, ""device|d4hi"": 12.400000000000002, ""device|d4lo"": 2.6000000000000005, ""emulsion type|d4hi"": 15.0, ""laboratory|d4hi"": 1.200000000000001, ""laboratory|d4lo"": 1.0, ""preparation|d4hi"": 1.0}",2.0
+R3,R2A1,7,"{""chemistry|d4hi"": 1.4000000000000004, ""chemistry|d4lo"": 1.0, ""composition|d4hi"": 1.0, ""composition|d4lo"": 1.0, ""device|d4hi"": 1.0, ""device|d4lo"": 2.6000000000000005, ""emulsion type|d4hi"": 15.0, ""laboratory|d4hi"": 1.0, ""laboratory|d4lo"": 1.8000000000000007, ""preparation|d4hi"": 1.0}",1.0
+R3,R2A2,38,"{""chemistry|d4hi"": 1.0, ""chemistry|d4lo"": 1.0, ""device|d4hi"": 8.600000000000007, ""device|d4lo"": 2.6000000000000005, ""emulsion type|d4hi"": 15.0, ""laboratory|d4lo"": 2.0}",2.0
+R4,D1,31,"{""chemistry|d1hi"": 1.0, ""chemistry|d1lo"": 1.0, ""composition|d1hi"": 2.6000000000000014, ""composition|d1lo"": 1.0, ""device|d1hi"": 1.0, ""device|d1lo"": 16.200000000000003, ""laboratory|d1hi"": 1.0, ""laboratory|d1lo"": 1.0, ""preparation|d1lo"": 1.0}",1.0
+R4,D2,7,"{""chemistry|d1hi"": 1.0, ""chemistry|d1lo"": 1.0, ""composition|d1hi"": 2.6000000000000014, ""composition|d1lo"": 1.0, ""device|d1hi"": 3.0, ""device|d1lo"": 1.0, ""emulsion type|d1lo"": 15.0, ""laboratory|d1hi"": 1.200000000000001, ""laboratory|d1lo"": 1.0, ""preparation|d1lo"": 1.0}",1.0
+R4,A1,24,"{""chemistry|d1hi"": 1.8000000000000007, ""chemistry|d1lo"": 3.0, ""composition|d1hi"": 2.6000000000000014, ""composition|d1lo"": 1.0, ""device|d1hi"": 3.0, ""device|d1lo"": 4.800000000000003, ""emulsion type|d1lo"": 15.0, ""laboratory|d1hi"": 1.200000000000001, ""laboratory|d1lo"": 1.0, ""preparation|d1lo"": 1.0}",2.0
+R4,R2A1,7,"{""chemistry|d1hi"": 1.0, ""chemistry|d1lo"": 1.0, ""composition|d1hi"": 2.6000000000000014, ""composition|d1lo"": 1.0, ""device|d1hi"": 3.0, ""device|d1lo"": 1.0, ""emulsion type|d1lo"": 15.0, ""laboratory|d1hi"": 1.200000000000001, ""laboratory|d1lo"": 1.0, ""preparation|d1lo"": 1.0}",1.0
+R4,R2A2,38,"{""chemistry|d1hi"": 1.0, ""chemistry|d1lo"": 1.4000000000000021, ""device|d1hi"": 3.0, ""device|d1lo"": 1.0, ""emulsion type|d1lo"": 15.0, ""laboratory|d1hi"": 2.0, ""laboratory|d1lo"": 2.0}",2.0
