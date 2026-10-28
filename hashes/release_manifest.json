@@ -12,8 +12,8 @@
     },
     {
       "path": "CITATION.cff",
-      "sha256": "a31396a73b802f0a66e96a5cc43c66e4c315ee18dd79b71e1b53f485ddcccf5f",
-      "size_bytes": 1526
+      "sha256": "287741196306d7458e3358edd8b81d287629da07eb2c6eeaba590d3fafff383b",
+      "size_bytes": 2233
     },
     {
       "path": "LICENSE",
@@ -37,8 +37,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "dc3700ac72887cc77fd1ab4954bda83820ef9777018c400f19785c3db9417586",
-      "size_bytes": 17269
+      "sha256": "7f977051810178eb41e91c7c3991ef859609841cba5f5f888f83ec3b4fee98e0",
+      "size_bytes": 17972
     },
     {
       "path": "THIRD_PARTY_DATA.md",
@@ -2212,8 +2212,8 @@
     },
     {
       "path": "scripts/validate_repository_policy.py",
-      "sha256": "67a969bb9a2e8b55ddbfcf48a847de6e16de2c7e61664aea9d60ecc99f2423a4",
-      "size_bytes": 4794
+      "sha256": "f06843fb4233d640fe2e0ebb41a579387a86381e531ec961cb2dc7c28bc02dd0",
+      "size_bytes": 5106
     },
     {
       "path": "scripts/validate_requirements_lock.py",

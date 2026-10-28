@@ -7,8 +7,8 @@ summary artifacts behind the preprint
 
 > Zhiyuan Zhang, *When Can a Learned Design Surrogate Be Trusted in a
 > Self-Driving Microfluidics Laboratory? An Offline Closed-Loop Framework Built
-> and Tested on Six Public Tables* (2026; arXiv identifier to be added to
-> `CITATION.cff` once assigned).
+> and Tested on Six Public Tables* (2026). arXiv:2610.36395,
+> <https://doi.org/10.48550/arXiv.2610.36395>.
 
 The work is retrospective and built on public tables only. Stage 1 is a
 reliability audit and mechanism diagnostics on three tables (a sealed
@@ -25,6 +25,10 @@ material or formulation.
 ## Release status
 
 - Tag `v0.5.5-preprint` accompanies manuscript v0.5.5 (the version named in `CITATION.cff`).
+- The preprint is arXiv:2610.36395 (v1, submitted 26 October 2026, primary
+  category cs.LG, licence CC BY 4.0; DOI 10.48550/arXiv.2610.36395). The
+  source uploaded to arXiv is byte-identical to `manuscript/main.tex` and
+  `manuscript/main.bbl` at this tag.
   The code, protocols, registers, ledger and hash manifests promised in the
   manuscript's *Reproducibility* section are in this repository; the compiled
   PDFs (English and Chinese mirror) are attached to the GitHub release.
@@ -214,3 +218,17 @@ keep their own terms ([`THIRD_PARTY_DATA.md`](THIRD_PARTY_DATA.md)). This
 independent work reproduces, stress-tests or builds on public work by
 Lashkaripour et al., Chagot et al., Lavagna et al., Hormozinezhad et al.,
 Wang et al. and Song et al.; it does not imply their endorsement. Citation metadata: [`CITATION.cff`](CITATION.cff).
+
+To cite the preprint:
+
+```bibtex
+@misc{zhang2026surrogate,
+  author        = {Zhang, Zhiyuan},
+  title         = {When Can a Learned Design Surrogate Be Trusted in a Self-Driving Microfluidics Laboratory? An Offline Closed-Loop Framework Built and Tested on Six Public Tables},
+  year          = {2026},
+  eprint        = {2610.36395},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  doi           = {10.48550/arXiv.2610.36395}
+}
+```

@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: >-
   If you use this software or its released artifacts, please cite the
-  repository release below and the accompanying preprint once its arXiv
-  identifier is assigned (it will be added here).
+  repository release below and the accompanying preprint
+  (arXiv:2610.36395, see preferred-citation).
 title: "Microfluidic Native Physics: code and artifacts of 'When Can a Learned Design Surrogate Be Trusted in a Self-Driving Microfluidics Laboratory?'"
 type: software
 version: "0.5.5-preprint"
@@ -12,6 +12,13 @@ authors:
     given-names: Zhiyuan
 repository-code: "https://github.com/LibertychaserUS/microfluidic-native-physics"
 url: "https://github.com/LibertychaserUS/microfluidic-native-physics"
+identifiers:
+  - type: doi
+    value: "10.48550/arXiv.2610.36395"
+    description: "arXiv preprint (v1, 26 October 2026)"
+  - type: url
+    value: "https://arxiv.org/abs/2610.36395"
+    description: "arXiv abstract page"
 abstract: >-
   Code, frozen protocols, deviation registers, number ledger, hash manifests
   and summary artifacts of an offline closed-loop framework for learned
@@ -33,3 +40,15 @@ keywords:
   - reproducibility
   - self-driving laboratory
   - closed-loop benchmark
+preferred-citation:
+  type: article
+  title: "When Can a Learned Design Surrogate Be Trusted in a Self-Driving Microfluidics Laboratory? An Offline Closed-Loop Framework Built and Tested on Six Public Tables"
+  authors:
+    - family-names: Zhang
+      given-names: Zhiyuan
+  year: 2026
+  month: 10
+  journal: "arXiv preprint"
+  doi: "10.48550/arXiv.2610.36395"
+  url: "https://arxiv.org/abs/2610.36395"
+  notes: "arXiv:2610.36395 [cs.LG], v1; code and artifacts at tag v0.5.5-preprint of this repository"

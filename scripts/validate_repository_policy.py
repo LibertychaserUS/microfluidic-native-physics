@@ -78,10 +78,16 @@ def validate_repository(root: Path) -> dict[str, object]:
             problems.append({"path": relative.as_posix(), "problem": "private_absolute_path"})
 
     citation = (root / "CITATION.cff").read_text(encoding="utf-8")
-    if citation.count("family-names:") != 1 or "family-names: Zhang" not in citation:
-        problems.append({"path": "CITATION.cff", "problem": "author_family_name_not_exactly_one_Zhang"})
-    if citation.count("given-names:") != 1 or "given-names: Zhiyuan" not in citation:
-        problems.append({"path": "CITATION.cff", "problem": "author_given_name_not_exactly_one_Zhiyuan"})
+    # The identity check applies to the top-level ``authors`` block; the
+    # ``preferred-citation`` reference repeats the same single author.
+    top_level, _, preferred = citation.partition("preferred-citation:")
+    for block in (top_level, preferred):
+        if not block.strip():
+            continue
+        if block.count("family-names:") != 1 or "family-names: Zhang" not in block:
+            problems.append({"path": "CITATION.cff", "problem": "author_family_name_not_exactly_one_Zhang"})
+        if block.count("given-names:") != 1 or "given-names: Zhiyuan" not in block:
+            problems.append({"path": "CITATION.cff", "problem": "author_given_name_not_exactly_one_Zhiyuan"})
     notice = (root / "NOTICE").read_text(encoding="utf-8")
     if "Copyright 2026 Zhiyuan Zhang" not in notice:
         problems.append({"path": "NOTICE", "problem": "copyright_identity_mismatch"})
